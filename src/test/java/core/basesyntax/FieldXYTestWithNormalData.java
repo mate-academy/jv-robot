@@ -6,6 +6,21 @@ import org.junit.Assert;
 public class FieldXYTestWithNormalData {
 
     @Test
+    public void robotShouldStayAtTheSamePosition() {
+        int startX = 0;
+        int startY = 0;
+        Robot robot = new Robot(Direction.LEFT, startX, startY);
+        FieldXY fieldXY = new FieldXY();
+        int finalX = 0;
+        int finalY = 0;
+
+        fieldXY.moveRobot(robot, finalX, finalY);
+
+        Assert.assertEquals("Wrong X coordinate", finalX, robot.getX());
+        Assert.assertEquals("Wrong Y coordinate", finalY, robot.getY());
+    }
+
+    @Test
     public void goFromFirstQuadrantToSecond() {
         int startX = 1;
         int startY = 1;
