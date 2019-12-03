@@ -12,7 +12,76 @@ package core.basesyntax;
  */
 public class FieldXY {
 
-    public void moveRobot(Robot robot, int toX, int toY) {
+    public static void moveRobot(Robot robot, int toX, int toY) {
+        while (robot.getX() != toX) {
+            switch (robot.getDirection()) {
+                case UP:
+                    if (robot.getX() > toX) {
+                        robot.turnLeft();
+                    } else {
+                        robot.turnRight();
+                    }
+                    break;
+                case DOWN:
+                    if (robot.getX() < toX) {
+                        robot.turnLeft();
+                    } else {
+                        robot.turnRight();
+                    }
+                    break;
+                case RIGHT:
+                    if (robot.getX() > toX) {
+                        robot.turnRight();
+                        robot.turnRight();
+                    }
+                    break;
+                case LEFT:
+                    if (robot.getX() < toX) {
+                        robot.turnLeft();
+                        robot.turnLeft();
+                    }
+                    break;
+                default:
+                    break;
+            }
+            System.out.format("DirectionX: %s, directionY: %s \n", robot.getX(), robot.getY());
+            robot.stepForward();
+        }
+        while (robot.getY() != toY) {
+            switch (robot.getDirection()) {
+                case UP:
+                    if (robot.getY() > toY) {
+                        robot.turnRight();
+                        robot.turnRight();
+                    }
+                    break;
+                case DOWN:
+                    if (robot.getY() < toY) {
+                        robot.turnLeft();
+                        robot.turnLeft();
+                    }
+                    break;
+                case LEFT:
+                    if (robot.getY() > toY) {
+                        robot.turnRight();
+                    } else {
+                        robot.turnLeft();
+                    }
+                    break;
+                case RIGHT:
+                    if (robot.getY() < toY) {
+                        robot.turnRight();
+                    } else {
+                        robot.turnLeft();
+                    }
+                    break;
+                default:
+                    break;
+            }
+            System.out.format("DirectionX: %s, directionY: %s \n", robot.getX(), robot.getY());
+            robot.stepForward();
+        }
+
         //your code
     }
 }
