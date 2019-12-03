@@ -19,89 +19,101 @@ public class FieldXY {
         int y = toY - robot.getY();
         if (x != 0) {
             if (x > 0) {
-                switch (robot.getDirection()) {
-                    case UP:
-                        robot.turnRight();
-                        break;
-                    case DOWN:
-                        robot.turnLeft();
-                        break;
-                    case LEFT:
-                        robot.turnLeft();
-                        robot.turnLeft();
-                        break;
-                    case RIGHT:
-                        break;
-                    default:
-                        break;
-                }
-                for (int i = 0; i < x; i++) {
-                    robot.stepForward();
-                }
+                moveRight(robot, x);
             } else {
-                switch (robot.getDirection()) {
-                    case UP:
-                        robot.turnLeft();
-                        break;
-                    case DOWN:
-                        robot.turnRight();
-                        break;
-                    case LEFT:
-                        break;
-                    case RIGHT:
-                        robot.turnLeft();
-                        robot.turnLeft();
-                        break;
-                    default:
-                        break;
-                }
-                for (int i = 0; i > x; i--) {
-                    robot.stepForward();
-                }
+                moveLeft(robot, x);
             }
         }
         if (y != 0) {
             if (y > 0) {
-                switch (robot.getDirection()) {
-                    case UP:
-                        break;
-                    case DOWN:
-                        robot.turnLeft();
-                        robot.turnLeft();
-                        break;
-                    case LEFT:
-                        robot.turnRight();
-                        break;
-                    case RIGHT:
-                        robot.turnLeft();
-                        break;
-                    default:
-                        break;
-                }
-                for (int i = 0; i < y; i++) {
-                    robot.stepForward();
-                }
+                moveUp(robot, y);
             } else {
-                switch (robot.getDirection()) {
-                    case UP:
-                        robot.turnLeft();
-                        robot.turnLeft();
-                        break;
-                    case DOWN:
-                        break;
-                    case LEFT:
-                        robot.turnLeft();
-                        break;
-                    case RIGHT:
-                        robot.turnRight();
-                        break;
-                    default:
-                        break;
-                }
-                for (int i = 0; i > y; i--) {
-                    robot.stepForward();
-                }
+                moveDown(robot, y);
             }
+        }
+    }
+
+    public void moveRight(Robot robot, int x) {
+        switch (robot.getDirection()) {
+            case UP:
+                robot.turnRight();
+                break;
+            case DOWN:
+                robot.turnLeft();
+                break;
+            case LEFT:
+                robot.turnLeft();
+                robot.turnLeft();
+                break;
+            case RIGHT:
+                break;
+            default:
+        }
+        for (int i = 0; i < x; i++) {
+            robot.stepForward();
+        }
+    }
+
+    public void moveLeft(Robot robot, int x) {
+        switch (robot.getDirection()) {
+            case UP:
+                robot.turnLeft();
+                break;
+            case DOWN:
+                robot.turnRight();
+                break;
+            case LEFT:
+                break;
+            case RIGHT:
+                robot.turnLeft();
+                robot.turnLeft();
+                break;
+            default:
+        }
+        for (int i = 0; i > x; i--) {
+            robot.stepForward();
+        }
+    }
+
+    public void moveUp(Robot robot, int y) {
+        switch (robot.getDirection()) {
+            case UP:
+                break;
+            case DOWN:
+                robot.turnLeft();
+                robot.turnLeft();
+                break;
+            case LEFT:
+                robot.turnRight();
+                break;
+            case RIGHT:
+                robot.turnLeft();
+                break;
+            default:
+        }
+        for (int i = 0; i < y; i++) {
+            robot.stepForward();
+        }
+    }
+
+    public void moveDown(Robot robot, int y) {
+        switch (robot.getDirection()) {
+            case UP:
+                robot.turnLeft();
+                robot.turnLeft();
+                break;
+            case DOWN:
+                break;
+            case LEFT:
+                robot.turnLeft();
+                break;
+            case RIGHT:
+                robot.turnRight();
+                break;
+            default:
+        }
+        for (int i = 0; i > y; i--) {
+            robot.stepForward();
         }
     }
 }
