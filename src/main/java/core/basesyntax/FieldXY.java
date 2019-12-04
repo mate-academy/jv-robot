@@ -26,7 +26,6 @@ public class FieldXY {
         while (toX != robot.getX()) {
             robot.stepForward();
         }
-
         if (toY < robot.getY()) {
             while (Direction.DOWN != robot.getDirection()) {
                 robot.turnRight();
