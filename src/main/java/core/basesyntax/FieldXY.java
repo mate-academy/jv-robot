@@ -14,32 +14,28 @@ public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
 
-        int currentPosX = robot.getX();
-        int currentPosY = robot.getY();
-        Direction currentDirection = robot.getDirection();
-
-        if (currentPosX >= toX) {
-            while (currentDirection != Direction.LEFT) {
+        if (robot.getX() >= toX) {
+            while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
         } else {
-            while (currentDirection != Direction.RIGHT) {
+            while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
         }
-        while (currentPosX != toX) {
+        while (robot.getX() != toX) {
             robot.stepForward();
         }
-        if (currentPosY >= toY) {
-            while (currentDirection != Direction.DOWN) {
+        if (robot.getY() >= toY) {
+            while (robot.getDirection() != Direction.DOWN) {
                 robot.turnRight();
             }
         } else {
-            while (currentDirection != Direction.UP) {
+            while (robot.getDirection() != Direction.UP) {
                 robot.turnLeft();
             }
         }
-        while (currentPosY != toY) {
+        while (robot.getY() != toY) {
             robot.stepForward();
         }
     }
