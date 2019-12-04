@@ -15,21 +15,17 @@ package core.basesyntax;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        int x = toX - robot.getX();
-        int y = toY - robot.getY();
-        if (x != 0) {
-            if (x > 0) {
-                moveRight(robot, x);
-            } else {
-                moveLeft(robot, x);
-            }
+        int xoffset = toX - robot.getX();
+        int yoffset = toY - robot.getY();
+        if (xoffset > 0) {
+            moveRight(robot, xoffset);
+        } else {
+            moveLeft(robot, xoffset);
         }
-        if (y != 0) {
-            if (y > 0) {
-                moveUp(robot, y);
-            } else {
-                moveDown(robot, y);
-            }
+        if (yoffset > 0) {
+            moveUp(robot, yoffset);
+        } else {
+            moveDown(robot, yoffset);
         }
     }
 
@@ -45,9 +41,8 @@ public class FieldXY {
                 robot.turnLeft();
                 robot.turnLeft();
                 break;
-            case RIGHT:
-                break;
             default:
+                break;
         }
         for (int i = 0; i < x; i++) {
             robot.stepForward();
@@ -62,13 +57,12 @@ public class FieldXY {
             case DOWN:
                 robot.turnRight();
                 break;
-            case LEFT:
-                break;
             case RIGHT:
                 robot.turnLeft();
                 robot.turnLeft();
                 break;
             default:
+                break;
         }
         for (int i = 0; i > x; i--) {
             robot.stepForward();
@@ -77,8 +71,6 @@ public class FieldXY {
 
     public void moveUp(Robot robot, int y) {
         switch (robot.getDirection()) {
-            case UP:
-                break;
             case DOWN:
                 robot.turnLeft();
                 robot.turnLeft();
@@ -90,6 +82,7 @@ public class FieldXY {
                 robot.turnLeft();
                 break;
             default:
+                break;
         }
         for (int i = 0; i < y; i++) {
             robot.stepForward();
@@ -102,8 +95,6 @@ public class FieldXY {
                 robot.turnLeft();
                 robot.turnLeft();
                 break;
-            case DOWN:
-                break;
             case LEFT:
                 robot.turnLeft();
                 break;
@@ -111,6 +102,7 @@ public class FieldXY {
                 robot.turnRight();
                 break;
             default:
+                break;
         }
         for (int i = 0; i > y; i--) {
             robot.stepForward();
