@@ -11,36 +11,29 @@ package core.basesyntax;
  * Реализуйте метод moveRobot()</p>
  */
 public class FieldXY {
+    private void coordinateDirection(Robot robot, int distance, Direction one, Direction two) {
+        if (distance < 0) {
+            while (robot.getDirection() != one) {
+                robot.turnLeft();
+            }
+        } else {
+            while (robot.getDirection() != two) {
+                robot.turnRight();
+            }
+        }
+    }
 
     public void moveRobot(Robot robot, int toX, int toY) {
         int distanceX = toX - robot.getX();
         while (robot.getX() != toX) {
-            if (distanceX < 0) {
-                while (robot.getDirection() != Direction.LEFT) {
-                    robot.turnLeft();
-                }
-            } else {
-                while (robot.getDirection() != Direction.RIGHT) {
-                    robot.turnRight();
-                }
-            }
+            coordinateDirection(robot, distanceX, Direction.LEFT, Direction.RIGHT);
             robot.stepForward();
         }
         int distanceY = toY - robot.getY();
         while (robot.getY() != toY) {
-            if (distanceY < 0) {
-                while (robot.getDirection() != Direction.DOWN) {
-                    robot.turnLeft();
-                }
-            } else {
-                while (robot.getDirection() != Direction.UP) {
-                    robot.turnRight();
-                }
-            }
+            coordinateDirection(robot, distanceY, Direction.DOWN, Direction.UP);
             robot.stepForward();
-
         }
-
     }
 }
 
