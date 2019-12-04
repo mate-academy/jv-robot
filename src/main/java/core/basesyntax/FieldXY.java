@@ -13,11 +13,10 @@ package core.basesyntax;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        int vectorX = toX - robot.getX();
-        int vectorY = toY - robot.getY();
-        Direction vectorDirectionX = vectorX > 0 ? Direction.RIGHT : Direction.LEFT;
-        Direction vectorDirectionY = vectorY > 0 ? Direction.UP : Direction.DOWN;
-        for (int i = 0; i < 5; i++) {
+        final int maxSideWorldValue = 4;
+        Direction vectorDirectionX = toX - robot.getX() > 0 ? Direction.RIGHT : Direction.LEFT;
+        Direction vectorDirectionY = toY - robot.getY() > 0 ? Direction.UP : Direction.DOWN;
+        for (int i = 0; i <= maxSideWorldValue; i++) {
             if (robot.getDirection().equals(vectorDirectionX) && toX != robot.getX()) {
                 while (robot.getX() != toX) {
                     robot.stepForward();
@@ -32,4 +31,3 @@ public class FieldXY {
         }
     }
 }
-
