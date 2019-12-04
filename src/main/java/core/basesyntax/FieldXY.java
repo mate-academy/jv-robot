@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import org.w3c.dom.ls.LSOutput;
-
 /**
  * <p>На игровом поле находится робот. Позиция робота на поле описывается двумя
  * целочисленным координатами: X и Y.
@@ -18,8 +16,8 @@ public class FieldXY {
         moveX(robot, toX);
         moveY(robot, toY);
     }
-        private void moveX(Robot robot, int toX) {
-            System.out.println(toX);
+
+    private void moveX(Robot robot, int toX) {
         while (robot.getX() != toX) {
             switch (robot.getDirection()) {
                 case UP:
@@ -54,43 +52,40 @@ public class FieldXY {
             robot.stepForward();
         }
     }
-        private void moveY(Robot robot, int toY) {
-            while (robot.getY() != toY) {
-                switch (robot.getDirection()) {
-                    case UP:
-                        if (robot.getY() > toY) {
-                            robot.turnRight();
-                            robot.turnRight();
-                        }
-                        break;
-                    case DOWN:
-                        if (robot.getY() < toY) {
-                            robot.turnLeft();
-                            robot.turnLeft();
-                        }
-                        break;
-                    case LEFT:
-                        if (robot.getY() > toY) {
-                            robot.turnRight();
-                        } else {
-                            robot.turnLeft();
-                        }
-                        break;
-                    case RIGHT:
-                        if (robot.getY() < toY) {
-                            robot.turnRight();
-                        } else {
-                            robot.turnLeft();
-                        }
-                        break;
-                    default:
-                        break;
-                }
-                robot.stepForward();
-        }
-        }
 
-        //your code
+    private void moveY(Robot robot, int toY) {
+        while (robot.getY() != toY) {
+            switch (robot.getDirection()) {
+                case UP:
+                    if (robot.getY() > toY) {
+                        robot.turnRight();
+                        robot.turnRight();
+                    }
+                    break;
+                case DOWN:
+                    if (robot.getY() < toY) {
+                        robot.turnLeft();
+                        robot.turnLeft();
+                    }
+                    break;
+                case LEFT:
+                    if (robot.getY() > toY) {
+                        robot.turnRight();
+                    } else {
+                        robot.turnLeft();
+                    }
+                    break;
+                case RIGHT:
+                    if (robot.getY() < toY) {
+                        robot.turnRight();
+                    } else {
+                        robot.turnLeft();
+                    }
+                    break;
+                default:
+                    break;
+            }
+            robot.stepForward();
+        }
     }
-
-
+}
