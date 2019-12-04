@@ -41,7 +41,3 @@ public class FieldXY {
         }
     }
 }
-
-
-
-
