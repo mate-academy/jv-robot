@@ -13,28 +13,44 @@ package core.basesyntax;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        while (robot.getY() != toY) {
-            if (robot.getY() < toY) {
-                while (robot.getDirection() != Direction.UP) {
-                    robot.turnLeft();
-                }
-            } else if (robot.getY() > toY) {
-                while (robot.getDirection() != Direction.DOWN) {
-                    robot.turnLeft();
-                }
+        turnToTheRightDirectionOY(robot, toY);
+        goToAimY(robot, toY);
+        turnToTheRightDirectionOX(robot, toX);
+        goToAimX(robot, toX);
+    }
+
+    private void turnToTheRightDirectionOY(Robot robot, int toY) {
+        if (robot.getY() < toY) {
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnLeft();
             }
+        } else if (robot.getY() > toY) {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
+            }
+        }
+    }
+
+    private void turnToTheRightDirectionOX(Robot robot, int toX) {
+        if (robot.getX() < toX) {
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnLeft();
+            }
+        } else if (robot.getX() > toX) {
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnLeft();
+            }
+        }
+    }
+
+    void goToAimX(Robot robot, int toX) {
+        while (robot.getX() != toX) {
             robot.stepForward();
         }
-        while (robot.getX() != toX) {
-            if (robot.getX() < toX) {
-                while (robot.getDirection() != Direction.RIGHT) {
-                    robot.turnLeft();
-                }
-            } else if (robot.getX() > toX) {
-                while (robot.getDirection() != Direction.LEFT) {
-                    robot.turnLeft();
-                }
-            }
+    }
+
+    void goToAimY(Robot robot, int toY) {
+        while (robot.getY() != toY) {
             robot.stepForward();
         }
     }
