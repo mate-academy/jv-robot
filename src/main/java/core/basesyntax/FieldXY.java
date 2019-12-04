@@ -12,19 +12,19 @@ package core.basesyntax;
  */
 public class FieldXY {
     public void moveRobot(Robot robot, int toX, int toY) {
-        if (robot.getX() < toX) {
+        if (robot.getX() <= toX) {
             switch (robot.getDirection()) {
                 case DOWN:
                     robot.turnRight();
                     break;
                 case LEFT:
-                    if (robot.getY() > toY) {
+                    if (robot.getY() >= toY) {
                         robot.turnLeft();
                     }
                     robot.turnRight();
                     break;
                 case RIGHT:
-                    if (robot.getY() > toY) {
+                    if (robot.getY() >= toY) {
                         robot.turnRight();
                     }
                     robot.turnLeft();
