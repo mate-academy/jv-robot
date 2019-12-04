@@ -16,48 +16,58 @@ public class FieldXY {
         int startX = robot.getX();
         int startY = robot.getY();
         while (startX != toX && startY != toY) {
-            Direction direction = robot.getDirection();
-            if (toY - startY > 0) {
-                if (direction == Direction.UP) {
+            if (robot.getDirection() == Direction.UP) {
+                if (toY - startY > 0) {
                     robot.stepForward();
                     startY = robot.getY();
-                } else {
-                    direction = Direction.UP;
-                    robot.stepForward();
-                    startY = robot.getY();
+                } else if (startX - toX > 0) {
+                    robot.turnLeft();
+                } else if (toX - startX > 0) {
+                    robot.turnRight();
+                } else if (startY - toY > 0) {
+                    robot.turnRight();
+                    robot.turnRight();
                 }
             }
-            if (toX - startX > 0) {
-                if (direction == Direction.RIGHT) {
+            if (robot.getDirection() == Direction.RIGHT) {
+                if (toX - startX > 0) {
                     robot.stepForward();
                     startX = robot.getX();
-                } else {
-                    direction = Direction.RIGHT;
-                    robot.stepForward();
-                    startX = robot.getX();
+                } else if (toY - startY > 0) {
+                    robot.turnLeft();
+                } else if (startY - toY > 0) {
+                    robot.turnRight();
+                } else if (startX - toX > 0) {
+                    robot.turnRight();
+                    robot.turnRight();
                 }
             }
-            if (startX - toX > 0) {
-                if (direction == Direction.LEFT) {
+            if (robot.getDirection() == Direction.DOWN) {
+                if (startY - toY > 0) {
                     robot.stepForward();
-                    startX = robot.getX();
-                } else {
-                    direction = Direction.LEFT;
-                    robot.stepForward();
-                    startX = robot.getX();
+                    startY = robot.getY();
+                } else if (toX - startX > 0) {
+                    robot.turnLeft();
+                } else if (startX - toX > 0) {
+                    robot.turnRight();
+                } else if (toY - startY > 0) {
+                    robot.turnRight();
+                    robot.turnRight();
                 }
             }
-            if (startY - toY > 0) {
-                if (direction == Direction.DOWN) {
+            if (robot.getDirection() == Direction.LEFT) {
+                if (startX - toX > 0) {
                     robot.stepForward();
-                    startY = robot.getY();
-                } else {
-                    direction = Direction.DOWN;
-                    robot.stepForward();
-                    startY = robot.getY();
+                    startX = robot.getY();
+                } else if (startY - toY > 0) {
+                    robot.turnLeft();
+                } else if (toY - startY > 0) {
+                    robot.turnRight();
+                } else if (toX - startX > 0) {
+                    robot.turnRight();
+                    robot.turnRight();
                 }
             }
         }
     }
 }
-
