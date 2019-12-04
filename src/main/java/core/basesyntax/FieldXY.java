@@ -14,101 +14,34 @@ public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
 
-        long distanceToX = Math.abs(robot.getX() - (long) toX);
-        long distanceToY = Math.abs(robot.getY() - (long) toY);
-
         if (robot.getX() < toX) {
-            switch (robot.getDirection()) {
-                case UP:
-                    robot.turnRight();
-                    break;
-                case LEFT:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case DOWN:
-                    robot.turnLeft();
-                    break;
-                case RIGHT:
-                    break;
-                default:
-                    System.out.println("Error");
-                    break;
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnRight();
             }
-
-            for (long i = 0; i < distanceToX; i++) {
+            while (robot.getX() != toX) {
                 robot.stepForward();
             }
-        }
-
-        if (robot.getX() > toX) {
-            switch (robot.getDirection()) {
-                case UP:
-                    robot.turnLeft();
-                    break;
-                case LEFT:
-                    break;
-                case DOWN:
-                    robot.turnRight();
-                    break;
-                case RIGHT:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                default:
-                    System.out.println("Error");
-                    break;
+        } else {
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnRight();
             }
-
-            for (long i = 0; i < distanceToX; i++) {
+            while (robot.getX() != toX) {
                 robot.stepForward();
             }
         }
 
         if (robot.getY() < toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    break;
-                case LEFT:
-                    robot.turnRight();
-                    break;
-                case DOWN:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case RIGHT:
-                    robot.turnLeft();
-                    break;
-                default:
-                    System.out.println("Error");
-                    break;
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnRight();
             }
-
-            for (long i = 0; i < distanceToY; i++) {
+            while (robot.getY() != toY) {
                 robot.stepForward();
             }
-        }
-
-        if (robot.getY() > toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case LEFT:
-                    robot.turnLeft();
-                    break;
-                case DOWN:
-                    break;
-                case RIGHT:
-                    robot.turnRight();
-                    break;
-                default:
-                    System.out.println("Error!");
-                    break;
+        } else {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnRight();
             }
-
-            for (long i = 0; i < distanceToY; i++) {
+            while (robot.getY() != toY) {
                 robot.stepForward();
             }
         }
