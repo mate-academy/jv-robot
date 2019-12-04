@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import static core.basesyntax.Direction.DOWN;
+
 /**
  * <p>На игровом поле находится робот. Позиция робота на поле описывается двумя
  * целочисленным координатами: X и Y.
@@ -11,33 +13,175 @@ package core.basesyntax;
  * Реализуйте метод moveRobot()</p>
  */
 public class FieldXY {
+
     public void moveRobot(Robot robot, int toX, int toY) {
-        switch (robot.getDirection()) {
-            case DOWN:
-                robot.turnRight();
-                break;
-            case LEFT:
-                if (robot.getY() >= toY) {
-                    robot.turnLeft();
-                }
-                robot.turnRight();
-                break;
-            case RIGHT:
-                if (robot.getY() >= toY) {
+        //your code
+        if (robot.getY() <= toY) {
+            switch (robot.getDirection()) {
+                case UP:
+                    while (robot.getY() != toY) {
+                        robot.stepForward();
+                    }
+                    if (robot.getX() > toX) {
+                        robot.turnLeft();
+                    }
+                    if (robot.getX() < toX) {
+                        robot.turnRight();
+                        while (robot.getX() != toX) {
+                            robot.stepForward();
+                        }
+                    }
+                    break;
+                case DOWN:
+                    if (robot.getX() > toX) {
+                        robot.turnRight();
+                        while (robot.getX() != toX) {
+                            robot.stepForward();
+                        }
+                        robot.turnRight();
+                    }
+                    if (robot.getX() < toX) {
+                        robot.turnLeft();
+                        while (robot.getX() != toX) {
+                            robot.stepForward();
+                        }
+                        robot.turnLeft();
+                    }
+                    while (robot.getY() != toY) {
+                        robot.stepForward();
+                    }
+                    break;
+                case LEFT:
                     robot.turnRight();
-                }
-                robot.turnLeft();
-                break;
-            default:
-                break;
+                    while (robot.getY() != toY) {
+                        robot.stepForward();
+                    }
+                    if (robot.getX() >= toX) {
+                        robot.turnLeft();
+                    }
+                    if (robot.getX() <= toX) {
+                        robot.turnRight();
+                    }
+                    while (robot.getX() != toX) {
+                        robot.stepForward();
+                    }
+                    break;
+                case RIGHT:
+                    robot.turnLeft();
+                    while (robot.getY() != toY) {
+                        robot.stepForward();
+                    }
+                    if (robot.getX() >= toX) {
+                        robot.turnLeft();
+                    }
+                    if (robot.getX() <= toX) {
+                        robot.turnRight();
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
-        while (robot.getY() != toY) {
-            robot.stepForward();
-        }
-        robot.turnLeft();
-        while (robot.getX() != toX) {
-            robot.stepForward();
+        if (robot.getY() > toY) {
+            switch (robot.getDirection()) {
+                case UP:
+                    if (robot.getX() > toX) {
+                        robot.turnLeft();
+                        while (robot.getX() != toX) {
+                            robot.stepForward();
+                        }
+                        robot.turnLeft();
+                    }
+                    if (robot.getX() < toX) {
+                        robot.turnRight();
+                        while (robot.getX() != toX) {
+                            robot.stepForward();
+                        }
+                        robot.turnRight();
+                    }
+                    while (robot.getY() != toY) {
+                        robot.stepForward();
+                    }
+                    break;
+                case DOWN:
+                    while (robot.getX() != toX) {
+                        robot.stepForward();
+                    }
+                    if (robot.getX() > toX) {
+                        robot.turnRight();
+                    }
+                    if (robot.getX() < toX) {
+                        robot.turnLeft();
+                    }
+                    while (robot.getY() != toY) {
+                        robot.stepForward();
+                    }
+                    break;
+                case LEFT:
+                    robot.turnRight();
+                    while (robot.getY() != toY) {
+                        robot.stepForward();
+                    }
+                    if (robot.getX() > toX) {
+                        robot.turnLeft();
+                    }
+                    if (robot.getX() < toX) {
+                        robot.turnRight();
+                    }
+                    while (robot.getX() != toX) {
+                        robot.stepForward();
+                    }
+                    break;
+                case RIGHT:
+                    robot.turnRight();
+                    while (robot.getX() != toX) {
+                        robot.stepForward();
+                    }
+                    if (robot.getX() > toX) {
+                        robot.turnLeft();
+                        while (robot.getY() != toY) {
+                            robot.stepForward();
+                        }
+                    }
+                    if (robot.getX() < toX) {
+                        robot.turnRight();
+                        while (robot.getY() != toY) {
+                            robot.stepForward();
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
