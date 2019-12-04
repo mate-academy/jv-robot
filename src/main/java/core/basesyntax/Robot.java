@@ -37,6 +37,9 @@ public class Robot {
                 break;
             case RIGHT:
                 direction = Direction.UP;
+                break;
+            default:
+                direction = Direction.UP;
         }
     }
 
@@ -53,6 +56,9 @@ public class Robot {
                 break;
             case RIGHT:
                 direction = Direction.DOWN;
+                break;
+            default:
+                direction = Direction.UP;
         }
     }
 
@@ -68,6 +74,9 @@ public class Robot {
                 coordinateY--;
                 break;
             case RIGHT:
+                coordinateX++;
+                break;
+            default:
                 coordinateX++;
         }
     }
