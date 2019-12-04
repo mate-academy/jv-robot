@@ -12,12 +12,10 @@ package core.basesyntax;
  */
 public class FieldXY {
     public void moveRobot(Robot robot, int toX, int toY) {
-        Direction direction = robot.getDirection();
         if (robot.getX() < toX) {
-            switch (direction) {
+            switch (robot.getDirection()) {
                 case DOWN:
-                    robot.turnLeft();
-                    robot.turnLeft();
+                    robot.turnRight();
                     break;
                 case LEFT:
                     if (robot.getY() > toY) {
