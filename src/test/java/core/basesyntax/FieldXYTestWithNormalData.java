@@ -26,8 +26,8 @@ public class FieldXYTestWithNormalData {
         int startY = 1;
         Robot robot = new Robot(Direction.LEFT, startX, startY);
         FieldXY fieldXY = new FieldXY();
-        int finalX = 7;
-        int finalY = -3;
+        int finalX = 2;
+        int finalY = 2;
 
         fieldXY.moveRobot(robot, finalX, finalY);
 
