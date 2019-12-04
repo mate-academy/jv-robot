@@ -35,7 +35,7 @@ public class FieldXY {
                 robot.turnRight();
             }
         } else {
-            while (currentDirection != Direction.DOWN) {
+            while (currentDirection != Direction.UP) {
                 robot.turnLeft();
             }
         }
