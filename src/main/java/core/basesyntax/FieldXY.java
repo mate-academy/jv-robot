@@ -16,146 +16,47 @@ public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
         //your code
-        if (robot.getY() <= toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    while (robot.getY() != toY) {
-                        robot.stepForward();
-                    }
-                    if (robot.getX() > toX) {
-                        robot.turnLeft();
-                    }
-                    if (robot.getX() < toX) {
-                        robot.turnRight();
-                        while (robot.getX() != toX) {
-                            robot.stepForward();
-                        }
-                    }
-                    break;
-                case DOWN:
-                    if (robot.getX() > toX) {
-                        robot.turnRight();
-                        while (robot.getX() != toX) {
-                            robot.stepForward();
-                        }
-                        robot.turnRight();
-                    }
-                    if (robot.getX() < toX) {
-                        robot.turnLeft();
-                        while (robot.getX() != toX) {
-                            robot.stepForward();
-                        }
-                        robot.turnLeft();
-                    }
-                    while (robot.getY() != toY) {
-                        robot.stepForward();
-                    }
-                    break;
-                case LEFT:
-                    robot.turnRight();
-                    while (robot.getY() != toY) {
-                        robot.stepForward();
-                    }
-                    if (robot.getX() >= toX) {
-                        robot.turnLeft();
-                    }
-                    if (robot.getX() <= toX) {
-                        robot.turnRight();
-                    }
-                    while (robot.getX() != toX) {
-                        robot.stepForward();
-                    }
-                    break;
-                case RIGHT:
-                    robot.turnLeft();
-                    while (robot.getY() != toY) {
-                        robot.stepForward();
-                    }
-                    if (robot.getX() >= toX) {
-                        robot.turnLeft();
-                    }
-                    if (robot.getX() <= toX) {
-                        robot.turnRight();
-                    }
-                    break;
-                default:
-                    break;
+        turnToNeededPosition(robot, toY, "Y");
+        moveRobotToPoint(robot, toY, "Y");
+        turnToNeededPosition(robot, toY, "X");
+        moveRobotToPoint(robot, toX, "X");
+    }
+
+    public void turnToNeededPosition(Robot robot, int poinTo, String marker) {
+        if (marker == "Y") {
+            if (robot.getY() <= poinTo) {
+                turnRobot(robot, Direction.UP);
+            } else if (robot.getY() >= poinTo) {
+                turnRobot(robot, DOWN);
+            }
+        } else if (marker == "X") {
+            if (robot.getX() <= poinTo) {
+                turnRobot(robot, Direction.LEFT);
+            } else if (robot.getX() >= poinTo) {
+                turnRobot(robot, Direction.RIGHT);
             }
         }
-        if (robot.getY() > toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    if (robot.getX() > toX) {
-                        robot.turnLeft();
-                        while (robot.getX() != toX) {
-                            robot.stepForward();
-                        }
-                        robot.turnLeft();
-                    }
-                    if (robot.getX() < toX) {
-                        robot.turnRight();
-                        while (robot.getX() != toX) {
-                            robot.stepForward();
-                        }
-                        robot.turnRight();
-                    }
-                    while (robot.getY() != toY) {
-                        robot.stepForward();
-                    }
-                    break;
-                case DOWN:
-                    while (robot.getX() != toX) {
-                        robot.stepForward();
-                    }
-                    if (robot.getX() > toX) {
-                        robot.turnRight();
-                    }
-                    if (robot.getX() < toX) {
-                        robot.turnLeft();
-                    }
-                    while (robot.getY() != toY) {
-                        robot.stepForward();
-                    }
-                    break;
-                case LEFT:
-                    robot.turnRight();
-                    while (robot.getY() != toY) {
-                        robot.stepForward();
-                    }
-                    if (robot.getX() > toX) {
-                        robot.turnLeft();
-                    }
-                    if (robot.getX() < toX) {
-                        robot.turnRight();
-                    }
-                    while (robot.getX() != toX) {
-                        robot.stepForward();
-                    }
-                    break;
-                case RIGHT:
-                    robot.turnRight();
-                    while (robot.getX() != toX) {
-                        robot.stepForward();
-                    }
-                    if (robot.getX() > toX) {
-                        robot.turnLeft();
-                        while (robot.getY() != toY) {
-                            robot.stepForward();
-                        }
-                    }
-                    if (robot.getX() < toX) {
-                        robot.turnRight();
-                        while (robot.getY() != toY) {
-                            robot.stepForward();
-                        }
-                    }
-                    break;
-                default:
-                    break;
+    }
+
+    public void turnRobot(Robot robot, Direction neededDirection) {
+        while (robot.getDirection() != neededDirection) {
+            robot.turnRight();
+        }
+    }
+
+    public void moveRobotToPoint(Robot robot, int neededPosition, String marker) {
+        if (marker == "X") {
+            while (robot.getX() != neededPosition) {
+                robot.stepForward();
+            }
+        } else if (marker == "Y") {
+            while (robot.getY() != neededPosition) {
+                robot.stepForward();
             }
         }
     }
 }
+
 
 
 
