@@ -24,6 +24,10 @@ public class Robot {
         return coordinateY;
     }
 
+    public void setCoordinateY(int coordinateY) {
+        this.coordinateY = coordinateY;
+    }
+
     public void turnLeft() {
         switch (direction) {
             case UP:
@@ -37,6 +41,8 @@ public class Robot {
                 break;
             case RIGHT:
                 direction = Direction.UP;
+                break;
+            default: break;
         }
     }
 
@@ -53,6 +59,8 @@ public class Robot {
                 break;
             case RIGHT:
                 direction = Direction.DOWN;
+                break;
+            default: break;
         }
     }
 
@@ -69,7 +77,8 @@ public class Robot {
                 break;
             case RIGHT:
                 coordinateX++;
+                break;
+            default: break;
         }
     }
 }
-
