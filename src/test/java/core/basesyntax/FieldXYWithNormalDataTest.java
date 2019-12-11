@@ -3,7 +3,7 @@ package core.basesyntax;
 import org.junit.Test;
 import org.junit.Assert;
 
-public class FieldXYTestWithNormalData {
+public class FieldXYWithNormalDataTest {
 
     @Test
     public void robotShouldStayAtTheSamePosition() {
