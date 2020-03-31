@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import java.util.function.IntSupplier;
+
 /**
  * <p>На игровом поле находится робот. Позиция робота на поле описывается двумя
  * целочисленным координатами: X и Y.
@@ -12,65 +14,21 @@ package core.basesyntax;
  */
 public class FieldXY {
     public void moveRobot(Robot robot, int toX, int toY) {
-        if (!moveXDone(robot, toX)) {
-            while (!correctDirectionAlongX(robot.getDirection(), robot.getX(), toX)) {
+        moveAlongAxis(robot, (toX - robot.getX()) < 0 ? Direction.LEFT : Direction.RIGHT,
+                      robot::getX, toX);
+        moveAlongAxis(robot, (toY - robot.getY()) < 0 ? Direction.DOWN : Direction.UP,
+                      robot::getY, toY);
+    }
+
+    private void moveAlongAxis(Robot robot, Direction correctStartDirection,
+                               IntSupplier current, int target) {
+        if (current.getAsInt() != target) {
+            while (robot.getDirection() != correctStartDirection) {
                 robot.turnRight();
             }
-            while (!moveXDone(robot, toX)) {
+            while (current.getAsInt() != target) {
                 robot.stepForward();
             }
-        }
-
-        if (!moveYDone(robot, toY)) {
-            while (!correctDirectionAlongY(robot.getDirection(), robot.getY(), toY)) {
-                robot.turnRight();
-            }
-            while (!moveYDone(robot, toY)) {
-                robot.stepForward();
-            }
-        }
-    }
-
-    private boolean correctDirectionAlongX(Direction robotDirection, int currentX, int targetX) {
-        return correctOffset(directionToXOffset(robotDirection), targetX - currentX);
-    }
-
-    private boolean correctDirectionAlongY(Direction robotDirection, int currentY, int targetY) {
-        return correctOffset(directionToYOffset(robotDirection), targetY - currentY);
-    }
-
-    private boolean correctOffset(int offset, int distance) {
-        return (long) offset * distance > 0;
-    }
-
-    private boolean moveYDone(Robot robot, int toY) {
-        return robot.getY() == toY;
-    }
-
-    private boolean moveXDone(Robot robot, int toX) {
-        return robot.getX() == toX;
-    }
-
-    private int directionToXOffset(Direction direction) {
-        switch (direction) {
-            case LEFT:
-                return -1;
-            case RIGHT:
-                return 1;
-            default:
-                return 0;
-        }
-    }
-
-    private int directionToYOffset(Direction direction) {
-        switch (direction) {
-            case DOWN:
-                return -1;
-            case UP:
-                return 1;
-            default:
-                return 0;
         }
     }
 }
-
