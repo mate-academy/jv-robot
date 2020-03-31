@@ -23,7 +23,7 @@ public class FieldXY {
             }
         }
 
-        while (toX < robot.getX() || toX > robot.getX()) {
+        while (robot.getX() != toX) {
             robot.stepForward();
         }
 
@@ -37,7 +37,7 @@ public class FieldXY {
             }
         }
 
-        while (toY < robot.getY() || toY > robot.getY()) {
+        while (robot.getY() != toY) {
             robot.stepForward();
         }
     }
