@@ -12,8 +12,43 @@ package core.basesyntax;
  */
 public class FieldXY {
 
+    public void turnToY(Robot robot, int toY) {
+        if (robot.getY() < toY) {
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnLeft();
+            }
+        } else {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
+            }
+        }
+    }
+
+    public void turnToX(Robot robot, int toX) {
+        if (robot.getX() < toX) {
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnLeft();
+            }
+        } else {
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnLeft();
+            }
+        }
+    }
+
     public void moveRobot(Robot robot, int toX, int toY) {
-        //your code
+
+        turnToX(robot, toX);
+
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+
+        turnToY(robot, toY);
+
+        while (robot.getY() != toY) {
+            robot.stepForward();
+        }
     }
 }
 
