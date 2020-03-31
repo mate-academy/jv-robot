@@ -16,26 +16,30 @@ public class FieldXY {
         while (robot.getX() != toX || robot.getY() != toY) {
             if (robot.getX() != toX) {
                 if (robot.getX() > toX) {
-                    turnToLeft(robot);
+                    //turnToLeft(robot);
+                    turnRobot(robot, Direction.LEFT);
                     multiplySteps(robot, robot.getX() - toX);
                 } else {
-                    turnToRight(robot);
+                    //turnToRight(robot);
+                    turnRobot(robot, Direction.RIGHT);
                     multiplySteps(robot, toX - robot.getX());
                 }
             }
             if (robot.getY() != toY) {
                 if (robot.getY() > toY) {
-                    turnToDown(robot);
+                    //turnToDown(robot);
+                    turnRobot(robot, Direction.DOWN);
                     multiplySteps(robot, robot.getY() - toY);
                 } else {
-                    turnToUp(robot);
+                    //turnToUp(robot);
+                    turnRobot(robot, Direction.UP);
                     multiplySteps(robot, toY - robot.getY());
                 }
             }
         }
     }
 
-    public void turnToUp(Robot robot) {
+    /*public void turnToUp(Robot robot) {
         switch (robot.getDirection()) {
             case LEFT:
                 robot.turnRight();
@@ -100,6 +104,12 @@ public class FieldXY {
                 break;
             default:
                 break;
+        }
+    }*/
+
+    public void turnRobot(Robot robot, Direction direction) {
+        while (robot.getDirection() != direction) {
+            robot.turnLeft();
         }
     }
 
