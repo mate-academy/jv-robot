@@ -45,9 +45,12 @@ public class FieldXY {
 
     private void turnRobot(Robot robot, Direction direction) {
         if ((robot.getDirection().equals(Direction.LEFT) && direction.equals(Direction.RIGHT))
-                || (robot.getDirection().equals(Direction.RIGHT) && direction.equals(Direction.LEFT))
-                || (robot.getDirection().equals(Direction.UP) && direction.equals(Direction.DOWN))
-                || (robot.getDirection().equals(Direction.DOWN) && direction.equals(Direction.UP))) {
+                || (robot.getDirection().equals(Direction.RIGHT)
+                   && direction.equals(Direction.LEFT))
+                || (robot.getDirection().equals(Direction.UP)
+                   && direction.equals(Direction.DOWN))
+                || (robot.getDirection().equals(Direction.DOWN)
+                   && direction.equals(Direction.UP))) {
             robot.turnLeft();
             robot.turnLeft();
         } else if (direction.equals(Direction.LEFT)) {
