@@ -14,6 +14,28 @@ public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
         //your code
+        Direction x = robot.getX() - toX < 0 ? Direction.RIGHT : Direction.LEFT;
+        Direction y = robot.getY() - toY < 0 ? Direction.DOWN : Direction.UP;
+        while (robot.getDirection() != x) {
+            if (robot.getX() - toX < 0) {
+                robot.turnRight();
+            } else {
+                robot.turnLeft();
+            }
+        }
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+        while (robot.getDirection() != y) {
+            if (robot.getY() - toY < 0) {
+                robot.turnRight();
+            } else {
+                robot.turnLeft();
+            }
+        }
+        while (robot.getY() != toY) {
+            robot.stepForward();
+        }
     }
 }
 
