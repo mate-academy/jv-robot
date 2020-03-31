@@ -18,11 +18,11 @@ import static core.basesyntax.Direction.UP;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        yAxisMove(robot, toY);
-        xAxisMove(robot, toX);
+        yaxisMove(robot, toY);
+        xaxisMove(robot, toX);
     }
 
-    public static void yAxisMove(Robot robot, int toY){
+    public static void yaxisMove(Robot robot, int toY) {
         if (robot.getY() < toY) {
             while (!robot.getDirection().equals(UP)) {
                 robot.turnRight();
@@ -41,7 +41,7 @@ public class FieldXY {
         }
     }
 
-    public static void xAxisMove(Robot robot, int toX){
+    public static void xaxisMove(Robot robot, int toX) {
         if (robot.getX() < toX) {
             while (!robot.getDirection().equals(RIGHT)) {
                 robot.turnRight();
