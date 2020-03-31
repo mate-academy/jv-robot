@@ -13,7 +13,24 @@ package core.basesyntax;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        //your code
+        Direction targetX = toX > 0
+                ? Direction.RIGHT : Direction.LEFT;
+        Direction targetY = toY > 0
+                ? Direction.UP : Direction.DOWN;
+
+        while (robot.getDirection() != targetY) {
+            robot.turnRight();
+        }
+        while (robot.getY() != toY) {
+            robot.stepForward();
+        }
+        while (robot.getDirection() != targetX) {
+            robot.turnRight();
+        }
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+
     }
 }
 
