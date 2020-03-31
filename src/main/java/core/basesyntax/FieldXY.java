@@ -46,38 +46,24 @@ public class FieldXY {
     private void turnRobot(Robot robot, Direction direction) {
         if ((robot.getDirection().equals(Direction.LEFT) && direction.equals(Direction.RIGHT))
                 || (robot.getDirection().equals(Direction.RIGHT)
-                   && direction.equals(Direction.LEFT))
+                && direction.equals(Direction.LEFT))
                 || (robot.getDirection().equals(Direction.UP)
-                   && direction.equals(Direction.DOWN))
+                && direction.equals(Direction.DOWN))
                 || (robot.getDirection().equals(Direction.DOWN)
-                   && direction.equals(Direction.UP))) {
+                && direction.equals(Direction.UP))) {
             robot.turnLeft();
             robot.turnLeft();
-        } else if (direction.equals(Direction.LEFT)) {
-            if (robot.getDirection().equals(Direction.UP)) {
-                robot.turnLeft();
-            } else {
-                robot.turnRight();
-            }
-        } else if (direction.equals(Direction.RIGHT)) {
-            if (robot.getDirection().equals(Direction.UP)) {
-                robot.turnRight();
-            } else {
-                robot.turnLeft();
-            }
-        } else if (direction.equals(Direction.UP)) {
-            if (robot.getDirection().equals(Direction.RIGHT)) {
-                robot.turnLeft();
-            } else {
-                robot.turnRight();
-            }
+        } else if ((direction.equals(Direction.LEFT)
+                && robot.getDirection().equals(Direction.UP))
+                || (direction.equals(Direction.RIGHT)
+                && robot.getDirection().equals(Direction.DOWN))
+                || (direction.equals(Direction.UP)
+                && robot.getDirection().equals(Direction.RIGHT))
+                || (direction.equals(Direction.DOWN)
+                && robot.getDirection().equals(Direction.LEFT))) {
+            robot.turnLeft();
         } else {
-            if (robot.getDirection().equals(Direction.RIGHT)) {
-                robot.turnRight();
-            } else {
-                robot.turnLeft();
-            }
+            robot.turnRight();
         }
     }
 }
-
