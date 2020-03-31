@@ -12,7 +12,7 @@ package core.basesyntax;
  */
 public class FieldXY {
 
-    public static void moveRobot(Robot robot, int toX, int toY) {
+    public void moveRobot(Robot robot, int toX, int toY) {
         Direction directX = robot.getX() < toX ? Direction.RIGHT : Direction.LEFT;;
         Direction directY = robot.getY() < toY ? Direction.UP : Direction.DOWN;
 
