@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import static core.basesyntax.Direction.*;
+
 /**
  * <p>На игровом поле находится робот. Позиция робота на поле описывается двумя
  * целочисленным координатами: X и Y. 
@@ -13,7 +15,37 @@ package core.basesyntax;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        //your code
+        if (robot.getY() < toY) {
+            while (!robot.getDirection().equals(UP)) {
+                robot.turnRight();
+            }
+            while (robot.getY() < toY){
+                robot.stepForward();
+            }
+        }
+        if (robot.getY() > toY) {
+            while (!robot.getDirection().equals(DOWN)) {
+                robot.turnLeft();
+            }
+            while (robot.getY() > toY){
+                robot.stepForward();
+            }
+        }
+        if (robot.getX() < toX) {
+            while (!robot.getDirection().equals(RIGHT)) {
+                robot.turnRight();
+            }
+            while (robot.getX() < toX){
+                robot.stepForward();
+            }
+        }
+        if (robot.getX() > toX) {
+            while (!robot.getDirection().equals(LEFT)) {
+                robot.turnLeft();
+            }
+            while (robot.getX() > toX){
+                robot.stepForward();
+            }
+        }
     }
 }
-
