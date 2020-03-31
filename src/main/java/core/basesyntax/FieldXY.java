@@ -56,7 +56,6 @@ public class FieldXY {
                     robot.turnLeft();
                 } else {
                     turnAround(robot);
-                    ;
                 }
                 break;
             case RIGHT:
@@ -68,7 +67,8 @@ public class FieldXY {
                     turnAround(robot);
                 }
                 break;
-            default: break;
+            default:
+                break;
         }
     }
 
