@@ -13,42 +13,21 @@ package core.basesyntax;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        while ((robot.getX() != toX) || (robot.getY() != toY)) {
-            goToX(robot,toX);
-            goToY(robot,toY);
+        final Direction rightDirectionX = (robot.getX() < toX) ? Direction.RIGHT : Direction.LEFT;
+        final Direction rightDirectionY = (robot.getY() < toY) ? Direction.UP : Direction.DOWN;
+        directionCheck(robot,rightDirectionX);
+        while (robot.getX() != toX) {
+            robot.stepForward();
         }
-    }
-
-    public static void goToX(Robot robot, int newX) {
-        if (robot.getX() < newX) {
-            while (robot.getDirection() != Direction.RIGHT) {
-                robot.turnRight();
-            }
-        }
-        if (robot.getX() > newX) {
-            while (robot.getDirection() != Direction.LEFT) {
-                robot.turnRight();
-            }
-        }
-        while (robot.getX() != newX) {
+        directionCheck(robot, rightDirectionY);
+        while (robot.getY() != toY) {
             robot.stepForward();
         }
     }
 
-    public static void goToY(Robot robot, int newY) {
-        if (robot.getY() < newY) {
-            while (robot.getDirection() != Direction.UP) {
-                robot.turnRight();
-            }
-        }
-        if (robot.getY() > newY) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnRight();
-            }
-        }
-        while (robot.getY() != newY) {
-            robot.stepForward();
+    public static void directionCheck(Robot robot, Direction rightDirection) {
+        while (robot.getDirection() != rightDirection) {
+            robot.turnRight();
         }
     }
 }
-
