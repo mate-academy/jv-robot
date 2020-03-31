@@ -20,8 +20,7 @@ public class FieldXY {
             do {
                 robot.stepForward();
             } while (robot.getX() != toX);
-        }
-        else {
+        } else {
             do {
                 robot.turnLeft();
             } while (robot.getDirection() != Direction.LEFT);
@@ -36,8 +35,7 @@ public class FieldXY {
             do {
                 robot.stepForward();
             } while (robot.getY() != toY);
-        }
-        else {
+        } else {
             do {
                 robot.turnLeft();
             } while (robot.getDirection() != Direction.DOWN);
