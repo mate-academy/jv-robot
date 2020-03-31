@@ -13,32 +13,68 @@ package core.basesyntax;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        if (robot.getX() != toX) {
-            setHorizontalDirection(robot, toX);
-            while (robot.getX() != toX) {
-                robot.stepForward();
-            }
-        }
-        if (robot.getY() != toY) {
-            setVerticalDirection(robot, toY);
-            while (robot.getY() != toY) {
-                robot.stepForward();
-            }
-        }
-    }
-
-    private void setHorizontalDirection(Robot robot, int toX) {
         Direction neededDirection = robot.getX() < toX ? Direction.RIGHT : Direction.LEFT;
-        while (!robot.getDirection().equals(neededDirection)) {
-            robot.turnLeft();
+        if (!robot.getDirection().equals(neededDirection)) {
+            setNeededDirection(robot, neededDirection);
+        }
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+        neededDirection = robot.getY() < toY ? Direction.UP : Direction.DOWN;
+        if (!robot.getDirection().equals(neededDirection)) {
+            setNeededDirection(robot, neededDirection);
+        }
+        while (robot.getY() != toY) {
+            robot.stepForward();
         }
     }
 
-    private void setVerticalDirection(Robot robot, int toY) {
-        Direction neededDirection = robot.getX() < toY ? Direction.UP : Direction.DOWN;
-        while (!robot.getDirection().equals(neededDirection)) {
-            robot.turnLeft();
+    private void setNeededDirection(Robot robot, Direction neededDirection) {
+        switch (robot.getDirection()) {
+            case UP:
+                if (neededDirection.equals(Direction.LEFT)) {
+                    robot.turnLeft();
+                } else if (neededDirection.equals(Direction.RIGHT)) {
+                    robot.turnRight();
+                } else {
+                    turnAround(robot);
+                }
+                break;
+            case DOWN:
+                if (neededDirection.equals(Direction.LEFT)) {
+                    robot.turnRight();
+                } else if (neededDirection.equals(Direction.RIGHT)) {
+                    robot.turnLeft();
+                } else {
+                    turnAround(robot);
+                }
+                break;
+            case LEFT:
+                if (neededDirection.equals(Direction.UP)) {
+                    robot.turnRight();
+                } else if (neededDirection.equals(Direction.DOWN)) {
+                    robot.turnLeft();
+                } else {
+                    turnAround(robot);
+                    ;
+                }
+                break;
+            case RIGHT:
+                if (neededDirection.equals(Direction.UP)) {
+                    robot.turnLeft();
+                } else if (neededDirection.equals(Direction.DOWN)) {
+                    robot.turnRight();
+                } else {
+                    turnAround(robot);
+                }
+                break;
+            default: break;
         }
+    }
+
+    private void turnAround(Robot robot) {
+        robot.turnLeft();
+        robot.turnLeft();
     }
 }
 
