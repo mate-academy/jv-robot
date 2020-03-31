@@ -27,7 +27,7 @@ public class FieldXY {
         }
     }
 
-    public static void findDirection(Robot robot, Direction currentDirect) {
+    public void findDirection(Robot robot, Direction currentDirect) {
         while (robot.getDirection() != currentDirect) {
             robot.turnLeft();
         }
