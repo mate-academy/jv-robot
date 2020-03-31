@@ -11,80 +11,30 @@ package core.basesyntax;
  * Реализуйте метод moveRobot()</p>
  */
 public class FieldXY {
-
     public void moveRobot(Robot robot, int toX, int toY) {
-        moveX(robot, toX);
-        moveY(robot, toY);
-    }
-
-    private void moveX(Robot robot, int toX) {
-        while (robot.getX() != toX) {
-            switch (robot.getDirection()) {
-                case UP:
-                    if (robot.getX() > toX) {
-                        robot.turnLeft();
-                    } else {
-                        robot.turnRight();
-                    }
-                    break;
-                case DOWN:
-                    if (robot.getX() < toX) {
-                        robot.turnLeft();
-                    } else {
-                        robot.turnRight();
-                    }
-                    break;
-                case LEFT:
-                    if (robot.getX() < toX) {
-                        robot.turnLeft();
-                        robot.turnLeft();
-                    }
-                    break;
-                case RIGHT:
-                    if (robot.getX() > toX) {
-                        robot.turnRight();
-                        robot.turnRight();
-                    }
-                    break;
-                default:
-                    break;
+        if (robot.getX() < toX) {
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnRight();
             }
+        } else {
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnRight();
+            }
+        }
+        while (robot.getX() != toX) {
             robot.stepForward();
         }
-    }
 
-    private void moveY(Robot robot, int toY) {
-        while (robot.getY() != toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    if (robot.getY() > toY) {
-                        robot.turnRight();
-                        robot.turnRight();
-                    }
-                    break;
-                case DOWN:
-                    if (robot.getY() < toY) {
-                        robot.turnLeft();
-                        robot.turnLeft();
-                    }
-                    break;
-                case LEFT:
-                    if (robot.getY() > toY) {
-                        robot.turnRight();
-                    } else {
-                        robot.turnLeft();
-                    }
-                    break;
-                case RIGHT:
-                    if (robot.getY() < toY) {
-                        robot.turnLeft();
-                    } else {
-                        robot.turnRight();
-                    }
-                    break;
-                default:
-                    break;
+        if (robot.getY() < toY) {
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnRight();
             }
+        } else {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnRight();
+            }
+        }
+        while (robot.getY() != toY) {
             robot.stepForward();
         }
     }
