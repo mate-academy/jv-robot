@@ -1,6 +1,9 @@
 package core.basesyntax;
 
-import static core.basesyntax.Direction.*;
+import static core.basesyntax.Direction.DOWN;
+import static core.basesyntax.Direction.LEFT;
+import static core.basesyntax.Direction.RIGHT;
+import static core.basesyntax.Direction.UP;
 
 /**
  * <p>На игровом поле находится робот. Позиция робота на поле описывается двумя
@@ -19,7 +22,7 @@ public class FieldXY {
             while (!robot.getDirection().equals(UP)) {
                 robot.turnRight();
             }
-            while (robot.getY() < toY){
+            while (robot.getY() < toY) {
                 robot.stepForward();
             }
         }
@@ -27,7 +30,7 @@ public class FieldXY {
             while (!robot.getDirection().equals(DOWN)) {
                 robot.turnLeft();
             }
-            while (robot.getY() > toY){
+            while (robot.getY() > toY) {
                 robot.stepForward();
             }
         }
@@ -35,7 +38,7 @@ public class FieldXY {
             while (!robot.getDirection().equals(RIGHT)) {
                 robot.turnRight();
             }
-            while (robot.getX() < toX){
+            while (robot.getX() < toX) {
                 robot.stepForward();
             }
         }
@@ -43,7 +46,7 @@ public class FieldXY {
             while (!robot.getDirection().equals(LEFT)) {
                 robot.turnLeft();
             }
-            while (robot.getX() > toX){
+            while (robot.getX() > toX) {
                 robot.stepForward();
             }
         }
