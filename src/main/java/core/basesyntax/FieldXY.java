@@ -15,27 +15,19 @@ public class FieldXY {
     public void moveRobot(Robot robot, int toX, int toY) {
         if (robot.getX() > toX) {
             changerDirection(robot, Direction.LEFT);
-            while (robot.getX() > toX) {
-                robot.stepForward();
-            }
-        }
-        if (robot.getX() < toX) {
+        } else {
             changerDirection(robot, Direction.RIGHT);
-            while (robot.getX() < toX) {
-                robot.stepForward();
-            }
+        }
+        while (robot.getX() != toX) {
+            robot.stepForward();
         }
         if (robot.getY() > toY) {
             changerDirection(robot, Direction.DOWN);
-            while (robot.getY() > toY) {
-                robot.stepForward();
-            }
-        }
-        if (robot.getY() < toY) {
+        } else {
             changerDirection(robot, Direction.UP);
-            while (robot.getY() < toY) {
-                robot.stepForward();
-            }
+        }
+        while (robot.getY() != toY) {
+            robot.stepForward();
         }
     }
 
