@@ -25,54 +25,9 @@ public class FieldXY {
     }
 
     private void setNeededDirection(Robot robot, Direction neededDirection) {
-        if (robot.getDirection().equals(neededDirection)) {
-            return;
+        while (!robot.getDirection().equals(neededDirection)) {
+            robot.turnLeft();
         }
-        switch (robot.getDirection()) {
-            case UP:
-                if (neededDirection.equals(Direction.LEFT)) {
-                    robot.turnLeft();
-                } else if (neededDirection.equals(Direction.RIGHT)) {
-                    robot.turnRight();
-                } else {
-                    turnAround(robot);
-                }
-                break;
-            case DOWN:
-                if (neededDirection.equals(Direction.LEFT)) {
-                    robot.turnRight();
-                } else if (neededDirection.equals(Direction.RIGHT)) {
-                    robot.turnLeft();
-                } else {
-                    turnAround(robot);
-                }
-                break;
-            case LEFT:
-                if (neededDirection.equals(Direction.UP)) {
-                    robot.turnRight();
-                } else if (neededDirection.equals(Direction.DOWN)) {
-                    robot.turnLeft();
-                } else {
-                    turnAround(robot);
-                }
-                break;
-            case RIGHT:
-                if (neededDirection.equals(Direction.UP)) {
-                    robot.turnLeft();
-                } else if (neededDirection.equals(Direction.DOWN)) {
-                    robot.turnRight();
-                } else {
-                    turnAround(robot);
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void turnAround(Robot robot) {
-        robot.turnLeft();
-        robot.turnLeft();
     }
 }
 
