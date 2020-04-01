@@ -7,31 +7,27 @@ public class FieldXY {
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
-            while (robot.getX() != toX) {
-                robot.stepForward();
-            }
-        } else if (robot.getX() > toX) {
+        } else {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
-            while (robot.getX() != toX) {
-                robot.stepForward();
-            }
+
+        }
+        while (robot.getX() != toX) {
+            robot.stepForward();
         }
         if (robot.getY() < toY) {
             while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             }
-            while (robot.getY() != toY) {
-                robot.stepForward();
-            }
-        } else if (robot.getY() > toY) {
+        } else {
             while (robot.getDirection() != Direction.DOWN) {
                 robot.turnLeft();
             }
-            while (robot.getY() != toY) {
-                robot.stepForward();
-            }
+
+        }
+        while (robot.getY() != toY) {
+            robot.stepForward();
         }
     }
 }
