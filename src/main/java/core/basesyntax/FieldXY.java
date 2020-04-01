@@ -15,8 +15,8 @@ public class FieldXY {
     public void moveRobot(Robot robot, int toX, int toY) {
         Direction[] trueDirection = trueDirection(robot, toX, toY);
 
-        if (!robot.getDirection().equals(trueDirection[0])
-                || !robot.getDirection().equals(trueDirection[1])) {
+        if (robot.getDirection() != trueDirection[0]
+                || robot.getDirection() != trueDirection[1]) {
             turnToNeededDirection(robot, trueDirection);
         }
         goToEndOfDirection(robot, toX, toY);
@@ -32,28 +32,28 @@ public class FieldXY {
     private void turnToNeededDirection(Robot robot, Direction[] trueDirection) {
         switch (robot.getDirection()) {
             case UP:
-                if (trueDirection[0].equals(Direction.RIGHT)) {
+                if (trueDirection[0] == Direction.RIGHT) {
                     robot.turnRight();
                 } else {
                     robot.turnLeft();
                 }
                 break;
             case DOWN:
-                if (trueDirection[0].equals(Direction.LEFT)) {
+                if (trueDirection[0] == Direction.LEFT) {
                     robot.turnRight();
                 } else {
                     robot.turnLeft();
                 }
                 break;
             case LEFT:
-                if (trueDirection[1].equals(Direction.UP)) {
+                if (trueDirection[1] == Direction.UP) {
                     robot.turnRight();
                 } else {
                     robot.turnLeft();
                 }
                 break;
             case RIGHT:
-                if (trueDirection[1].equals(Direction.DOWN)) {
+                if (trueDirection[1] == Direction.DOWN) {
                     robot.turnRight();
                 } else {
                     robot.turnLeft();
@@ -66,7 +66,7 @@ public class FieldXY {
 
     private void goToEndOfDirection(Robot robot, int toX, int toY) {
         switch (robot.getDirection()) {
-            case LEFT: ;
+            case LEFT:
             case RIGHT:
                 while (robot.getX() != toX) {
                     robot.stepForward();
