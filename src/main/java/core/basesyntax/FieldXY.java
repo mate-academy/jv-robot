@@ -11,6 +11,7 @@ package core.basesyntax;
  * Реализуйте метод moveRobot()</p>
  */
 public class FieldXY {
+    //test commit
     public void moveRobot(Robot robot, int toX, int toY) {
         moveX(robot, toX);
         moveY(robot, toY);
