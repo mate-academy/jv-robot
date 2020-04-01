@@ -19,7 +19,7 @@ public class FieldXY {
         goY(robot, toY);
     }
 
-    public void setDirectionX (Robot robot, int toX) {
+    public void setDirectionX(Robot robot, int toX) {
         if (toX > 0) {
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
@@ -40,7 +40,7 @@ public class FieldXY {
         }
     }
 
-    public void setDirectionY (Robot robot, int toY) {
+    public void setDirectionY(Robot robot, int toY) {
         if (toY > 0) {
             while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
