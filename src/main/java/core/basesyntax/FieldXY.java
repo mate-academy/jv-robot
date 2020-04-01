@@ -16,12 +16,10 @@ public class FieldXY {
         //your code
 
         if (robot.getX() > toX) {
-
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
         } else {
-
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnLeft();
             }
