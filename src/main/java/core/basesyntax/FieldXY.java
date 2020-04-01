@@ -16,20 +16,16 @@ public class FieldXY {
         while (robot.getX() != toX || robot.getY() != toY) {
             if (robot.getX() != toX) {
                 if (robot.getX() > toX) {
-                    turnRobot(robot, Direction.LEFT);
-                    multiplySteps(robot, robot.getX() - toX);
+                    moveRobotToPoint(robot, Direction.LEFT, robot.getX() - toX);
                 } else {
-                    turnRobot(robot, Direction.RIGHT);
-                    multiplySteps(robot, toX - robot.getX());
+                    moveRobotToPoint(robot, Direction.RIGHT, toX - robot.getX());
                 }
             }
             if (robot.getY() != toY) {
                 if (robot.getY() > toY) {
-                    turnRobot(robot, Direction.DOWN);
-                    multiplySteps(robot, robot.getY() - toY);
+                    moveRobotToPoint(robot, Direction.DOWN, robot.getY() - toY);
                 } else {
-                    turnRobot(robot, Direction.UP);
-                    multiplySteps(robot, toY - robot.getY());
+                    moveRobotToPoint(robot, Direction.UP, toY - robot.getY());
                 }
             }
         }
@@ -46,6 +42,11 @@ public class FieldXY {
             robot.stepForward();
             steps--;
         }
+    }
+
+    public void moveRobotToPoint(Robot robot, Direction direction, int steps) {
+        turnRobot(robot, direction);
+        multiplySteps(robot, steps);
     }
 }
 
