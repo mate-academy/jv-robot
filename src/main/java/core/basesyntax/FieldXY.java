@@ -13,36 +13,53 @@ package core.basesyntax;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        if (toX > 0) {
-            do {
-                robot.turnRight();
-            } while (robot.getDirection() != Direction.RIGHT);
-            do {
-                robot.stepForward();
-            } while (robot.getX() != toX);
-        } else {
-            do {
-                robot.turnLeft();
-            } while (robot.getDirection() != Direction.LEFT);
-        }
-        do {
-            robot.stepForward();
-        } while (robot.getX() != toX);
-        if (toY > 0) {
-            do {
-                robot.turnRight();
-            } while (robot.getDirection() != Direction.UP);
-            do {
-                robot.stepForward();
-            } while (robot.getY() != toY);
-        } else {
-            do {
-                robot.turnLeft();
-            } while (robot.getDirection() != Direction.DOWN);
-        }
-        do {
-            robot.stepForward();
-        } while (robot.getY() != toY);
+        setDirectionX(robot, toX);
+        goX(robot, toX);
+        setDirectionY(robot, toY);
+        goY(robot, toY);
     }
+
+    public void setDirectionX (Robot robot, int toX) {
+        if (toX > 0) {
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnRight();
+            }
+            while (robot.getX() != toX) {
+                robot.stepForward();
+            }
+        } else {
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnLeft();
+            }
+        }
+    }
+
+    public void goX(Robot robot, int toX) {
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+    }
+
+    public void setDirectionY (Robot robot, int toY) {
+        if (toY > 0) {
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnRight();
+            }
+            while (robot.getY() != toY) {
+                robot.stepForward();
+            }
+        } else {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
+            }
+        }
+    }
+
+    public void goY(Robot robot, int toY) {
+        while (robot.getY() != toY) {
+            robot.stepForward();
+        }
+    }
+
 }
 
