@@ -11,41 +11,30 @@ package core.basesyntax;
  * Реализуйте метод moveRobot()</p>
  */
 public class FieldXY {
-
-    public void gogoBender(Robot robot, long i) {
+    public void goToDirection(Robot robot, long i, Direction whereRobotHaveToLook) {
+        changeDirection(robot, whereRobotHaveToLook);
         while (i > 0) {
             robot.stepForward();
             i--;
         }
     }
 
+    public void changeDirection(Robot robot, Direction whereRobotHaveToLook) {
+        while (robot.getDirection() != whereRobotHaveToLook) {
+            robot.turnLeft();
+        }
+    }
+
     public void moveRobot(Robot robot, int toX, int toY) {
         if (robot.getX() > toX) {
-            while (robot.getDirection() != Direction.LEFT) {
-                robot.turnLeft();
-            }
-            gogoBender(robot, (long) robot.getX() - (long) toX);
-
+            goToDirection(robot, (long) robot.getX() - (long) toX, Direction.LEFT);
         } else if (robot.getX() < toX) {
-            while (robot.getDirection() != Direction.RIGHT) {
-                robot.turnRight();
-            }
-            gogoBender(robot, (long) toX - (long) robot.getX());
+            goToDirection(robot, (long) toX - (long) robot.getX(), Direction.RIGHT);
         }
-
         if (robot.getY() > toY) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnLeft();
-            }
-
-            gogoBender(robot, (long) robot.getY() - (long) toY);
-
+            goToDirection(robot, (long) robot.getY() - (long) toY, Direction.DOWN);
         } else if (robot.getY() < toY) {
-            while (robot.getDirection() != Direction.UP) {
-                robot.turnRight();
-            }
-            gogoBender(robot, (long) toY - (long) robot.getY());
+            goToDirection(robot, (long) toY - (long) robot.getY(), Direction.UP);
         }
-
     }
 }
