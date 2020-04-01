@@ -12,37 +12,39 @@ package core.basesyntax;
  */
 public class FieldXY {
     public void moveRobot(Robot robot, int toX, int toY) {
-        Direction directionX = chooseDirectionForX(toX);
-        moveToX(robot, toX, directionX);
-        Direction directionY = chooseDirectionForY(toY);
-        moveToY(robot, toY, directionY);
+        Direction directionX = chooseDirection(toX, "X");
+        move(robot, toX, toY, directionX);
+        Direction directionY = chooseDirection(toY, "Y");
+        move(robot, toX, toY, directionY);
     }
 
-    public static Direction chooseDirectionForY(int toY) {
-        return toY > 0
-                ? Direction.UP : Direction.DOWN;
+    public static Direction chooseDirection(int to, String axes) {
+        if (axes == "X") {
+            return to > 0
+                    ? Direction.RIGHT : Direction.LEFT;
+        } else {
+            return to > 0
+                    ? Direction.UP : Direction.DOWN;
+        }
     }
 
-    public static Direction chooseDirectionForX(int toX) {
-        return toX > 0
-                ? Direction.RIGHT : Direction.LEFT;
-    }
-
-    public static void moveToX(Robot robot, int toX, Direction directionX) {
-        while (robot.getDirection() != directionX) {
+    public static void move(Robot robot, int toX, int toY, Direction direction) {
+        while (robot.getDirection() != direction) {
             robot.turnRight();
         }
-        while (robot.getX() != toX) {
-            robot.stepForward();
-        }
-    }
-
-    public static void moveToY(Robot robot, int toY, Direction directionY) {
-        while (robot.getDirection() != directionY) {
-            robot.turnRight();
-        }
-        while (robot.getY() != toY) {
-            robot.stepForward();
+        switch (direction) {
+            case UP:
+            case DOWN: while (robot.getY() != toY) {
+                    robot.stepForward();
+                }
+                break;
+            case LEFT:
+            case RIGHT: while (robot.getX() != toX) {
+                    robot.stepForward();
+                }
+                break;
+            default:
+                break;
         }
     }
 }
