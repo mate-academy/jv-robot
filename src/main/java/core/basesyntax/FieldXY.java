@@ -11,42 +11,22 @@ package core.basesyntax;
  * Реализуйте метод moveRobot()</p>
  */
 public class FieldXY {
-    private static int MIDDLE_OF_BOARD = 0;
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        if (robot.getX() != toX) {
-            if (robot.getY() != toY) {
-                if (toX > MIDDLE_OF_BOARD) {
-                    while (robot.getDirection() != Direction.RIGHT) {
-                        robot.turnRight();
-                    }
-                    while (robot.getX() != toX) {
-                        robot.stepForward();
-                    }
-                } else {
-                    while (robot.getDirection() != Direction.LEFT) {
-                        robot.turnLeft();
-                    }
-                    while (robot.getX() != toX) {
-                        robot.stepForward();
-                    }
-                }
-            }
+
+        newDirection(robot, robot.getX() < toX ? Direction.RIGHT : Direction.LEFT);
+        while (robot.getX() != toX) {
+            robot.stepForward();
         }
-        if (toY > MIDDLE_OF_BOARD) {
-            while (robot.getDirection() != Direction.UP) {
-                robot.turnLeft();
-            }
-            while (robot.getY() != toY) {
-                robot.stepForward();
-            }
-        } else {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnLeft();
-            }
-            while (robot.getY() != toY) {
-                robot.stepForward();
-            }
+        newDirection(robot, robot.getY() < toY ? Direction.UP : Direction.DOWN);
+        while (robot.getY() != toY) {
+            robot.stepForward();
+        }
+    }
+
+    public void newDirection(Robot robot, Direction direction) {
+        while(!robot.getDirection().equals(direction)) {
+            robot.turnRight();
         }
     }
 }
