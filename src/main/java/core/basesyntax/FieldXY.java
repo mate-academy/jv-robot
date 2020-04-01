@@ -14,23 +14,22 @@ public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
         //your code
+        if (robot.getX() > toX) {
+            choseDirection(robot, Direction.LEFT);
+        } else {
+            choseDirection(robot, Direction.RIGHT);
+        }
         while (robot.getX() != toX) {
-            if (robot.getX() > toX) {
-                choseDirection(robot, Direction.LEFT);
-                robot.stepForward();
-            } else {
-                choseDirection(robot, Direction.RIGHT);
-                robot.stepForward();
-            }
+            robot.stepForward();
+        }
+        if (robot.getY() > toY) {
+            choseDirection(robot, Direction.DOWN);
+
+        } else {
+            choseDirection(robot, Direction.UP);
         }
         while (robot.getY() != toY) {
-            if (robot.getY() > toY) {
-                choseDirection(robot, Direction.DOWN);
-                robot.stepForward();
-            } else {
-                choseDirection(robot, Direction.UP);
-                robot.stepForward();
-            }
+            robot.stepForward();
         }
     }
 
