@@ -16,63 +16,79 @@ public class FieldXY {
 
         while (robot.getX() != toX) {
             if (robot.getX() < toX) {
-                switch (robot.getDirection()) {
-                    case LEFT:
-                    case UP:
-                        robot.turnRight();
-                        break;
-                    case DOWN:
-                        robot.turnLeft();
-                        break;
-                    default:
-                        robot.stepForward();
-                        break;
-                }
+                toRightDirection(robot);
             }
             if (robot.getX() > toX) {
-                switch (robot.getDirection()) {
-                    case RIGHT:
-                    case UP:
-                        robot.turnLeft();
-                        break;
-                    case DOWN:
-                        robot.turnRight();
-                        break;
-                    default:
-                        robot.stepForward();
-                        break;
-                }
+                toLeftDirection(robot);
             }
         }
         while (robot.getY() != toY) {
             if (robot.getY() < toY) {
-                switch (robot.getDirection()) {
-                    case RIGHT:
-                        robot.turnLeft();
-                        break;
-                    case DOWN:
-                    case LEFT:
-                        robot.turnRight();
-                        break;
-                    default:
-                        robot.stepForward();
-                        break;
-                }
+                toUpDirection(robot);
             }
             if (robot.getY() > toY) {
-                switch (robot.getDirection()) {
-                    case LEFT:
-                        robot.turnLeft();
-                        break;
-                    case UP:
-                    case RIGHT:
-                        robot.turnRight();
-                        break;
-                    default:
-                        robot.stepForward();
-                        break;
-                }
+                toDownDirection(robot);
             }
+        }
+    }
+
+    private void toRightDirection(Robot robot) {
+        switch (robot.getDirection()) {
+            case LEFT:
+            case UP:
+                robot.turnRight();
+                break;
+            case DOWN:
+                robot.turnLeft();
+                break;
+            default:
+                robot.stepForward();
+                break;
+        }
+    }
+
+    private void toLeftDirection(Robot robot) {
+        switch (robot.getDirection()) {
+            case RIGHT:
+            case UP:
+                robot.turnLeft();
+                break;
+            case DOWN:
+                robot.turnRight();
+                break;
+            default:
+                robot.stepForward();
+                break;
+        }
+    }
+
+    private void toDownDirection(Robot robot) {
+        switch (robot.getDirection()) {
+            case LEFT:
+                robot.turnLeft();
+                break;
+            case UP:
+            case RIGHT:
+                robot.turnRight();
+                break;
+            default:
+                robot.stepForward();
+                break;
+        }
+    }
+
+    private void toUpDirection(Robot robot) {
+        switch (robot.getDirection()) {
+            case RIGHT:
+                robot.turnLeft();
+                break;
+            case DOWN:
+            case LEFT:
+                robot.turnRight();
+                break;
+            default:
+                robot.stepForward();
+                break;
         }
     }
 }
