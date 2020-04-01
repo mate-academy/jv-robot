@@ -25,7 +25,7 @@ public class FieldXY {
                 robot.turnLeft();
             }
         }
-        movement(robot, x);
+        move(robot, x);
         if (y >= zero) {
             while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
@@ -35,10 +35,10 @@ public class FieldXY {
                 robot.turnLeft();
             }
         }
-        movement(robot, y);
+        move(robot, y);
     }
 
-    void movement(Robot robot, long axis) {
+    void move(Robot robot, long axis) {
         axis = (axis < 0) ? (axis * -1) : axis;
         while (axis > 0) {
             robot.stepForward();
