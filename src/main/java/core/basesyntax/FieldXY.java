@@ -13,10 +13,10 @@ package core.basesyntax;
 public class FieldXY {
     public void moveRobot(Robot robot, int toX, int toY) {
         moveX(robot, toX);
-        moveY(robot, toY);
         while (robot.getX() != toX) {
             robot.stepForward();
         }
+        moveY(robot, toY);
         while (robot.getY() != toY) {
             robot.stepForward();
         }
