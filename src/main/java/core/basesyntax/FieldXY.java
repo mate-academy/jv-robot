@@ -36,8 +36,7 @@ public class FieldXY {
                     robot.stepForward();
                     break;
             }
-        }
-        if (robot.getX() > toX) {
+        } else {
             switch (robot.getDirection()) {
                 case RIGHT:
                 case UP:
@@ -67,8 +66,7 @@ public class FieldXY {
                     robot.stepForward();
                     break;
             }
-        }
-        if (robot.getY() > toY) {
+        } else {
             switch (robot.getDirection()) {
                 case LEFT:
                     robot.turnLeft();
