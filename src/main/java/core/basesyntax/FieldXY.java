@@ -18,45 +18,35 @@ import static core.basesyntax.Direction.UP;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        yaxisMove(robot, toY);
-        xaxisMove(robot, toX);
-    }
-
-    public static void yaxisMove(Robot robot, int toY) {
         if (robot.getY() < toY) {
-            while (!robot.getDirection().equals(UP)) {
-                robot.turnRight();
-            }
+            robotTurn(robot, UP);
             while (robot.getY() < toY) {
                 robot.stepForward();
             }
         }
         if (robot.getY() > toY) {
-            while (!robot.getDirection().equals(DOWN)) {
-                robot.turnLeft();
-            }
+            robotTurn(robot, DOWN);
             while (robot.getY() > toY) {
                 robot.stepForward();
             }
         }
-    }
-
-    public static void xaxisMove(Robot robot, int toX) {
         if (robot.getX() < toX) {
-            while (!robot.getDirection().equals(RIGHT)) {
-                robot.turnRight();
-            }
+            robotTurn(robot, RIGHT);
             while (robot.getX() < toX) {
                 robot.stepForward();
             }
         }
         if (robot.getX() > toX) {
-            while (!robot.getDirection().equals(LEFT)) {
-                robot.turnLeft();
-            }
+            robotTurn(robot, LEFT);
             while (robot.getX() > toX) {
                 robot.stepForward();
             }
+        }
+    }
+
+    private static void robotTurn(Robot robot, Direction direction) {
+        while (robot.getDirection() != direction) {
+            robot.turnLeft();
         }
     }
 }
