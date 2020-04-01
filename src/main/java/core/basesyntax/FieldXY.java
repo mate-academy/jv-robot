@@ -25,7 +25,7 @@ public class FieldXY {
     }
 
     public void newDirection(Robot robot, Direction direction) {
-        while(!robot.getDirection().equals(direction)) {
+        while (!robot.getDirection().equals(direction)) {
             robot.turnLeft();
         }
     }
