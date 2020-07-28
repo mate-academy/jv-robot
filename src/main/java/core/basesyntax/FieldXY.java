@@ -29,13 +29,13 @@ public class FieldXY {
                     break;
             }
 
-            for (int i = robot.getY(); i < toY; i++) {
+            while (robot.getY() < toY) {
                 robot.stepForward();
             }
 
             robot.turnRight();
 
-            for (int i = robot.getX(); i < toX; i++) {
+            while (robot.getX() < toX) {
                 robot.stepForward();
             }
         }
@@ -56,13 +56,13 @@ public class FieldXY {
                     break;
             }
 
-            for (int i = robot.getY(); i > toY; i--) {
+            while (robot.getY() > toY) {
                 robot.stepForward();
             }
 
             robot.turnLeft();
 
-            for (int i = robot.getX(); i < toX; i++) {
+            while (robot.getX() < toX) {
                 robot.stepForward();
             }
         }
@@ -83,13 +83,13 @@ public class FieldXY {
                     break;
             }
 
-            for (int i = robot.getY(); i > toY; i--) {
+            while (robot.getY() > toY) {
                 robot.stepForward();
             }
 
             robot.turnRight();
 
-            for (int i = robot.getX(); i > toX; i--) {
+            while (robot.getX() > toX) {
                 robot.stepForward();
             }
         }
@@ -110,18 +110,18 @@ public class FieldXY {
                     break;
             }
 
-            for (int i = robot.getY(); i < toY; i++) {
+            while (robot.getY() < toY) {
                 robot.stepForward();
             }
 
             robot.turnLeft();
 
-            for (int i = robot.getX(); i > toX; i--) {
+            while (robot.getX() > toX) {
                 robot.stepForward();
             }
         }
 
-        if(robot.getX() == toX && robot.getY() < toY){
+        if (robot.getX() == toX && robot.getY() < toY) {
             switch (robot.getDirection()) {
                 case UP:
                     break;
@@ -137,12 +137,12 @@ public class FieldXY {
                     break;
             }
 
-            for (int i = robot.getY(); i < toY; i++) {
+            while (robot.getY() < toY) {
                 robot.stepForward();
             }
         }
 
-        if(robot.getX() == toX && robot.getY() > toY){
+        if (robot.getX() == toX && robot.getY() > toY) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnLeft();
@@ -158,12 +158,12 @@ public class FieldXY {
                     break;
             }
 
-            for (int i = robot.getY(); i > toY; i--) {
+            while (robot.getY() > toY) {
                 robot.stepForward();
             }
         }
 
-        if(robot.getX() < toX && robot.getY() == toY){
+        if (robot.getX() < toX && robot.getY() == toY) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnRight();
@@ -179,12 +179,12 @@ public class FieldXY {
                     break;
             }
 
-            for (int i = robot.getX(); i < toX; i++) {
+            while (robot.getX() < toX) {
                 robot.stepForward();
             }
         }
 
-        if(robot.getX() < toX && robot.getY() == toY){
+        if (robot.getX() < toX && robot.getY() == toY) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnLeft();
@@ -200,7 +200,7 @@ public class FieldXY {
                     break;
             }
 
-            for (int i = robot.getX(); i > toX; i--) {
+            while (robot.getX() > toX) {
                 robot.stepForward();
             }
         }
