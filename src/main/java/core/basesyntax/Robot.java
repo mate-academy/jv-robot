@@ -80,5 +80,14 @@ public class Robot {
                 break;
         }
     }
+
+    public boolean isRight(int toX) {
+        return coordinateX > toX;
+    }
+
+    public boolean isUp(int toY) {
+        return coordinateY > toY;
+    }
+
 }
 
