@@ -41,6 +41,4 @@ public class FieldXY {
             robot.stepForward();
         }
     }
-
-    //your code
 }
