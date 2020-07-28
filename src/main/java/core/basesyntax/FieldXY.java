@@ -37,7 +37,7 @@ public class FieldXY {
         }
     }
 
-    private static void lookRight(Robot robot) {
+    private void lookRight(Robot robot) {
         switch (robot.getDirection()) {
             case UP:
                 robot.turnRight();
@@ -55,7 +55,7 @@ public class FieldXY {
 
     }
 
-    private static void lookLeft(Robot robot) {
+    private void lookLeft(Robot robot) {
         switch (robot.getDirection()) {
             case UP:
                 robot.turnLeft();
@@ -73,7 +73,7 @@ public class FieldXY {
 
     }
 
-    private static void lookUp(Robot robot) {
+    private void lookUp(Robot robot) {
         switch (robot.getDirection()) {
             case LEFT:
                 robot.turnRight();
@@ -91,7 +91,7 @@ public class FieldXY {
 
     }
 
-    private static void lookDown(Robot robot) {
+    private void lookDown(Robot robot) {
         switch (robot.getDirection()) {
             case UP:
                 robot.turnRight();
