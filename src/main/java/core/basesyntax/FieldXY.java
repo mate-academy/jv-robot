@@ -17,7 +17,7 @@ public class FieldXY {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
-        } else if (robot.getX() < toX) {
+        } else {
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
@@ -30,7 +30,7 @@ public class FieldXY {
             while (robot.getDirection() != Direction.DOWN) {
                 robot.turnRight();
             }
-        } else if (robot.getY() < toY) {
+        } else {
             while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             }
