@@ -27,6 +27,8 @@ public class FieldXY {
                 case LEFT:
                     robot.turnRight();
                     break;
+                default:
+                    assert (!robot.getDirection().equals(null));
             }
 
             while (robot.getY() < toY) {
@@ -54,6 +56,8 @@ public class FieldXY {
                 case LEFT:
                     robot.turnLeft();
                     break;
+                default:
+                    assert (!robot.getDirection().equals(null));
             }
 
             while (robot.getY() > toY) {
@@ -81,6 +85,8 @@ public class FieldXY {
                 case LEFT:
                     robot.turnLeft();
                     break;
+                default:
+                    assert (!robot.getDirection().equals(null));
             }
 
             while (robot.getY() > toY) {
@@ -108,6 +114,8 @@ public class FieldXY {
                 case LEFT:
                     robot.turnRight();
                     break;
+                default:
+                    assert (!robot.getDirection().equals(null));
             }
 
             while (robot.getY() < toY) {
@@ -135,6 +143,8 @@ public class FieldXY {
                 case LEFT:
                     robot.turnRight();
                     break;
+                default:
+                    assert (!robot.getDirection().equals(null));
             }
 
             while (robot.getY() < toY) {
@@ -156,6 +166,8 @@ public class FieldXY {
                 case LEFT:
                     robot.turnLeft();
                     break;
+                default:
+                    assert (!robot.getDirection().equals(null));
             }
 
             while (robot.getY() > toY) {
@@ -177,6 +189,8 @@ public class FieldXY {
                     robot.turnLeft();
                     robot.turnLeft();
                     break;
+                default:
+                    assert (!robot.getDirection().equals(null));
             }
 
             while (robot.getX() < toX) {
@@ -198,6 +212,8 @@ public class FieldXY {
                     break;
                 case LEFT:
                     break;
+                default:
+                    assert (!robot.getDirection().equals(null));
             }
 
             while (robot.getX() > toX) {
