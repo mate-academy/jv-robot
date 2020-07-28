@@ -12,7 +12,6 @@ package core.basesyntax;
  */
 public class FieldXY {
     public void moveRobot(Robot robot, int toX, int toY) {
-        int x = robot.getX();
         Direction directionX;
         if (robot.getX() < toX) {
             directionX = Direction.RIGHT;
