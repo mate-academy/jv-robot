@@ -18,7 +18,7 @@ public class FieldXY {
                 lookRight(robot);
             }
             if (toX < robot.getX()) {
-                lookRLeft(robot);
+                lookLeft(robot);
             }
             while (robot.getX() != toX) {
                 robot.stepForward();
@@ -55,7 +55,7 @@ public class FieldXY {
 
     }
 
-    private static void lookRLeft(Robot robot) {
+    private static void lookLeft(Robot robot) {
         switch (robot.getDirection()) {
             case UP:
                 robot.turnLeft();
