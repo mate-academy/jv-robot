@@ -14,8 +14,6 @@ public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
 
-        if (!(robot.getX() == toX) || !(robot.getY() == toY)) {
-
             Direction robotDirection;
 
             if (robot.getX() != toX) {
@@ -46,9 +44,5 @@ public class FieldXY {
                     robot.stepForward();
                 }
             }
-        }
-
     }
 }
-
-
