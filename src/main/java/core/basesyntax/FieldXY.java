@@ -14,22 +14,7 @@ public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
         if (robot.getX() < toX && robot.getY() < toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    break;
-                case DOWN:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case RIGHT:
-                    robot.turnLeft();
-                    break;
-                case LEFT:
-                    robot.turnRight();
-                    break;
-                default:
-                    assert (!robot.getDirection().equals(null));
-            }
+            setDirection(robot, Direction.UP);
 
             while (robot.getY() < toY) {
                 robot.stepForward();
@@ -43,22 +28,7 @@ public class FieldXY {
         }
 
         if (robot.getX() < toX && robot.getY() > toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case DOWN:
-                    break;
-                case RIGHT:
-                    robot.turnRight();
-                    break;
-                case LEFT:
-                    robot.turnLeft();
-                    break;
-                default:
-                    assert (!robot.getDirection().equals(null));
-            }
+            setDirection(robot, Direction.DOWN);
 
             while (robot.getY() > toY) {
                 robot.stepForward();
@@ -72,22 +42,7 @@ public class FieldXY {
         }
 
         if (robot.getX() > toX && robot.getY() > toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case DOWN:
-                    break;
-                case RIGHT:
-                    robot.turnRight();
-                    break;
-                case LEFT:
-                    robot.turnLeft();
-                    break;
-                default:
-                    assert (!robot.getDirection().equals(null));
-            }
+            setDirection(robot, Direction.DOWN);
 
             while (robot.getY() > toY) {
                 robot.stepForward();
@@ -101,22 +56,7 @@ public class FieldXY {
         }
 
         if (robot.getX() > toX && robot.getY() < toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    break;
-                case DOWN:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case RIGHT:
-                    robot.turnLeft();
-                    break;
-                case LEFT:
-                    robot.turnRight();
-                    break;
-                default:
-                    assert (!robot.getDirection().equals(null));
-            }
+            setDirection(robot, Direction.UP);
 
             while (robot.getY() < toY) {
                 robot.stepForward();
@@ -130,22 +70,7 @@ public class FieldXY {
         }
 
         if (robot.getX() == toX && robot.getY() < toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    break;
-                case DOWN:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case RIGHT:
-                    robot.turnLeft();
-                    break;
-                case LEFT:
-                    robot.turnRight();
-                    break;
-                default:
-                    assert (!robot.getDirection().equals(null));
-            }
+            setDirection(robot, Direction.UP);
 
             while (robot.getY() < toY) {
                 robot.stepForward();
@@ -153,22 +78,7 @@ public class FieldXY {
         }
 
         if (robot.getX() == toX && robot.getY() > toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case DOWN:
-                    break;
-                case RIGHT:
-                    robot.turnRight();
-                    break;
-                case LEFT:
-                    robot.turnLeft();
-                    break;
-                default:
-                    assert (!robot.getDirection().equals(null));
-            }
+            setDirection(robot, Direction.DOWN);
 
             while (robot.getY() > toY) {
                 robot.stepForward();
@@ -176,22 +86,7 @@ public class FieldXY {
         }
 
         if (robot.getX() < toX && robot.getY() == toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    robot.turnRight();
-                    break;
-                case DOWN:
-                    robot.turnLeft();
-                    break;
-                case RIGHT:
-                    break;
-                case LEFT:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                default:
-                    assert (!robot.getDirection().equals(null));
-            }
+            setDirection(robot, Direction.RIGHT);
 
             while (robot.getX() < toX) {
                 robot.stepForward();
@@ -199,26 +94,17 @@ public class FieldXY {
         }
 
         if (robot.getX() < toX && robot.getY() == toY) {
-            switch (robot.getDirection()) {
-                case UP:
-                    robot.turnLeft();
-                    break;
-                case DOWN:
-                    robot.turnRight();
-                    break;
-                case RIGHT:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    break;
-                case LEFT:
-                    break;
-                default:
-                    assert (!robot.getDirection().equals(null));
-            }
+            setDirection(robot, Direction.LEFT);
 
             while (robot.getX() > toX) {
                 robot.stepForward();
             }
+        }
+    }
+
+    public void setDirection(Robot robot, Direction directionTo) {
+        while (!robot.getDirection().equals(directionTo)) {
+            robot.turnRight();
         }
     }
 }
