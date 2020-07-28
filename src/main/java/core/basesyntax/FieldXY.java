@@ -2,8 +2,8 @@ package core.basesyntax;
 
 /**
  * <p>На игровом поле находится робот. Позиция робота на поле описывается двумя
- * целочисленным координатами: X и Y. 
- * Ось X смотрит слева направо, ось Y — снизу вверх.(Помните, как рисовали 
+ * целочисленным координатами: X и Y.
+ * Ось X смотрит слева направо, ось Y — снизу вверх.(Помните, как рисовали
  * графики функций в школе?)
  * В начальный момент робот находится в некоторой позиции на поле.
  * Также известно, куда робот смотрит: вверх, вниз, направо или налево.
@@ -14,6 +14,30 @@ public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
         //your code
+        Direction directionToX;
+        Direction directionToY;
+        if (robot.getX() < toX) {
+            directionToX = Direction.RIGHT;
+        } else {
+            directionToX = Direction.LEFT;
+        }
+        while (!robot.getDirection().equals(directionToX)) {
+            robot.turnLeft();
+        }
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+        if (robot.getY() < toY) {
+            directionToY = Direction.UP;
+        } else {
+            directionToY = Direction.DOWN;
+        }
+        while (!robot.getDirection().equals(directionToY)) {
+            robot.turnLeft();
+        }
+        while (robot.getY() != toY) {
+            robot.stepForward();
+        }
     }
 }
 
