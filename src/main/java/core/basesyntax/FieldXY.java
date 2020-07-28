@@ -23,7 +23,7 @@ public class FieldXY {
         }
     }
 
-    public void setDirection(Robot robot, Direction direction) {
+    private void setDirection(Robot robot, Direction direction) {
         while (!robot.getDirection().equals(direction)) {
             robot.turnLeft();
         }
