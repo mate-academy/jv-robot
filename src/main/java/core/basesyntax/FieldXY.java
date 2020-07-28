@@ -13,56 +13,29 @@ package core.basesyntax;
 public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        while (robot.getX() != toX) {
-            if (robot.getX() > toX) {
-                if (robot.getDirection() != Direction.LEFT) {
-                    if ((robot.getDirection() == Direction.UP || robot.getDirection()
-                            == Direction.RIGHT)) {
-                        robot.turnLeft();
-                    } else {
-                        robot.turnRight();
-                    }
-                } else {
-                    robot.stepForward();
-                }
-                continue;
-            }
-            if (robot.getDirection() != Direction.RIGHT) {
-                if ((robot.getDirection() == Direction.UP || robot.getDirection()
-                        == Direction.LEFT)) {
-                    robot.turnRight();
-                } else {
-                    robot.turnLeft();
-                }
-            } else {
-                robot.stepForward();
-            }
+        Direction directionX;
+        if (robot.getX() > toX) {
+            directionX = Direction.LEFT;
+        } else {
+            directionX = Direction.RIGHT;
         }
-
+        while (!directionX.equals(robot.getDirection())) {
+            robot.turnRight();
+        }
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+        Direction directionY;
+        if (robot.getY() > toY) {
+            directionY = Direction.DOWN;
+        } else {
+            directionY = Direction.UP;
+        }
+        while (!directionY.equals(robot.getDirection())) {
+            robot.turnRight();
+        }
         while (robot.getY() != toY) {
-            if (robot.getY() > toY) {
-                if (robot.getDirection() != Direction.DOWN) {
-                    if ((robot.getDirection() == Direction.LEFT && robot.getDirection()
-                            == Direction.UP)) {
-                        robot.turnLeft();
-                    } else {
-                        robot.turnRight();
-                    }
-                } else {
-                    robot.stepForward();
-                }
-                continue;
-            }
-            if (robot.getDirection() != Direction.UP) {
-                if ((robot.getDirection() == Direction.DOWN && robot.getDirection()
-                        == Direction.LEFT)) {
-                    robot.turnRight();
-                } else {
-                    robot.turnLeft();
-                }
-            } else {
-                robot.stepForward();
-            }
+            robot.stepForward();
         }
     }
 }
