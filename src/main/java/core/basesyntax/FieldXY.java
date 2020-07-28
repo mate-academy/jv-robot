@@ -20,8 +20,7 @@ public class FieldXY {
             if (toX < robot.getX()) {
                 lookRLeft(robot);
             }
-            long x0 = robot.getX();
-            for (long i = 0; i < Math.abs(toX - x0); i++) {
+            while (robot.getX() != toX) {
                 robot.stepForward();
             }
         }
@@ -32,8 +31,7 @@ public class FieldXY {
             if (toY < robot.getY()) {
                 lookDown(robot);
             }
-            long y0 = robot.getY();
-            for (long i = 0; i < Math.abs(toY - y0); i++) {
+            while (robot.getY() != toY) {
                 robot.stepForward();
             }
         }
