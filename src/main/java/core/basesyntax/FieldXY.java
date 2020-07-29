@@ -14,7 +14,7 @@ public class FieldXY {
 
     public void moveRobot(Robot robot, int toX, int toY) {
 
-        if (toX < robot.getX()){
+        if (toX < robot.getX()) {
             while (!robot.getDirection().equals(Direction.LEFT)) {
                 robot.turnLeft();
             }
