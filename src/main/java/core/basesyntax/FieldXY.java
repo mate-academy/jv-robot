@@ -16,20 +16,16 @@ public class FieldXY {
         while (direction != robot.getDirection()) {
             robot.turnLeft();
         }
-        System.out.println("Now looking " + robot.getDirection());
     }
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        System.out.println("Going to X:" + toX + ", Y:" + toY + " Look " + robot.getDirection());
         rotateRobot(robot, (robot.getX() - toX) > 0 ? Direction.LEFT : Direction.RIGHT);
         while (robot.getX() != toX) {
             robot.stepForward();
         }
-        System.out.println("I`m at X:" + robot.getX() + " Y:" + robot.getY());
         rotateRobot(robot, (robot.getY() - toY) > 0 ? Direction.DOWN : Direction.UP);
         while (robot.getY() != toY) {
             robot.stepForward();
         }
-        System.out.println("I`m at X:" + robot.getX() + " Y:" + robot.getY());
     }
 }
