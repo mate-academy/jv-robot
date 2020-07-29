@@ -19,7 +19,7 @@ public class FieldXY {
         moveRobotToTarget(robot,robot.getY(), toY);
     }
 
-    public void turnRobotToTarget(Robot robot, int position, int target,
+    private void turnRobotToTarget(Robot robot, int position, int target,
                                   Direction direction1, Direction direction2) {
         if (position < target) {
             while (robot.getDirection() != direction1) {
@@ -32,14 +32,14 @@ public class FieldXY {
         }
     }
 
-    public void moveRobotToTarget(Robot robot, int position, int target) {
+    private void moveRobotToTarget(Robot robot, int position, int target) {
         while (position != target) {
             robot.stepForward();
             position = getPosition(robot);
         }
     }
 
-    public int getPosition(Robot robot) {
+    private int getPosition(Robot robot) {
         if (robot.getDirection() == Direction.LEFT || robot.getDirection() == Direction.RIGHT) {
             return robot.getX();
         }
