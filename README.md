@@ -22,11 +22,11 @@ public class Robot {
     }
 
     public void turnLeft() {
-        // turen left for 90 degrees
+        // turn the robot left for 90 degrees
     }
 
     public void turnRight() {
-        // turen rigth for 90 degrees
+        // turn the robot right for 90 degrees
     }
 
     public void stepForward() {
@@ -44,7 +44,7 @@ public enum Direction {
     RIGHT
 }
 ```
-Example
+Method flow example:   
 
 We pass into method: toX == 3, toY == 0; robots' initial state: robot.getX() == 0, robot.getY() == 0, robot.getDirection() == Direction.UP
 
