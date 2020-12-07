@@ -1,54 +1,58 @@
 # jv-robot
-На игровом поле находится робот. Позиция робота на поле описывается двумя целочисленным координатами: X и Y. Ось X смотрит слева направо, ось Y — снизу вверх. (Помните, как рисовали графики функций в школе?)
+We have our good friend Robot Johny who got lost on the playground. His position is represented by two integer 
+coordinates: `X` and `Y`. X is the horizontal axis and Y-axis is vertical.(Remember how you drew them in school?). 
+Unfortunately he has some unknown random initial position and we don't even know initial direction.
+But he really wants to go home, which is represented by `toX` and `toY`.  
+Hopefully you can figure something out.
 
-В начальный момент робот находится в некоторой позиции на поле. Также известно, куда робот смотрит: вверх, вниз, направо или налево. Ваша задача — привести робота в заданную точку игрового поля.
-
-Робот описывается классом Robot. Вы можете пользоваться следующими его методами:
+You can use the following Robots' methods:
 
 public class Robot {
 
     public Direction getDirection() {
-        // текущее направление взгляда
+        // current robot direction
     }
 
     public int getX() {
-        // текущая координата X
+        // current X position
     }
 
     public int getY() {
-        // текущая координата Y
+        // current Y positon
     }
 
     public void turnLeft() {
-        // повернуться на 90 градусов против часовой стрелки
+        // turen left for 90 degrees
     }
 
     public void turnRight() {
-        // повернуться на 90 градусов по часовой стрелке
+        // turen rigth for 90 degrees
     }
 
     public void stepForward() {
-        // шаг в направлении взгляда
-        // за один шаг робот изменяет одну свою координату на единицу
+        // one step in the current direction
+        // for each step robot changes X or Y position to one unit
     }
 }
 
-Direction, направление взгляда робота,  — это перечисление:
-
+Direction shows where robot is pointed to, (this is `enum`):
+``` 
 public enum Direction {
     UP,
     DOWN,
     LEFT,
     RIGHT
 }
+```
+Example
 
-Пример
+We pass into method: toX == 3, toY == 0; robots' initial state: robot.getX() == 0, robot.getY() == 0, robot.getDirection() == Direction.UP
 
-В метод передано: toX == 3, toY == 0; начальное состояние робота такое: robot.getX() == 0, robot.getY() == 0, robot.getDirection() == Direction.UP
-
-Чтобы привести робота в указанную точку (3, 0), метод должен вызвать у робота следующие методы:
+To move the robot to given point (3, 0), methods should call this method sequence:
 
 robot.turnRight();
 robot.stepForward();
 robot.stepForward();
 robot.stepForward();
+
+[Try to avoid these mistakes while solving task](https://mate-academy.github.io/jv-program-common-mistakes/java-core/oop/robot/robot-route)
