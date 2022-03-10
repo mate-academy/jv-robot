@@ -1,9 +1,7 @@
 package core.basesyntax;
 
-public class FieldXY {
-
+public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        //your code
+      //write your solution here
     }
 }
-
