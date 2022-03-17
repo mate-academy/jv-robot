@@ -53,9 +53,11 @@ public class RobotRoute {
             }
             while (robot.getY() != toY) {
                 robot.stepForward();
+
             }
 
         }
 
     }
+
 }
