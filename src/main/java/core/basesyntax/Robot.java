@@ -19,9 +19,7 @@ public class Robot {
         return coordinateX;
     }
 
-    public int getY() {
-        return coordinateY;
-    }
+    public int getY() { return coordinateY; }
 
     public void turnLeft() {
         switch (direction) {
