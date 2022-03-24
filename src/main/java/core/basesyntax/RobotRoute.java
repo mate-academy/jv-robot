@@ -3,5 +3,36 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
       //write your solution here
+        if (toY > robot.getY()) {
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnRight();
+            }
+        }
+
+        if (toY < robot.getY()) {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
+            }
+        }
+
+        if (toX > robot.getX()) {
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnRight();
+            }
+        }
+
+        if (toX < robot.getX()) {
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnLeft();
+            }
+        }
+
+        while (toX != robot.getX()) {
+            robot.stepForward();
+        }
+
+        while (toY != robot.getY()) {
+            robot.stepForward();
+        }
     }
 }
