@@ -6,7 +6,7 @@ public class RobotRoute {
     private int toY;
 
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution her
+        //write your solution her
         this.robot = robot;
         this.toX = toX;
         this.toY = toY;
