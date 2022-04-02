@@ -39,7 +39,8 @@ public class RobotRoute {
         }
 
         if (robot.getY() == toY && robot.getX() == toX) {
-            System.out.println();
+            System.out.println(robot.getX());
+            System.out.println(robot.getY());
         }
 
     }
