@@ -37,12 +37,6 @@ public class RobotRoute {
                 robot.stepForward();
             }
         }
-
-        if (robot.getY() == toY && robot.getX() == toX) {
-            System.out.println(robot.getX());
-            System.out.println(robot.getY());
-        }
-
     }
 }
 
