@@ -79,4 +79,8 @@ public class Robot {
                 break;
         }
     }
+
+    public String printInfo() {
+        return String.format("Robot{direction: %s, x: %d, y: %d}", getDirection(), getX(), getY());
+    }
 }
