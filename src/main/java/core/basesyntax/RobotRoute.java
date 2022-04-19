@@ -19,7 +19,7 @@ public class RobotRoute {
                 default:
                     break;
             }
-            while (robot.getX() != toX){
+            while (robot.getX() != toX) {
                 robot.stepForward();
             }
         } else if (toX > robot.getX()) {
