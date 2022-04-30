@@ -2,17 +2,17 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        boolean waitForMove;
+        boolean waitingForWalk;
         while (true) {
             tryToMove(robot, toX, toY);
             if (robot.getX() == toX && robot.getY() == toY) {
                 break;
             }
-            waitForMove = findTurnX(robot, toX);
-            if (!waitForMove) {
-                waitForMove = findTurnY(robot,toY);
+            waitingForWalk = findTurnX(robot, toX);
+            if (!waitingForWalk) {
+                waitingForWalk = findTurnY(robot,toY);
             }
-            if (!waitForMove) {
+            if (!waitingForWalk) {
                 robot.turnLeft();
                 robot.turnLeft();
             }
