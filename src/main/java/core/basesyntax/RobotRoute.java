@@ -6,7 +6,7 @@ public class RobotRoute {
         int yStep = 0;
         if (robot.getX() < toX) {
             xStep = toX - (robot.getX());
-            while (robot.getDirection()!=Direction.RIGHT) {
+            while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
             while (xStep > 0) {
@@ -16,7 +16,7 @@ public class RobotRoute {
         }
         if (robot.getX() > toX) {
             xStep = robot.getX() - (toX);
-            while (robot.getDirection()!=Direction.LEFT) {
+            while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
             while (xStep > 0) {
@@ -26,7 +26,7 @@ public class RobotRoute {
         }
         if (robot.getY() < toY) {
             yStep = toY - (robot.getY());
-            while (robot.getDirection()!=Direction.UP) {
+            while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             }
             while (yStep > 0) {
@@ -36,7 +36,7 @@ public class RobotRoute {
         }
         if (robot.getY() > toY) {
             yStep = robot.getY() - (toY);
-            while (robot.getDirection()!=Direction.DOWN) {
+            while (robot.getDirection() != Direction.DOWN) {
                 robot.turnRight();
             }
             while (yStep > 0) {
