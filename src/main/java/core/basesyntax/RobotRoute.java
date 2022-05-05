@@ -7,8 +7,7 @@ public class RobotRoute {
                 case UP:
                     if (robot.getY() < toY) {
                         robot.stepForward();
-                    }
-                    else if (robot.getX() > toX) {
+                    } else if (robot.getX() > toX) {
                         robot.turnLeft();
                     } else {
                         robot.turnRight();
