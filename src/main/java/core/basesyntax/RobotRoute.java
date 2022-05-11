@@ -2,7 +2,6 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        //direction change
         if (toX < robot.getX()) {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
