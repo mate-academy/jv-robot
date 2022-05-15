@@ -5,12 +5,12 @@ public class RobotRoute {
         if (robot.getX() == toX) {
             return;
         }
-        if(toX > robot.getX()) {
+        if (toX > robot.getX()) {
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
         }
-        if(toX < robot.getX()) {
+        if (toX < robot.getX()) {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
@@ -21,12 +21,12 @@ public class RobotRoute {
         if (robot.getY() == toY) {
             return;
         }
-        if(toY > robot.getY()) {
+        if (toY > robot.getY()) {
             while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             }
         }
-        if(toY < robot.getY()) {
+        if (toY < robot.getY()) {
             while (robot.getDirection() != Direction.DOWN) {
                 robot.turnLeft();
             }
