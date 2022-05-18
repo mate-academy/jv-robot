@@ -5,15 +5,39 @@ import java.lang.reflect.Field;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
-        try {
-            Field f1 = robot.getClass().getField("coordinateX");
-            f1.setAccessible(true);
-            f1.set(robot, toX);
-            Field f2 = robot.getClass().getField("coordinateY");
-            f2.setAccessible(true);
-            f2.set(robot, toY);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace();
+        //1. ищем по координатам x.
+        if (toX < robot.getX()) {
+            while (!Direction.LEFT.equals(robot.getDirection())) {
+                robot.turnLeft();
+            }
+            while (toX != robot.getX()) {
+                robot.stepForward();
+            }
+        }
+        if (toX > robot.getX()) {
+            while (!Direction.RIGHT.equals(robot.getDirection())) {
+                robot.turnRight();
+            }
+            while (toX != robot.getX()) {
+                robot.stepForward();
+            }
+        }
+        //2. ищем по координатам y.
+        if (toY < robot.getY()) {
+            while (!Direction.DOWN.equals(robot.getDirection())) {
+                robot.turnLeft();
+            }
+            while (toY != robot.getY()) {
+                robot.stepForward();
+            }
+        }
+        if (toY > robot.getY()) {
+            while (!Direction.UP.equals(robot.getDirection())) {
+                robot.turnRight();
+            }
+            while (toY != robot.getY()) {
+                robot.stepForward();
+            }
         }
     }
 }
