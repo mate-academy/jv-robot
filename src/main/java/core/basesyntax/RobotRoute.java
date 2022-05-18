@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import java.lang.reflect.Field;
-
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
