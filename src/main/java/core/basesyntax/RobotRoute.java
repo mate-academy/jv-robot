@@ -6,9 +6,7 @@ public class RobotRoute {
         //1. ищем по координатам x.
         Direction direction = toX < robot.getX() ? Direction.LEFT : Direction.RIGHT;
         if (toX != robot.getX()) {
-            while (!direction.equals(robot.getDirection())) {
-                robot.turnLeft();
-            }
+            turn(direction, robot);
             while (toX != robot.getX()) {
                 robot.stepForward();
             }
@@ -16,12 +14,16 @@ public class RobotRoute {
         //2. ищем по координатам y.
         direction = toY < robot.getY() ? Direction.DOWN : Direction.UP;
         if (toY != robot.getY()) {
-            while (!direction.equals(robot.getDirection())) {
-                robot.turnLeft();
-            }
+            turn(direction, robot);
             while (toY != robot.getY()) {
                 robot.stepForward();
             }
+        }
+    }
+
+    private void turn(Direction direction, Robot robot) {
+        while (!direction.equals(robot.getDirection())) {
+            robot.turnLeft();
         }
     }
 }
