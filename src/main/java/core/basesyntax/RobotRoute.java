@@ -6,25 +6,24 @@ public class RobotRoute {
         int actualY = robot.getY();
         Direction actualD = robot.getDirection();
         Direction directionMove;
-        if(toX<actualX){
+        if (toX < actualX) {
             directionMove = Direction.LEFT;
-            if(actualD==Direction.RIGHT){
+            if (actualD == Direction.RIGHT) {
                 robot.turnLeft();
                 robot.turnLeft();
-            } else if(actualD==Direction.UP){
+            } else if (actualD == Direction.UP) {
                 robot.turnLeft();
-            } else if (actualD==Direction.DOWN) {
+            } else if (actualD == Direction.DOWN) {
                 robot.turnRight();
             }
-        }
-        else {
+        } else {
             directionMove = Direction.RIGHT;
-            if(actualD==Direction.LEFT){
+            if (actualD == Direction.LEFT) {
                 robot.turnRight();
                 robot.turnRight();
-            } else if (actualD==Direction.DOWN) {
+            } else if (actualD == Direction.DOWN) {
                 robot.turnLeft();
-            } else if (actualD==Direction.UP){
+            } else if (actualD == Direction.UP) {
                 robot.turnRight();
             }
 
@@ -33,7 +32,8 @@ public class RobotRoute {
             robot.stepForward();
         }
 
-        if ((actualY > toY && directionMove == Direction.LEFT) || (actualY < toY && directionMove == Direction.RIGHT)) {
+        if ((actualY > toY && directionMove == Direction.LEFT)
+                || (actualY < toY && directionMove == Direction.RIGHT)) {
             robot.turnRight();
         } else {
             robot.turnLeft();
@@ -42,7 +42,5 @@ public class RobotRoute {
         while (robot.getY() != toY) {
             robot.stepForward();
         }
-
-
     }
 }
