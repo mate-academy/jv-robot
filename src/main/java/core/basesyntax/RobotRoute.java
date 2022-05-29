@@ -1,12 +1,9 @@
 package core.basesyntax;
 
 public class RobotRoute {
-    public void moveRobot(Robot robot, int toX, int toY) {
+    private void moveOnAxisX(Robot robot, int toX) {
+        int vectorX = toX - robot.getX();
         Direction direction = robot.getDirection();
-        int x = robot.getX();
-        int y = robot.getY();
-        int vectorX = toX - x;
-        int vectorY = toY - y;
         if (vectorX != 0) {
             Direction goX = (vectorX > 0) ? Direction.RIGHT : Direction.LEFT;
             if (!direction.equals(goX)) {
@@ -46,7 +43,12 @@ public class RobotRoute {
                 robot.stepForward();
             }
         }
-        direction = robot.getDirection();
+    }
+
+    private void moveOnAxisY(Robot robot, int toY) {
+        int vectorY = toY - robot.getY();
+        Direction direction = robot.getDirection();
+
         if (vectorY != 0) {
             Direction goY = (vectorY > 0) ? Direction.UP : Direction.DOWN;
             if (!direction.equals(goY)) {
@@ -86,6 +88,12 @@ public class RobotRoute {
                 robot.stepForward();
             }
         }
+    }
+
+    public void moveRobot(Robot robot, int toX, int toY) {
+
+        moveOnAxisX(robot, toX);
+        moveOnAxisY(robot, toY);
 
     }
 }
