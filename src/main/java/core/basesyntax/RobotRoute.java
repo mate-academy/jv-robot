@@ -28,11 +28,11 @@ public class RobotRoute {
                     case UP:
                         turnRightAndForward(robot,1);
                         break;
-                    case DOWN:
-                        turnRightAndForward(robot,3);
-                        break;
                     case LEFT:
                         turnRightAndForward(robot,2);
+                        break;
+                    case DOWN:
+                        turnRightAndForward(robot,3);
                         break;
                     default:
                         break;
