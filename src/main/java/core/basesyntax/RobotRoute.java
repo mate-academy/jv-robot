@@ -6,7 +6,8 @@ public class RobotRoute {
                 + robot.getY() + ". Direction of view: " + robot.getDirection());
 
         if (robot.getY() != toY) {
-            while (robot.getDirection() != ((robot.getY() < toY) ? Direction.UP : Direction.DOWN)) {
+            while (robot.getDirection() != ((robot.getY() < toY) ? Direction.UP
+                    : Direction.DOWN)) {
                 robot.turnLeft();
             }
             while (robot.getY() != toY) {
@@ -14,7 +15,8 @@ public class RobotRoute {
             }
         }
         if (robot.getX() != toX) {
-            while (robot.getDirection() != ((robot.getX() < toX) ? Direction.RIGHT : Direction.LEFT)) {
+            while (robot.getDirection() != ((robot.getX() < toX) ? Direction.RIGHT
+                    : Direction.LEFT)) {
                 robot.turnLeft();
             }
             while (robot.getX() != toX) {
