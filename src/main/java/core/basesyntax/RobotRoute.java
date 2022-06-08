@@ -2,7 +2,8 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        System.out.println("Start position " + robot.getX() + " " + robot.getY() + ". Direction of view: " + robot.getDirection());
+        System.out.println("Start position " + robot.getX() + " "
+                + robot.getY() + ". Direction of view: " + robot.getDirection());
 
         if (robot.getY() != toY) {
             while (robot.getDirection() != ((robot.getY() < toY) ? Direction.UP : Direction.DOWN)) {
@@ -21,6 +22,7 @@ public class RobotRoute {
             }
         }
 
-        System.out.println("End position " + robot.getX() + " " + robot.getY() + ". Direction of view: " + robot.getDirection());
+        System.out.println("End position " + robot.getX() + " "
+                + robot.getY() + ". Direction of view: " + robot.getDirection());
     }
 }
