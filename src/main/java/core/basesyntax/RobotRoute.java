@@ -15,7 +15,6 @@ public class RobotRoute {
         }
     }
 
-
     private void moveRobotFirstQuandrant(Robot robot, int x, int y) {
         while (robot.getDirection() != Direction.RIGHT) {
             robot.turnRight();
