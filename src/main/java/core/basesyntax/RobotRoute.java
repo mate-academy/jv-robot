@@ -2,7 +2,8 @@ package core.basesyntax;
 
 public class RobotRoute {
 
-    private Direction findNeededDirection (Robot robot, char axis, int destination) { // axis weather 'x' or 'y'
+    // axis weather 'x' or 'y'
+    private Direction findNeededDirection(Robot robot, char axis, int destination) {
         Direction neededDirection;
         switch (axis) {
             case 'x': // fined needed direction to move along x
@@ -24,13 +25,13 @@ public class RobotRoute {
                 }
                 break;
             default:
-                System.out.println("Wrong parameter: class RobotRoute, method findNeededDirection.");
+                System.out.println("Wrong parameter: class RobotRoute, method findNeededDirection");
                 neededDirection = robot.getDirection();
         }
         return neededDirection;
     }
 
-    private void turnRobot (Robot robot, Direction neededDirection) {
+    private void turnRobot(Robot robot, Direction neededDirection) {
         while (neededDirection != robot.getDirection()) {
             robot.turnLeft();
         }
