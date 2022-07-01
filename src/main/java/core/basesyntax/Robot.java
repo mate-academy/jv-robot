@@ -5,7 +5,6 @@ public class Robot {
     private int coordinateX;
     private int coordinateY;
 
-
     public Robot(Direction direction, int coordinateX, int coordinateY) {
         this.direction = direction;
         this.coordinateX = coordinateX;

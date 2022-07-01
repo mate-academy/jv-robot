@@ -2,7 +2,6 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        //write your solution here
         if (robot.getX() > toX) {
             if (robot.getDirection().equals(Direction.UP)) {
                 robot.turnLeft();
@@ -38,7 +37,6 @@ public class RobotRoute {
             while (robot.getX() < toX) {
                 robot.stepForward();
             }
-
         }
         if (robot.getX() == toX) {
             if (robot.getY() < toY) {
@@ -58,7 +56,6 @@ public class RobotRoute {
                 while (robot.getY() < toY) {
                     robot.stepForward();
                 }
-
             }
             if (robot.getY() > toY) {
                 if (robot.getDirection().equals(Direction.RIGHT)) {
@@ -80,7 +77,6 @@ public class RobotRoute {
                 }
 
             }
-
         }
     }
 }
