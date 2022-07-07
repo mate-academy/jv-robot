@@ -25,7 +25,7 @@ public class RobotRoute {
     }
 
     private void turnRobot(Direction direction, Robot robot) {
-        if(direction == robot.getDirection()) {
+        if (direction == robot.getDirection()) {
             return;
         }
 
