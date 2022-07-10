@@ -4,9 +4,6 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
       int lengthToX = toX - robot.getX();
       int lengthToY = toY - robot.getY();
-
-      int x = robot.getX();
-      int y = robot.getY();
       if(robot.getX() != toX && robot.getX() < toX) {
           switch (robot.getDirection()){
               case UP:
