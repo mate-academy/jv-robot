@@ -17,9 +17,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -35,9 +35,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -53,9 +53,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -71,9 +71,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -89,9 +89,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -107,9 +107,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -125,9 +125,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -143,9 +143,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -161,9 +161,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -179,9 +179,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -197,9 +197,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -215,9 +215,9 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 
   @Test
@@ -233,8 +233,8 @@ public class RobotRouteTest {
     int actualX = robot.getX();
     int actualY = robot.getY();
     Assert.assertEquals(String.format("Wrong X coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedX, actualX);
+            startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
-      startX, startY), expectedY, actualY);
+            startX, startY), expectedY, actualY);
   }
 }
