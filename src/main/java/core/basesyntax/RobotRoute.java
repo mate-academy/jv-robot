@@ -2,25 +2,32 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
-        Robot amigo = new Robot(robot.getDirection(), robot.getX(), robot.getY());
 
-        if (amigo.getX() > toX) {
-            amigo.turnLeft();
-        }   amigo.turnRight();
-
-        int xDistance = amigo.getX() - toX;
-        while (xDistance > 0) {
-            amigo.stepForward();
+        if (robot.getX() > toX) {
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnLeft();
+            }
+        } else {
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnRight();
+            }
         }
 
-        if (amigo.getY() > toY) {
-            amigo.turnLeft();
-        }   amigo.turnRight();
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
 
-        int yDistance = amigo.getY() - toY;
-        while (yDistance > 0) {
-            amigo.stepForward();
+        if (robot.getY() >= toY) {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
+            }
+        }
+        while (robot.getDirection() != Direction.UP) {
+            robot.turnRight();
+        }
+
+        while (robot.getY() != toY) {
+            robot.stepForward();
         }
     }
 }
