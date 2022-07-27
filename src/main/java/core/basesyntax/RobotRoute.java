@@ -2,82 +2,86 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        int dX = toX - robot.getX();
-        int dY = toY - robot.getY();
+        int deltaX = toX - robot.getX();
+        int deltaY = toY - robot.getY();
 
-        turnRobotCorrectHorizontal(robot, dX);
-        moveForvard(robot, Math.abs(dX));
-        turnRobotCorrectVertical(robot, dY);
-        moveForvard(robot, Math.abs(dY));
+        turnRobotCorrectHorizontal(robot, deltaX);
+        moveForvard(robot, Math.abs(deltaX));
+        turnRobotCorrectVertical(robot, deltaY);
+        moveForvard(robot, Math.abs(deltaY));
     }
 
-    private void turnRobotCorrectHorizontal(Robot robot, int dX) {
-        if (dX == 0) {
+    private void turnRobotCorrectHorizontal(Robot robot, int deltaX) {
+        if (deltaX == 0) {
             return;
         }
 
         switch (robot.getDirection()) {
             case UP:
-                if (dX > 0) {
+                if (deltaX > 0) {
                     robot.turnRight();
                 } else {
                     robot.turnLeft();
                 }
                 break;
             case DOWN:
-                if (dX > 0) {
+                if (deltaX > 0) {
                     robot.turnLeft();
                 } else {
                     robot.turnRight();
                 }
                 break;
             case LEFT:
-                if (dX > 0) {
+                if (deltaX > 0) {
                     robot.turnLeft();
                     robot.turnLeft();
                 }
                 break;
             case RIGHT:
-                if (dX < 0) {
+                if (deltaX < 0) {
                     robot.turnLeft();
                     robot.turnLeft();
                 }
                 break;
+            default:
+                System.out.println("impossible");
         }
     }
 
-    private void turnRobotCorrectVertical(Robot robot, int dY) {
-        if (dY == 0) {
+    private void turnRobotCorrectVertical(Robot robot, int deltaY) {
+        if (deltaY == 0) {
             return;
         }
 
         switch (robot.getDirection()) {
             case RIGHT:
-                if (dY > 0) {
+                if (deltaY > 0) {
                     robot.turnLeft();
                 } else {
                     robot.turnRight();
                 }
                 break;
             case LEFT:
-                if (dY > 0) {
+                if (deltaY > 0) {
                     robot.turnRight();
                 } else {
                     robot.turnLeft();
                 }
                 break;
             case DOWN:
-                if (dY > 0) {
+                if (deltaY > 0) {
                     robot.turnLeft();
                     robot.turnLeft();
                 }
                 break;
             case UP:
-                if (dY < 0) {
+                if (deltaY < 0) {
                     robot.turnLeft();
                     robot.turnLeft();
                 }
                 break;
+            default:
+                System.out.println("impossible");
         }
     }
 
