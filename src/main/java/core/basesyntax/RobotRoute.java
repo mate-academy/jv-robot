@@ -1,92 +1,46 @@
 package core.basesyntax;
 
 public class RobotRoute {
-    private boolean isOppositeDirectionX(Robot robot, Direction moveToDirectionX) {
-        if (robot.getDirection() == Direction.LEFT && moveToDirectionX == Direction.RIGHT) {
-            return true;
-        }
-
-        if (robot.getDirection() == Direction.RIGHT && moveToDirectionX == Direction.LEFT) {
-            return true;
-        }
-
-        return false;
+    public void moveRobot(Robot robot, int toX, int toY) {
+        turnToDirectionX(robot, toX);
+        moveToX(robot, toX);
+        turnToDirectionY(robot, toY);
+        moveToY(robot, toY);
     }
 
-    private boolean isOppositeDirectionY(Robot robot, Direction moveToDirectionY) {
-        if (robot.getDirection() == Direction.UP && moveToDirectionY == Direction.DOWN) {
-            return true;
-        }
-
-        if (robot.getDirection() == Direction.DOWN && moveToDirectionY == Direction.UP) {
-            return true;
-        }
-
-        return false;
-    }
-
-    private void turnToDirectionY(Robot robot, Direction directionToY) {
-        if (robot.getDirection() == Direction.LEFT) {
-            if (directionToY == Direction.UP) {
-                robot.turnRight();
-            } else {
+    private void turnToDirectionX(Robot robot, int toX) {
+        if (toX < robot.getX()) {
+            while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
-        }
-
-        if (robot.getDirection() == Direction.RIGHT) {
-            if (directionToY == Direction.UP) {
-                robot.turnLeft();
-            } else {
+        } else {
+            while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
         }
     }
 
-    private void turnToDirectionX(Robot robot, Direction directionToX) {
-        if (robot.getDirection() == Direction.UP) {
-            if (directionToX == Direction.LEFT) {
-                robot.turnRight();
-            } else {
+    private void turnToDirectionY(Robot robot, int toY) {
+        if (toY < robot.getY()) {
+            while (robot.getDirection() != Direction.DOWN) {
                 robot.turnLeft();
             }
-        }
-
-        if (robot.getDirection() == Direction.DOWN) {
-            if (directionToX == Direction.LEFT) {
+        } else {
+            while (robot.getDirection() != Direction.UP) {
                 robot.turnLeft();
-            } else {
-                robot.turnRight();
             }
         }
     }
 
-    private void turnToNeededDirection(Robot robot, int toX, int toY) {
-        Direction directionToX = robot.getX() > toX ? Direction.LEFT : Direction.RIGHT;
-        Direction directionToY = robot.getY() > toY ? Direction.DOWN : Direction.UP;
-
-        if (isOppositeDirectionX(robot, directionToX) || robot.getX() == toX) {
-            turnToDirectionY(robot, directionToY);
-        } else if (isOppositeDirectionY(robot, directionToY) || robot.getY() == toY) {
-            turnToDirectionX(robot, directionToY);
-        }
-    }
-
-    private void moveToCoordinate(Robot robot, int toX, int toY) {
-        Direction robotDirection = robot.getDirection();
-        int steps = (robotDirection == Direction.LEFT || robotDirection == Direction.RIGHT)
-                ? toX - robot.getX()
-                : toY - robot.getY();
-
-        for (int i = 0; i < Math.abs(steps); i++) {
+    private void moveToX(Robot robot, int toX) {
+        while (toX != robot.getX()) {
             robot.stepForward();
         }
     }
 
-    public void moveRobot(Robot robot, int toX, int toY) {
-        while (!(robot.getX() == toX && robot.getY() == toY)) {
-            turnToNeededDirection(robot, toX, toY);
-            moveToCoordinate(robot, toX, toY);
+    private void moveToY(Robot robot, int toY) {
+        while (toY != robot.getY()) {
+            robot.stepForward();
         }
     }
 }
