@@ -2,21 +2,25 @@ package core.basesyntax;
 
 public class RobotRoute {
     private boolean isOppositeDirectionX(Robot robot, Direction moveToDirectionX) {
-        if (robot.getDirection() == Direction.LEFT && moveToDirectionX == Direction.RIGHT)
+        if (robot.getDirection() == Direction.LEFT && moveToDirectionX == Direction.RIGHT) {
             return true;
+        }
 
-        if (robot.getDirection() == Direction.RIGHT && moveToDirectionX == Direction.LEFT)
+        if (robot.getDirection() == Direction.RIGHT && moveToDirectionX == Direction.LEFT) {
             return true;
+        }
 
         return false;
     }
 
     private boolean isOppositeDirectionY(Robot robot, Direction moveToDirectionY) {
-        if (robot.getDirection() == Direction.UP && moveToDirectionY == Direction.DOWN)
+        if (robot.getDirection() == Direction.UP && moveToDirectionY == Direction.DOWN) {
             return true;
+        }
 
-        if (robot.getDirection() == Direction.DOWN && moveToDirectionY == Direction.UP)
+        if (robot.getDirection() == Direction.DOWN && moveToDirectionY == Direction.UP) {
             return true;
+        }
 
         return false;
     }
@@ -69,7 +73,8 @@ public class RobotRoute {
     }
 
     private void moveToCoordinate(Robot robot, int toX, int toY) {
-        int steps = (robot.getDirection() == Direction.LEFT || robot.getDirection() == Direction.RIGHT)
+        Direction robotDirection = robot.getDirection();
+        int steps = (robotDirection == Direction.LEFT || robotDirection == Direction.RIGHT)
                 ? toX - robot.getX()
                 : toY - robot.getY();
 
