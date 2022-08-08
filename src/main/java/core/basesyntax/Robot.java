@@ -15,6 +15,11 @@ public class Robot {
         return direction;
     }
 
+    public Direction setDirection(Direction direction) {
+        this.direction = direction;
+        return direction;
+    }
+
     public int getX() {
         return coordinateX;
     }
