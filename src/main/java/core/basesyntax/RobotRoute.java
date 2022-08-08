@@ -11,7 +11,7 @@ public class RobotRoute {
     }
 
     public void setCorrectDirectionOnX(Robot robot, int toX) {
-        if(robot.getX() < toX) {
+        if (robot.getX() < toX) {
             robot.setDirection(Direction.RIGHT);
         } else {
             robot.setDirection(Direction.LEFT);
@@ -19,7 +19,7 @@ public class RobotRoute {
     }
 
     public void setCorrectDirectionOnY(Robot robot, int toY) {
-        if(robot.getY() < toY) {
+        if (robot.getY() < toY) {
             robot.setDirection(Direction.UP);
         } else {
             robot.setDirection(Direction.DOWN);
@@ -35,19 +35,19 @@ public class RobotRoute {
     }
 
     public void goToTheX(Robot robot, int toX) {
-        if(checkDirectionOnRightWay(robot)) {
-            while(robot.getX() < toX) {
+        if (checkDirectionOnRightWay(robot)) {
+            while (robot.getX() < toX) {
                 robot.stepForward();
             }
-        } else  {
-            while(robot.getX() > toX) {
+        } else {
+            while (robot.getX() > toX) {
                 robot.stepForward();
             }
         }
     }
 
     public void goToTheY(Robot robot, int toY) {
-        if(checkDirectionOnUpWay(robot)) {
+        if (checkDirectionOnUpWay(robot)) {
             while (robot.getY() < toY) {
                 robot.stepForward();
             }
