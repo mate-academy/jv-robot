@@ -16,7 +16,6 @@ public class RobotRoute {
             robot.stepForward();
         }
 
-
         if (robot.getY() > toY) {
             while (robot.getDirection() != Direction.DOWN) {
                 robot.turnLeft();
