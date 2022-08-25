@@ -5,7 +5,7 @@ public class RobotRoute {
     private void checkX(Robot robot, int x) {
         Direction direction;
 
-        if (x < robot.getX()) {
+        if(x < robot.getX()) {
 
             switch (robot.getDirection()) {
                 case UP:
@@ -23,7 +23,7 @@ public class RobotRoute {
                 default: break;
             }
         }
-        if (x > robot.getX()) {
+        if(x > robot.getX()) {
 
             switch (robot.getDirection()) {
                 case UP:
@@ -44,7 +44,7 @@ public class RobotRoute {
     }
 
     private void checkY(Robot robot, int y) {
-        Direction direction ;
+        Direction direction;
 
         if(y < robot.getY()){
 
@@ -80,17 +80,19 @@ public class RobotRoute {
     public void movingAroundMap(Robot robot, int toX, int toY) {
         int x = toX + (robot.getX() * -1);
         int y = toY + (robot.getY() * -1);
-        int xMotor = 0;
-        if (x < 0) {xMotor = -1 * x;} else {xMotor = x;}
-        int yMotor = 0;
-        if (y < 0) {yMotor = -1 * y;} else {yMotor = y;}
+        int motor1 = 0;
+        if(x < 0) {motor1 = -1 * x;}
+        motor1 = x;
+        int motor2 = 0;
+        if(y < 0) {motor2 = -1 * y;}
+        motor2 = y;
         checkX(robot,toX);
-        for (int i = 0; i < xMotor; i++) {
+        for (int i = 0; i < motor1; i++) {
             System.out.println("Step " + robot.stepForward() + " Robot ==> " + (i + 1) +
                     " X " + "coordinates" + "(" + robot.getX() + "," + robot.getY() + ")");
         }
         checkY(robot,toY);
-        for (int j = 0; j < yMotor; j++) {
+        for (int j = 0; j < motor2; j++) {
             System.out.println("Step " + robot.stepForward() + " Robot ==> " + (j + 1) +
                     " Y " + "coordinates" + "(" + robot.getX() + "," + robot.getY() + ")");
         }
