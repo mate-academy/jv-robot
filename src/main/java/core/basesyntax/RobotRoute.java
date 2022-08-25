@@ -20,6 +20,7 @@ public class RobotRoute {
                 case LEFT:
                     direction = Direction.LEFT;
                     break;
+                default: break;
             }
         }
         if (x > robot.getX()) {
@@ -37,16 +38,17 @@ public class RobotRoute {
                 case LEFT:
                     robot.turnRobot();
                     break;
+                default: break;
             }
         }
     }
 
-    private void checkY(Robot robot, int y){
+    private void checkY(Robot robot, int y) {
         Direction direction ;
 
         if(y < robot.getY()){
 
-            switch (robot.getDirection()){
+            switch (robot.getDirection()) {
                 case UP : robot.turnRobot();
                 break;
                 case RIGHT: robot.turnRight();
@@ -55,6 +57,7 @@ public class RobotRoute {
                 break;
                 case DOWN: direction = Direction.DOWN;
                 break;
+                default: break;
             }
         }
 
@@ -69,6 +72,7 @@ public class RobotRoute {
                 break;
                 case RIGHT: robot.turnLeft();
                 break;
+                default: break;
             }
         }
     }
