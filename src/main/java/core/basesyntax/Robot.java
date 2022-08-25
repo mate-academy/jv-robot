@@ -82,8 +82,9 @@ public class Robot {
         }
         return direction.name();
     }
-    public Direction turnRobot(){
-        switch (direction){
+
+    public Direction turnRobot() {
+        switch (direction) {
             case UP : direction = Direction.DOWN;
                 return direction;
             case DOWN : direction = Direction.UP;
@@ -92,16 +93,8 @@ public class Robot {
                 return direction;
             case RIGHT :direction = Direction.LEFT;
                 return direction;
+            default: break;
         }
         return direction;
-    }
-
-    @Override
-    public String toString() {
-        return "Robot{" +
-                "direction=" + direction +
-                ", coordinateX=" + coordinateX +
-                ", coordinateY=" + coordinateY +
-                '}';
     }
 }

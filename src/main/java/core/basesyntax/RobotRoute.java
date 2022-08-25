@@ -5,8 +5,7 @@ public class RobotRoute {
     private void checkX(Robot robot, int x) {
         Direction direction;
 
-        if(x < robot.getX())
-
+        if(x < robot.getX()) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnLeft();
@@ -20,10 +19,11 @@ public class RobotRoute {
                 case LEFT:
                     direction = Direction.LEFT;
                     break;
-                default: break;
+                default:
+                    break;
+            }
         }
-        if(x > robot.getX())
-
+        if(x > robot.getX()) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnRight();
@@ -37,41 +37,51 @@ public class RobotRoute {
                 case LEFT:
                     robot.turnRobot();
                     break;
-                default: break;
+                default:
+                    break;
             }
-
+        }
     }
 
     private void checkY(Robot robot, int y) {
         Direction direction;
 
-        if(y < robot.getY())
-
+        if(y < robot.getY()) {
             switch (robot.getDirection()) {
-                case UP : robot.turnRobot();
-                break;
-                case RIGHT: robot.turnRight();
-                break;
-                case LEFT: robot.turnLeft();
-                break;
-                case DOWN: direction = Direction.DOWN;
-                break;
-                default: break;
+                case UP:
+                    robot.turnRobot();
+                    break;
+                case RIGHT:
+                    robot.turnRight();
+                    break;
+                case LEFT:
+                    robot.turnLeft();
+                    break;
+                case DOWN:
+                    direction = Direction.DOWN;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        if(y > robot.getY())
-
+        if(y > robot.getY()) {
             switch (robot.getDirection()) {
-                case UP: direction = Direction.UP;
-                break;
-                case DOWN: robot.turnRobot();
-                break;
-                case LEFT: robot.turnRight();
-                break;
-                case RIGHT: robot.turnLeft();
-                break;
-                default: break;
-
+                case UP:
+                    direction = Direction.UP;
+                    break;
+                case DOWN:
+                    robot.turnRobot();
+                    break;
+                case LEFT:
+                    robot.turnRight();
+                    break;
+                case RIGHT:
+                    robot.turnLeft();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
