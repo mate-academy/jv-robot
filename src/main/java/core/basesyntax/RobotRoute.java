@@ -99,14 +99,14 @@ public class RobotRoute {
                     robot.stepForward();
                 }
                 if (toY < y) {
-                    robot.turnLeft();
+                    robot.turnRight();
                     int abs1 = Math.abs(y - toY);
                     for (int i = 0; i < abs1; i++) {
                         robot.stepForward();
                     }
                 }
                 if (toY > y) {
-                    robot.turnRight();
+                    robot.turnLeft();
                     int abs1 = Math.abs(y - toY);
                     for (int i = 0; i < abs1; i++) {
                         robot.stepForward();
@@ -120,14 +120,14 @@ public class RobotRoute {
                     robot.stepForward();
                 }
                 if (toY < y) {
-                    robot.turnLeft();
+                    robot.turnRight();
                     int abs1 = Math.abs(y - toY);
                     for (int i = 0; i < abs1; i++) {
                         robot.stepForward();
                     }
                 }
                 if (toY > y) {
-                    robot.turnRight();
+                    robot.turnLeft();
                     int abs1 = Math.abs(y - toY);
                     for (int i = 0; i < abs1; i++) {
                         robot.stepForward();
@@ -141,14 +141,14 @@ public class RobotRoute {
                     robot.stepForward();
                 }
                 if (toY < y) {
-                    robot.turnLeft();
+                    robot.turnRight();
                     int abs1 = Math.abs(y - toY);
                     for (int i = 0; i < abs1; i++) {
                         robot.stepForward();
                     }
                 }
                 if (toY > y) {
-                    robot.turnRight();
+                    robot.turnLeft();
                     int abs1 = Math.abs(y - toY);
                     for (int i = 0; i < abs1; i++) {
                         robot.stepForward();
@@ -163,14 +163,14 @@ public class RobotRoute {
                     robot.stepForward();
                 }
                 if (toY < y) {
-                    robot.turnLeft();
+                    robot.turnRight();
                     int abs1 = Math.abs(y - toY);
                     for (int i = 0; i < abs1; i++) {
                         robot.stepForward();
                     }
                 }
                 if (toY > y) {
-                    robot.turnRight();
+                    robot.turnLeft();
                     int abs1 = Math.abs(y - toY);
                     for (int i = 0; i < abs1; i++) {
                         robot.stepForward();
@@ -187,7 +187,7 @@ public class RobotRoute {
                     }
                 }
                 if (direction.equals(Direction.RIGHT)) {
-                    robot.turnRight();
+                    robot.turnLeft();
                     int abs = Math.abs(y - toY);
                     for (int i = 0; i < abs; i++) {
                         robot.stepForward();
