@@ -5,7 +5,7 @@ public class RobotRoute {
     private void checkX(Robot robot, int x) {
         Direction direction;
 
-        if(x < robot.getX()) {
+        if (x < robot.getX()) {
 
             switch (robot.getDirection()) {
                 case UP:
@@ -24,7 +24,7 @@ public class RobotRoute {
                     break;
             }
         }
-        if(x > robot.getX()) {
+        if (x > robot.getX()) {
 
             switch (robot.getDirection()) {
                 case UP:
@@ -48,7 +48,7 @@ public class RobotRoute {
     private void checkY(Robot robot, int y) {
         Direction direction;
 
-        if(y < robot.getY()) {
+        if (y < robot.getY()) {
 
             switch (robot.getDirection()) {
                 case UP:
@@ -68,7 +68,7 @@ public class RobotRoute {
             }
         }
 
-        if(y > robot.getY()) {
+        if (y > robot.getY()) {
 
             switch (robot.getDirection()) {
                 case UP:
