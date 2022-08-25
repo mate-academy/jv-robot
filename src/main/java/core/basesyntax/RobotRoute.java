@@ -4,7 +4,9 @@ public class RobotRoute {
 
     private void checkX(Robot robot, int x) {
         Direction direction;
+
         if (x < robot.getX()) {
+
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnLeft();
@@ -21,6 +23,7 @@ public class RobotRoute {
             }
         }
         if (x > robot.getX()) {
+
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnRight();
@@ -38,9 +41,11 @@ public class RobotRoute {
         }
     }
 
-    private void checkY(Robot robot , int y){
+    private void checkY(Robot robot, int y){
         Direction direction ;
+
         if(y < robot.getY()){
+
             switch (robot.getDirection()){
                 case UP : robot.turnRobot();
                 break;
@@ -48,20 +53,22 @@ public class RobotRoute {
                 break;
                 case LEFT: robot.turnLeft();
                 break;
-                case DOWN: direction = Direction.DOWN
-                ;break;
+                case DOWN: direction = Direction.DOWN;
+                break;
             }
         }
+
         if(y > robot.getY()) {
+
             switch (robot.getDirection()) {
                 case UP: direction = Direction.UP;
                 break;
                 case DOWN: robot.turnRobot();
                 break;
-                case LEFT: robot.turnRight()
-                ;break;
-                case RIGHT: robot.turnLeft()
-                ;break;
+                case LEFT: robot.turnRight();
+                break;
+                case RIGHT: robot.turnLeft();
+                break;
             }
         }
     }
@@ -74,14 +81,16 @@ public class RobotRoute {
         int yMotor = 0;
         if (y < 0) {yMotor = -1 * y;} else {yMotor = y;}
         checkX(robot,toX);
-        for (int iX = 0; iX < xMotor; iX++) {
-            System.out.println("Step " + robot.stepForward() + " Robot ==> " + (iX + 1) + " X " + "coordinates" + "(" + robot.getX() + "," + robot.getY() + ")");
+        for (int i = 0; i < xMotor; i++) {
+            System.out.println("Step " + robot.stepForward() + " Robot ==> " + (i + 1) +
+                    " X " + "coordinates" + "(" + robot.getX() + "," + robot.getY() + ")");
         }
         checkY(robot,toY);
-        for (int iY = 0; iY < yMotor; iY++) {
-            System.out.println("Step " + robot.stepForward() + " Robot ==> " + (iY + 1) + " Y " + "coordinates" + "(" + robot.getX() + "," + robot.getY() + ")");
-        }}
-
+        for (int j = 0; j < yMotor; j++) {
+            System.out.println("Step " + robot.stepForward() + " Robot ==> " + (j + 1) +
+                    " Y " + "coordinates" + "(" + robot.getX() + "," + robot.getY() + ")");
+        }
+    }
 
     public void moveRobot(Robot robot, int toX, int toY) {
         movingAroundMap(robot, toX, toY);
