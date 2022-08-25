@@ -86,12 +86,14 @@ public class RobotRoute {
         int motor2 = 0;
         if(y < 0) { motor2 = -1 * y; }
         motor2 = y;
+
         checkX(robot,toX);
         for (int i = 0; i < motor1; i++) {
             System.out.println("Step " + robot.stepForward() + " Robot ==> " + (i + 1)
                     + " X " + "coordinates" + "(" + robot.getX()
                     + "," + robot.getY() + ")");
         }
+
         checkY(robot,toY);
         for (int j = 0; j < motor2; j++) {
             System.out.println("Step " + robot.stepForward() + " Robot ==> " + (j + 1)
