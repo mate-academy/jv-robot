@@ -46,7 +46,7 @@ public class RobotRoute {
     private void checkY(Robot robot, int y) {
         Direction direction;
 
-        if(y < robot.getY()){
+        if(y < robot.getY()) {
 
             switch (robot.getDirection()) {
                 case UP : robot.turnRobot();
@@ -81,10 +81,10 @@ public class RobotRoute {
         int x = toX + (robot.getX() * -1);
         int y = toY + (robot.getY() * -1);
         int motor1 = 0;
-        if(x < 0) motor1 = -1 * x;
+        if(x < 0) { motor1 = -1 * x; }
         motor1 = x;
         int motor2 = 0;
-        if(y < 0) motor2 = -1 * y;
+        if(y < 0) { motor2 = -1 * y; }
         motor2 = y;
         checkX(robot,toX);
         for (int i = 0; i < motor1; i++) {
