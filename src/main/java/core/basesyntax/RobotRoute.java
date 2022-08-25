@@ -6,6 +6,7 @@ public class RobotRoute {
         Direction direction;
 
         if(x < robot.getX()) {
+
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnLeft();
@@ -24,6 +25,7 @@ public class RobotRoute {
             }
         }
         if(x > robot.getX()) {
+
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnRight();
@@ -47,6 +49,7 @@ public class RobotRoute {
         Direction direction;
 
         if(y < robot.getY()) {
+
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnRobot();
@@ -66,6 +69,7 @@ public class RobotRoute {
         }
 
         if(y > robot.getY()) {
+
             switch (robot.getDirection()) {
                 case UP:
                     direction = Direction.UP;
