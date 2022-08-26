@@ -40,7 +40,7 @@ public class Robot {
             default:
                 break;
         }
-         return direction.name();
+        return direction.name();
     }
 
     public String turnRight() {
