@@ -7,7 +7,7 @@ public class RobotRoute {
 
         if (x < robot.getX()) {
 
-            switch (robot.getDirection()) {
+             switch (robot.getDirection()) {
                 case UP:
                     robot.turnLeft();
                     break;
@@ -22,7 +22,7 @@ public class RobotRoute {
                     break;
                 default:
                     break;
-            }
+             }
         }
         if (x > robot.getX()) {
 
