@@ -27,6 +27,8 @@ public class RobotRoute {
                     robot.turnRight();
                     break;
                 }
+                default:
+                    break;
             }
 
         } else if (robot.getX() < toX) {
@@ -45,6 +47,8 @@ public class RobotRoute {
                     robot.turnLeft();
                     break;
                 }
+                default:
+                    break;
             }
         }
 
@@ -74,6 +78,8 @@ public class RobotRoute {
                     robot.turnLeft();
                     break;
                 }
+                default:
+                    break;
             }
 
         } else if (robot.getY() < toY) {
@@ -92,6 +98,8 @@ public class RobotRoute {
                     robot.turnRight();
                     break;
                 }
+                default:
+                    break;
             }
         }
 
