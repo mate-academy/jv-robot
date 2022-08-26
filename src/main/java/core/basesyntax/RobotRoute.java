@@ -13,24 +13,38 @@ public class RobotRoute {
 
         if (robot.getX() > toX) {
             switch (direction) {
-                case UP -> robot.turnLeft();
-                case RIGHT -> {
+                case UP: {
+                    robot.turnLeft();
+                    break;
+                }
+                case RIGHT: {
                     for (int i = 0; i < 2; i++) {
                         robot.turnLeft();
                     }
+                    break;
                 }
-                case DOWN -> robot.turnRight();
+                case DOWN: {
+                    robot.turnRight();
+                    break;
+                }
             }
 
         } else if (robot.getX() < toX) {
             switch (direction) {
-                case UP -> robot.turnRight();
-                case LEFT -> {
+                case UP: {
+                    robot.turnRight();
+                    break;
+                }
+                case LEFT: {
                     for (int i = 0; i < 2; i++) {
                         robot.turnLeft();
                     }
+                    break;
                 }
-                case DOWN -> robot.turnLeft();
+                case DOWN: {
+                    robot.turnLeft();
+                    break;
+                }
             }
         }
 
@@ -46,24 +60,38 @@ public class RobotRoute {
 
         if (robot.getY() > toY) {
             switch (direction) {
-                case RIGHT -> robot.turnRight();
-                case UP -> {
-                    for (int i = 0; i < 3; i++) {
+                case RIGHT: {
+                    robot.turnRight();
+                    break;
+                }
+                case UP: {
+                    for (int i = 0; i < 2; i++) {
                         robot.turnLeft();
                     }
+                    break;
                 }
-                case LEFT -> robot.turnLeft();
+                case LEFT: {
+                    robot.turnLeft();
+                    break;
+                }
             }
 
         } else if (robot.getY() < toY) {
             switch (direction) {
-                case RIGHT -> robot.turnLeft();
-                case DOWN -> {
-                    for (int i = 0; i < 3; i++) {
+                case RIGHT: {
+                    robot.turnLeft();
+                    break;
+                }
+                case DOWN: {
+                    for (int i = 0; i < 2; i++) {
                         robot.turnLeft();
                     }
+                    break;
                 }
-                case LEFT -> robot.turnRight();
+                case LEFT: {
+                    robot.turnRight();
+                    break;
+                }
             }
         }
 
