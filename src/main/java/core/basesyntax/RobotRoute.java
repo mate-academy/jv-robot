@@ -2,55 +2,243 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
-        while (( robot.getX()!= toX) | ( robot.getY()!= toY))
-        {
-            if (toX > robot.getX())
-            {
-                while (robot.getDirection()!= Direction.RIGHT)
-                {
-                    robot.turnRight();
-                }
-                while (robot.getX()!= toX) {
+        //write your solution here
+        int y = robot.getY();
+        int x = robot.getX();
+        Direction direction = robot.getDirection();
+        if (toX < x) {
+            if (direction.equals(Direction.RIGHT)) {
+                robot.turnLeft();
+                robot.turnLeft();
+                int abs = Math.abs(x - toX);
+                for (int i = 0; i < abs; i++) {
                     robot.stepForward();
                 }
-                System.out.println(robot.getX());
-            }
-            else if (toX < robot.getX())
-            {
-                while (robot.getDirection () != Direction.LEFT)
-                {
-                    robot.turnRight();
+                if (toY < y) {
+                    robot.turnLeft();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
                 }
-                while (robot.getX()!= toX) {
+                if (toY > y) {
+                    robot.turnRight();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+            }
+            if (direction.equals(Direction.UP)) {
+                robot.turnLeft();
+                int abs = Math.abs(x - toX);
+                for (int i = 0; i < abs; i++) {
                     robot.stepForward();
                 }
-                System.out.println(robot.getX());
-            }
-            if (toY > robot.getY())
-            {
-                while (robot.getDirection () != Direction.UP)
-                {
-                    robot.turnRight();
+                if (toY < y) {
+                    robot.turnLeft();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
                 }
-                while (robot.getY()!= toY) {
+                if (toY > y) {
+                    robot.turnRight();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+            }
+            if (direction.equals(Direction.DOWN)) {
+                robot.turnRight();
+                int abs = Math.abs(x - toX);
+                for (int i = 0; i < abs; i++) {
                     robot.stepForward();
                 }
-                System.out.println(robot.getY());
-            }
-            if (toY < robot.getY())
-            {
-                while (robot.getDirection () != Direction.DOWN)
-                {
-                    robot.turnRight();
+                if (toY < y) {
+                    robot.turnLeft();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
                 }
-
-                while (robot.getY()!= toY) {
+                if (toY > y) {
+                    robot.turnRight();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+            }
+            if (direction.equals(Direction.LEFT)) {
+                int abs = Math.abs(x - toX);
+                for (int i = 0; i < abs; i++) {
                     robot.stepForward();
                 }
-                System.out.println(robot.getY());
+                if (toY < y) {
+                    robot.turnLeft();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (toY > y) {
+                    robot.turnRight();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
             }
-            System.out.println("Robot in position X = " +robot.getX()+ " Y=" + robot.getY());
+        }
+        if (toX > x) {
+            if (direction.equals(Direction.RIGHT)) {
+                int abs = Math.abs(x - toX);
+                for (int i = 0; i < abs; i++) {
+                    robot.stepForward();
+                }
+                if (toY < y) {
+                    robot.turnRight();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (toY > y) {
+                    robot.turnLeft();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+            }
+            if (direction.equals(Direction.UP)) {
+                robot.turnRight();
+                int abs = Math.abs(x - toX);
+                for (int i = 0; i < abs; i++) {
+                    robot.stepForward();
+                }
+                if (toY < y) {
+                    robot.turnRight();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (toY > y) {
+                    robot.turnLeft();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+            }
+            if (direction.equals(Direction.DOWN)) {
+                robot.turnLeft();
+                int abs = Math.abs(x - toX);
+                for (int i = 0; i < abs; i++) {
+                    robot.stepForward();
+                }
+                if (toY < y) {
+                    robot.turnRight();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (toY > y) {
+                    robot.turnLeft();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+            }
+            if (direction.equals(Direction.LEFT)) {
+                robot.turnRight();
+                robot.turnRight();
+                int abs = Math.abs(x - toX);
+                for (int i = 0; i < abs; i++) {
+                    robot.stepForward();
+                }
+                if (toY < y) {
+                    robot.turnRight();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (toY > y) {
+                    robot.turnLeft();
+                    int abs1 = Math.abs(y - toY);
+                    for (int i = 0; i < abs1; i++) {
+                        robot.stepForward();
+                    }
+                }
+            }
+        }
+        if (toX == x) {
+            if (toY > y) {
+                if (direction.equals(Direction.UP)) {
+                    int abs = Math.abs(y - toY);
+                    for (int i = 0; i < abs; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (direction.equals(Direction.RIGHT)) {
+                    robot.turnLeft();
+                    int abs = Math.abs(y - toY);
+                    for (int i = 0; i < abs; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (direction.equals(Direction.LEFT)) {
+                    robot.turnRight();
+                    int abs = Math.abs(y - toY);
+                    for (int i = 0; i < abs; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (direction.equals(Direction.DOWN)) {
+                    robot.turnRight();
+                    robot.turnRight();
+                    int abs = Math.abs(y - toY);
+                    for (int i = 0; i < abs; i++) {
+                        robot.stepForward();
+                    }
+                }
+            }
+            if (toY < y) {
+                if (direction.equals(Direction.UP)) {
+                    robot.turnRight();
+                    robot.turnRight();
+                    int abs = Math.abs(y - toY);
+                    for (int i = 0; i < abs; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (direction.equals(Direction.RIGHT)) {
+                    robot.turnRight();
+                    int abs = Math.abs(y - toY);
+                    for (int i = 0; i < abs; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (direction.equals(Direction.LEFT)) {
+                    robot.turnLeft();
+                    int abs = Math.abs(y - toY);
+                    for (int i = 0; i < abs; i++) {
+                        robot.stepForward();
+                    }
+                }
+                if (direction.equals(Direction.DOWN)) {
+                    int abs = Math.abs(y - toY);
+                    for (int i = 0; i < abs; i++) {
+                        robot.stepForward();
+                    }
+                }
+            }
         }
     }
 }
