@@ -51,7 +51,6 @@ public class RobotRoute {
                 System.out.println(robot.getY());
             }
             System.out.println("Robot in position X = " +robot.getX()+ " Y=" + robot.getY());
-
         }
     }
 }
