@@ -40,7 +40,7 @@ public class RobotRoute {
         }
     }
 
-    public void moveY(Robot robot, int toY) {  // Move robot to Y
+    public void moveY(Robot robot, int toY) { // Move robot to Y
         int count = Math.abs(toY - robot.getY());
         for (int i = 0; i < count; i++) {
             robot.stepForward();
