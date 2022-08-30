@@ -95,22 +95,25 @@ public class RobotRoute {
         int motor1 = 0;
         if (x < 0) {
             motor1 = -1 * x;
+        } else {
+            motor1 = x;
         }
-        motor1 = x;
+
         int motor2 = 0;
         if (y < 0) {
             motor2 = -1 * y;
+        } else {
+            motor2 = y;
         }
-        motor2 = y;
 
-        checkX(robot,toX);
+        checkX(robot, toX);
         for (int i = 0; i < motor1; i++) {
             System.out.println("Step " + robot.stepForward() + " Robot ==> " + (i + 1)
                     + " X " + "coordinates" + "(" + robot.getX()
                     + "," + robot.getY() + ")");
         }
 
-        checkY(robot,toY);
+        checkY(robot, toY);
         for (int j = 0; j < motor2; j++) {
             System.out.println("Step " + robot.stepForward() + " Robot ==> " + (j + 1)
                     + " Y " + "coordinates" + "(" + robot.getX()
