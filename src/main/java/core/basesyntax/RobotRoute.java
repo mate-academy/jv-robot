@@ -8,7 +8,8 @@ public class RobotRoute {
                     if (robot.getX() < toX) {
                         robot.turnRight();
                     } else {
-                        robot.turnLeft();}
+                        robot.turnLeft();
+                    }
                     break;
                 }
                 case DOWN: {
