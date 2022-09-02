@@ -7,17 +7,14 @@ public class RobotRoute {
                 case UP: {
                     if (robot.getX() < toX) {
                         robot.turnRight();
-                    }
-                    else {
-                      robot.turnLeft();
-                    }
+                    } else {
+                      robot.turnLeft();}
                     break;
                 }
                 case DOWN: {
                     if (robot.getX() > toX) {
                         robot.turnRight();
-                    }
-                    else {
+                    } else {
                         robot.turnLeft();
                     }
                     break;
@@ -36,42 +33,46 @@ public class RobotRoute {
                     }
                     break;
                 }
+                default: {
+                    break;
+                }
             }
             robot.stepForward();
         }
         while (robot.getY() != toY) {
             switch (robot.getDirection()) {
                 case UP: {
-                  if (robot.getY() < toY) {
+                    if (robot.getY() < toY) {
                       robot.turnRight();
                       robot.turnRight();
-                  }
-                  break;
+                    }
+                    break;
                 }
                 case DOWN: {
-                  if (robot.getY() > toY) {
+                    if (robot.getY() > toY) {
                       robot.turnLeft();
                       robot.turnLeft();
-                  }
-                  break;
+                    }
+                    break;
                 }
                 case LEFT: {
-                  if (robot.getY() < toY) {
+                    if (robot.getY() < toY) {
                       robot.turnRight();
-                  }
-                  else {
+                    } else {
                       robot.turnLeft();
-                  }
-                  break;
+                    }
+                    break;
                 }
                 case RIGHT: {
-                  if (robot.getY() > toY) {
+                    if (robot.getY() > toY) {
                       robot.turnRight();
-                  }
-                  else {
+                    } else {
                       robot.turnLeft();
-                  }
-                  break;
+                    }
+                    break;
+                }
+                default: {
+                    break;
                 }
             }
             robot.stepForward();
