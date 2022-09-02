@@ -8,7 +8,7 @@ public class RobotRoute {
                     if (robot.getX() < toX) {
                         robot.turnRight();
                     } else {
-                      robot.turnLeft();}
+                        robot.turnLeft();}
                     break;
                 }
                 case DOWN: {
@@ -43,31 +43,31 @@ public class RobotRoute {
             switch (robot.getDirection()) {
                 case UP: {
                     if (robot.getY() < toY) {
-                      robot.turnRight();
-                      robot.turnRight();
+                        robot.turnRight();
+                        robot.turnRight();
                     }
                     break;
                 }
                 case DOWN: {
                     if (robot.getY() > toY) {
-                      robot.turnLeft();
-                      robot.turnLeft();
+                        robot.turnLeft();
+                        robot.turnLeft();
                     }
                     break;
                 }
                 case LEFT: {
                     if (robot.getY() < toY) {
-                      robot.turnRight();
+                        robot.turnRight();
                     } else {
-                      robot.turnLeft();
+                        robot.turnLeft();
                     }
                     break;
                 }
                 case RIGHT: {
                     if (robot.getY() > toY) {
-                      robot.turnRight();
+                        robot.turnRight();
                     } else {
-                      robot.turnLeft();
+                        robot.turnLeft();
                     }
                     break;
                 }
