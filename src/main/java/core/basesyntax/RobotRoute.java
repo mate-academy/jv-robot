@@ -4,42 +4,30 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         int x = robot.getX();
         int y = robot.getY();
-        if (toX > robot.getX()) {
-            if (robot.getDirection() == Direction.RIGHT) {
-                robot.turnLeft();
+        if (toX > x) {
+            if (robot.getDirection() == Direction.LEFT) {
+                new Robot(Direction.RIGHT, x, y);
             }
-            while (toX != x) {
+            for (int i = x; i <= toX; i++) {
                 robot.stepForward();
-                x--;
             }
         } else {
-            if (robot.getDirection() == Direction.LEFT) {
-                robot.turnRight();
+            if (robot.getDirection() == Direction.RIGHT) {
+                new Robot(Direction.LEFT, x, y);
             }
-            while (toX != x) {
+            for (int i = x; i >= toX; i--) {
                 robot.stepForward();
-                x++;
             }
         }
-        if (toY < robot.getY()) {
-            if (robot.getDirection() == Direction.RIGHT) {
-                robot.turnRight();
-            } else {
-                robot.turnLeft();
-            }
-            while (toY != y) {
+        if (toY < y) {
+            new Robot(Direction.DOWN, toX, y);
+            for (int i = y; i >= toY; i--) {
                 robot.stepForward();
-                y--;
             }
         } else {
-            if (robot.getDirection() == Direction.RIGHT) {
-                robot.turnLeft();
-            } else {
-                robot.turnRight();
-            }
-            while (toY != y) {
+            new Robot(Direction.UP, toX, y);
+            for (int i = y; i <= toY; i++) {
                 robot.stepForward();
-                y++;
             }
         }
     }
