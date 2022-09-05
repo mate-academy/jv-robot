@@ -6,26 +6,26 @@ public class RobotRoute {
         int y = robot.getY();
         if (toX > x) {
             if (robot.getDirection() == Direction.LEFT) {
-                new Robot(Direction.RIGHT, x, y);
+                robot = new Robot(Direction.RIGHT, robot.getX(), robot.getY());
             }
-            for (int i = x; i <= toX; i++) {
+            for (int i = x; i < toX; i++) {
                 robot.stepForward();
             }
         } else {
             if (robot.getDirection() == Direction.RIGHT) {
-                new Robot(Direction.LEFT, x, y);
+                robot = new Robot(Direction.LEFT, robot.getX(), robot.getY());
             }
-            for (int i = x; i >= toX; i--) {
+            for (int i = x; i > toX; i--) {
                 robot.stepForward();
             }
         }
         if (toY < y) {
-            new Robot(Direction.DOWN, toX, y);
-            for (int i = y; i >= toY; i--) {
+            robot = new Robot(Direction.DOWN, robot.getX(), robot.getY());
+            for (int i = y; i > toY; i--) {
                 robot.stepForward();
             }
         } else {
-            new Robot(Direction.UP, toX, y);
+            robot = new Robot(Direction.UP, robot.getX(), robot.getY());
             for (int i = y; i <= toY; i++) {
                 robot.stepForward();
             }
