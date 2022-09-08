@@ -5,28 +5,60 @@ public class RobotRoute {
         int x = robot.getX();
         int y = robot.getY();
         if (toX > x) {
+            if (robot.getDirection() == Direction.UP) {
+                robot.turnRight();
+            }
+            if (robot.getDirection() == Direction.DOWN) {
+                robot.turnLeft();
+            }
             if (robot.getDirection() == Direction.LEFT) {
-                robot = new Robot(Direction.RIGHT, robot.getX(), robot.getY());
+                robot.turnRight();
+                robot.turnRight();
             }
             for (int i = x; i < toX; i++) {
                 robot.stepForward();
             }
-        } else {
+        } else if (toX < x) {
+            if (robot.getDirection() == Direction.UP) {
+                robot.turnLeft();
+            }
             if (robot.getDirection() == Direction.RIGHT) {
-                robot = new Robot(Direction.LEFT, robot.getX(), robot.getY());
+                robot.turnLeft();
+                robot.turnLeft();
+            }
+            if (robot.getDirection() == Direction.DOWN) {
+                robot.turnRight();
             }
             for (int i = x; i > toX; i--) {
                 robot.stepForward();
             }
         }
         if (toY < y) {
-            robot = new Robot(Direction.DOWN, robot.getX(), robot.getY());
+            if (robot.getDirection() == Direction.UP) {
+                robot.turnRight();
+                robot.turnRight();
+            }
+            if (robot.getDirection() == Direction.RIGHT) {
+                robot.turnRight();
+            }
+            if (robot.getDirection() == Direction.LEFT) {
+                robot.turnLeft();
+            }
             for (int i = y; i > toY; i--) {
                 robot.stepForward();
             }
         } else {
-            robot = new Robot(Direction.UP, robot.getX(), robot.getY());
-            for (int i = y; i <= toY; i++) {
+            if (robot.getDirection() == Direction.DOWN) {
+                robot.turnLeft();
+                robot.turnLeft();
+            }
+            if (robot.getDirection() == Direction.RIGHT) {
+                robot.turnLeft();
+            }
+            if (robot.getDirection() == Direction.LEFT) {
+                robot.turnRight();
+            }
+            for (int i = y; i < toY; i++) {
                 robot.stepForward();
             }
         }
