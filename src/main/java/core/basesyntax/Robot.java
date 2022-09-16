@@ -11,6 +11,14 @@ public class Robot {
         this.coordinateY = coordinateY;
     }
 
+    @Override
+    public String toString() {
+        String str1 = "direction=";
+        String str2 = ", coordinateX=";
+        String str3 = ", coordinateY=";
+        return "Robot{" + str1 + direction + str2 + coordinateX + str3 + coordinateY + '}';
+    }
+
     public Direction getDirection() {
         return direction;
     }
