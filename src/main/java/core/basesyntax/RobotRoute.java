@@ -7,10 +7,10 @@ public class RobotRoute {
 
         if (toX < x) {
             while (robot.getDirection() != Direction.LEFT) {
-                    robot.turnLeft();
+                robot.turnLeft();
             }
             for (int i = x; i > toX; i--) {
-                    robot.stepForward();
+                robot.stepForward();
             }
         } else if (toX > x) {
             while (robot.getDirection() != Direction.RIGHT) {
