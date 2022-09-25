@@ -12,19 +12,19 @@ public class RobotRoute {
         }
         int betweenX = Math.abs(robot.getX() - toX);
         for (int i = 0; i < betweenX; i++) {
-                robot.stepForward();
-            }
+            robot.stepForward();
+        }
         if (robot.getY() != toY && robot.getY() < toY) {
-                Direction direction = Direction.UP;
-                robot.setDirection(direction);
-            }
+            Direction direction = Direction.UP;
+            robot.setDirection(direction);
+        }
         if (robot.getY() != toY && robot.getY() > toY) {
-                Direction direction = Direction.DOWN;
-                robot.setDirection(direction);
-            }
-            int betweenY = Math.abs(robot.getY() - toY);
-            for (int i = 0; i < betweenY; i++) {
-                robot.stepForward();
-            }
+            Direction direction = Direction.DOWN;
+            robot.setDirection(direction);
+        }
+        int betweenY = Math.abs(robot.getY() - toY);
+        for (int i = 0; i < betweenY; i++) {
+            robot.stepForward();
         }
     }
+}
