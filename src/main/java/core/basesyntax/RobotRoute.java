@@ -1,41 +1,46 @@
 package core.basesyntax;
 
 public class RobotRoute {
-    public void goRobot(Robot robot, int toX, int toY) {
-        if (toX > robot.getX()) {
-            while (robot.getDirection() != Direction.RIGHT) {
-                robot.turnRight();
-            }
-            while (toX > robot.getX()) {
-                robot.stepForward();
-            }
-        }
+    private Robot robot;
+    private int toX;
+    private int toY;
 
-        if (toX < robot.getX()) {
-            while (robot.getDirection() != Direction.LEFT) {
-                robot.turnLeft();
-            }
-            while (toX < robot.getX()) {
-                robot.stepForward();
-            }
-        }
+    public void moveRobot(Robot robot, int toX, int toY) {
+        //write your solution here
+        this.robot = robot;
+        this.toX = toX;
+        this.toY = toY;
+        Direction directionX = getDirectionX();
+        Direction directionY = getDirectionY();
+        turnRobot(directionX);
+        moveToX();
+        turnRobot(directionY);
+        moveToY();
+    }
 
-        if (toY < robot.getY()) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnLeft();
-            }
-            while (toY < robot.getY()) {
-                robot.stepForward();
-            }
-        }
+    private Direction getDirectionX() {
+        return this.robot.getX() - this.toX < 0 ? Direction.RIGHT : Direction.LEFT;
+    }
 
-        if (toY > robot.getY()) {
-            while (robot.getDirection() != Direction.UP) {
-                robot.turnRight();
-            }
-            while (toY > robot.getY()) {
-                robot.stepForward();
-            }
+    private Direction getDirectionY() {
+        return this.robot.getY() - this.toY < 0 ? Direction.UP : Direction.DOWN;
+    }
+
+    private void turnRobot(Direction direction) {
+        while (this.robot.getDirection() != direction) {
+            this.robot.turnRight();
+        }
+    }
+
+    private void moveToX() {
+        while (this.robot.getX() != toX) {
+            this.robot.stepForward();
+        }
+    }
+
+    private void moveToY() {
+        while (this.robot.getY() != toY) {
+            this.robot.stepForward();
         }
     }
 }
