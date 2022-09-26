@@ -7,7 +7,7 @@ import static core.basesyntax.Direction.UP;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
+        //write your solution here
         int origX = robot.getX();
         int origY = robot.getY();
 
