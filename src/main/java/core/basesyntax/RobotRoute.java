@@ -2,7 +2,7 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
+        //write your solution here
         alignedXPos(robot, toX);
         alignedYPos(robot, toY);
     }
@@ -17,9 +17,7 @@ public class RobotRoute {
     }
 
     private void moveRobotOnY(Robot robot, int toY, Direction direction) {
-        while (!robot.getDirection().equals(direction)) {
-            robot.turnLeft();
-        }
+        turnRobotOnDirection(robot, direction);
         while (robot.getY() != toY) {
             robot.stepForward();
         }
@@ -35,11 +33,15 @@ public class RobotRoute {
     }
 
     private void moveRobotOnX(Robot robot, int toX, Direction direction) {
-        while (!robot.getDirection().equals(direction)) {
-            robot.turnLeft();
-        }
+        turnRobotOnDirection(robot, direction);
         while (robot.getX() != toX) {
             robot.stepForward();
+        }
+    }
+
+    private void turnRobotOnDirection(Robot robot, Direction direction) {
+        while (!robot.getDirection().equals(direction)) {
+            robot.turnLeft();
         }
     }
 }
