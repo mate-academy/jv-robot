@@ -24,6 +24,7 @@ public class RobotRoute {
                         robot.turnLeft();
                     }
                     break;
+                default:
             }
         } else {
             switch (robot.getDirection()) {
@@ -38,6 +39,7 @@ public class RobotRoute {
                         robot.turnLeft();
                     }
                     break;
+                default:
             }
         }
         int counter = Math.abs(toX - robot.getX());
@@ -60,6 +62,7 @@ public class RobotRoute {
                         robot.turnLeft();
                     }
                     break;
+                default:
             }
         } else {
             switch (robot.getDirection()) {
@@ -74,6 +77,7 @@ public class RobotRoute {
                         robot.turnLeft();
                     }
                     break;
+                default:
             }
         }
         int counter = Math.abs(toY - robot.getY());
