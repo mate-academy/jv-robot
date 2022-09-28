@@ -19,7 +19,7 @@ public class RobotRoute {
         }
     }
 
-    public void turnToDirection(String str, Robot robot) {
+    private void turnToDirection(String str, Robot robot) {
         switch (Direction.valueOf(str.toUpperCase())) {
             case LEFT:
                 while (robot.getDirection() != Direction.LEFT) {
@@ -46,13 +46,13 @@ public class RobotRoute {
         }
     }
 
-    public void getToX(int x, Robot robot) {
+    private void getToX(int x, Robot robot) {
         while (robot.getX() != x) {
             robot.stepForward();
         }
     }
 
-    public void getToY(int y, Robot robot) {
+    private void getToY(int y, Robot robot) {
         while (robot.getY() != y) {
             robot.stepForward();
         }
