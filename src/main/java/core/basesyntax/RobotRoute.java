@@ -3,14 +3,18 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         if (robot.getX() != toX) {
-            moveHorizontally(robot, toX);
+            rotateHorizontally(robot, toX);
+            int counter = Math.abs(toX - robot.getX());
+            moveByAxis(robot, counter);
         }
         if (robot.getY() != toY) {
-            moveVertically(robot, toY);
+            rotateVertically(robot, toY);
+            int counter = Math.abs(toY - robot.getY());
+            moveByAxis(robot, counter);
         }
     }
 
-    private void moveHorizontally(Robot robot, int toX) {
+    private void rotateHorizontally(Robot robot, int toX) {
         if (toX > robot.getX()) {
             switch (robot.getDirection()) {
                 case UP:
@@ -42,13 +46,9 @@ public class RobotRoute {
                 default:
             }
         }
-        int counter = Math.abs(toX - robot.getX());
-        for (int i = counter; i > 0; i--) {
-            robot.stepForward();
-        }
     }
 
-    private void moveVertically(Robot robot, int toY) {
+    private void rotateVertically(Robot robot, int toY) {
         if (toY > robot.getY()) {
             switch (robot.getDirection()) {
                 case RIGHT:
@@ -80,7 +80,9 @@ public class RobotRoute {
                 default:
             }
         }
-        int counter = Math.abs(toY - robot.getY());
+    }
+
+    private void moveByAxis(Robot robot, int counter) {
         for (int i = counter; i > 0; i--) {
             robot.stepForward();
         }
