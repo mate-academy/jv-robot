@@ -13,39 +13,34 @@ public class RobotRoute {
 
     private void moveRobotToX(Robot robot, int toX) {
         if (toX < robot.getX()) {
-            while (robot.getDirection().equals(Direction.LEFT)) {
+            while (!robot.getDirection().equals(Direction.LEFT)) {
                 robot.turnLeft();
-            }
-            while (robot.getX() != toX) {
-                robot.stepForward();
             }
         }
         if (toX > robot.getX()) {
-            while (robot.getDirection().equals(Direction.RIGHT)) {
+            while (!robot.getDirection().equals(Direction.RIGHT)) {
                 robot.turnRight();
             }
-            while (robot.getX() != toX) {
-                robot.stepForward();
-            }
+        }
+        while (robot.getX() != toX) {
+            robot.stepForward();
         }
     }
 
-    private void moveRobotToY(Robot robot, int toY) {
+    private void moveRobotToY(Robot robot,int toY) {
         if (toY < robot.getY()) {
-            while (robot.getDirection().equals(Direction.DOWN)) {
+            while (!robot.getDirection().equals(Direction.DOWN)) {
                 robot.turnLeft();
-            }
-            while (robot.getY() != toY) {
-                robot.stepForward();
             }
         }
-        if (toY < robot.getY()) {
-            while (robot.getDirection().equals(Direction.UP)) {
+        if (toY > robot.getY()) {
+            while (!robot.getDirection().equals(Direction.UP)) {
                 robot.turnLeft();
             }
-            while (robot.getY() != toY) {
-                robot.stepForward();
-            }
+        }
+        while (robot.getY() != toY) {
+            robot.stepForward();
         }
     }
 }
+
