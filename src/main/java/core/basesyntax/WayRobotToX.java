@@ -2,7 +2,7 @@ package core.basesyntax;
 
 public class WayRobotToX {
 
-    public static void MoveToX(Robot robot, int toX) {
+    public static void MoveTox(Robot robot, int toX) {
 
         if (robot.getX() < toX) {
             while (robot.getDirection() != Direction.LEFT) {
