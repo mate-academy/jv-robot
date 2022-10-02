@@ -22,7 +22,7 @@ public class RobotRoute {
             }
         }
         while (toY != robot.getY()) {
-            if (lengthOfRouteX > 0) {
+            if (lengthOfRouteY > 0) {
                 while (robot.getDirection() != Direction.UP) {
                     robot.turnLeft();
                 }
