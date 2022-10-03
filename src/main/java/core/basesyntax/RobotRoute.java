@@ -11,12 +11,16 @@ public class RobotRoute {
         Direction directionToX = null;
         if (stepToX > 0) {
             directionToX = Direction.RIGHT;
-        } else if (stepToX < 0) directionToX = Direction.LEFT;
+        } else if (stepToX < 0) {
+            directionToX = Direction.LEFT;
+        }
 
         Direction directionToY = null;
         if (stepToY > 0) {
             directionToY = Direction.UP;
-        } else if (stepToY < 0) directionToY = Direction.DOWN;
+        } else if (stepToY < 0) {
+            directionToY = Direction.DOWN;
+        }
 
         if (directionToX != null) {
             switch (robot.getDirection()) {
@@ -45,6 +49,8 @@ public class RobotRoute {
                         robot.turnRight();
                         robot.turnRight();
                     }
+                    break;
+                default:
                     break;
             }
             for (int i = 0; i < Math.abs(stepToX); i++) {
@@ -78,6 +84,8 @@ public class RobotRoute {
                     } else {
                         robot.turnLeft();
                     }
+                    break;
+                default:
                     break;
             }
             for (int i = 0; i < Math.abs(stepToY); i++) {
