@@ -60,6 +60,7 @@ public class RobotRoute {
                 while (robot.getY() != toY) {
                     robot.stepForward();
                 }
+                break;
             case RIGHT:
                 if (robot.getY() > toY) {
                     robot.turnRight();
@@ -69,6 +70,7 @@ public class RobotRoute {
                 while (robot.getY() != toY) {
                     robot.stepForward();
                 }
+                break;
             default:
                 break;
         }
