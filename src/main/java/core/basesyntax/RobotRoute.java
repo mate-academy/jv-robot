@@ -54,7 +54,7 @@ public class RobotRoute {
             case LEFT:
                 if (robot.getY() > toY) {
                     robot.turnLeft();
-                }else {
+                } else {
                     robot.turnRight();
                 }
                 while (robot.getY() != toY) {
