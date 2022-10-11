@@ -44,6 +44,8 @@ public class RobotRoute {
                     robot.stepForward();
                 }
                 break;
+            default:
+                break;
         }
 
         Direction currentDir = robot.getDirection();
@@ -67,6 +69,8 @@ public class RobotRoute {
                 while (robot.getY() != toY) {
                     robot.stepForward();
                 }
+            default:
+                break;
         }
     }
 }
