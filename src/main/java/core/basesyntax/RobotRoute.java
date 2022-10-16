@@ -22,20 +22,20 @@ public class RobotRoute {
                     break;
             }
         } else if (actualX < toX) {
-                switch (robot.getDirection()) {
-                    case UP:
-                        robot.turnRight();
-                        break;
-                    case LEFT:
-                        robot.turnRight();
-                        robot.turnRight();
-                        break;
-                    case DOWN:
-                        robot.turnLeft();
-                        break;
-                    default:
-                        break;
-                }
+            switch (robot.getDirection()) {
+                case UP:
+                    robot.turnRight();
+                    break;
+                case LEFT:
+                    robot.turnRight();
+                    robot.turnRight();
+                    break;
+                case DOWN:
+                    robot.turnLeft();
+                    break;
+                default:
+                    break;
+            }
         }
         while (actualX != toX) {
             robot.stepForward();
