@@ -12,15 +12,25 @@ public class RobotRoute {
                 robot.turnLeft();
             }
         }
+
+        while (toX != robot.getX()) {
+            robot.stepForward();
+        }
+
         if (robot.getY() > toY) {
-            while (robot.getDirection() != Direction.UP) {
-                robot.stepForward();
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
             }
         }
         if (robot.getY() < toY) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.stepForward();
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnRight();
             }
         }
+
+        while (toY != robot.getY()) {
+            robot.stepForward();
+        }
+
     }
 }
