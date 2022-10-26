@@ -19,8 +19,8 @@ public class RobotRoute {
             }
         }
 
-        while (robot.getX() != toX) {
-            robot.stepForward();
+            while (robot.getX() != toX) {
+                robot.stepForward();
 
         }
 
