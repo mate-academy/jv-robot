@@ -3,15 +3,15 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
 
-
-
         if (toX > robot.getX()) {
+
             while (robot.getDirection() != Direction.RIGHT) {
               robot.turnRight();
 
           }
       }
-      if (toX < robot.getX()) {
+
+        if (toX < robot.getX()) {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
