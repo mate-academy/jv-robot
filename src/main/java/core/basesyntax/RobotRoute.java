@@ -5,9 +5,9 @@ public class RobotRoute {
 
         if (toX > robot.getX()) {
 
-
             while (robot.getDirection() != Direction.RIGHT) {
-              robot.turnRight();
+
+                robot.turnRight();
 
             }
         }
