@@ -12,10 +12,12 @@ public class Robot {
     }
 
     public Direction getDirection() {
+
         return direction;
     }
 
     public int getX() {
+
         return coordinateX;
     }
 
