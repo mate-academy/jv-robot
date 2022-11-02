@@ -1,35 +1,21 @@
 package core.basesyntax;
 
-import static core.basesyntax.Direction.UP;
-
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-
         if (toX > robot.getX()) {
-            while (robot.getDirection() != Direction.RIGHT) {
-                robot.turnRight();
-            }
+            getTurn(robot, Direction.RIGHT);
             getMove(robot, toX, robot.getX());
         }
-
         if (toY > robot.getY()) {
-            while (robot.getDirection() != Direction.UP) {
-                robot.turnRight();
-            }
+            getTurn(robot, Direction.UP);
             getMove(robot, toY, robot.getY());
         }
-
         if (toX < robot.getX()) {
-            while (robot.getDirection() != Direction.LEFT) {
-                robot.turnRight();
-            }
+            getTurn(robot, Direction.LEFT);
             getMove(robot, toX, robot.getX());
         }
-
         if (toY < robot.getY()) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnRight();
-            }
+            getTurn(robot, Direction.DOWN);
             getMove(robot, toY, robot.getY());
         }
     }
@@ -41,6 +27,21 @@ public class RobotRoute {
                 from++;
             } else {
                 from--;
+            }
+        }
+    }
+
+    public void getTurn(Robot robot, Direction direction) {
+        if (robot.getDirection() == Direction.UP & direction == Direction.RIGHT
+                || robot.getDirection() == Direction.RIGHT & direction == Direction.DOWN
+                || robot.getDirection() == Direction.DOWN & direction == Direction.LEFT
+                || robot.getDirection() == Direction.LEFT & direction == Direction.UP) {
+            while (robot.getDirection() != direction) {
+                robot.turnRight();
+            }
+        } else {
+            while (robot.getDirection() != direction) {
+                robot.turnLeft();
             }
         }
     }
