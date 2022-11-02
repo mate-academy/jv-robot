@@ -20,7 +20,7 @@ public class RobotRoute {
         }
     }
 
-    public void getMove(Robot robot, int to, int from) {
+    private void getMove(Robot robot, int to, int from) {
         while (to != from) {
             robot.stepForward();
             if (from < to) {
@@ -31,7 +31,7 @@ public class RobotRoute {
         }
     }
 
-    public void getTurn(Robot robot, Direction direction) {
+    private void getTurn(Robot robot, Direction direction) {
         if (robot.getDirection() == Direction.UP & direction == Direction.RIGHT
                 || robot.getDirection() == Direction.RIGHT & direction == Direction.DOWN
                 || robot.getDirection() == Direction.DOWN & direction == Direction.LEFT
