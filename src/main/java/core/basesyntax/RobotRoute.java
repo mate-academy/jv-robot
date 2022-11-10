@@ -8,7 +8,6 @@ public class RobotRoute {
 
         int findY = robot.getY();
 
-
         if (findX > toX) {
 
             while (robot.getDirection() != Direction.LEFT) {
@@ -31,7 +30,7 @@ public class RobotRoute {
 
             for (int i = findY; i > toY; i--) {
 
-                    robot.stepForward();
+                robot.stepForward();
 
             }
         }
