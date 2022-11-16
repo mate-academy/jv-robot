@@ -5,7 +5,7 @@ public class RobotRoute {
 
         int thisX = robot.getX();
         int thisY = robot.getY();
-        if ( thisY >= toY) {
+        if (thisY >= toY) {
             switch (robot.getDirection()) {
                 case LEFT:
                     robot.turnLeft();
@@ -16,7 +16,7 @@ public class RobotRoute {
                 case UP:
                     robot.turnRight();
                     robot.turnRight();
-                default:
+                case DOWN:
                     break;
             }
             for (int i = 0; i < thisY - toY; i++) {
@@ -24,18 +24,18 @@ public class RobotRoute {
             }
             if (thisX > toX) {
                 robot.turnRight();
-                for (int i =0; i < thisX - toX; i++) {
+                for (int i = 0; i < thisX - toX; i++) {
                     robot.stepForward();
                 }
             }
             if (thisX < toX) {
                 robot.turnLeft();
-                for (int i =0; i < toX - thisX; i++) {
+                for (int i = 0; i < toX - thisX; i++) {
                     robot.stepForward();
                 }
             }
         }
-        if ( thisY < toY) {
+        if (thisY < toY) {
             switch (robot.getDirection()) {
                 case LEFT:
                     robot.turnRight();
@@ -46,7 +46,7 @@ public class RobotRoute {
                 case DOWN:
                     robot.turnRight();
                     robot.turnRight();
-                default:
+                case UP:
                     break;
             }
             for (int i = 0; i < toY - thisY; i++) {
