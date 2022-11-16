@@ -16,7 +16,8 @@ public class RobotRoute {
                 case UP:
                     robot.turnRight();
                     robot.turnRight();
-                case DOWN:
+                    break;
+                default:
                     break;
             }
             for (int i = 0; i < thisY - toY; i++) {
@@ -46,7 +47,8 @@ public class RobotRoute {
                 case DOWN:
                     robot.turnRight();
                     robot.turnRight();
-                case UP:
+                    break;
+                default:
                     break;
             }
             for (int i = 0; i < toY - thisY; i++) {
