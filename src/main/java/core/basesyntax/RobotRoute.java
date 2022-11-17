@@ -15,11 +15,11 @@ public class RobotRoute {
                     break;
                 case LEFT:
                     for (int i = 0; i < 2; i++) {
-                      robot.turnRight();
+                        robot.turnRight();
                     }
-                    
-                case RIGHT:
-                    break;          
+                    break;                 
+                default:
+                    break;       
             }
       
             for (int i = 0; i < toX - initialX; i++) {
@@ -35,11 +35,11 @@ public class RobotRoute {
                     break;
                 case RIGHT:
                     for (int i = 0; i < 2; i++) {
-                      robot.turnLeft();
+                        robot.turnLeft();
                     }
-                    break;
-                case LEFT:
-                    break;          
+                    break;                 
+                default:
+                    break;         
             }
       
             for (int i = 0; i < initialX - toX; i++) {
@@ -57,10 +57,10 @@ public class RobotRoute {
                     break;
                 case DOWN:
                     for (int i = 0; i < 2; i++) {
-                      robot.turnRight();
+                        robot.turnRight();
                     }
                     break;
-                case UP:
+                default:
                     break;          
             }
             
@@ -77,10 +77,10 @@ public class RobotRoute {
                     break;
                 case UP:
                     for (int i = 0; i < 2; i++) {
-                      robot.turnLeft();
+                        robot.turnLeft();
                     }
                     break;
-                case DOWN:
+                default:
                     break;          
             }
             
