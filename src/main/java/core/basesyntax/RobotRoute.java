@@ -6,13 +6,14 @@ public class RobotRoute {
             switch (robot.getDirection()) {
                 case LEFT:
                     robot.turnRight();
+                    robot.turnRight();
+                    break;
                 case UP:
                     robot.turnRight();
                     break;
                 case DOWN:
                     robot.turnLeft();
                     break;
-                case RIGHT:
                 default:
                     break;
             }
@@ -21,13 +22,14 @@ public class RobotRoute {
             switch (robot.getDirection()) {
                 case RIGHT:
                     robot.turnRight();
+                    robot.turnRight();
+                    break;
                 case DOWN:
                     robot.turnRight();
                     break;
                 case UP:
                     robot.turnLeft();
                     break;
-                case LEFT:
                 default:
                     break;
             }
@@ -42,10 +44,11 @@ public class RobotRoute {
                     break;
                 case UP:
                     robot.turnLeft();
+                    robot.turnLeft();
+                    break;
                 case LEFT:
                     robot.turnLeft();
                     break;
-                case DOWN:
                 default:
                     break;
             }
@@ -62,7 +65,6 @@ public class RobotRoute {
                 case LEFT:
                     robot.turnRight();
                     break;
-                case UP:
                 default:
                     break;
             }
