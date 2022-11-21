@@ -3,35 +3,31 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
-        if (robot.getX() < toX) {
-            while (robot.getDirection() != Direction.RIGHT) {
-                robot.turnRight();
+        while (robot.getX() != toX) {
+            while (robot.getX() < toX) {
+                while (!(robot.getDirection().equals(Direction.RIGHT))) {
+                    robot.turnLeft();
+                }
+                robot.stepForward();
             }
-            while (robot.getX() != toX) {
+            while (robot.getX() > toX) {
+                while (!(robot.getDirection().equals(Direction.LEFT))) {
+                    robot.turnLeft();
+                }
                 robot.stepForward();
             }
         }
-        if (robot.getX() > toX) {
-            while (robot.getDirection() != Direction.LEFT) {
-                robot.turnLeft();
-            }
-            while (robot.getX() != toX) {
+        while (robot.getY() != toY) {
+            while (robot.getY() < toY) {
+                while (!(robot.getDirection().equals(Direction.UP))) {
+                    robot.turnLeft();
+                }
                 robot.stepForward();
             }
-        }
-        if (robot.getY() < toY) {
-            while (robot.getDirection() != Direction.UP) {
-                robot.turnRight();
-            }
-            while (robot.getX() != toY) {
-                robot.stepForward();
-            }
-        }
-        if (robot.getY() > toY) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnLeft();
-            }
-            while (robot.getX() != toY) {
+            while (robot.getY() > toY) {
+                while (!(robot.getDirection().equals(Direction.DOWN))) {
+                    robot.turnLeft();
+                }
                 robot.stepForward();
             }
         }
