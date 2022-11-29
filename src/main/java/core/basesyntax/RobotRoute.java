@@ -62,6 +62,7 @@ public class RobotRoute {
                     break;
                 case LEFT:
                     robot.turnLeft();
+                    break;
                 default:
                     break;
             }
