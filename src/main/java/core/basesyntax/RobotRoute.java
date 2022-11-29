@@ -2,10 +2,11 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
-        if(toX > robot.getX()) {
-            switch(robot.getDirection()) {
+        if (toX > robot.getX()) {
+            switch (robot.getDirection()) {
                 case UP:
+                    robot.turnRight();
+                    break;
                 case DOWN:
                     robot.turnRight();
                     break;
@@ -16,9 +17,11 @@ public class RobotRoute {
                 default:
                     break;
             }
-        } else if(toX < robot.getX()) {
-            switch(robot.getDirection()) {
+        } else if (toX < robot.getX()) {
+            switch (robot.getDirection()) {
                 case UP:
+                    robot.turnLeft();
+                    break;
                 case DOWN:
                     robot.turnLeft();
                     break;
@@ -30,11 +33,11 @@ public class RobotRoute {
                     break;
             }
         }
-        while(robot.getX() != toX) {
+        while (robot.getX() != toX) {
             robot.stepForward();
         }
-        if(toY > robot.getY()) {
-            switch(robot.getDirection()) {
+        if (toY > robot.getY()) {
+            switch (robot.getDirection()) {
                 case LEFT:
                     robot.turnRight();
                     break;
@@ -48,8 +51,8 @@ public class RobotRoute {
                 default:
                     break;
             }
-        } else if(toY < robot.getY()) {
-            switch(robot.getDirection()) {
+        } else if (toY < robot.getY()) {
+            switch (robot.getDirection()) {
                 case UP:
                     robot.turnRight();
                     robot.turnRight();
@@ -63,7 +66,7 @@ public class RobotRoute {
                     break;
             }
         }
-        while(robot.getY() != toY) {
+        while (robot.getY() != toY) {
             robot.stepForward();
         }
     }
