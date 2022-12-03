@@ -2,7 +2,6 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
         if (toX > robot.getX()) {
             switch (robot.getDirection()) {
                 case UP:
@@ -14,44 +13,58 @@ public class RobotRoute {
                     break;
                 case DOWN:
                     robot.turnLeft();
+                default:
+                    robot.stepForward();
             }
         } else if (toX < robot.getX()) {
             switch (robot.getDirection()) {
                 case UP:
-                    robot.turnLeft();
-                    break;
+                robot.turnLeft();
+                break;
                 case RIGHT:
-                    robot.turnLeft();
-                    robot.turnLeft();
-                case DOWN:
-                    robot.turnRight();
-                }
+                robot.turnLeft();
+                robot.turnLeft();
+                break;
+            case DOWN:
+                robot.turnRight();
+                break;
             }
+        }
 
             while (robot.getX() != toX) {
                 robot.stepForward();
             }
 
-        if(toY > robot.getY()) {
+        if (toY > robot.getY()) {
             switch (robot.getDirection()) {
                 case DOWN:
                     robot.turnRight();
                     robot.turnRight();
+                    break;
                 case RIGHT:
                     robot.turnLeft();
+                    break;
                 case LEFT:
                     robot.turnRight();
+                    break;
+                default:
+                    robot.stepForward();
             }
-        }else if (toY < robot.getY()) {
+        } else if (toY < robot.getY()) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnRight();
                     robot.turnRight();
+                    break;
                 case LEFT:
                     robot.turnLeft();
+                    break;
                 case RIGHT:
                     robot.turnRight();
-            }
+                    break;
+                default:
+                    robot.stepForward();
+                }
         }
 
             while (robot.getY() != toY) {
