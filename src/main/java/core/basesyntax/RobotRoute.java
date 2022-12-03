@@ -14,7 +14,7 @@ public class RobotRoute {
                 case DOWN:
                     robot.turnLeft();
                 default:
-                    robot.stepForward();
+                    break;
             }
         } else if (toX < robot.getX()) {
             switch (robot.getDirection()) {
@@ -29,7 +29,7 @@ public class RobotRoute {
                     robot.turnRight();
                     break;
                 default:
-                    robot.stepForward();
+                    break;
             }
         }
 
