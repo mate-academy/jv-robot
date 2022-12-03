@@ -19,21 +19,23 @@ public class RobotRoute {
         } else if (toX < robot.getX()) {
             switch (robot.getDirection()) {
                 case UP:
-                robot.turnLeft();
-                break;
+                    robot.turnLeft();
+                    break;
                 case RIGHT:
-                robot.turnLeft();
-                robot.turnLeft();
-                break;
-            case DOWN:
-                robot.turnRight();
-                break;
+                    robot.turnLeft();
+                    robot.turnLeft();
+                    break;
+                case DOWN:
+                    robot.turnRight();
+                    break;
+                default:
+                    robot.stepForward();
             }
         }
 
-            while (robot.getX() != toX) {
-                robot.stepForward();
-            }
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
 
         if (toY > robot.getY()) {
             switch (robot.getDirection()) {
@@ -64,11 +66,11 @@ public class RobotRoute {
                     break;
                 default:
                     robot.stepForward();
-                }
+            }
         }
 
-            while (robot.getY() != toY) {
-                robot.stepForward();
-            }
+        while (robot.getY() != toY) {
+            robot.stepForward();
+        }
     }
 }
