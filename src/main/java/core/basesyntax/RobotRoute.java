@@ -18,9 +18,6 @@ public class RobotRoute {
             } else {
                 robot.turnLeft();
             }
-            while (robot.getY() != toY) {
-                robot.stepForward();
-                }
         } else {
             if (robot.getDirection() == Direction.UP) {
                 robot.turnRight();
@@ -37,9 +34,9 @@ public class RobotRoute {
             } else {
                     robot.turnRight();
             }
-            while (robot.getY() != toY) {
-                robot.stepForward();
-            }
         }
+        while (robot.getY() != toY) {
+            robot.stepForward();
+            }
     }
 }
