@@ -15,19 +15,20 @@ public class RobotRoute {
                 robot.stepForward();
             }
             if (robot.getY() < toY) {
-                robot.turnRight();
+               robot.turnRight();
             } else {
-                robot.turnLeft();
+               robot.turnLeft();
             }
             while (robot.getY() != toY) {
-                robot.stepForward();
+            robot.stepForward();
             }
         } else {
             if (robot.getDirection() == Direction.UP) {
                 robot.turnRight();
             } else {
                 while (robot.getDirection() != Direction.RIGHT) {
-                robot.turnLeft();
+                    robot.turnLeft();
+                }
             }
             while (robot.getX() != toX) {
                 robot.stepForward();
@@ -43,4 +44,3 @@ public class RobotRoute {
             }
         }
     }
-}
