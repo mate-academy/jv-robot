@@ -41,7 +41,7 @@ public class Robot {
                 break;
         }
     }
-
+/*  */
     public void turnRight() {
         switch (direction) {
             case UP:
