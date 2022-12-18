@@ -1,7 +1,7 @@
 package core.basesyntax;
 
 public class RobotRoute {
-    public void setRobotDirection(Robot robot, String setDirection) {
+    private void setRobotDirection(Robot robot, String setDirection) {
         while (!robot.getDirection().name().equals(setDirection)) {
             robot.turnRight();
         }
