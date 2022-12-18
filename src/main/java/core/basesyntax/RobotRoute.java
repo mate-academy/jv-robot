@@ -10,7 +10,9 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         if (robot.getX() > toX) {
             setRobotDirection(robot, "LEFT");
-        } else setRobotDirection(robot, "RIGHT");
+        } else {
+            setRobotDirection(robot, "RIGHT");
+        }
         while (robot.getX() != toX) {
             robot.stepForward();
         }
