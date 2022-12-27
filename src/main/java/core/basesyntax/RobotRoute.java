@@ -2,12 +2,12 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
+        //write your solution here
 
-        Direction xDirection = (robot.getX() - toX > 0) ? Direction.LEFT : Direction.RIGHT;
-        Direction yDirection = (robot.getY() - toY > 0) ? Direction.DOWN : Direction.UP;
+        Direction xdirection = (robot.getX() - toX > 0) ? Direction.LEFT : Direction.RIGHT;
+        Direction ydirection = (robot.getY() - toY > 0) ? Direction.DOWN : Direction.UP;
 
-        while (robot.getDirection() != xDirection) {
+        while (robot.getDirection() != xdirection) {
             robot.turnRight();
         }
 
@@ -15,7 +15,7 @@ public class RobotRoute {
             robot.stepForward();
         }
 
-        while (robot.getDirection() != yDirection) {
+        while (robot.getDirection() != ydirection) {
             robot.turnRight();
         }
 
