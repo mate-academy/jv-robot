@@ -2,8 +2,8 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        int diff_X = robot.getX() - toX;
-        int diff_Y = robot.getY() - toY;
+        int diffX = robot.getX() - toX;
+        int diffY = robot.getY() - toY;
         if (robot.getX() > toX) {
             switch (robot.getDirection()) {
                 case UP:
@@ -15,6 +15,8 @@ public class RobotRoute {
                 case RIGHT:
                     robot.turnRight();
                     robot.turnRight();
+                default:
+                    break;
             }
         } else if (robot.getX() < toX) {
             switch (robot.getDirection()) {
@@ -27,9 +29,11 @@ public class RobotRoute {
                 case LEFT:
                     robot.turnLeft();
                     robot.turnLeft();
+                default:
+                    break;
             }
         }
-        for (int i = 0; i < Math.abs(diff_X); i++) {
+        for (int i = 0; i < Math.abs(diffX); i++) {
             robot.stepForward();
         }
         if (robot.getY() > toY) {
@@ -43,6 +47,8 @@ public class RobotRoute {
                     break;
                 case RIGHT:
                     robot.turnRight();
+                default:
+                    break;
             }
         } else if (robot.getY() < toY) {
             switch (robot.getDirection()) {
@@ -55,9 +61,11 @@ public class RobotRoute {
                     break;
                 case RIGHT:
                     robot.turnLeft();
+                default:
+                    break;
             }
         }
-        for (int i = 0; i < Math.abs(diff_Y); i++) {
+        for (int i = 0; i < Math.abs(diffY); i++) {
             robot.stepForward();
         }
     }
