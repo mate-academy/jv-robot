@@ -14,11 +14,9 @@ public class RobotRoute {
                 case RIGHT:
                     robot.turnRight();
                     robot.turnRight();
-                case LEFT:
+                default:
                     robot.turnRight();
                     robot.turnLeft();
-                default:
-                    break;
             }
         } else if (robot.getX() < toX) {
             switch (robot.getDirection()) {
@@ -31,11 +29,9 @@ public class RobotRoute {
                 case LEFT:
                     robot.turnLeft();
                     robot.turnLeft();
-                case RIGHT:
+                default:
                     robot.turnRight();
                     robot.turnLeft();
-                default:
-                    break;
             }
         }
         for (int i = 0; i < Math.abs(diffX); i++) {
@@ -52,11 +48,9 @@ public class RobotRoute {
                     break;
                 case RIGHT:
                     robot.turnRight();
-                case DOWN:
+                default:
                     robot.turnRight();
                     robot.turnLeft();
-                default:
-                    break;
             }
         } else if (robot.getY() < toY) {
             switch (robot.getDirection()) {
@@ -69,11 +63,9 @@ public class RobotRoute {
                     break;
                 case RIGHT:
                     robot.turnLeft();
-                case UP:
+                default:
                     robot.turnRight();
                     robot.turnLeft();
-                default:
-                    break;
             }
         }
         int diffY = robot.getY() - toY;
