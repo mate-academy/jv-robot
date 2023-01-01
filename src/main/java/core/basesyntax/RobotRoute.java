@@ -14,6 +14,7 @@ public class RobotRoute {
                 case RIGHT:
                     robot.turnRight();
                     robot.turnRight();
+                    break;
                 default:
                     robot.turnRight();
                     robot.turnLeft();
@@ -29,6 +30,7 @@ public class RobotRoute {
                 case LEFT:
                     robot.turnLeft();
                     robot.turnLeft();
+                    break;
                 default:
                     robot.turnRight();
                     robot.turnLeft();
@@ -48,6 +50,7 @@ public class RobotRoute {
                     break;
                 case RIGHT:
                     robot.turnRight();
+                    break;
                 default:
                     robot.turnRight();
                     robot.turnLeft();
@@ -63,6 +66,7 @@ public class RobotRoute {
                     break;
                 case RIGHT:
                     robot.turnLeft();
+                    break;
                 default:
                     robot.turnRight();
                     robot.turnLeft();
