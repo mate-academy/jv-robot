@@ -3,7 +3,6 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         int diffX = robot.getX() - toX;
-        int diffY = robot.getY() - toY;
         if (robot.getX() > toX) {
             switch (robot.getDirection()) {
                 case UP:
@@ -65,6 +64,7 @@ public class RobotRoute {
                     break;
             }
         }
+        int diffY = robot.getY() - toY;
         for (int i = 0; i < Math.abs(diffY); i++) {
             robot.stepForward();
         }
