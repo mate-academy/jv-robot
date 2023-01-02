@@ -68,7 +68,7 @@ public class RobotRoute {
                     break;
             }
         }
-        while (robot.getY() < toX) {
+        while (robot.getY() < toY) {
             switch (robot.getDirection()) { // Разворачиваемся вверх
                 case UP:
                     robot.stepForward();
