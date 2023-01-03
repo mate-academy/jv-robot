@@ -3,7 +3,6 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         int x = robot.getX();
-        int y = robot.getY();
         if (x > toX) {
             if (robot.getDirection() == Direction.UP) {
                 robot.turnLeft();
@@ -45,7 +44,8 @@ public class RobotRoute {
         for (int i = 0; i < stepX; i++) {
             robot.stepForward();
         }
-        // напрямок вниз
+
+        int y = robot.getY();
         if (y > toY) {
             if (robot.getDirection() == Direction.UP) {
                 robot.turnRight();
@@ -90,8 +90,5 @@ public class RobotRoute {
         for (int i = 0; i < stepY; i++) {
             robot.stepForward();
         }
-
-
-        //write your solution here
     }
 }
