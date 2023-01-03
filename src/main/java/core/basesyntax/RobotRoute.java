@@ -12,67 +12,68 @@ public class RobotRoute {
     }
 
     public static Direction[] getDirections(Robot robot, int toX, int toY) {
-        Direction XStepDirection = null;
-        Direction YStepDirection = null;
+        Direction stepDirectionX = null;
+        Direction stepDirectionY = null;
         if (robot.getX() - toX != 0) {
-            XStepDirection = robot.getX() > toX ? Direction.LEFT : Direction.RIGHT;
+            stepDirectionX = robot.getX() > toX ? Direction.LEFT : Direction.RIGHT;
         }
         if (robot.getY() - toY != 0) {
-            YStepDirection = robot.getY() > toY ? Direction.DOWN : Direction.UP;
+            stepDirectionY = robot.getY() > toY ? Direction.DOWN : Direction.UP;
         }
-        System.out.println("Robot can move " + XStepDirection + " and " + YStepDirection);
-        return new Direction[]{XStepDirection, YStepDirection};
+        return new Direction[]{stepDirectionX, stepDirectionY};
     }
 
     public static void turnRobotToRightDirection(Robot robot, int toX, int toY) {
         Direction[] directions = getDirections(robot, toX, toY);
-        Direction XDirection = directions[0];
-        Direction YDirection = directions[1];
+        Direction directionX = directions[0];
+        Direction directionY = directions[1];
         Random random = new Random();
         switch (robot.getDirection()) {
             case UP:
-                if (YDirection == Direction.UP) {
+                if (directionY == Direction.UP) {
                     break;
-                } else if (XDirection == Direction.LEFT) {
+                } else if (directionX == Direction.LEFT) {
                     robot.turnLeft();
-                } else if (XDirection == Direction.RIGHT) {
+                } else if (directionX == Direction.RIGHT) {
                     robot.turnRight();
-                } else if (YDirection == Direction.DOWN) {
+                } else if (directionY == Direction.DOWN) {
                     doBackFlip(robot);
                 }
                 break;
             case DOWN:
-                if (YDirection == Direction.DOWN) {
+                if (directionY == Direction.DOWN) {
                     break;
-                } else if (XDirection == Direction.LEFT) {
+                } else if (directionX == Direction.LEFT) {
                     robot.turnRight();
-                } else if (XDirection == Direction.RIGHT) {
+                } else if (directionX == Direction.RIGHT) {
                     robot.turnLeft();
-                } else if (YDirection == Direction.UP) {
+                } else if (directionY == Direction.UP) {
                     doBackFlip(robot);
                 }
                 break;
             case LEFT:
-                if (XDirection == Direction.LEFT) {
+                if (directionX == Direction.LEFT) {
                     break;
-                } else if (YDirection == Direction.UP) {
+                } else if (directionY == Direction.UP) {
                     robot.turnRight();
-                } else if (YDirection == Direction.DOWN) {
+                } else if (directionY == Direction.DOWN) {
                     robot.turnLeft();
-                } else if (XDirection == Direction.RIGHT) {
+                } else if (directionX == Direction.RIGHT) {
                     doBackFlip(robot);
                 }
                 break;
             case RIGHT:
-                if (XDirection == Direction.RIGHT) {
+                if (directionX == Direction.RIGHT) {
                     break;
-                } else if (YDirection == Direction.UP) {
+                } else if (directionY == Direction.UP) {
                     robot.turnLeft();
-                } else if (YDirection == Direction.DOWN) {
+                } else if (directionY == Direction.DOWN) {
                     robot.turnRight();
-                } else if (XDirection == Direction.LEFT) {
+                } else if (directionX == Direction.LEFT) {
                     doBackFlip(robot);
                 }
+                break;
+            default:
                 break;
         }
     }
