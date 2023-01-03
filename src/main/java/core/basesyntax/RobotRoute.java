@@ -4,8 +4,6 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         int x = robot.getX();
         int y = robot.getY();
-        // визначаю напрямок
-        // роблю напрямок на ліво
         if (x > toX) {
             if (robot.getDirection() == Direction.UP) {
                 robot.turnLeft();
@@ -19,7 +17,6 @@ public class RobotRoute {
 
             }
         }
-        // напрямок на право
         if (x < toX) {
             if (robot.getDirection() == Direction.UP) {
                 robot.turnRight();
@@ -32,7 +29,7 @@ public class RobotRoute {
                 robot.turnRight();
             }
         }
-        // переміщаются на ось х
+
         int stepX = 0;
         if (toX < x) {
             for (int i = toX; i < x; i++) {
