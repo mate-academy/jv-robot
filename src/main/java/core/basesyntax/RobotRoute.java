@@ -4,7 +4,7 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         while (true) {
             if (robot.getX() == toX) break;
-            if (robot.getX() > toX && getDirection() == Direction.LEFT)
+            if (robot.getX() > toX && robot.getDirection() == Direction.LEFT)
                 robot.stepForward();
             else if (robot.getX() > toX)
                 robot.turnLeft();
