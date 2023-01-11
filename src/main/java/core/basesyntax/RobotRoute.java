@@ -17,7 +17,8 @@ public class RobotRoute {
             } else if (robot.getX() < toX) {
                 robot.turnRight();
             }
-            System.out.println("I'm in pos: x=" + robot.getX() + " and y=" + robot.getY() + " dir=" + robot.getDirection());
+            System.out.println("I'm in pos: x=" + robot.getX() + " and y=" + robot.getY()
+                + " dir=" + robot.getDirection());
         }
 
         while (true) {
@@ -34,8 +35,8 @@ public class RobotRoute {
             } else if (robot.getY() < toY) {
                 robot.turnLeft();
             }
-            System.out.println("I'm in pos: x=" + robot.getX() + " and y=" + robot.getY() +
-                " dir=" + robot.getDirection());
+            System.out.println("I'm in pos: x=" + robot.getX() + " and y=" + robot.getY() 
+                + " dir=" + robot.getDirection());
         }
         System.out.println("I'm in Home: x=" + robot.getX() + " and y=" + robot.getY());
     }
