@@ -18,7 +18,7 @@ public class RobotRoute {
                 robot.turnRight();
             }
             System.out.println("I'm in pos: x=" + robot.getX() + " and y=" + robot.getY()
-                + " dir=" + robot.getDirection());
+                    + " dir=" + robot.getDirection());
         }
 
         while (true) {
@@ -36,7 +36,7 @@ public class RobotRoute {
                 robot.turnLeft();
             }
             System.out.println("I'm in pos: x=" + robot.getX() + " and y=" + robot.getY() 
-                + " dir=" + robot.getDirection());
+                    + " dir=" + robot.getDirection());
         }
         System.out.println("I'm in Home: x=" + robot.getX() + " and y=" + robot.getY());
     }
