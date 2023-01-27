@@ -11,7 +11,7 @@ public class RobotRoute {
         Direction direction = robot.getDirection();
         int coordinateX = robot.getX();
         int coordinateY = robot.getY();
-        if (coordinateX < toX) {
+        if (direction == UP && coordinateX < toX) {
             robot.turnRight();
 //            direction = RIGHT;
         }
@@ -26,12 +26,9 @@ public class RobotRoute {
             robot.turnRight();
         }
         while (coordinateX < toX) {
+            robot.turnRight();
             robot.stepForward();
             coordinateX++;
-//            if (coordinateX == toX) {
-//                coordinateX = toX;
-//                break;
-//            }
         }
             if (direction == UP && coordinateX > toX) {
                 robot.turnLeft();
@@ -47,31 +44,27 @@ public class RobotRoute {
                 robot.turnRight();
             }
             while (coordinateX > toX) {
+                robot.turnLeft();
                 robot.stepForward();
-                coordinateX++;
-//                if (coordinateX == toX) {
-//                    coordinateX = toX;
-//                    break;
-//                }
+                coordinateX--;
             }
-            if (direction == UP && coordinateY <= toY) {
+            if (direction == UP && coordinateY < toY) {
                 robot.stepForward();
             }
-            if (direction == DOWN && coordinateY <= toY) {
-                robot.turnLeft();
-                robot.turnLeft();
-            }
-            if (direction == RIGHT && coordinateY <= toY) {
+            if (direction == DOWN && coordinateY < toY) {
                 robot.turnLeft();
             }
-            if (direction == LEFT && coordinateY <= toY) {
+            if (direction == RIGHT && coordinateY < toY) {
+                robot.turnLeft();
+            }
+            if (direction == LEFT && coordinateY < toY) {
                 robot.turnRight();
             }
-            while (coordinateY <= toY) {
+            while (coordinateY < toY) {
                 robot.stepForward();
                 coordinateY++;
                 if (coordinateY == toY) {
-                    coordinateY = toY;
+//                    coordinateY = toY;
                     break;
                 }
             }
@@ -90,14 +83,11 @@ public class RobotRoute {
             }
             while (coordinateY > toY) {
                 robot.stepForward();
-                coordinateY++;
-                if (coordinateY == toY) {
-                    coordinateY = toY;
-                    break;
+                coordinateY--;
                 }
             }
         }
-    }
+
 
 
 
