@@ -19,18 +19,18 @@ public class RobotRoute {
         } else if (toY < y) {
             secondDirection = Direction.DOWN;
         } else {
-            secondDirection = null;             
+            secondDirection = null;
         }
 
-       if (firstDirection != null) {
-           while (robot.getDirection() != firstDirection) {
-               robot.turnLeft();
-           }
+        if (firstDirection != null) {
+            while (robot.getDirection() != firstDirection) {
+                robot.turnLeft();
+            }
 
-           while (robot.getX() != toX) {
-               robot.stepForward();
-           }
-       }
+            while (robot.getX() != toX) {
+                robot.stepForward();
+            }
+        }
 
         if (secondDirection != null) {
             while (robot.getDirection() != secondDirection) {
