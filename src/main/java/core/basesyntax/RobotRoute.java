@@ -5,7 +5,9 @@ public class RobotRoute {
         int x = robot.getX();
         int y = robot.getY();
 
-        Direction firstDirection, secondDirection;
+        Direction firstDirection;
+        Direction secondDirection;
+
         if (toX > x) {
             firstDirection = Direction.RIGHT;
         } else if (toX < x) {
@@ -41,7 +43,5 @@ public class RobotRoute {
                 robot.stepForward();
             }
         }
-
-
     }
 }
