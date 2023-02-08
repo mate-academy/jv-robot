@@ -2,15 +2,8 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
-        RandomPosition randomPosition = new RandomPosition();
-        int startX = randomPosition.getRandomStartX();
-        int startY = randomPosition.getRandomStartY();
-        Direction startDirection = randomPosition.getRandomDirection();
-
-        robot = new Robot(startDirection, startX, startY);
-        toX = randomPosition.getRandomEndX();
-        toY = randomPosition.getRandomEndY();
+        int startX = robot.getX();
+        int startY = robot.getY();
 
         if (startX > toX) {
             while (robot.getDirection() == Direction.LEFT) {
