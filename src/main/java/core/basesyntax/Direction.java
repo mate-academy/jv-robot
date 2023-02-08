@@ -1,8 +1,9 @@
 package core.basesyntax;
 
 public enum Direction {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT
+    //clockwise
+    UP, //0
+    RIGHT, //1
+    DOWN, //2
+    LEFT //3
 }
