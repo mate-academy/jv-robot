@@ -72,5 +72,5 @@ public class RobotRoute {
         while (toY != robot.getY()) {
             robot.stepForward();
         }
-        }
+    }
 }
