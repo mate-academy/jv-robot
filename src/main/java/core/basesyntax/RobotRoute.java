@@ -5,12 +5,12 @@ public class RobotRoute {
         while (robot.getX() != toX) {
             if (robot.getX() > toX && robot.getDirection() == Direction.LEFT) {
                 robot.stepForward();
-            } else {
+            } else if (robot.getX() > toX) {
                 robot.turnLeft();
             }
             if (robot.getX() < toX && robot.getDirection() == Direction.RIGHT) {
                 robot.stepForward();
-            } else {
+            } else if (robot.getX() < toX) {
                 robot.turnRight();
             }
             System.out.println("I`m at x: " + robot.getX() + " y: " + robot.getY() + " dir: "
@@ -19,12 +19,12 @@ public class RobotRoute {
         while (robot.getY() != toY) {
             if (robot.getY() > toY && robot.getDirection() == Direction.DOWN) {
                 robot.stepForward();
-            } else {
+            } else if (robot.getY() > toY) {
                 robot.turnRight();
             }
             if (robot.getY() < toY && robot.getDirection() == Direction.UP) {
                 robot.stepForward();
-            } else {
+            } else if (robot.getY() < toY) {
                 robot.turnLeft();
             }
             System.out.println("I`m at x: " + robot.getX() + " y: " + robot.getY() + " dir: "
