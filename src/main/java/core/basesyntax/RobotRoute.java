@@ -2,27 +2,11 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        robotMovesHorizontal(robot, toX, toY);
-        robotMovesVertical(robot, toX, toY);
+        robotMovesHorizontal(robot, toX);
+        robotMovesVertical(robot, toY);
     }
 
-    private void robotMovesVertical(Robot robot, int toX, int toY) {
-        if (robot.getY() > toY) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnLeft();
-            }
-        } else {
-            while (robot.getDirection() != Direction.UP) {
-                robot.turnLeft();
-            }
-        }
-
-        while (robot.getY() != toY) {
-            robot.stepForward();
-        }
-    }
-
-    public void robotMovesHorizontal(Robot robot, int toX, int toY) {
+    public void robotMovesHorizontal(Robot robot, int toX) {
         if (robot.getX() > toX) {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
@@ -34,6 +18,22 @@ public class RobotRoute {
         }
 
         while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+    }
+
+    private void robotMovesVertical(Robot robot, int toY) {
+        if (robot.getY() > toY) {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
+            }
+        } else {
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnLeft();
+            }
+        }
+
+        while (robot.getY() != toY) {
             robot.stepForward();
         }
     }
