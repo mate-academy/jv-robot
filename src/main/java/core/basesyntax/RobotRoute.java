@@ -39,6 +39,7 @@ public class RobotRoute {
                     while (toY > robot.getY()) {
                         robot.stepForward();
                     }
+                default:
             }
         }
         // *** Move UP + RIGHT SQUARE ***
@@ -79,6 +80,7 @@ public class RobotRoute {
                     while (toX > robot.getX()) {
                         robot.stepForward();
                     }
+                default:
             }
         }
         // *** Move BOTTOM + RIGHT SQUARE ***
@@ -118,6 +120,7 @@ public class RobotRoute {
                     while (toX > robot.getX()) {
                         robot.stepForward();
                     }
+                default:
             }
         }
         // *** Move BOTTOM + LEFT SQUARE ***
@@ -157,6 +160,7 @@ public class RobotRoute {
                     while (toY < robot.getY()) {
                         robot.stepForward();
                     }
+                default:
             }
         }
     }
