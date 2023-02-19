@@ -3,36 +3,31 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
-        int currentX = robot.getX();
-        int currentY = robot.getY();
-        if (toX < 0) {
-            robot.turnRight();
+        if (robot.getX() > toX) {
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnRight();
+            }
         } else {
-            robot.turnLeft();
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnLeft();
+            }
         }
-        if (currentX > toX) {
-            for (int x = currentX; x > toX; x--) {
-                robot.stepForward();
-            }
-        }  else {
-            for (int x = currentX; x < toX; x++) {
-                robot.stepForward();
-            }
+        while (toX != robot.getX()) {
+            robot.stepForward();
         }
 
-        if (toY<currentY) {
-            robot.turnLeft();
-        } else {
-            robot.turnRight();
+        if (robot.getY() > toY) {
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnRight();
+            }
         }
-        if (currentY > toY) {
-            for (int y = currentY; y > toY; y--) {
-                robot.stepForward();
+        if (robot.getY() < toY) {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
             }
-        }  else {
-            for (int y = currentY; y < toY; y++) {
-                robot.stepForward();
-            }
+        }
+        while (robot.getY() != toY) {
+            robot.stepForward();
         }
     }
 }
