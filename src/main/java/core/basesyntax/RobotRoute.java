@@ -18,10 +18,10 @@ public class RobotRoute {
                 robot.stepForward();
                 diffY++;
             }
-
             if (diffY > 0) {
+                robot.turnRight();
                 robot.stepForward();
-                diffX--;
+                diffY--;
             } else if (diffY < 0) {
                 robot.turnLeft();
                 robot.stepForward();
