@@ -4,7 +4,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class RobotRoute {
     public void moveRobot(@NotNull Robot robot, int toX, int toY) {
-
         int currentX = robot.getX();
         int currentY = robot.getY();
         int diffX = toX - currentX;
