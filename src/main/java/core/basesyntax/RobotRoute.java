@@ -5,7 +5,6 @@ public class RobotRoute {
 
         int currentX = robot.getX();
         int currentY = robot.getY();
-
         int diffX = toX - currentX;
         int diffY = toY - currentY;
 
