@@ -9,9 +9,9 @@ public class Main {
         int expectedY = 4;
 
         Robot robot = new Robot(Direction.UP, actualX, actualY);
-        new RobotRoute().moveRobot(robot, expectedX, expectedY );
+        new RobotRoute().moveRobot(robot, expectedX, expectedY);
 
-        System.out.println("Final X " +robot.getX());
-        System.out.println("Final Y " +robot.getY());
+        System.out.println("Final X " + robot.getX());
+        System.out.println("Final Y " + robot.getY());
     }
 }
