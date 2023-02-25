@@ -24,22 +24,22 @@ public class RobotRoute {
         moveInCurrentDirection(robot, distanceY);
     }
 
-    private void moveInCurrentDirection(Robot robot, int numberOfStepsToMove){
-        for(int i = 0; i < numberOfStepsToMove; i++){
+    private void moveInCurrentDirection(Robot robot, int numberOfStepsToMove) {
+        for (int i = 0; i < numberOfStepsToMove; i++) {
             robot.stepForward();
         }
     }
 
-    private void rotateToMatchDirection(Robot robot, String direction){
-        for(int i = 0; i < 3; i ++){
-            if(robot.getDirection().name().equals(direction)){
+    private void rotateToMatchDirection(Robot robot, String direction) {
+        for (int i = 0; i < 3; i++) {
+            if (robot.getDirection().name().equals(direction)) {
                 break;
             }
             robot.turnLeft();
         }
     }
 
-    private String getDirectionOnX(int currentX, int toX){
+    private String getDirectionOnX(int currentX, int toX) {
         if (currentX > toX) {
             return Direction.LEFT.name();
         } else if (currentX == toX) {
@@ -49,7 +49,7 @@ public class RobotRoute {
         }
     }
 
-    private String getDirectionOnY(int currentY, int toY){
+    private String getDirectionOnY(int currentY, int toY) {
         if (currentY > toY) {
             return Direction.DOWN.name();
         } else if (currentY == toY) {
@@ -59,9 +59,9 @@ public class RobotRoute {
         }
     }
 
-    private int getDistanceOnAxis(int currentPoint, int toPoint){
+    private int getDistanceOnAxis(int currentPoint, int toPoint) {
         if (currentPoint == toPoint) {
-            return  0;
+            return 0;
         } else if ((currentPoint > 0 && toPoint > 0) || (currentPoint < 0 && toPoint < 0)) {
             return Math.abs(currentPoint - toPoint);
         } else {
