@@ -10,17 +10,14 @@ public class RobotRoute {
             if (deltaX > 0) {
                 if (robot.getDirection() != Direction.RIGHT) {
                     robot.turnRight();
-                }
-                else {
+                } else {
                     robot.stepForward();
                     deltaX--;
                 }
-            }
-            else {
+            } else {
                 if (robot.getDirection() != Direction.LEFT) {
                     robot.turnLeft();
-                }
-                else {
+                } else {
                     robot.stepForward();
                     deltaX++;
                 }
@@ -32,18 +29,15 @@ public class RobotRoute {
                 if (robot.getDirection() != Direction.UP) {
                     robot.turnRight();
                     robot.turnRight();
-                }
-                else {
+                } else {
                     robot.stepForward();
                     deltaY--;
                 }
-            }
-            else {
+            } else {
                 if (robot.getDirection() != Direction.DOWN) {
                     robot.turnRight();
                     robot.turnRight();
-                }
-                else {
+                } else {
                     robot.stepForward();
                     deltaY++;
                 }
