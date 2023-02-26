@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         RobotRoute robotRoute = new RobotRoute();
         Robot myRobot = new Robot(Direction.UP, 5, 7);
