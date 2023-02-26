@@ -75,4 +75,8 @@ public class Robot {
                 break;
         }
     }
+
+    public Direction getDirection() {
+        return null;
+    }
 }
