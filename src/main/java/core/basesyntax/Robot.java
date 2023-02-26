@@ -10,18 +10,12 @@ public class Robot {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
     }
-    public Direction getDirection() {
-        return direction;
-    }
-
     public int getX() {
         return coordinateX;
     }
-
     public int getY() {
         return coordinateY;
     }
-
     public void turnLeft() {
         switch (direction) {
             case UP:
@@ -40,7 +34,6 @@ public class Robot {
                 break;
         }
     }
-
     public void turnRight() {
         switch (direction) {
             case UP:
@@ -59,7 +52,6 @@ public class Robot {
                 break;
         }
     }
-
     public void stepForward() {
         switch (direction) {
             case UP:
