@@ -11,6 +11,10 @@ public class Robot {
         this.coordinateY = coordinateY;
     }
 
+    public Direction getDirection() {
+        return direction;
+    }
+    
     public int getX() {
         return coordinateX;
     }
@@ -74,9 +78,5 @@ public class Robot {
             default:
                 break;
         }
-    }
-
-    public Direction getDirection() {
-        return null;
     }
 }
