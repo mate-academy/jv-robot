@@ -17,14 +17,14 @@ public class RobotRoute {
                 robot.stepForward();
             }
         }
-        while (robot.getX() < toY) {
+        while (robot.getY() < toY) {
             if (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             } else {
                 robot.stepForward();
             }
         }
-        while (robot.getX() > toY) {
+        while (robot.getY() > toY) {
             if (robot.getDirection() != Direction.DOWN) {
                 robot.turnLeft();
             } else {
