@@ -37,28 +37,28 @@ public class  RobotRoute {
             case UP:
                 if (robot.getDirection() == Direction.LEFT) {
                     robot.turnRight();
-                }else {
+                } else {
                     robot.turnLeft();
                 }
                 break;
             case DOWN:
                 if (robot.getDirection() == Direction.LEFT) {
                     robot.turnLeft();
-                }else {
+                } else {
                     robot.turnRight();
                 }
                 break;
             case RIGHT:
                 if (robot.getDirection() == Direction.UP) {
                     robot.turnRight();
-                }else {
+                } else {
                     robot.turnLeft();
                 }
                 break;
             case LEFT:
                 if (robot.getDirection() == Direction.UP) {
                     robot.turnLeft();
-                }else {
+                } else {
                     robot.turnLeft();
                 }
                 break;
