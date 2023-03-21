@@ -6,7 +6,8 @@ public class RobotRoute {
             System.out.println("Robot on the position");
         }
         if (robot.getX() > toX) {
-            switch (robot.getDirection()) {
+            switch (robot.getDirection())
+            {
                 case UP:
                     robot.turnLeft();
                     break;
