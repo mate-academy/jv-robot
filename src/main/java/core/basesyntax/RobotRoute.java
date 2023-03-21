@@ -18,6 +18,8 @@ public class RobotRoute {
                         robot.turnRight();
                     }
                     break;
+                default:
+                    break;
             }
             for (int position = robot.getX(); position >= toX; position--) {
                 while (robot.getX() != toX) {
@@ -36,6 +38,8 @@ public class RobotRoute {
                     for (int i = 0; i <= 2; i++) {
                         robot.turnRight();
                     }
+                    break;
+                default:
                     break;
             }
             for (int position = robot.getX(); position <= toX; position++) {
@@ -56,6 +60,8 @@ public class RobotRoute {
                         robot.turnRight();
                     }
                     break;
+                default:
+                    break;
             }
             for (int position = robot.getY(); position >= toY; position--) {
                 while (robot.getY() != toY) {
@@ -74,6 +80,8 @@ public class RobotRoute {
                     for (int i = 0; i <= 2; i++) {
                         robot.turnRight();
                     }
+                    break;
+                default:
                     break;
             }
             for (int position = robot.getY(); position <= toY; position++) {
