@@ -48,48 +48,48 @@ public class RobotRoute {
                     robot.stepForward();
                 }
             }
-            if (robot.getY() > toY) {
-                switch (robot.getDirection()) {
-                    case LEFT:
-                        robot.turnLeft();
-                        break;
-                    case RIGHT:
+        }
+        if (robot.getY() > toY) {
+            switch (robot.getDirection()) {
+                case LEFT:
+                    robot.turnLeft();
+                    break;
+                case RIGHT:
+                    robot.turnRight();
+                    break;
+                case UP:
+                    for (int i = 0; i <= 2; i++) {
                         robot.turnRight();
-                        break;
-                    case UP:
-                        for (int i = 0; i <= 2; i++) {
-                            robot.turnRight();
-                        }
-                        break;
-                    default:
-                        break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            for (int position = robot.getY(); position >= toY; position--) {
+                while (robot.getY() != toY) {
+                    robot.stepForward();
                 }
-                for (int position = robot.getY(); position >= toY; position--) {
-                    while (robot.getY() != toY) {
-                        robot.stepForward();
+            }
+        }
+        if (robot.getY() < toY) {
+            switch (robot.getDirection()) {
+                case LEFT:
+                    robot.turnRight();
+                    break;
+                case RIGHT:
+                    robot.turnLeft();
+                    break;
+                case DOWN:
+                    for (int i = 0; i <= 2; i++) {
+                        robot.turnRight();
                     }
-                }
-                if (robot.getY() < toY) {
-                    switch (robot.getDirection()) {
-                        case LEFT:
-                            robot.turnRight();
-                            break;
-                        case RIGHT:
-                            robot.turnLeft();
-                            break;
-                        case DOWN:
-                            for (int i = 0; i <= 2; i++) {
-                                robot.turnRight();
-                            }
-                            break;
-                        default:
-                            break;
-                    }
-                    for (int position = robot.getY(); position <= toY; position++) {
-                        while (robot.getY() != toY) {
-                            robot.stepForward();
-                        }
-                    }
+                    break;
+                default:
+                    break;
+            }
+            for (int position = robot.getY(); position <= toY; position++) {
+                while (robot.getY() != toY) {
+                    robot.stepForward();
                 }
             }
         }
