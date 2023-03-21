@@ -25,8 +25,7 @@ public class RobotRoute {
                 while (robot.getX() != toX) {
                     robot.stepForward();
                 }
-            }
-        }
+            }}
         else if (robot.getX() < toX) {
             switch (robot.getDirection()) {
                 case UP:
