@@ -26,7 +26,8 @@ public class RobotRoute {
                     robot.stepForward();
                 }
             }
-        } else if (robot.getX() < toX) {
+        }
+        else if (robot.getX() < toX) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnRight();
