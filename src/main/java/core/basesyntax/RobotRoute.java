@@ -1,8 +1,8 @@
 package core.basesyntax;
 
 public class RobotRoute {
-    static private int stepsX;
-    static private int stepsY;
+    private static int stepsX;
+    private static int stepsY;
 
     public void moveRobot(Robot robot, int toX, int toY) {
         turnXRobot(robot, toX);
