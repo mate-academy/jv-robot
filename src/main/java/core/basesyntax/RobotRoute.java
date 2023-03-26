@@ -3,7 +3,7 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         int pathByX = Math.abs(toX) + Math.abs(robot.getX());
-        int pathByY = Math.abs(toY) + Math.abs(robot.getY());
+        final int pathByY = Math.abs(toY) + Math.abs(robot.getY());
         if (moveByX(robot.getX(), toX) == Direction.LEFT) {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
