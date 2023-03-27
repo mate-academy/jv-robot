@@ -8,7 +8,7 @@ public class RobotRoute {
 
     }
 
-    private void moveRobotByX (Robot robot, int toX) {
+    private void moveRobotByX(Robot robot, int toX) {
         if (toX > robot.getX()) {
             switch (robot.getDirection()) {
                 case UP: {
@@ -54,7 +54,7 @@ public class RobotRoute {
         }
     }
 
-    private void moveRobotByY (Robot robot, int toY) {
+    private void moveRobotByY(Robot robot, int toY) {
         if (toY > robot.getY()) {
             switch (robot.getDirection()) {
                 case LEFT: {
