@@ -1,42 +1,86 @@
 package core.basesyntax;
 
+
+import static core.basesyntax.Direction.DOWN;
+import static core.basesyntax.Direction.LEFT;
+import static core.basesyntax.Direction.RIGHT;
+import static core.basesyntax.Direction.UP;
+import static java.lang.Math.abs;
+
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        int pathByX = Math.abs(toX) + Math.abs(robot.getX());
-        final int pathByY = Math.abs(toY) + Math.abs(robot.getY());
-        if (moveByX(robot.getX(), toX) == Direction.LEFT) {
-            while (robot.getDirection() != Direction.LEFT) {
-                robot.turnLeft();
-            }
-        }
-        for (int i = 0; i < pathByX; i++) {
-            if (toX != robot.getX()) {
-                robot.stepForward();
-            }
-        }
-        if (moveByY(robot.getY(), toY) == Direction.DOWN) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnLeft();
-            }
-        }
-        for (int i = 0; i < pathByY; i++) {
+        final int pathByX = toX - robot.getX();
+        final int pathByY = toY - robot.getY();
+        turnByX(pathByX, robot);
+        moveByX(robot, toX, pathByX);
+
+        turnByY(pathByY, robot);
+        moveByY(robot, toY, pathByY);
+    }
+
+    private static void moveByY(Robot robot, int toY, int pathByY) {
+        for (int i = 0; i < abs(pathByY); i++) {
             if (toY != robot.getY()) {
                 robot.stepForward();
             }
         }
     }
 
+    private static void moveByX(Robot robot, int toX, int pathByX) {
+        for (int i = 0; i < abs(pathByX); i++) {
+            if (toX != robot.getX()) {
+                robot.stepForward();
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        Robot robot = new Robot(Direction.RIGHT, 4, 3);
+        Robot robot = new Robot(DOWN, 1, 1);
         RobotRoute robotRoute = new RobotRoute();
-        robotRoute.moveRobot(robot, -2, -2);
+        robotRoute.moveRobot(robot, 2, 2);
     }
 
-    public Direction moveByX(int startX, int endX) {
-        return startX > endX ? Direction.LEFT : Direction.RIGHT;
+    public void turnByX(int pathByX, Robot robot) {
+        if (pathByX > 0) {
+            if (robot.getDirection() == LEFT) {
+                robot.turnRight();
+                robot.turnRight();
+            } else if (robot.getDirection() == UP) {
+                robot.turnRight();
+            } else if (robot.getDirection() == DOWN) {
+                robot.turnLeft();
+            }
+        } else {
+            if (robot.getDirection() == RIGHT) {
+                robot.turnLeft();
+                robot.turnLeft();
+            } else if (robot.getDirection() == UP) {
+                robot.turnLeft();
+            } else if (robot.getDirection() == DOWN) {
+                robot.turnRight();
+            }
+        }
     }
 
-    public Direction moveByY(int startY, int endY) {
-        return startY > endY ? Direction.DOWN : Direction.UP;
+    public void turnByY(int pathByY, Robot robot) {
+        if (pathByY > 0) {
+            if (robot.getDirection() == DOWN) {
+                robot.turnRight();
+                robot.turnRight();
+            } else if (robot.getDirection() == LEFT) {
+                robot.turnRight();
+            } else if (robot.getDirection() == RIGHT) {
+                robot.turnLeft();
+            }
+        } else {
+            if (robot.getDirection() == UP) {
+                robot.turnLeft();
+                robot.turnLeft();
+            } else if (robot.getDirection() == LEFT) {
+                robot.turnLeft();
+            } else if (robot.getDirection() == RIGHT) {
+                robot.turnRight();
+            }
+        }
     }
 }
