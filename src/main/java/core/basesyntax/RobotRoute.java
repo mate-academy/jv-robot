@@ -1,6 +1,5 @@
 package core.basesyntax;
 
-
 import static core.basesyntax.Direction.DOWN;
 import static core.basesyntax.Direction.LEFT;
 import static core.basesyntax.Direction.RIGHT;
