@@ -40,7 +40,8 @@ public class RobotRoute {
                 }
             } else {
                 if (initialDirection == Direction.UP) {
-                    robot.turnLeft();} else if (initialDirection == Direction.LEFT) {
+                    robot.turnLeft();
+                } else if (initialDirection == Direction.LEFT) {
                     robot.turnLeft();
                     robot.stepForward();
                     robot.turnRight();
