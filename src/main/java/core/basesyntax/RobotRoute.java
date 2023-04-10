@@ -7,7 +7,6 @@ public class RobotRoute {
             robot.turnLeft();
         }
 
-        // Move the robot to the correct x-coordinate
         while (robot.getX() != toX) {
             if (robot.getX() < toX) {
                 if (robot.getDirection() == initialDirection) {
@@ -24,7 +23,6 @@ public class RobotRoute {
             }
         }
 
-        // Move the robot to the correct y-coordinate
         while (robot.getY() != toY) {
             if (robot.getY() < toY) {
                 if (initialDirection == Direction.UP) {
