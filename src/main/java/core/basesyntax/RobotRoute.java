@@ -2,53 +2,20 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        Direction initialDirection = robot.getDirection();
-        while (robot.getDirection() != Direction.UP) {
+        Direction dirX = (robot.getX() - toX > 0) ? Direction.RIGHT : Direction.LEFT;
+        Direction dirY = (robot.getY() - toY > 0) ? Direction.DOWN : Direction.UP;
+
+        while (robot.getDirection() != dirX) {
+            robot.turnRight();
+        }
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+        while (robot.getDirection() != dirY) {
             robot.turnLeft();
         }
-
-        while (robot.getX() != toX) {
-            if (robot.getX() < toX) {
-                if (robot.getDirection() == initialDirection) {
-                    robot.stepForward();
-                } else {
-                    robot.turnRight();
-                }
-            } else {
-                if (robot.getDirection() == initialDirection) {
-                    robot.stepForward();
-                } else {
-                    robot.turnLeft();
-                }
-            }
-        }
-
         while (robot.getY() != toY) {
-            if (robot.getY() < toY) {
-                if (initialDirection == Direction.UP) {
-                    robot.stepForward();
-                } else if (initialDirection == Direction.LEFT) {
-                    robot.turnRight();
-                    robot.stepForward();
-                    robot.turnLeft();
-                } else if (initialDirection == Direction.RIGHT) {
-                    robot.turnLeft();
-                    robot.stepForward();
-                    robot.turnRight();
-                }
-            } else {
-                if (initialDirection == Direction.UP) {
-                    robot.turnLeft();
-                } else if (initialDirection == Direction.LEFT) {
-                    robot.turnLeft();
-                    robot.stepForward();
-                    robot.turnRight();
-                } else if (initialDirection == Direction.RIGHT) {
-                    robot.turnRight();
-                    robot.stepForward();
-                    robot.turnLeft();
-                }
-            }
+            robot.stepForward();
         }
     }
 }
