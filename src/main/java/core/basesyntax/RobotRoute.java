@@ -8,37 +8,20 @@ public class RobotRoute {
             return;
         }
 
-        Direction moveToDirection = getDirectionsX(toX, robot.getX());
+//        Direction moveToDirection = getDirectionsX(toX, robot.getX());
 //        int steps = numberOfSteps(toX, robot.getX());
-        if (moveToDirection != null) {
-            while (!robot.getDirection().equals(moveToDirection)) {
-                robot.turnLeft();
-            }
-            int steps = numberOfSteps(toX, robot.getX());
-            for (int i = steps; i > 0; i--) {
-                robot.stepForward();
-            }
-        }
+        coverSegment(getDirectionsX(toX, robot.getX()), robot, numberOfSteps(toX, robot.getX()));
 
-        moveToDirection = getDirectionsY(toY, robot.getY());
+//        moveToDirection = getDirectionsY(toY, robot.getY());
 //        steps = numberOfSteps(toY, robot.getY());
-        if (moveToDirection != null) {
-            while (!robot.getDirection().equals(moveToDirection)) {
-                robot.turnLeft();
-            }
-            int steps = numberOfSteps(toY, robot.getY());
-            for (int i = steps; i > 0; i--) {
-                robot.stepForward();
-            }
-        }
+        coverSegment(getDirectionsY(toY, robot.getY()), robot, numberOfSteps(toY, robot.getY()));
     }
 
-    private void coverSegment(Direction moveToDirection, Robot robot, int toCoordinate, int steps){
+    private void coverSegment(Direction moveToDirection, Robot robot, int steps){
         if (moveToDirection != null) {
             while (!robot.getDirection().equals(moveToDirection)) {
                 robot.turnLeft();
             }
-            //int steps = numberOfSteps(toCoordinate, robot.getX());
             for (int i = steps; i > 0; i--) {
                 robot.stepForward();
             }
@@ -50,7 +33,7 @@ public class RobotRoute {
     }
 
     private Direction getDirectionsX(int toX, int curX) {
-        if
+//        if
         return (toX < curX ? Direction.LEFT : (toX > curX ? Direction.RIGHT : null));
     }
 
