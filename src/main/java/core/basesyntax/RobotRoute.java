@@ -8,12 +8,7 @@ public class RobotRoute {
             return;
         }
 
-//        Direction moveToDirection = getDirectionsX(toX, robot.getX());
-//        int steps = numberOfSteps(toX, robot.getX());
         coverSegment(getDirectionsX(toX, robot.getX()), robot, numberOfSteps(toX, robot.getX()));
-
-//        moveToDirection = getDirectionsY(toY, robot.getY());
-//        steps = numberOfSteps(toY, robot.getY());
         coverSegment(getDirectionsY(toY, robot.getY()), robot, numberOfSteps(toY, robot.getY()));
     }
 
@@ -33,7 +28,6 @@ public class RobotRoute {
     }
 
     private Direction getDirectionsX(int toX, int curX) {
-//        if
         return (toX < curX ? Direction.LEFT : (toX > curX ? Direction.RIGHT : null));
     }
 
