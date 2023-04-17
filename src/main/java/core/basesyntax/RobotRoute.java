@@ -1,9 +1,7 @@
 package core.basesyntax;
-import java.lang.Math;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
         if (robot.getX() == toX && robot.getY() == toY) {
             return;
         }
@@ -12,7 +10,7 @@ public class RobotRoute {
         coverSegment(getDirectionsY(toY, robot.getY()), robot, numberOfSteps(toY, robot.getY()));
     }
 
-    private void coverSegment(Direction moveToDirection, Robot robot, int steps){
+    private void coverSegment(Direction moveToDirection, Robot robot, int steps) {
         if (moveToDirection != null) {
             while (!robot.getDirection().equals(moveToDirection)) {
                 robot.turnLeft();
