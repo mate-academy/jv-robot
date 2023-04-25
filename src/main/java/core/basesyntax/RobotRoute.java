@@ -2,59 +2,30 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        while (robot.getX() > toX) {
-            if (robot.getDirection() != Direction.RIGHT) {
+        if (toX > robot.getX()) {
+            while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
-            robot.stepForward();
         }
-
-        while (robot.getX() < toX) {
-            if (robot.getDirection() != Direction.RIGHT) {
+        if (toX < robot.getX()) {
+            while (robot.getDirection() != Direction.LEFT) {
                 robot.turnRight();
             }
+        }
+        while (toX != robot.getX()) {
             robot.stepForward();
         }
-
-        while (robot.getX() > toX) {
-            if (robot.getDirection() != Direction.LEFT) {
-                robot.turnLeft();
-            }
-            robot.stepForward();
-        }
-
-        while (robot.getX() < toX) {
-            if (robot.getDirection() != Direction.LEFT) {
-                robot.turnLeft();
-            }
-            robot.stepForward();
-        }
-
-        while (robot.getY() > toY) {
-            if (robot.getDirection() != Direction.RIGHT) {
+        if (toY > robot.getY()) {
+            while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             }
-            robot.stepForward();
         }
-
-        while (robot.getY() < toY) {
-            if (robot.getDirection() != Direction.RIGHT) {
+        if (toY < robot.getY()) {
+            while (robot.getDirection() != Direction.DOWN) {
                 robot.turnRight();
             }
-            robot.stepForward();
         }
-
-        while (robot.getY() > toY) {
-            if (robot.getDirection() != Direction.LEFT) {
-                robot.turnLeft();
-            }
-            robot.stepForward();
-        }
-
-        while (robot.getY() < toY) {
-            if (robot.getDirection() != Direction.LEFT) {
-                robot.turnLeft();
-            }
+        while (toY != robot.getY()) {
             robot.stepForward();
         }
     }
