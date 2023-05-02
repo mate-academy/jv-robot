@@ -41,7 +41,7 @@ public class RobotRoute {
                 robotDirection = robot.getDirection();
             }
         } else {
-            while (robotDirection != Direction.UP){
+            while (robotDirection != Direction.UP) {
                 robot.turnRight();
                 robotDirection = robot.getDirection();
             }
