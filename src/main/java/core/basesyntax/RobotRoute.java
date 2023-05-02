@@ -12,6 +12,7 @@ public class RobotRoute {
         moveToX(toX);
         moveToY(toY);
     }
+
     public void moveToX(int toX) {
         robotX = robot.getX();
         robotDirection = robot.getDirection();
@@ -35,19 +36,19 @@ public class RobotRoute {
     public void moveToY(int toY) {
         robotY = robot.getY();
         if (toY < robotY) {
-            while(robotDirection != Direction.DOWN) {
+            while (robotDirection != Direction.DOWN) {
                 robot.turnLeft();
                 robotDirection = robot.getDirection();
             }
         } else {
-            while(robotDirection != Direction.UP) {
+            while (robotDirection != Direction.UP){
                 robot.turnRight();
                 robotDirection = robot.getDirection();
             }
         }
-        while(toY != robotY) {
-           robot.stepForward();
-           robotY = robot.getY();
+        while (toY != robotY) {
+            robot.stepForward();
+            robotY = robot.getY();
         }
     }
 }
