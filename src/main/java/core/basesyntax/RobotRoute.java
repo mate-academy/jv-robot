@@ -14,24 +14,24 @@ public class RobotRoute {
 
         if (startX > toX && startDirect == Direction.UP) {
             robot.turnLeft();
-            }
+        }
         if (startX > toX && startDirect == Direction.DOWN) {
             robot.turnRight();
         }
         if (startX > toX && startDirect == Direction.RIGHT) {
-                robot.turnLeft();
-                robot.turnLeft();
-            }
+            robot.turnLeft();
+            robot.turnLeft();
+        }
         if (startX < toX && startDirect == Direction.UP) {
-                robot.turnRight();
-            }
+            robot.turnRight();
+        }
         if (startX < toX && startDirect == Direction.DOWN) {
             robot.turnRight();
         }
         if (startX < toX && startDirect == Direction.LEFT) {
-                robot.turnRight();
-                robot.turnRight();
-            }
+            robot.turnRight();
+            robot.turnRight();
+        }
     }
 
     private void changeToCorrectDirectionByY(Robot robot, int toY) {
