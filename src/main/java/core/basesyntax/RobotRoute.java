@@ -12,23 +12,23 @@ public class RobotRoute {
         Direction startDirect = robot.getDirection();
         int startX = robot.getX();
 
-        if(startX > toX && startDirect == Direction.UP){
+        if (startX > toX && startDirect == Direction.UP) {
             robot.turnLeft();
             }
-        if(startX > toX && startDirect == Direction.DOWN){
+        if (startX > toX && startDirect == Direction.DOWN) {
             robot.turnRight();
         }
-        if(startX > toX && startDirect == Direction.RIGHT){
+        if (startX > toX && startDirect == Direction.RIGHT) {
                 robot.turnLeft();
                 robot.turnLeft();
             }
-        if(startX < toX && startDirect == Direction.UP){
+        if (startX < toX && startDirect == Direction.UP) {
                 robot.turnRight();
             }
-        if(startX < toX && startDirect == Direction.DOWN){
+        if (startX < toX && startDirect == Direction.DOWN) {
             robot.turnRight();
         }
-        if(startX < toX && startDirect == Direction.LEFT){
+        if (startX < toX && startDirect == Direction.LEFT) {
                 robot.turnRight();
                 robot.turnRight();
             }
@@ -38,20 +38,20 @@ public class RobotRoute {
         Direction startDirect = robot.getDirection();
         int startY = robot.getY();
 
-        if(startY > toY && startDirect == Direction.LEFT) {
+        if (startY > toY && startDirect == Direction.LEFT) {
             robot.turnLeft();
         }
-        if(startY > toY && startDirect == Direction.RIGHT) {
+        if (startY > toY && startDirect == Direction.RIGHT) {
             robot.turnRight();
         }
         if (startY > toY && startDirect == Direction.UP) {
             robot.turnRight();
             robot.turnRight();
         }
-        if(startY < toY && startDirect == Direction.LEFT) {
+        if (startY < toY && startDirect == Direction.LEFT) {
             robot.turnRight();
         }
-        if(startY < toY && startDirect == Direction.RIGHT) {
+        if (startY < toY && startDirect == Direction.RIGHT) {
             robot.turnLeft();
         }
     }
