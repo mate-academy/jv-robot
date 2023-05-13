@@ -12,20 +12,23 @@ public class RobotRoute {
         Direction startDirect = robot.getDirection();
         int startX = robot.getX();
 
-        if(startX > toX && startDirect == Direction.UP) {
-              robot.turnLeft();
+        if(startX > toX && startDirect == Direction.UP){
+            robot.turnLeft();
             }
-        else if(startX > toX && startDirect == Direction.DOWN) {
+        if(startX > toX && startDirect == Direction.DOWN){
             robot.turnRight();
         }
-        else if(startX > toX && startDirect == Direction.RIGHT) {
+        if(startX > toX && startDirect == Direction.RIGHT){
                 robot.turnLeft();
                 robot.turnLeft();
             }
-        else if(startX < toX && startDirect == Direction.UP || startDirect == Direction.DOWN) {
+        if(startX < toX && startDirect == Direction.UP){
                 robot.turnRight();
             }
-        else if(startX < toX && startDirect == Direction.LEFT) {
+        if(startX < toX && startDirect == Direction.DOWN){
+            robot.turnRight();
+        }
+        if(startX < toX && startDirect == Direction.LEFT){
                 robot.turnRight();
                 robot.turnRight();
             }
@@ -38,17 +41,17 @@ public class RobotRoute {
         if(startY > toY && startDirect == Direction.LEFT) {
             robot.turnLeft();
         }
-        else if(startY > toY && startDirect == Direction.RIGHT) {
+        if(startY > toY && startDirect == Direction.RIGHT) {
             robot.turnRight();
         }
-        else if (startY > toY && startDirect == Direction.UP) {
+        if (startY > toY && startDirect == Direction.UP) {
             robot.turnRight();
             robot.turnRight();
         }
-        else if(startY < toY && startDirect == Direction.LEFT) {
+        if(startY < toY && startDirect == Direction.LEFT) {
             robot.turnRight();
         }
-        else if(startY < toY && startDirect == Direction.RIGHT) {
+        if(startY < toY && startDirect == Direction.RIGHT) {
             robot.turnLeft();
         }
     }
