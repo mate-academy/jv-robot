@@ -43,25 +43,25 @@ public class RobotRoute {
     }
 
     private void turnRobotRight(Robot robot) {
-        while (robot.getDirection() != Direction.RIGHT ) {
+        while (robot.getDirection() != Direction.RIGHT) {
             robot.turnRight();
         }
     }
 
     private void turnRobotLeft(Robot robot) {
-        while (robot.getDirection() != Direction.LEFT ) {
+        while (robot.getDirection() != Direction.LEFT) {
             robot.turnLeft();
         }
     }
 
     private void turnRobotUp(Robot robot) {
-        while (robot.getDirection() != Direction.UP ) {
+        while (robot.getDirection() != Direction.UP) {
             robot.turnLeft();
         }
     }
 
     private void turnRobotDown(Robot robot) {
-        while (robot.getDirection() != Direction.DOWN ) {
+        while (robot.getDirection() != Direction.DOWN) {
             robot.turnRight();
         }
     }
