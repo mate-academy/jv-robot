@@ -3,27 +3,67 @@ package core.basesyntax;
 public class RobotRoute {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        int x = robot.getX();
-        int y = robot.getY();
-
-        while (x != toX || y != toY) {
-            if (x < toX) {
-                robot.turnRight();
+        if (toX > robot.getX() && toY > robot.getY()) {
+            turnRobotRight(robot);
+            for (int i = robot.getX(); i < toX; i++) {
                 robot.stepForward();
-                x++;
-            } else if (x > toX) {
-                robot.turnLeft();
-                robot.stepForward();
-                x--;
-            } else if (y < toY) {
-                robot.stepForward();
-                y++;
-            } else if (y > toY) {
-                robot.turnRight();
-                robot.turnRight();
-                robot.stepForward();
-                y--;
             }
+            turnRobotUp(robot);
+            for (int i = robot.getY(); i < toY; i++) {
+                robot.stepForward();
+            }
+        } else if (toX < robot.getX() && toY < robot.getY()) {
+            turnRobotLeft(robot);
+            for (int i = robot.getX(); i > toX; i--) {
+                robot.stepForward();
+            }
+            turnRobotDown(robot);
+            for (int i = robot.getY(); i > toY; i--) {
+                robot.stepForward();
+            }
+        } else if (toX >= robot.getX() && toY <= robot.getY()) {
+            turnRobotRight(robot);
+            for (int i = robot.getX(); i < toX; i++) {
+                robot.stepForward();
+            }
+            turnRobotDown(robot);
+            for (int i = robot.getY(); i > toY; i--) {
+                robot.stepForward();
+            }
+        } else if (toX <= robot.getX() && toY >= robot.getY()) {
+            turnRobotLeft(robot);
+            for (int i = robot.getX(); i > toX; i--) {
+                robot.stepForward();
+            }
+            turnRobotUp(robot);
+            for (int i = robot.getY(); i < toY; i++) {
+                robot.stepForward();
+            }
+        }
+        System.out.println(robot.getX() + " " + robot.getY());
+    }
+
+    private void turnRobotRight(Robot robot) {
+        while (robot.getDirection() != Direction.RIGHT) {
+            robot.turnRight();
+        }
+    }
+
+    private void turnRobotLeft(Robot robot) {
+        while (robot.getDirection() != Direction.LEFT) {
+            robot.turnLeft();
+        }
+    }
+
+    private void turnRobotUp(Robot robot) {
+        while (robot.getDirection() != Direction.UP) {
+            robot.turnLeft();
+        }
+    }
+
+    private void turnRobotDown(Robot robot) {
+        while (robot.getDirection() != Direction.DOWN) {
+            robot.turnRight();
         }
     }
 }
