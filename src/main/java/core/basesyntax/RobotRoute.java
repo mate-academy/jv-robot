@@ -14,14 +14,14 @@ public class RobotRoute {
             }
         }
         if (robot.getX() > toX) {
-                while (robot.getDirection() != Direction.LEFT) {
-                    robot.turnLeft();
-                }
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnLeft();
+            }
         }
         while (robot.getX() != toX) {
             robot.stepForward();
         }
-        if (robot.getY() > toY ) {
+        if (robot.getY() > toY) {
             while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             }
