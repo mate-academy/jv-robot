@@ -23,46 +23,64 @@ public class RobotRoute {
 
     private void setXAxisDirection() {
         if (toX > robot.getX()) {
-            if (robot.getDirection() == Direction.LEFT) {
-                robot.turnRight();
-                robot.turnRight();
-            }
-            if (robot.getDirection() == Direction.UP) {
-                robot.turnRight();
-            } else if (robot.getDirection() == Direction.DOWN) {
-                robot.turnLeft();
+            switch (robot.getDirection()) {
+                case LEFT:
+                    robot.turnRight();
+                    robot.turnRight();
+                    break;
+                case UP:
+                    robot.turnRight();
+                    break;
+                case DOWN:
+                    robot.turnLeft();
+                    break;
+                default:
             }
         } else if (toX < robot.getX()) {
-            if (robot.getDirection() == Direction.RIGHT) {
-                robot.turnRight();
-                robot.turnRight();
-            }
-            if (robot.getDirection() == Direction.UP) {
-                robot.turnLeft();
-            } else if (robot.getDirection() == Direction.DOWN) {
-                robot.turnRight();
+            switch (robot.getDirection()) {
+                case RIGHT:
+                    robot.turnRight();
+                    robot.turnRight();
+                    break;
+                case UP:
+                    robot.turnLeft();
+                    break;
+                case DOWN:
+                    robot.turnRight();;
+                    break;
+                default:
             }
         }
     }
 
     private void setYAxisDirection() {
         if (toY > robot.getY()) {
-            if (robot.getDirection() == Direction.DOWN) {
-                robot.turnRight();
-                robot.turnRight();
-            } else if (robot.getDirection() == Direction.LEFT) {
-                robot.turnRight();
-            } else if (robot.getDirection() == Direction.RIGHT) {
-                robot.turnLeft();
+            switch (robot.getDirection()) {
+                case DOWN:
+                    robot.turnRight();
+                    robot.turnRight();
+                    break;
+                case LEFT:
+                    robot.turnRight();
+                    break;
+                case RIGHT:
+                    robot.turnLeft();
+                    break;
+                default:
             }
         } else if (toY < robot.getY()) {
-            if (robot.getDirection() == Direction.UP) {
-                robot.turnRight();
-                robot.turnRight();
-            } else if (robot.getDirection() == Direction.LEFT) {
-                robot.turnLeft();
-            } else if (robot.getDirection() == Direction.RIGHT) {
-                robot.turnRight();
+            switch (robot.getDirection()) {
+                case UP:
+                    robot.turnRight();
+                    robot.turnRight();
+                    break;
+                case LEFT:
+                    robot.turnLeft();
+                    break;
+                case RIGHT:
+                    robot.turnRight();
+                    break;
+                default:
             }
         }
     }
