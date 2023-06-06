@@ -6,8 +6,9 @@ public class RobotRoute {
         moveToY(robot, toY);
 
     }
+
     public void moveToX(Robot robot, int toX) {
-        if(robot.getX() < toX){
+        if (robot.getX() < toX) {
             while (!robot.getDirection().equals(Direction.RIGHT)) {
                 robot.turnRight();
             }
@@ -15,7 +16,7 @@ public class RobotRoute {
                 robot.stepForward();
             }
         }
-        if(robot.getX() > toX){
+        if (robot.getX() > toX) {
             while (!robot.getDirection().equals(Direction.LEFT)) {
                 robot.turnLeft();
             }
@@ -24,9 +25,10 @@ public class RobotRoute {
             }
         }
     }
+
     public void moveToY(Robot robot, int toY) {
 
-        if(robot.getY() < toY){
+        if (robot.getY() < toY) {
             while (!robot.getDirection().equals(Direction.UP)) {
                 robot.turnLeft();
             }
@@ -34,7 +36,7 @@ public class RobotRoute {
                 robot.stepForward();
             }
         }
-        if(robot.getY() > toY){
+        if (robot.getY() > toY) {
             while (!robot.getDirection().equals(Direction.DOWN)) {
                 robot.turnLeft();
             }
