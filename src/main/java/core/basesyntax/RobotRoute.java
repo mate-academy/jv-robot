@@ -24,6 +24,8 @@ public class RobotRoute {
                         robot.turnLeft();
                     }
                     break;
+                default:
+                    break;
             }
         } else if (initialX > toX) {
             switch (robot.getDirection()) {
@@ -39,6 +41,8 @@ public class RobotRoute {
                     robot.turnRight();
                     break;
                 case LEFT:
+                    break;
+                default:
                     break;
             }
         }
@@ -64,6 +68,8 @@ public class RobotRoute {
                 case LEFT:
                     robot.turnRight();
                     break;
+                default:
+                    break;
             }
         } else if (initialY - toY > 0) {
             switch (robot.getDirection()) {
@@ -79,6 +85,8 @@ public class RobotRoute {
                     break;
                 case LEFT:
                     robot.turnLeft();
+                    break;
+                default:
                     break;
             }
         }
