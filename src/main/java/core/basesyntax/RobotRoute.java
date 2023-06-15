@@ -6,49 +6,35 @@ public class RobotRoute {
 
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
-        int currentX = robot.getX();
-        int currentY = robot.getY();
-
-        System.out.println("Move robot from [" + currentX + ", " + currentY
+        System.out.println("Move robot from [" + robot.getX() + ", " + robot.getY()
                 + "] to [" + toX + ", " + toY + "]");
 
-        currentX = moveByAxis(currentX, currentY, Axis.AXIS_X, toX);
-        currentY = moveByAxis(currentX, currentY, Axis.AXIS_Y, toY);
+        moveByAxis(robot, Axis.AXIS_X, toX);
+        moveByAxis(robot, Axis.AXIS_Y, toY);
 
-        System.out.println("Final position: [" + currentX + ", " + currentY + "]");
+        System.out.println("Final position: [" + robot.getX() + ", " + robot.getY() + "]");
     }
 
-    private static int moveByAxis(int currentX, int currentY, Axis axis, int finalPosition) {
+    private static void moveByAxis(Robot robot, Axis axis, int finalPosition) {
         Direction direction;
         int shift;
         if (axis == Axis.AXIS_X) {
-            direction = (currentX >= finalPosition) ? Direction.LEFT : Direction.RIGHT;
-            shift = Math.abs(currentX - finalPosition);
+            direction = (robot.getX() >= finalPosition) ? Direction.LEFT : Direction.RIGHT;
+            shift = Math.abs(robot.getX() - finalPosition);
         } else {
-            direction = (currentY >= finalPosition) ? Direction.DOWN : Direction.UP;
-            shift = Math.abs(currentY - finalPosition);
+            direction = (robot.getY() >= finalPosition) ? Direction.DOWN : Direction.UP;
+            shift = Math.abs(robot.getY() - finalPosition);
+        }
+
+        while (!direction.equals(robot.getDirection())) {
+            robot.turnLeft();
         }
 
         for (int i = 0; i < shift; i++) {
-            switch (direction) {
-                case UP:
-                    currentY++;
-                    break;
-                case DOWN:
-                    currentY--;
-                    break;
-                case LEFT:
-                    currentX--;
-                    break;
-                case RIGHT:
-                    currentX++;
-                    break;
-                default:
-                    break;
-            }
-            System.out.println("One step " + direction + ": [" + currentX + ", " + currentY + "]");
+            robot.stepForward();
+            System.out.println("One step " + direction + ": ["
+                    + robot.getX() + ", " + robot.getY() + "]");
         }
-        return (axis == Axis.AXIS_X) ? currentX : currentY;
     }
 
     public static void main(String[] args) {
