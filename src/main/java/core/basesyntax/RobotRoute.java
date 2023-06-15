@@ -9,7 +9,8 @@ public class RobotRoute {
         int currentX = robot.getX();
         int currentY = robot.getY();
 
-        System.out.println("Move robot from [" + currentX + ", " + currentY + "] to [" + toX + ", " + toY +"]");
+        System.out.println("Move robot from [" + currentX + ", " + currentY
+                + "] to [" + toX + ", " + toY + "]");
 
         currentX = moveByAxis(currentX, currentY, Axis.AXIS_X, toX);
         currentY = moveByAxis(currentX, currentY, Axis.AXIS_Y, toY);
@@ -42,6 +43,8 @@ public class RobotRoute {
                 case RIGHT:
                     currentX++;
                     break;
+                default:
+                    break;
             }
             System.out.println("One step " + direction + ": [" + currentX + ", " + currentY + "]");
         }
@@ -52,17 +55,18 @@ public class RobotRoute {
         // the area is from -50 to 50 - according to your tests, it should be enough
         int areaLimit = 50;
 
-        int rDirection = new Random().nextInt(4);
+        int direction = new Random().nextInt(4);
 
-        Robot robot = new Robot(Direction.values()[rDirection], getRandomInt(areaLimit), getRandomInt(areaLimit));
+        Robot robot = new Robot(Direction.values()[direction],
+                getRandomInt(areaLimit), getRandomInt(areaLimit));
 
         RobotRoute route = new RobotRoute();
         route.moveRobot(robot, getRandomInt(areaLimit), getRandomInt(areaLimit));
     }
 
     private static int getRandomInt(int areaLimit) {
-        int aSize = (areaLimit + 1) * 2;
+        int size = (areaLimit + 1) * 2;
         int shift = areaLimit - 1;
-        return new Random().nextInt(aSize) - shift;
+        return new Random().nextInt(size) - shift;
     }
 }
