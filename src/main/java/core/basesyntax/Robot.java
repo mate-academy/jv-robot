@@ -61,7 +61,7 @@ public class Robot {
         }
     }
 
-    public void stepForward() {
+    public void stepForward(int toX) {
         switch (direction) {
             case UP:
                 coordinateY++;
