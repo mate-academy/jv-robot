@@ -22,6 +22,13 @@ public class Robot {
     public int getY() {
         return coordinateY;
     }
+    private void updateDirection (Direction newDirection) {
+        direction = newDirection;
+    }
+    private void updateCoordinates (int x, int y) {
+        coordinateX = x;
+        coordinateY = y;
+    }
 
     public void turnLeft() {
         switch (direction) {
