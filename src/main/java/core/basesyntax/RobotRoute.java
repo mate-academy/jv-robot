@@ -21,8 +21,8 @@ public class RobotRoute {
                     robot.turnRight();
                 }
                 robot.stepForward();
-                } else {
-            while (robot.getDirection() != Direction.DOWN) {
+            } else {
+                while (robot.getDirection() != Direction.DOWN) {
                     robot.turnRight();
                 }
                 robot.stepForward();
