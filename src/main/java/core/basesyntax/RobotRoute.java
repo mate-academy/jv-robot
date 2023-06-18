@@ -18,8 +18,8 @@ public class RobotRoute {
                 robot.stepForward();
                 currentY++;
             } else if (currentY > toY) {
-                robot.turnLeft();
-                robot.turnLeft();
+                robot.turnRight();
+                robot.turnRight();
                 robot.stepForward();
                 currentY--;
             }
