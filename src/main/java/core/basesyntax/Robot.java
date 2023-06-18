@@ -75,8 +75,6 @@ public class Robot {
             case RIGHT:
                 coordinateX++;
                 break;
-            default:
-                break;
         }
     }
 }
