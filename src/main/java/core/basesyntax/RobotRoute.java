@@ -2,7 +2,7 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        System.out.println(robot.getDirection());
+        System.out.print(robot.getDirection() + "\n");
         moveRobotToX(robot, toX, toY);
         moveRobotToy(robot, toX, toY);
     }
