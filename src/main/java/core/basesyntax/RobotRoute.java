@@ -46,7 +46,7 @@ public class RobotRoute {
 
             if (Direction.DOWN.equals(robot.getDirection())) {
                 robot.turnRight();
-                for (int x = robot.getX(); x > toX; x--) {
+                for (int x1 = robot.getX(); x1 > toX; x1--) {
                     robot.stepForward();
                 }
             }
