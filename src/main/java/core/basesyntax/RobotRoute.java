@@ -2,36 +2,32 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        changeMoveDirrection(robot, toX, toY);
-        while(true){
+        changeMoveDirection(robot, toX, toY);
+        while (true) {
             robot.stepForward();
-            if(robot.getX() == toX || robot.getY() == toY) {
+            if (robot.getX() == toX || robot.getY() == toY) {
                 break;
             }
         }
-        changeMoveDirrection(robot, toX, toY);
-        while(true){
+        changeMoveDirection(robot, toX, toY);
+        while ((robot.getX() != toX) || (robot.getY() != toY)) {
             robot.stepForward();
-            if((robot.getX() == toX) && (robot.getY() == toY)) {
-                break;
-            }
         }
     }
 
-    public void changeMoveDirrection(Robot robot, int toX, int toY){
-        if ((robot.getX() > toX) && (robot.getY() > toY)) {
+    /* turn to right direction if need direction ↖ or ↙,
+    ↗ or ↘,
+    ↓, ↑, ➝, ←
+    */
+    public void changeMoveDirection(Robot robot, int toX, int toY) {
+
+        if ((robot.getX() > toX) && (robot.getY() > toY)
+                || (robot.getX() > toX) && (robot.getY() < toY)) {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnRight();
             }
-        } else if ((robot.getX() < toX) && (robot.getY() < toY)) {
-            while (robot.getDirection() != Direction.RIGHT) {
-                robot.turnRight();
-            }
-        } else if ((robot.getX() > toX) && (robot.getY() < toY)) {
-            while (robot.getDirection() != Direction.LEFT) {
-                robot.turnRight();
-            }
-        } else if ((robot.getX() < toX) && (robot.getY() > toY)) {
+        } else if ((robot.getX() < toX) && (robot.getY() < toY)
+                || (robot.getX() < toX) && (robot.getY() > toY)) {
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
