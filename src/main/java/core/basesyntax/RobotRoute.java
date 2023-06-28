@@ -10,7 +10,6 @@ public class RobotRoute {
             }
         }
         if (toX > robot.getX()) {
-
             if (Direction.UP.equals(robot.getDirection())) {
                 robot.turnRight();
             }
@@ -21,7 +20,6 @@ public class RobotRoute {
             for (int x = robot.getX(); x < toX; x++) {
                 robot.stepForward();
             }
-
         }
 
         if (toX < robot.getX()) {
@@ -43,16 +41,13 @@ public class RobotRoute {
                     robot.stepForward();
                 }
             }
-
             if (Direction.DOWN.equals(robot.getDirection())) {
                 robot.turnRight();
                 for (int x1 = robot.getX(); x1 > toX; x1--) {
                     robot.stepForward();
                 }
             }
-
         }
-
 
         if (toY < robot.getY()) {
             if (Direction.LEFT.equals(robot.getDirection())) {
@@ -81,7 +76,5 @@ public class RobotRoute {
                 }
             }
         }
-
     }
 }
-
