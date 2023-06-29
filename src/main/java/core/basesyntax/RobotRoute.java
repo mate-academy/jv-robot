@@ -9,6 +9,7 @@ public class RobotRoute {
         turn(robot, directionY);
         move(robot, Math.abs(robot.getY() - toY));
     }
+    
     private void turn(Robot robot, Direction direction) {
         while (robot.getDirection() != direction) {
             robot.turnRight();
