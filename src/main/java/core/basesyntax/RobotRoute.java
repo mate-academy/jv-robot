@@ -9,7 +9,8 @@ public class RobotRoute {
             while (toX != robot.getX()) {
                 robot.stepForward();
             }
-        } else if (toX - robot.getX() < 0) {
+        }
+        else if (toX - robot.getX() < 0) {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
@@ -24,7 +25,8 @@ public class RobotRoute {
             while (toY != robot.getY()) {
                 robot.stepForward();
             }
-        } else if (toY - robot.getY() < 0) {
+        }
+        else if (toY - robot.getY() < 0) {
             while (robot.getDirection() != Direction.DOWN) {
                 robot.turnLeft();
             }
