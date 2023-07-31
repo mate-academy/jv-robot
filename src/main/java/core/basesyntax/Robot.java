@@ -80,7 +80,7 @@ public class Robot {
         }
     }
 
-    public void ifXmoreToX(int toX, int toY) {
+    protected void ifXmoreToX(int toX, int toY) {
         if (getX() > toX) {
             while (!getDirection().equals(Direction.LEFT)) {
                 turnLeft();
@@ -102,7 +102,7 @@ public class Robot {
         }
     }
 
-    public void ifXlessToX(int toX, int toY) {
+    protected void ifXlessToX(int toX, int toY) {
         if (getX() < toX) {
             while (!getDirection().equals(Direction.RIGHT)) {
                 turnRight();
@@ -124,7 +124,7 @@ public class Robot {
         }
     }
 
-    public void ifXequalsToX(int toX, int toY) {
+    protected void ifXequalsToX(int toX, int toY) {
         if (getX() == toX) {
             if (getY() > toY) {
                 while (!getDirection().equals(Direction.DOWN)) {
@@ -144,7 +144,7 @@ public class Robot {
         }
     }
 
-    public void ifYequalsToY(int toX, int toY) {
+    protected void ifYequalsToY(int toX, int toY) {
         if (getY() == toY) {
             if (getX() > toX) {
                 while (!getDirection().equals(Direction.LEFT)) {
