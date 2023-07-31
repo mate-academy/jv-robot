@@ -79,4 +79,26 @@ public class Robot {
                 break;
         }
     }
+
+    public void ifXmoreToX(int toX, int toY) {
+        if(getX() > toX) {
+            while(!getDirection().equals(Direction.LEFT)) {
+                turnLeft();
+            }
+            while(getX() != toX) {
+                stepForward();
+            }
+            if(getY() > toY) {
+                turnLeft();
+                while(getY() != toY) {
+                    stepForward();
+                }
+            } else if (getY() < toY) {
+                turnRight();
+                while(getY() != toY) {
+                    stepForward();
+                }
+            }
+        }
+    }
 }
