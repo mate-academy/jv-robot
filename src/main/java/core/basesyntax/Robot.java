@@ -101,4 +101,26 @@ public class Robot {
             }
         }
     }
+
+    public void ifXlessToX(int toX, int toY) {
+        if(getX() < toX) {
+            while(!getDirection().equals(Direction.RIGHT)) {
+                turnRight();
+            }
+            while(getX() != toX) {
+                stepForward();
+            }
+            if(getY() > toY) {
+                turnRight();
+                while(getY() != toY) {
+                    stepForward();
+                }
+            } else if(getY() < toY) {
+                turnLeft();
+                while(getY() != toY) {
+                    stepForward();
+                }
+            }
+        }
+    }
 }
