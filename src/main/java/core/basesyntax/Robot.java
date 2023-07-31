@@ -143,4 +143,24 @@ public class Robot {
             }
         }
     }
+
+    public void ifYequalsToY(int toX, int toY) {
+        if (getY() == toY) {
+            if (getX() > toX) {
+                while (!getDirection().equals(Direction.LEFT)) {
+                    turnLeft();
+                }
+                while (getX() != toX) {
+                    stepForward();
+                }
+            } else if (getX() < toX) {
+                while (!getDirection().equals(Direction.RIGHT)) {
+                    turnRight();
+                }
+                while (getX() != toX) {
+                    stepForward();
+                }
+            }
+        }
+    }
 }
