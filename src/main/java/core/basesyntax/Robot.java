@@ -79,4 +79,7 @@ public class Robot {
                 break;
         }
     }
+
+    public void setCoordinateX(int i) {
+    }
 }
