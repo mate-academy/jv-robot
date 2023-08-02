@@ -87,4 +87,8 @@ public class Robot {
     public void setCoordinateY(int y) {
         this.coordinateY = y;
     }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
 }
