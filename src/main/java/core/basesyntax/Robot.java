@@ -91,4 +91,9 @@ public class Robot {
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
+
+    public void moveRobot(int toX, int toY) {
+        setCoordinateX(toX);
+        setCoordinateY(toY);
+    }
 }
