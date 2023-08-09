@@ -23,7 +23,7 @@ public class RobotRoute {
         }
     }
 
-    private static void moveByY (Robot robot, int toY) {
+    private static void moveByY(Robot robot, int toY) {
         if (toY < robot.getY()) {
             turn(robot, Direction.DOWN);
         } else {
