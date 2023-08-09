@@ -6,13 +6,13 @@ public class RobotRoute {
         moveRobotByY(robot, toY);
     }
 
-    private static void turnRobot (Robot robot, Direction direction) {
+    private static void turnRobot(Robot robot, Direction direction) {
         while (robot.getDirection() != direction) {
             robot.turnRight();
         }
     }
 
-    private static void moveRobotByX (Robot robot, int toX) {
+    private static void moveRobotByX(Robot robot, int toX) {
         if (robot.getX() > toX) {
             turnRobot(robot, Direction.LEFT);
         } else {
@@ -23,7 +23,7 @@ public class RobotRoute {
         }
     }
 
-    private static void moveRobotByY (Robot robot, int toY) {
+    private static void moveRobotByY(Robot robot, int toY) {
         if (robot.getY() > toY) {
             turnRobot(robot, Direction.DOWN);
         } else {
