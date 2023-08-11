@@ -6,7 +6,8 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
         // next forward on X-axis;
-        directionOfMovement = robot.getX() > toX ?  Direction.LEFT.ordinal() : Direction.RIGHT.ordinal();
+        directionOfMovement = robot.getX() > toX
+                ? Direction.LEFT.ordinal() : Direction.RIGHT.ordinal();
         while (robot.getDirection().ordinal() != directionOfMovement) {
             robot.turnRight();
         }
@@ -14,7 +15,8 @@ public class RobotRoute {
             robot.stepForward();
         }
         // next forward on Y-axis;
-        directionOfMovement = robot.getY() > toY ?  Direction.DOWN.ordinal() : Direction.UP.ordinal();
+        directionOfMovement = robot.getY() > toY
+                ? Direction.DOWN.ordinal() : Direction.UP.ordinal();
         while (robot.getDirection().ordinal() != directionOfMovement) {
             robot.turnRight();
         }
