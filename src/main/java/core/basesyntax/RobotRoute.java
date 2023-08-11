@@ -1,11 +1,10 @@
 package core.basesyntax;
 
 public class RobotRoute {
+    private Direction toDirection;
+
     public void moveRobot(Robot robot, int toX, int toY) {
         boolean isGreaterX = robot.getX() > toX;
-        boolean isGreaterY = robot.getY() > toY;
-        Direction toDirection;
-
         toDirection = isGreaterX ? Direction.LEFT : Direction.RIGHT;
 
         while (!(toDirection.equals(robot.getDirection()))) {
@@ -16,6 +15,7 @@ public class RobotRoute {
             robot.stepForward();
         }
 
+        boolean isGreaterY = robot.getY() > toY;
         toDirection = isGreaterY ? Direction.DOWN : Direction.UP;
 
         while (!(toDirection.equals(robot.getDirection()))) {
