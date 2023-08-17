@@ -7,36 +7,52 @@ public class RobotRoute {
         int y = robot.getY();
         int x = robot.getX();
         Direction direct = robot.getDirection();
+
         // VERTICAL STEPS
         if (toY > y) {
-            while (direct == direct.UP) {
+            while (direct != direct.UP) {
                 robot.turnRight();
+                direct = robot.getDirection();
             }
-            for (int count = 0; count <= toY - y; count++) {
+
+            while (toY != y) {
                 robot.stepForward();
+                y = robot.getY();
             }
+
         } else if (toY < y) {
-            while (direct == direct.DOWN) {
+            while (direct != direct.DOWN) {
                 robot.turnRight();
+                direct = robot.getDirection();
             }
-            for (int count = 0; count <= y - toY; count++) {
+
+            while (toY != y) {
                 robot.stepForward();
+                y = robot.getY();
             }
         }
         //HORIZONTAL STEPS
         if (toX > x) {
-            while (direct == direct.RIGHT) {
+
+            while (direct != direct.RIGHT) {
                 robot.turnRight();
+                direct = robot.getDirection();
             }
-            for (int count = 0; count <= toX - x; count++) {
+
+            while (x != toX) {
                 robot.stepForward();
+                x = robot.getX();
             }
+
         } else if (toX < x) {
-            while (direct == direct.LEFT) {
+            while (direct != direct.LEFT){
                 robot.turnRight();
+                direct = robot.getDirection();
             }
-            for (int count = 0; count <= x - toX; count++) {
+
+            while (x != toX) {
                 robot.stepForward();
+                x = robot.getX();
             }
         }
 
