@@ -2,13 +2,11 @@
 package core.basesyntax;
 
 public class RobotRoute {
-    private Direction directionToX;
-    private Direction directionToY;
 
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
-        directionToX = robot.getX() > toX ? Direction.LEFT : Direction.RIGHT;
-        directionToY = robot.getY() > toY ? Direction.DOWN : Direction.UP;
+        Direction directionToX = robot.getX() > toX ? Direction.LEFT : Direction.RIGHT;
+        Direction directionToY = robot.getY() > toY ? Direction.DOWN : Direction.UP;
         if ((Math.abs(giveNumber(directionToX) - giveNumber(robot.getDirection())) != 2)
                 && ((giveNumber(directionToY) - giveNumber(robot.getDirection()) != 0))) {
             toTurn(giveNumber(robot.getDirection()), giveNumber(directionToX), robot, directionToX);
@@ -59,6 +57,5 @@ public class RobotRoute {
                 robot.turnLeft();
             }
         }
-        return;
     }
 }
