@@ -4,21 +4,20 @@ public class RobotRoute {
 
     public void moveRobot(Robot robot, int toX, int toY) {
 
-        Direction firstRightDirection = (robot.getX() > toX) ? Direction.LEFT : Direction.RIGHT;
-        this.turnOnPosition(robot, firstRightDirection);
+        this.turnOnPosition(robot, robot.getX(), toX, Direction.LEFT, Direction.RIGHT);
         while (robot.getX() != toX) {
             robot.stepForward();
         }
 
-        Direction secondRightDirection = (robot.getY() > toY) ? Direction.DOWN : Direction.UP;
-        this.turnOnPosition(robot, secondRightDirection);
+        this.turnOnPosition(robot, robot.getY(), toY, Direction.DOWN, Direction.UP);
         while (robot.getY() != toY) {
             robot.stepForward();
         }
     }
 
-    private void turnOnPosition(Robot robot, Direction rightDirection) {
+    private void turnOnPosition(Robot robot, int get, int to, Direction directionFirst, Direction directionSecond) {
         Direction currentDirection = robot.getDirection();
+        Direction rightDirection = (get > to) ? directionFirst : directionSecond;
         if (currentDirection == Direction.RIGHT && rightDirection == Direction.DOWN
                 || currentDirection == Direction.DOWN && rightDirection == Direction.LEFT
                 || currentDirection == Direction.LEFT && rightDirection == Direction.UP
