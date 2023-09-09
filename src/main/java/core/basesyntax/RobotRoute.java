@@ -4,21 +4,27 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
         if (robot.getX() > toX) {
-            robot.turnLeft();
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnLeft();
+            }
         } else if (robot.getX() < toX) {
-            robot.turnRight();
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnRight();
+            }
         }
-
         while (robot.getX() != toX) {
             robot.stepForward();
         }
 
         if (robot.getY() > toY) {
-            robot.turnLeft();
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
+            }
         } else if (robot.getY() < toY) {
-            robot.turnRight();
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnRight();
+            }
         }
-
         while (robot.getY() != toY) {
             robot.stepForward();
         }
