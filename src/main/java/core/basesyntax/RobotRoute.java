@@ -2,14 +2,14 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
         int differenceX = Math.abs(robot.getX() - toX);
-        int differenceY = Math.abs(robot.getY() - toY);
 
         changeDiractionX(robot, toX);
         for (int i = 0; i < differenceX; i++) {
             robot.stepForward();
         }
+
+        int differenceY = Math.abs(robot.getY() - toY);
 
         changeDiractionY(robot, toY);
         for (int i = 0; i < differenceY; i++) {
