@@ -18,38 +18,30 @@ public class RobotRoute {
     }
 
     private static void changeDiractionX(Robot robot, int toX) {
-        if (robot.getDirection().equals(Direction.UP) && robot.getX() < toX) {
-            robot.turnRight();
-        } else if (robot.getDirection().equals(Direction.LEFT) && robot.getX() < toX) {
-            robot.turnLeft();
-            robot.turnLeft();
-        } else if (robot.getDirection().equals(Direction.DOWN) && robot.getX() < toX) {
-            robot.turnLeft();
-        } else if (robot.getDirection().equals(Direction.UP) && robot.getX() > toX) {
-            robot.turnLeft();
-        } else if (robot.getDirection().equals(Direction.RIGHT) && robot.getX() > toX) {
-            robot.turnLeft();
-            robot.turnLeft();
-        } else if (robot.getDirection().equals(Direction.DOWN) && robot.getX() > toX) {
-            robot.turnRight();
+        if (robot.getX() < toX) {
+            while (robot.getDirection() != Direction.RIGHT) {
+                robot.turnRight();
+            }
+        }
+
+        if (robot.getX() > toX) {
+            while (robot.getDirection() != Direction.LEFT) {
+                robot.turnLeft();
+            }
         }
     }
 
     private static void changeDiractionY(Robot robot, int toY) {
-        if (robot.getDirection().equals(Direction.UP) && robot.getY() > toY) {
-            robot.turnLeft();
-            robot.turnLeft();
-        } else if (robot.getDirection().equals(Direction.RIGHT) && robot.getY() > toY) {
-            robot.turnRight();
-        } else if (robot.getDirection().equals(Direction.LEFT) && robot.getY() > toY) {
-            robot.turnLeft();
-        } else if (robot.getDirection().equals(Direction.DOWN) && robot.getY() < toY) {
-            robot.turnLeft();
-            robot.turnLeft();
-        } else if (robot.getDirection().equals(Direction.RIGHT) && robot.getY() < toY) {
-            robot.turnLeft();
-        } else if (robot.getDirection().equals(Direction.LEFT) && robot.getY() < toY) {
-            robot.turnRight();
+        if (robot.getY() < toY) {
+            while (robot.getDirection() != Direction.UP) {
+                robot.turnLeft();
+            }
+        }
+
+        if (robot.getY() > toY) {
+            while (robot.getDirection() != Direction.DOWN) {
+                robot.turnLeft();
+            }
         }
     }
 }
