@@ -2,15 +2,16 @@ package core.basesyntax;
 
 public class RobotRoute {
 
-    public void moveRobot (Robot robot, int toX, int toY) {
+    public void moveRobot(Robot robot, int toX, int toY) {
         Direction direction = robot.getDirection();
         int coordinateX = robot.getX();
         int coordinateY = robot.getY();
         setNewDirection(direction,coordinateX,coordinateY,robot,toX,toY);
     }
 
-    public void setNewDirection(Direction direction, int coordinateX, int coordinateY, Robot robot, int toX, int toY){
-        switch(direction){
+    public void setNewDirection(Direction direction, int coordinateX,
+                                int coordinateY, Robot robot, int toX, int toY) {
+        switch (direction) {
             case RIGHT:
                 if (coordinateX < toX) {
                     goToCoordinate(robot, toX - coordinateX, toX, toY);
@@ -22,12 +23,12 @@ public class RobotRoute {
                     goToCoordinate(robot, toX - coordinateX, toX, toY);
                     break;
                 }
-                if (coordinateY < toY){
+                if (coordinateY < toY) {
                     robot.turnLeft();
                     goToCoordinate(robot, toY - coordinateY, toX, toY);
                     break;
                 }
-                if (coordinateY > toY){
+                if (coordinateY > toY) {
                     robot.turnRight();
                     goToCoordinate(robot, toY - coordinateY, toX, toY);
                     break;
@@ -43,12 +44,12 @@ public class RobotRoute {
                     goToCoordinate(robot, toX - coordinateX, toX, toY);
                     break;
                 }
-                if (coordinateY < toY){
+                if (coordinateY < toY) {
                     robot.turnRight();
                     goToCoordinate(robot, toY - coordinateY, toX, toY);
                     break;
                 }
-                if (coordinateY>toY){
+                if (coordinateY > toY) {
                     robot.turnLeft();
                     goToCoordinate(robot, toY - coordinateY, toX, toY);
                     break;
@@ -64,11 +65,11 @@ public class RobotRoute {
                     goToCoordinate(robot, toX - coordinateX, toX, toY);
                     break;
                 }
-                if (coordinateY < toY){
+                if (coordinateY < toY) {
                     goToCoordinate(robot, toY - coordinateY, toX, toY);
                     break;
                 }
-                if (coordinateY > toY){
+                if (coordinateY > toY) {
                     robot.turnRight();
                     robot.turnRight();
                     goToCoordinate(robot, toY - coordinateY, toX, toY);
@@ -85,11 +86,11 @@ public class RobotRoute {
                     goToCoordinate(robot, toX - coordinateX, toX, toY);
                     break;
                 }
-                if (coordinateY > toY){
+                if (coordinateY > toY) {
                     goToCoordinate(robot, toY - coordinateY, toX, toY);
                     break;
                 }
-                if (coordinateY < toY){
+                if (coordinateY < toY) {
                     robot.turnRight();
                     robot.turnRight();
                     goToCoordinate(robot, toY - coordinateY, toX, toY);
@@ -102,9 +103,9 @@ public class RobotRoute {
         }
     }
 
-    public void goToCoordinate (Robot robot, int step, int toX, int toY){
+    public void goToCoordinate(Robot robot, int step, int toX, int toY) {
         step = Math.abs(step);
-        for (int i = 0; i < step; i++){
+        for (int i = 0; i < step; i++) {
             robot.stepForward();
         }
         moveRobot(robot,toX,toY);
