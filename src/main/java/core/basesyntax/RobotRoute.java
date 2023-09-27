@@ -15,7 +15,7 @@ public class RobotRoute {
         }
     }
 
-    public void chooseDirectionX(Robot robot, int toX) {
+    private void chooseDirectionX(Robot robot, int toX) {
         // X
         if (robot.getX() < toX) {
             // if myX < toX | turn RIGHT
@@ -30,7 +30,7 @@ public class RobotRoute {
         }
     }
 
-    public void chooseDirectionY(Robot robot, int toY) {
+    private void chooseDirectionY(Robot robot, int toY) {
         // Y
         if (robot.getY() > toY) {
             // if myY > toY | turn DOWN
