@@ -6,7 +6,7 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
         searchY(robot, toY);
-        searchX(robot, toX);
+        searchX(robot, toX) ;
     }
 
     private void searchY(Robot robot, int toY) {
