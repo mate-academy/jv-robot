@@ -2,7 +2,6 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
         while (robot.getX() != toX || robot.getY() != toY) {
             int dx = toX - robot.getX();
             int dy = toY - robot.getY();
