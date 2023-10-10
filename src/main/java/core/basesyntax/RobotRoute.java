@@ -14,6 +14,8 @@ public class RobotRoute {
                 case DOWN:
                     robot.turnRight();
                     break;
+                default:
+                    break;
             }
             while (robot.getX() != toX) {
                 robot.stepForward();
@@ -29,6 +31,8 @@ public class RobotRoute {
                     break;
                 case UP:
                     robot.turnRight();
+                    break;
+                default:
                     break;
             }
             while (robot.getX() != toX) {
@@ -47,6 +51,8 @@ public class RobotRoute {
                 case RIGHT:
                     robot.turnRight();
                     break;
+                default:
+                    break;
             }
             while (robot.getY() != toY) {
                 robot.stepForward();
@@ -62,6 +68,8 @@ public class RobotRoute {
                     break;
                 case RIGHT:
                     robot.turnLeft();
+                    break;
+                default:
                     break;
             }
             while (robot.getY() != toY) {
