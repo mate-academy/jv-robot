@@ -79,4 +79,23 @@ public class Robot {
                 break;
         }
     }
+
+    public void stepBack() {
+        switch (direction) {
+            case UP:
+                coordinateY--;
+                break;
+            case LEFT:
+                coordinateX++;
+                break;
+            case DOWN:
+                coordinateY++;
+                break;
+            case RIGHT:
+                coordinateX--;
+                break;
+            default:
+                break;
+        }
+    }
 }
