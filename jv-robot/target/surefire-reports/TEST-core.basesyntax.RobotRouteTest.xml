@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="core.basesyntax.RobotRouteTest" time="59.919" tests="13" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="c:\Users\kaste\projects\mateAc\jv-robot\target\test-classes;c:\Users\kaste\projects\mateAc\jv-robot\target\classes;C:\Users\kaste\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\kaste\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="America/Edmonton"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Users\kaste\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.7.7-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\kaste\AppData\Local\Temp\surefire4971480702882753944\surefirebooter-20230918190717878_3.jar C:\Users\kaste\AppData\Local\Temp\surefire4971480702882753944 2023-09-18T19-07-17_669-jvmRun1 surefire-20230918190717878_1tmp surefire_0-20230918190717878_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="c:\Users\kaste\projects\mateAc\jv-robot\target\test-classes;c:\Users\kaste\projects\mateAc\jv-robot\target\classes;C:\Users\kaste\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\kaste\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\kaste"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-04-18"/>
+    <property name="java.home" value="C:\Users\kaste\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.7.7-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="c:\Users\kaste\projects\mateAc\jv-robot"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\kaste\AppData\Local\Temp\surefire4971480702882753944\surefirebooter-20230918190717878_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.7+7"/>
+    <property name="user.name" value="kaste"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.7+7"/>
+    <property name="localRepository" value="C:\Users\kaste\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\kaste\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.7"/>
+    <property name="user.dir" value="c:\Users\kaste\projects\mateAc\jv-robot"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\kaste\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.7.7-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\kaste\apache-maven-3.9.3\bin;C:\Program Files\Java\jdk-20\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Users\kaste\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.7.7-hotspot\bin;C:\Users\kaste\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kaste\AppData\Local\Programs\Python\Python311\;C:\Users\kaste\AppData\Local\Microsoft\WindowsApps;C:\Users\kaste\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.7+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="goFromThirdQuadrantToFirst" classname="core.basesyntax.RobotRouteTest" time="1.417"/>
+  <testcase name="goFromSecondQuadrantToFourth" classname="core.basesyntax.RobotRouteTest" time="1.59"/>
+  <testcase name="goFromThirdQuadrantToFourth" classname="core.basesyntax.RobotRouteTest" time="2.8"/>
+  <testcase name="goFromFourthQuadrantToFirst" classname="core.basesyntax.RobotRouteTest" time="5.722"/>
+  <testcase name="goFromFourthQuadrantToThird" classname="core.basesyntax.RobotRouteTest" time="6.986"/>
+  <testcase name="goFromThirdQuadrantToSecond" classname="core.basesyntax.RobotRouteTest" time="6.101"/>
+  <testcase name="goFromFirstQuadrantToThird" classname="core.basesyntax.RobotRouteTest" time="10.355"/>
+  <testcase name="robotShouldStayAtTheSamePosition" classname="core.basesyntax.RobotRouteTest" time="0.0"/>
+  <testcase name="goFromFirstQuadrantToFourth" classname="core.basesyntax.RobotRouteTest" time="3.258"/>
+  <testcase name="goFromFourthQuadrantToSecond" classname="core.basesyntax.RobotRouteTest" time="6.528"/>
+  <testcase name="goFromFirstQuadrantToSecond" classname="core.basesyntax.RobotRouteTest" time="7.776"/>
+  <testcase name="goFromSecondQuadrantToFirst" classname="core.basesyntax.RobotRouteTest" time="3.808"/>
+  <testcase name="goFromSecondQuadrantToThird" classname="core.basesyntax.RobotRouteTest" time="3.53"/>
+</testsuite>
