@@ -10,7 +10,6 @@ public class RobotRoute {
             robot.stepForward();
         }
 
-
         Direction newDirectionY = (robot.getY() < toY) ? Direction.UP : Direction.DOWN;
         while (robot.getDirection() != newDirectionY) {
             robot.turnRight();
