@@ -10,7 +10,7 @@ public class FieldXYTestWithExtremeData {
         int startX = 0;
         int startY = 0;
         Robot robot = new Robot(Direction.LEFT, startX, startY);
-        FieldXY fieldXY = new FieldXY();
+        RobotRoute fieldXY = new RobotRoute();
         int finalX = Integer.MAX_VALUE;
         int finalY = Integer.MAX_VALUE;
 
@@ -25,7 +25,7 @@ public class FieldXYTestWithExtremeData {
         int startX = 0;
         int startY = 0;
         Robot robot = new Robot(Direction.LEFT, startX, startY);
-        FieldXY fieldXY = new FieldXY();
+        RobotRoute fieldXY = new RobotRoute();
         int finalX = Integer.MIN_VALUE;
         int finalY = Integer.MIN_VALUE;
 
@@ -40,7 +40,7 @@ public class FieldXYTestWithExtremeData {
         int startX = Integer.MAX_VALUE;
         int startY = Integer.MAX_VALUE;
         Robot robot = new Robot(Direction.LEFT, startX, startY);
-        FieldXY fieldXY = new FieldXY();
+        RobotRoute fieldXY = new RobotRoute();
         int finalX = Integer.MIN_VALUE;
         int finalY = Integer.MIN_VALUE;
 

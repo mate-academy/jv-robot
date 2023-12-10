@@ -10,10 +10,42 @@ package core.basesyntax;
  * Ваша задача — привести робота в заданную точку игрового поля.
  * Реализуйте метод moveRobot()</p>
  */
-public class FieldXY {
+public class RobotRoute {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-        //your code
+        if (robot.getX() < toX) {
+
+            do {
+                robot.turnRight();
+            } while (robot.getDirection() != Direction.RIGHT);
+
+        } else {
+
+            do {
+                robot.turnLeft();
+            } while (robot.getDirection() != Direction.LEFT);
+        }
+
+        do {
+            robot.stepForward();
+        } while (robot.getX() != toX);
+
+        if (robot.getY() < toY) {
+
+            do {
+                robot.turnRight();
+            } while (robot.getDirection() != Direction.UP);
+
+        } else {
+
+            do {
+                robot.turnLeft();
+            } while (robot.getDirection() != Direction.DOWN);
+        }
+
+        do {
+            robot.stepForward();
+        } while (robot.getY() != toY);
     }
 }
 
