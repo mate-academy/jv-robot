@@ -79,4 +79,12 @@ public class Robot {
                 break;
         }
     }
+
+    public void turnUp() {
+    }
+
+    public void turnDown() {
+    }
 }
+
+    
