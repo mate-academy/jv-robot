@@ -2,7 +2,7 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
+        //write your solution here
         int startY = robot.getY();
         if (toX > 0) {
             turnRight(robot);
@@ -22,17 +22,19 @@ public class RobotRoute {
                 robot.turnLeft();
             }
             goFromByY(robot, toY);
-        } else new Robot(robot.getDirection(), toX, toY);
+        } else {
+            new Robot(robot.getDirection(), toX, toY);
+        }
     }
 
     private void goFromByX(Robot robot, int toX) {
         int startX = robot.getX();
         if (startX < toX) {
-            for (int i = startX; i < toX; i++ ) {
+            for (int i = startX; i < toX; i++) {
                 robot.stepForward();
             }
         } else if (startX > toX) {
-            for (int i = startX; i > toX; i-- ) {
+            for (int i = startX; i > toX; i--) {
                 robot.stepForward();
             }
         }
@@ -41,11 +43,11 @@ public class RobotRoute {
     private void goFromByY(Robot robot, int toY) {
         int startY = robot.getY();
         if (startY < toY) {
-            for (int i = startY; i < toY; i++ ) {
+            for (int i = startY; i < toY; i++) {
                 robot.stepForward();
             }
         } else if (startY > toY) {
-            for (int i = startY; i > toY; i-- ) {
+            for (int i = startY; i > toY; i--) {
                 robot.stepForward();
             }
         }
@@ -66,6 +68,8 @@ public class RobotRoute {
                     robot.turnLeft();
                 }
                 break;
+            default:
+                break;
         }
     }
 
@@ -83,6 +87,8 @@ public class RobotRoute {
                 for (int i = 0; i < 3; i++) {
                     robot.turnRight();
                 }
+                break;
+            default:
                 break;
         }
     }
