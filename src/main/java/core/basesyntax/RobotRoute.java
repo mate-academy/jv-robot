@@ -13,7 +13,7 @@ public class RobotRoute {
             robot.stepForward();
         }
 
-        int currentX = robot.getY();
+        int currentY = robot.getY();
         Direction targetDirection2 = (currentY < toY) ? Direction.UP : Direction.DOWN;
         while (robot.getY() != toY && robot.getDirection() != targetDirection2) {
             if (targetDirection2 == Direction.RIGHT) {
