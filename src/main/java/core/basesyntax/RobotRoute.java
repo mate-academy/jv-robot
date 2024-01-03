@@ -1,14 +1,11 @@
 package core.basesyntax;
 
-import org.example.Direction;
-import org.example.Robot;
-
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         int currentX = robot.getX();
-        Direction targetDirection = (currentX < toX) ? Direction.RIGHT : Direction.LEFT;
-        while (robot.getX() != toX && robot.getDirection() != targetDirection) {
-            if (targetDirection == Direction.RIGHT) {
+        Direction targetDirection1 = (currentX < toX) ? Direction.RIGHT : Direction.LEFT;
+        while (robot.getX() != toX && robot.getDirection() != targetDirection1) {
+            if (targetDirection1 == Direction.RIGHT) {
                 robot.turnRight();
             } else {
                 robot.turnLeft();
@@ -17,9 +14,9 @@ public class RobotRoute {
         }
 
         int currentX = robot.getY();
-        Direction targetDirection = (currentX < toY) ? Direction.UP : Direction.DOWN;
-        while (robot.getY() != toY && robot.getDirection() != targetDirection) {
-            if (targetDirection == Direction.RIGHT) {
+        Direction targetDirection2 = (currentY < toY) ? Direction.UP : Direction.DOWN;
+        while (robot.getY() != toY && robot.getDirection() != targetDirection2) {
+            if (targetDirection2 == Direction.RIGHT) {
                 robot.turnRight();
             } else {
                 robot.turnLeft();
