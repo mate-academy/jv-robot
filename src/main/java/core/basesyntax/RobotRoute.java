@@ -1,34 +1,39 @@
 package core.basesyntax;
 
 public class RobotRoute {
-    private void moveHorizontally(Robot robot, int toX) {
+    private void moveHorizontally(Robot robot, int toX, int toY) {
         int currentX = robot.getX();
-        Direction targetDirection = (currentX < toX) ? Direction.RIGHT : Direction.LEFT;
-        while (robot.getX() != toX && robot.getDirection() != targetDirection) {
-            if (targetDirection == Direction.RIGHT) {
-                robot.turnRight();
-            } else {
-                robot.turnLeft();
-            }
-            robot.stepForward();
-        }
-    }
-
-    private void moveVertically(Robot robot, int toY) {
         int currentY = robot.getY();
-        Direction targetDirection = (currentY < toY) ? Direction.UP : Direction.DOWN;
-        while (robot.getY() != toY && robot.getDirection() != targetDirection) {
-            if (targetDirection == Direction.RIGHT) {
-                robot.turnRight();
+        while (currentX != toX) {
+            if (currentX < toX) {
+                while (robot.getDirection() != Direction.RIGHT) {
+                    robot.turnRight();
+                }
+                robot.stepForward();
+                currentX++;
             } else {
-                robot.turnLeft();
+                while (robot.getDirection() != Direction.LEFT) {
+                    robot.turnLeft();
+                }
+                robot.stepForward();
+                currentX--;
             }
-            robot.stepForward();
         }
-    }
 
-    public void moveRobot(Robot robot, int toX, int toY) {
-        moveHorizontally(robot, toX);
-        moveVertically(robot, toY);
+        while (currentY != toY) {
+            if (currentY < toY) {
+                while (robot.getDirection() != Direction.UP) {
+                    robot.turnRight();
+                }
+                robot.stepForward();
+                currentY++;
+            } else {
+                while (robot.getDirection() != Direction.DOWN) {
+                    robot.turnLeft();
+                }
+                robot.stepForward();
+                currentY--;
+            }
+        }
     }
 }
