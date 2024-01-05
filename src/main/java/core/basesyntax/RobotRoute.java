@@ -29,6 +29,7 @@ public class RobotRoute {
             robot.turnLeft();
         }
 
+
         while (deltaY != 0) {
             robot.stepForward();
             deltaY = toY - robot.getY();
