@@ -1,7 +1,7 @@
 package core.basesyntax;
 
 public class RobotRoute {
-    private void moveHorizontally(Robot robot, int toX, int toY) {
+    public void moveRobot(Robot robot, int toX, int toY) {
         int currentX = robot.getX();
         int currentY = robot.getY();
         while (currentX != toX) {
