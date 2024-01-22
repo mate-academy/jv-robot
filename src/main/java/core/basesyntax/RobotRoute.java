@@ -28,15 +28,20 @@ public class RobotRoute {
     }
 
     private static void printRobotState(Robot robot) {
-        System.out.println("Current Position: (" + robot.getX() + ", " + robot.getY() + "), Direction: " + robot.getDirection());
+        System.out.println("Current Position: (" + robot.getX() + ", " + robot.getY()
+                + "), Direction: "
+                + robot.getDirection());
     }
 
     public static void main(String[] args) {
-        Direction initialDirection = Direction.values()[new Random().nextInt(Direction.values().length)];
+        Direction initialDirection = Direction.values()[new Random().nextInt(Direction.values()
+                .length)];
         Robot robot = new Robot(initialDirection, 0, 0);
 
-        System.out.println("Initial Position: (" + robot.getX() + ", " + robot.getY() + "), Direction: " + robot.getDirection());
+        System.out.println("Initial Position: (" + robot.getX() + ", "
+                + robot.getY() + "), Direction: " + robot.getDirection());
         moveRobot(robot, 3, 4);
-        System.out.println("Final Position: (" + robot.getX() + ", " + robot.getY() + "), Direction: " + robot.getDirection());
+        System.out.println("Final Position: (" + robot.getX() + ", " + robot.getY()
+                + "), Direction: " + robot.getDirection());
     }
 }
