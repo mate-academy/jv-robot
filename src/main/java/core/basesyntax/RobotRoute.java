@@ -11,22 +11,13 @@ public class RobotRoute {
         int deltaY = toY - currentY;
 
         //Determine required directions
-        Direction xDirection = null;
-        if (deltaX > 0) {
-            xDirection = Direction.RIGHT;
-        } else {
-            xDirection = Direction.LEFT;
-        }
+        Direction horizontalDirection = deltaX > 0 ? Direction.RIGHT : Direction.LEFT;
 
-        Direction yDirection = null;
-        if (deltaY > 0) {
-            yDirection = Direction.DOWN;
-        } else {
-            yDirection = Direction.UP;
-        }
+        Direction verticalDirection = deltaY > 0 ? Direction.UP : Direction.DOWN;
+
 
         //rotate a robot till it faces a right X direction
-        while (currentDirection != xDirection) {
+        while (currentDirection != horizontalDirection) {
             robot.turnRight();
         }
 
@@ -36,7 +27,7 @@ public class RobotRoute {
         }
 
         //rotate a robot till it faces a right Y direction
-        while (currentDirection != yDirection) {
+        while (currentDirection != verticalDirection) {
             robot.turnLeft();
         }
 
