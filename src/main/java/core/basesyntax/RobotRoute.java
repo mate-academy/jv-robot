@@ -12,9 +12,7 @@ public class RobotRoute {
 
         //Determine required directions
         Direction horizontalDirection = deltaX > 0 ? Direction.RIGHT : Direction.LEFT;
-
         Direction verticalDirection = deltaY > 0 ? Direction.UP : Direction.DOWN;
-
 
         //rotate a robot till it faces a right X direction
         while (currentDirection != horizontalDirection) {
