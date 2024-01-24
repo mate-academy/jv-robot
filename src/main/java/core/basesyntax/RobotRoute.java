@@ -7,10 +7,14 @@ public class RobotRoute {
         }
 
         rotateRobot(robot, findHorizontalDirection(robot, toX));
-        moveForward(robot, robot.getX(), toX);
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
 
         rotateRobot(robot, findVerticalDirection(robot, toY));
-        moveForward(robot, robot.getY(), toY);
+        while (robot.getY() != toY) {
+            robot.stepForward();
+        }
     }
 
     private Direction findHorizontalDirection(Robot robot, int targetX) {
@@ -35,9 +39,4 @@ public class RobotRoute {
         }
     }
 
-    private void moveForward(Robot robot, int currentPosition, int targetPosition) {
-        while (currentPosition != targetPosition) {
-            robot.stepForward();
-        }
-    }
 }
