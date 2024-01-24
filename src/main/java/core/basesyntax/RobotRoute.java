@@ -6,32 +6,36 @@ public class RobotRoute {
         int currentY = robot.getY();
         Direction currentDirection = robot.getDirection();
 
-        //Determine how far a robot from its destination
+        // Determine how far a robot from its destination
         int deltaX = toX - currentX;
         int deltaY = toY - currentY;
 
-        //Determine required directions
+        // Determine required directions
         Direction horizontalDirection = deltaX > 0 ? Direction.RIGHT : Direction.LEFT;
         Direction verticalDirection = deltaY > 0 ? Direction.UP : Direction.DOWN;
 
-        //rotate a robot till it faces a right X direction
+        // Rotate a robot till it faces the right X direction
         while (currentDirection != horizontalDirection) {
             robot.turnRight();
+            currentDirection = robot.getDirection(); // Update currentDirection
         }
 
-        //step forward till it in right X coordinates
+        // Step forward till it reaches the right X coordinates
         while (currentX != toX) {
             robot.stepForward();
+            currentX = robot.getX(); // Update currentX
         }
 
-        //rotate a robot till it faces a right Y direction
+        // Rotate a robot till it faces the right Y direction
         while (currentDirection != verticalDirection) {
             robot.turnLeft();
+            currentDirection = robot.getDirection(); // Update currentDirection
         }
 
-        //step forward till it in right Y coordinates
+        // Step forward till it reaches the right Y coordinates
         while (currentY != toY) {
             robot.stepForward();
+            currentY = robot.getY(); // Update currentY
         }
     }
 }
