@@ -2,33 +2,40 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        //write your solution here
-        //write your solution here
-        int robotX = robot.getX();
-        int robotY = robot.getY();
+        int currentX = robot.getX();
+        int currentY = robot.getY();
 
-        // To equal X coords
-        if (robotX < toX) {
-            robot.turnRight();
-        } else if (robotX > toX) {
+        int deltaX = toX - currentX;
+        int deltaY = toY - currentY;
+
+        while (deltaX != 0) {
+            if (deltaX > 0) {
+                turnRobotToDirection(robot, Direction.RIGHT);
+                robot.stepForward();
+                deltaX--;
+            } else {
+                turnRobotToDirection(robot, Direction.LEFT);
+                robot.stepForward();
+                deltaX++;
+            }
+        }
+
+        while (deltaY != 0) {
+            if (deltaY > 0) {
+                turnRobotToDirection(robot, Direction.UP);
+                robot.stepForward();
+                deltaY--;
+            } else {
+                turnRobotToDirection(robot, Direction.DOWN);
+                robot.stepForward();
+                deltaY++;
+            }
+        }
+    }
+
+    private void turnRobotToDirection(Robot robot, Direction targetDirection) {
+        while (robot.getDirection() != targetDirection) {
             robot.turnLeft();
-        }
-        while (robotX != toX) {
-            robot.stepForward();
-        }
-
-        // To equal Y coords
-        if (robotY < toY) {
-            while (robot.getDirection() != Direction.UP) {
-                robot.turnRight();
-            }
-        } else if (robotY > toY) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnLeft();
-            }
-        }
-        while (robotY != toY) {
-            robot.stepForward();
         }
     }
 }
