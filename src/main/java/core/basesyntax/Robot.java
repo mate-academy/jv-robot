@@ -80,12 +80,4 @@ public class Robot {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Robot{"
-                + "direction=" + direction.name()
-                + ", coordinateX=" + coordinateX
-                + ", coordinateY=" + coordinateY
-                + '}';
-    }
 }
