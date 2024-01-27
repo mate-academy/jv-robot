@@ -14,21 +14,15 @@ public class Main {
         int coordinateX = new Random().nextInt(100);
         int coordinateY = new Random().nextInt(100);
 
+        System.out.println("Current direction and  position:"
+                + robot1.getDirection() + " " + robot1.getX() + " " + robot1.getY());
 
-
-
-
-
-        System.out.println("Current direction and  position:" + robot1.getDirection() + " " + robot1.getX() + " " + robot1.getY());
         System.out.println("Target position: " + coordinateX + " " + coordinateY);
-
 
         robotRoute.moveRobot(robot1, coordinateX, coordinateY);
 
-
-        System.out.println("Current direction and  position:" + robot1.getDirection() + " " + robot1.getX() + " " + robot1.getY());
-
-
+        System.out.println("Current direction and  position:"
+                + robot1.getDirection() + " " + robot1.getX() + " " + robot1.getY());
 
     }
 }
