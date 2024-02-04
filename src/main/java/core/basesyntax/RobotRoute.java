@@ -5,7 +5,6 @@ import static core.basesyntax.Direction.LEFT;
 import static core.basesyntax.Direction.RIGHT;
 import static core.basesyntax.Direction.UP;
 
-
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         while (robot.getX() != toX || robot.getY() != toY) {
