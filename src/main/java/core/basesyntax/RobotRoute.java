@@ -1,9 +1,10 @@
 package core.basesyntax;
 
-import static core.basesyntax.Direction.UP;
+import static core.basesyntax.Direction.DOWN;
 import static core.basesyntax.Direction.LEFT;
 import static core.basesyntax.Direction.RIGHT;
-import static core.basesyntax.Direction.DOWN;
+import static core.basesyntax.Direction.UP;
+
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
