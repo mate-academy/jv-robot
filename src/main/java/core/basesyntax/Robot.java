@@ -79,4 +79,28 @@ public class Robot {
                 break;
         }
     }
+
+    public void changeDirectionToLeft() {
+        do {
+            this.turnLeft();
+        } while (this.getDirection() != Direction.LEFT);
+    }
+
+    public void changeDirectionToRight() {
+        do {
+            this.turnLeft();
+        } while (this.getDirection() != Direction.RIGHT);
+    }
+
+    public void changeDirectionToUp() {
+        do {
+            this.turnLeft();
+        } while (this.getDirection() != Direction.UP);
+    }
+
+    public void changeDirectionToDown() {
+        do {
+            this.turnRight();
+        } while (this.getDirection() != Direction.DOWN);
+    }
 }
