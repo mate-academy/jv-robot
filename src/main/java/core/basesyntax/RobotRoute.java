@@ -1,9 +1,10 @@
 package core.basesyntax;
 
 public class RobotRoute {
-    public void moveRobot (Robot robot, int toX, int toY) {
-        int currentX=robot.getX();
-        int currentY=robot.getY();
+    public void moveRobot(Robot robot, int toX, int toY) {
+        int currentX = robot.getX();
+        int currentY = robot.getY();
+
         Direction horizontalDirection = currentX < toX ? Direction.RIGHT : Direction.LEFT;
         Direction verticalDirection = currentY < toY ? Direction.UP : Direction.DOWN;
 
