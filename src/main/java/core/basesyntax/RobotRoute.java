@@ -7,20 +7,20 @@ public class RobotRoute {
                 while (robot.getDirection() != Direction.RIGHT) {
                     robot.turnRight();
                 }
-            }else {
-                while (robot.getDirection() != Direction.LEFT){
+            } else {
+                while (robot.getDirection() != Direction.LEFT) {
                     robot.turnLeft();
                 }
             }
             robot.stepForward();
         }
         while (robot.getY() != toY) {
-            if (robot.getY() < toY){
-                while (robot.getDirection() != Direction.UP){
+            if (robot.getY() < toY) {
+                while (robot.getDirection() != Direction.UP) {
                     robot.turnRight();
                 }
-            }else {
-                while (robot.getDirection() != Direction.DOWN){
+            } else {
+                while (robot.getDirection() != Direction.DOWN) {
                     robot.turnLeft();
                 }
                 robot.stepForward();
