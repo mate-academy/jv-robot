@@ -19,7 +19,9 @@ public class RobotRoute {
     }
 
     private Direction getTargetDirection(Robot rob, int target, boolean isAxisX) {
-        return isAxisX ? rob.getX() > target ? Direction.LEFT : Direction.RIGHT : rob.getY() > target ? Direction.DOWN : Direction.UP;
+        return isAxisX ? rob.getX() > target ?
+                Direction.LEFT : Direction.RIGHT :
+                rob.getY() > target ? Direction.DOWN : Direction.UP;
     }
 
     private void turnRobotToRightDirection(Robot rob, Direction targetDirection) {
