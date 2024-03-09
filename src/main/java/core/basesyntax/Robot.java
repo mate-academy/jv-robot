@@ -10,7 +10,7 @@ public class Robot {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
     }
-    
+
     public Direction getDirection() {
         return direction;
     }

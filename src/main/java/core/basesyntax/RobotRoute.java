@@ -2,10 +2,10 @@ package core.basesyntax;
 
 public class RobotRoute {
     public static void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
+        //write your solution here
         while (robot.getX() != toX || robot.getY() != toY) {
             if (robot.getX() != toX && robot.getY() == toY) {
-                if (robot.getX() < toX)  {
+                if (robot.getX() < toX) {
                     switch (robot.getDirection()) {
                         case UP:
                             robot.turnRight();
@@ -19,6 +19,7 @@ public class RobotRoute {
                         case RIGHT:
                             robot.stepForward();
                             break;
+                        default:
                     }
                 } else {
                     switch (robot.getDirection()) {
@@ -34,10 +35,11 @@ public class RobotRoute {
                         case RIGHT:
                             robot.turnRight();
                             break;
+                        default:
                     }
                 }
             } else if (robot.getX() == toX && robot.getY() != toY) {
-                if (robot.getY() < toY)  {
+                if (robot.getY() < toY) {
                     switch (robot.getDirection()) {
                         case UP:
                             robot.stepForward();
@@ -51,6 +53,7 @@ public class RobotRoute {
                         case RIGHT:
                             robot.turnLeft();
                             break;
+                        default:
                     }
                 } else {
                     switch (robot.getDirection()) {
@@ -66,10 +69,11 @@ public class RobotRoute {
                         case RIGHT:
                             robot.turnRight();
                             break;
+                        default:
                     }
                 }
             } else {
-                if (robot.getX() < toX && robot.getY() < toY)  {
+                if (robot.getX() < toX && robot.getY() < toY) {
                     switch (robot.getDirection()) {
                         case UP:
                             robot.stepForward();
@@ -83,6 +87,7 @@ public class RobotRoute {
                         case RIGHT:
                             robot.stepForward();
                             break;
+                        default:
                     }
                 } else if (robot.getX() > toX && robot.getY() > toY) {
                     switch (robot.getDirection()) {
@@ -98,6 +103,7 @@ public class RobotRoute {
                         case RIGHT:
                             robot.turnRight();
                             break;
+                        default:
                     }
                 } else if (robot.getX() > toX && robot.getY() < toY) {
                     switch (robot.getDirection()) {
@@ -113,6 +119,7 @@ public class RobotRoute {
                         case RIGHT:
                             robot.turnRight();
                             break;
+                        default:
                     }
                 } else {
                     switch (robot.getDirection()) {
@@ -128,6 +135,7 @@ public class RobotRoute {
                         case RIGHT:
                             robot.turnRight();
                             break;
+                        default:
                     }
                 }
             }
