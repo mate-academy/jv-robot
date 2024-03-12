@@ -21,13 +21,9 @@ public class RobotRoute {
                 changeDirection(robot, Direction.UP);
                 currentY++;
             }
-
-            if (currentX == toX && currentY == toY) {
-                break;
-            }
         }
-
     }
+
     public void changeDirection(Robot robot, Direction direction) {
         while (robot.getDirection() != direction) {
             robot.turnRight();
