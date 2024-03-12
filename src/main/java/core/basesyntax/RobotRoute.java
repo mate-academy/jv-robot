@@ -7,28 +7,31 @@ public class RobotRoute {
 
         while (robot.getX() != toX || robot.getY() != toY) {
             if (currentX > toX) {
-                while (robot.getDirection() != Direction.UP) {
-                    robot.turnRight();
-                }
-                robot.stepForward();
+                changeDirection(robot, Direction.LEFT);
+                currentX--;
             } else if (currentX < toX) {
-                while (robot.getDirection() != Direction.DOWN) {
-                    robot.turnRight();
-                }
-                robot.stepForward();
+                changeDirection(robot, Direction.RIGHT);
+                currentX++;
             }
 
             if (currentY > toY) {
-                while (robot.getDirection() != Direction.LEFT) {
-                    robot.turnRight();
-                }
-                robot.stepForward();
+                changeDirection(robot, Direction.DOWN);
+                currentY--;
             } else if (currentY < toY) {
-                while (robot.getDirection() != Direction.RIGHT) {
-                    robot.turnRight();
-                }
-                robot.stepForward();
+                changeDirection(robot, Direction.UP);
+                currentY++;
+            }
+
+            if (currentX == toX && currentY == toY) {
+                break;
             }
         }
+
+    }
+    public void changeDirection(Robot robot, Direction direction) {
+        while (robot.getDirection() != direction) {
+            robot.turnRight();
+        }
+        robot.stepForward();
     }
 }
