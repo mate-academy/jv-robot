@@ -2,8 +2,8 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        boolean ForwardsOrBackwards = toX > robot.getX();
-        if (ForwardsOrBackwards) {
+        boolean forwardsOrBackwards = toX > robot.getX();
+        if (forwardsOrBackwards) {
             rotate(robot, Direction.RIGHT);
             traverse(robot, toX - robot.getX());
         } else {
@@ -11,8 +11,8 @@ public class RobotRoute {
             traverse(robot, robot.getX() - toX);
         }
 
-        boolean UpwardsOrDownwards = toY > robot.getY();
-        if (UpwardsOrDownwards) {
+        boolean upwardsOrDownwards = toY > robot.getY();
+        if (upwardsOrDownwards) {
             rotate(robot, Direction.UP);
             traverse(robot, toY - robot.getY());
         } else {
