@@ -55,7 +55,6 @@ public class RobotRoute {
         }
     }
 
-
     private void goUp(Robot robot) {
         while (robot.getDirection() != Direction.UP) {
             robot.turnLeft();
