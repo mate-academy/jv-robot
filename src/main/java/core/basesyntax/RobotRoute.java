@@ -8,18 +8,15 @@ public class RobotRoute {
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
-        }
-        else if (currentX > toX) {
+        } else if (currentX > toX) {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
-        }
-        else if (currentY < toY) {
+        } else if (currentY < toY) {
             while (robot.getDirection() != Direction.UP) {
                 robot.turnLeft();
             }
-        }
-        else if (currentY > toY) {
+        } else if (currentY > toY) {
             while (robot.getDirection() != Direction.DOWN) {
                 robot.turnLeft();
             }
