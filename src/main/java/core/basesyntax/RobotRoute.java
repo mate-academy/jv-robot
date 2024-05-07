@@ -21,7 +21,7 @@ public class RobotRoute {
                 robot.turnLeft();
             }
         }
-        while (currentX != toX || currentY != toY) {
+        while (robot.getX() != toX || robot.getY() != toY) {
             robot.stepForward();
         }
     }
