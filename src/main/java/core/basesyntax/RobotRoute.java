@@ -23,6 +23,8 @@ public class RobotRoute {
         }
         while (robot.getX() != toX || robot.getY() != toY) {
             robot.stepForward();
+            currentX = robot.getX();
+            currentY = robot.getY();
         }
     }
 }
