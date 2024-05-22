@@ -15,6 +15,10 @@ public class Robot {
         return direction;
     }
 
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
     public int getX() {
         return coordinateX;
     }
@@ -78,5 +82,14 @@ public class Robot {
             default:
                 break;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Robot{" +
+                "direction=" + direction +
+                ", coordinateX=" + coordinateX +
+                ", coordinateY=" + coordinateY +
+                '}';
     }
 }
