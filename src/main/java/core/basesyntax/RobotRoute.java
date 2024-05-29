@@ -22,7 +22,7 @@ public class RobotRoute {
     }
 
     private void changeCurrentPosition(Robot robot, Direction direction) {
-        while  (robot.getDirection() != direction) {
+        while (robot.getDirection() != direction) {
             robot.turnRight();
         }
     }
