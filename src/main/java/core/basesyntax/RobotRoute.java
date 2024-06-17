@@ -25,7 +25,7 @@ public class RobotRoute {
     }
     
     public static void main(String[] args) {
-        Robot robot = new Robot(0,0,Direction.RIGHT);
+        Robot robot = new Robot(0, 0, Direction.RIGTH);
         moveRobot(robot, 5,6);
         System.out.println("Robot`s final position: (" + robot.getX() + ", " + robot.getY() + ")");
     }
