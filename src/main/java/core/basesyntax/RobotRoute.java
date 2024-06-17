@@ -2,9 +2,6 @@ package core.basesyntax;
 
 public class RobotRoute {
     public static void moveRobot (Robot robot, int toX, int toY) {
-        /* цей метод приймає Robot- екземпляр. Метод повинен переміщати робота з його поточного
-         положення до цільового, враховуючи його поточний напрямок і оновлюючи напрямок за потреби*/
-        // toX і toY - координати дому
         while (robot.getX() != toX || robot.getY() != toY){
             if (robot.getX() < toX){
                 while (robot.getDirection() != Direction.RIGHT){
