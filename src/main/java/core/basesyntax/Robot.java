@@ -2,13 +2,13 @@ package core.basesyntax;
 
 public class Robot {
     private Direction direction;
-    private int coordinateX;
-    private int coordinateY;
+    private int x;
+    private int Y;
 
-    public Robot(Direction direction, int coordinateX, int coordinateY) {
+    public Robot(Direction direction, int X, int Y) {
         this.direction = direction;
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
+        this.X = X;
+        this.Y = Y;
     }
 
     public Direction getDirection() {
@@ -16,11 +16,11 @@ public class Robot {
     }
 
     public int getX() {
-        return coordinateX;
+        return X;
     }
 
     public int getY() {
-        return coordinateY;
+        return Y;
     }
 
     public void turnLeft() {
@@ -64,16 +64,16 @@ public class Robot {
     public void stepForward() {
         switch (direction) {
             case UP:
-                coordinateY++;
+                Y++;
                 break;
             case LEFT:
-                coordinateX--;
+                X--;
                 break;
             case DOWN:
-                coordinateY--;
+                Y--;
                 break;
             case RIGHT:
-                coordinateX++;
+                X++;
                 break;
             default:
                 break;
