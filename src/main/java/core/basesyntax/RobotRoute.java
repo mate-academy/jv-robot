@@ -39,6 +39,4 @@ public class RobotRoute {
             System.out.println("coordinate Y is Ok");
         }
     }
-
-
 }
