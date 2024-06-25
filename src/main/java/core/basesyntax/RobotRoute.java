@@ -8,7 +8,7 @@ public class RobotRoute {
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
-            while (robot.getDirection() == Direction.RIGHT) {
+            while (robot.getX() != toX) {
                 robot.stepForward();
             }
         } else if (robot.getX() > toX) {
@@ -25,7 +25,7 @@ public class RobotRoute {
             while (robot.getDirection() != Direction.DOWN) {
                 robot.turnRight();
             }
-            while (robot.getDirection() == Direction.DOWN) {
+            while (robot.getY() != toY) {
                 robot.stepForward();
             }
         } else if (robot.getY() > toY) {
