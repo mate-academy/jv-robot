@@ -1,74 +1,25 @@
 package core.basesyntax;
 
-import static core.basesyntax.Direction.DOWN;
-import static core.basesyntax.Direction.LEFT;
-import static core.basesyntax.Direction.RIGHT;
-import static core.basesyntax.Direction.UP;
-
-import org.jetbrains.annotations.NotNull;
-
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
-        int currentX = robot.getX();
-        int currentY = robot.getY();
-        int remainToX = toX - currentX;
-        int remainToY = toY - currentY;
-
-        while (remainToX != 0) {
-            if (remainToX > 0) {
-                if (robot.getDirection() != RIGHT) {
-                    turn(robot, RIGHT);
-                }
-            } else {
-                if (robot.getDirection() != LEFT) {
-                    turn(robot, LEFT);
-                }
+        while (robot.getX() != toX || robot.getY() != toY) {
+            while (robot.getDirection() != getDirectionToTarget(robot, toX, toY)) {
+                robot.turnRight();
             }
             robot.stepForward();
-            remainToX = toX - robot.getX();
-        }
-
-        while (remainToY != 0) {
-            if (remainToY > 0) {
-                if (robot.getDirection() != UP) {
-                    turn(robot, UP);
-                }
-            } else {
-                if (robot.getDirection() != DOWN) {
-                    turn(robot, DOWN);
-                }
-            }
-            robot.stepForward();
-            remainToY = toY - robot.getY();
         }
     }
 
-    private void turn(@NotNull Robot robot, Direction targetDirection) {
-        Direction currentDirection = robot.getDirection();
-        if (currentDirection == UP && targetDirection == RIGHT) {
-            robot.turnRight();
-        }
-        if (currentDirection == UP && targetDirection == LEFT) {
-            robot.turnLeft();
-        }
-        if (currentDirection == DOWN && targetDirection == RIGHT) {
-            robot.turnLeft();
-        }
-        if (currentDirection == DOWN && targetDirection == LEFT) {
-            robot.turnRight();
-        }
-        if (currentDirection == RIGHT && targetDirection == UP) {
-            robot.turnLeft();
-        }
-        if (currentDirection == RIGHT && targetDirection == DOWN) {
-            robot.turnRight();
-        }
-        if (currentDirection == LEFT && targetDirection == UP) {
-            robot.turnRight();
-        }
-        if (currentDirection == LEFT && targetDirection == DOWN) {
-            robot.turnLeft();
+    private Direction getDirectionToTarget(Robot robot, int toX, int toY) {
+        if (toY > robot.getY()) {
+            return Direction.UP;
+        } else if (toY < robot.getY()) {
+            return Direction.DOWN;
+        } else if (toX > robot.getX()) {
+            return Direction.RIGHT;
+        } else {
+            return Direction.LEFT;
         }
     }
 }
