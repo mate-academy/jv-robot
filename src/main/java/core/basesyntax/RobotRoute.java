@@ -7,8 +7,7 @@ public class RobotRoute {
                 while (robot.getDirection() != Direction.LEFT) {
                     robot.turnLeft();
                 }
-            }
-            else {
+            } else {
                 while (robot.getDirection() != Direction.RIGHT) {
                     robot.turnRight();
                 }
@@ -20,8 +19,7 @@ public class RobotRoute {
                 while (robot.getDirection() != Direction.UP) {
                     robot.turnLeft();
                 }
-            }
-            else {
+            } else {
                 while (robot.getDirection() != Direction.DOWN) {
                     robot.turnRight();
                 }
