@@ -92,21 +92,22 @@ public class Robot {
 
     public void faceRight() {
         faceLeft();
-        turnLeft();
-        turnLeft();
+        turnAround();
     }
 
     public void faceLeft() {
         switch (getDirection()) {
             case UP -> turnLeft();
-            case RIGHT -> {
-                turnLeft();
-                turnLeft();
-            }
+            case RIGHT -> turnAround();
             case DOWN -> turnRight();
             default -> {
 
             }
         }
+    }
+
+    public void turnAround() {
+        turnLeft();
+        turnLeft();
     }
 }

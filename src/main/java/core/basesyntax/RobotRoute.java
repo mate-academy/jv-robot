@@ -5,21 +5,19 @@ import java.util.function.Function;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        alignCoordinate(Robot::getX, robot, Robot::faceLeft, Robot::faceRight, toX);
-        alignCoordinate(Robot::getY, robot, Robot::faceDown, Robot::faceUp, toY);
+        alignCoordinate(Robot::getX, Robot::faceLeft, robot, toX);
+        alignCoordinate(Robot::getY, Robot::faceDown, robot, toY);
     }
 
     private void alignCoordinate(Function<Robot, Integer> robotCoordinateFunction,
-                                 Robot robot,
                                  Consumer<Robot> faceNegativeConsumer,
-                                 Consumer<Robot> facePositiveConsumer,
+                                 Robot robot,
                                  int coordinate) {
         int robotCoordinate = robotCoordinateFunction.apply(robot);
         while (robotCoordinate != coordinate) {
-            if (robotCoordinate > coordinate) {
-                faceNegativeConsumer.accept(robot);
-            } else {
-                facePositiveConsumer.accept(robot);
+            faceNegativeConsumer.accept(robot);
+            if (robotCoordinate < coordinate) {
+                robot.turnAround();
             }
             robot.stepForward();
             robotCoordinate = robotCoordinateFunction.apply(robot);
