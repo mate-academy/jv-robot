@@ -1,53 +1,28 @@
 package core.basesyntax;
 
+import java.util.function.Consumer;
+import java.util.function.Function;
+
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        while (robot.getX() != toX) {
-            if (robot.getX() > toX) {
-                faceLeft(robot);
+        alignCoordinate(Robot::getX, robot, Robot::faceLeft, Robot::faceRight, toX);
+        alignCoordinate(Robot::getY, robot, Robot::faceDown, Robot::faceUp, toY);
+    }
+
+    private void alignCoordinate(Function<Robot, Integer> robotCoordinateFunction,
+                                 Robot robot,
+                                 Consumer<Robot> faceNegativeConsumer,
+                                 Consumer<Robot> facePositiveConsumer,
+                                 int coordinate) {
+        int robotCoordinate = robotCoordinateFunction.apply(robot);
+        while (robotCoordinate != coordinate) {
+            if (robotCoordinate > coordinate) {
+                faceNegativeConsumer.accept(robot);
             } else {
-                faceRight(robot);
+                facePositiveConsumer.accept(robot);
             }
             robot.stepForward();
-        }
-
-        while (robot.getY() != toY) {
-            if (robot.getY() > toY) {
-                faceDown(robot);
-            } else {
-                faceUp(robot);
-            }
-            robot.stepForward();
-        }
-    }
-
-    private void faceUp(Robot robot) {
-        faceLeft(robot);
-        robot.turnRight();
-    }
-
-    private void faceDown(Robot robot) {
-        faceLeft(robot);
-        robot.turnLeft();
-    }
-
-    private void faceRight(Robot robot) {
-        faceLeft(robot);
-        robot.turnLeft();
-        robot.turnLeft();
-    }
-
-    private void faceLeft(Robot robot) {
-        switch (robot.getDirection()) {
-            case UP -> robot.turnLeft();
-            case RIGHT -> {
-                robot.turnLeft();
-                robot.turnLeft();
-            }
-            case DOWN -> robot.turnRight();
-            default -> {
-
-            }
+            robotCoordinate = robotCoordinateFunction.apply(robot);
         }
     }
 }
