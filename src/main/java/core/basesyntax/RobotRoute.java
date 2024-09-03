@@ -16,11 +16,11 @@ public class RobotRoute {
         }
 
         if (robot.getY() < toY) {
-            while (robot.getDirection() != Direction.UP){
+            while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             }
         } else if (robot.getY() > toY) {
-            while (robot.getDirection() != Direction.DOWN){
+            while (robot.getDirection() != Direction.DOWN) {
                 robot.turnRight();
             }
         }
