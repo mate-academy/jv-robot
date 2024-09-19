@@ -12,6 +12,7 @@ public class Robot {
     }
 
     public Direction getDirection() {
+
         return direction;
     }
 
