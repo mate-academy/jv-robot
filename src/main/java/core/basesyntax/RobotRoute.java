@@ -1,22 +1,29 @@
 package core.basesyntax;
 
+import java.sql.DriverAction;
+
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         while (robot.getX() != toX) {
             if (robot.getX() < toX) {
-                Direction directionr = Direction.RIGHT;
+                faceDiraction(robot, Direction.RIGHT);
             } else {
-                Direction directionl = Direction.LEFT;
+                faceDiraction(robot, Direction.LEFT);
             }
             robot.stepForward();
         }
         while (robot.getY() != toY) {
             if (robot.getY() < toY) {
-                Direction directionu = Direction.UP;
+                faceDiraction(robot, Direction.UP);
             } else {
-                Direction directiond = Direction.DOWN;
+                faceDiraction(robot, Direction.DOWN);
             }
             robot.stepForward();
+        }
+    }
+    private void faceDiraction(Robot robot, Direction targetDirection) {
+        while (robot.getDirection() != targetDirection) {
+            robot.turnRight();
         }
     }
 }
