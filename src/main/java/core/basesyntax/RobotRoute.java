@@ -1,8 +1,12 @@
 package core.basesyntax;
 
-import java.sql.DriverAction;
-
 public class RobotRoute {
+    private void faceDiraction(Robot robot, Direction targetDirection) {
+        while (robot.getDirection() != targetDirection) {
+            robot.turnRight();
+        }
+    }
+
     public void moveRobot(Robot robot, int toX, int toY) {
         while (robot.getX() != toX) {
             if (robot.getX() < toX) {
@@ -19,11 +23,6 @@ public class RobotRoute {
                 faceDiraction(robot, Direction.DOWN);
             }
             robot.stepForward();
-        }
-    }
-    private void faceDiraction(Robot robot, Direction targetDirection) {
-        while (robot.getDirection() != targetDirection) {
-            robot.turnRight();
         }
     }
 }
