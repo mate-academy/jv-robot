@@ -237,4 +237,28 @@ public class RobotRouteTest {
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
       startX, startY), expectedY, actualY);
   }
+
+    @Test
+    public void getDirection() {
+    }
+
+    @Test
+    public void getX() {
+    }
+
+    @Test
+    public void getY() {
+    }
+
+    @Test
+    public void turnLeft() {
+    }
+
+    @Test
+    public void turnRight() {
+    }
+
+    @Test
+    public void stepForward() {
+    }
 }
