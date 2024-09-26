@@ -15,8 +15,10 @@ public class RobotRoute {
             case RIGHT:
                 moveIfDirectionRight(robot, toX, toY);
                 break;
+            default: // Do nothing
         }
     }
+
     public void moveIfDirectionUP(Robot robot, int toX, int toY) {
         if (robot.getX() == toX && robot.getY() < toY) {
             goFwdY(robot, toY);
