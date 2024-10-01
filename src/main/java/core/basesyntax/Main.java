@@ -1,7 +1,7 @@
 package core.basesyntax;
 
 public class Main {
-    public static void  main (String[] args){
+    public static void main(String[] args) {
         int startX = 1;
         int startY = 1;
         Robot robot = new Robot(Direction.DOWN, startX, startY);
