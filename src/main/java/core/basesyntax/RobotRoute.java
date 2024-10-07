@@ -52,9 +52,14 @@ public class RobotRoute {
                     robot.turnLeft();
                 }
             }
-            while (robot.getX() != toX && robot.getDirection() == Direction.DOWN) {
+            while (robot.getY() != toY && robot.getDirection() == Direction.DOWN) {
                 robot.stepForward();
             }
+        }
+        if (robot.getX() == toX && robot.getY() == toY) {
+            System.out.println("Robot has reached it's destination");
+        } else {
+            System.out.println("Something went wrong");
         }
     }
 }
