@@ -40,6 +40,7 @@ public class Robot {
             default:
                 break;
         }
+        System.out.println("Turning Left.");
     }
 
     public void turnRight() {
@@ -59,6 +60,7 @@ public class Robot {
             default:
                 break;
         }
+        System.out.println("Turning Right");
     }
 
     public void stepForward() {
@@ -78,5 +80,6 @@ public class Robot {
             default:
                 break;
         }
+        System.out.println("Stepping Forward.");
     }
 }
