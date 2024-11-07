@@ -4,31 +4,33 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
         if (robot.getX() < toX) {
-            robot.turnRight();
+            faceDirection(robot, Direction.RIGHT);
             while (robot.getX() < toX) {
                 robot.stepForward();
             }
-            robot.turnLeft();
         } else if (robot.getX() > toX) {
-            robot.turnLeft();
+            faceDirection(robot, Direction.LEFT);
             while (robot.getX() > toX) {
                 robot.stepForward();
             }
-            robot.turnRight();
         }
 
         if (robot.getY() < toY) {
+            faceDirection(robot, Direction.UP);
             while (robot.getY() < toY) {
                 robot.stepForward();
             }
         } else if (robot.getY() > toY) {
-            robot.turnRight();
-            robot.turnRight();
+            faceDirection(robot, Direction.DOWN);
             while (robot.getY() > toY) {
                 robot.stepForward();
             }
-            robot.turnLeft();
-            robot.turnLeft();
+        }
+    }
+
+    private void faceDirection(Robot robot, Direction targetDirection) {
+        while (robot.getDirection() != targetDirection) {
+            robot.turnRight();
         }
     }
 }
