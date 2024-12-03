@@ -24,7 +24,7 @@ public class RobotRoute {
                 robot.turnRight();
             }
         }
-        return Math.max(robot.getX(), toX) - Math.min(robot.getX(), toX); //  returns amount of steps
+        return Math.max(robot.getX(), toX) - Math.min(robot.getX(), toX);
     }
 
     public static int setDirectionAndStepsY(Robot robot, int toY) {
@@ -37,6 +37,6 @@ public class RobotRoute {
                 robot.turnRight();
             }
         }
-        return Math.max(robot.getY(), toY) - Math.min(robot.getY(), toY); //  returns amount of steps
+        return Math.max(robot.getY(), toY) - Math.min(robot.getY(), toY);
     }
 }
