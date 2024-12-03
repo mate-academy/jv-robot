@@ -40,4 +40,3 @@ public class RobotRoute {
         return Math.max(robot.getY(), toY) - Math.min(robot.getY(), toY);
     }
 }
-
