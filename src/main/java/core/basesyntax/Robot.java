@@ -62,7 +62,7 @@ public class Robot {
     }
 
     public void initialDirection() {
-      direction = Direction.UP;
+        direction = Direction.UP;
     }
 
     public void stepForward() {
