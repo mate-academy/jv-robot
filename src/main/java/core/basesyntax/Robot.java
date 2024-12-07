@@ -61,6 +61,10 @@ public class Robot {
         }
     }
 
+    public void initialDirection() {
+      direction = Direction.UP;
+    }
+
     public void stepForward() {
         switch (direction) {
             case UP:
