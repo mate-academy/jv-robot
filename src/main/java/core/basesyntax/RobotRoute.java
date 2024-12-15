@@ -7,7 +7,7 @@ public class RobotRoute {
             int startX = robot.getX();
             int startY = robot.getY();
             if (startX <= toX & startY <= toY) {
-                switch (robot.getDiraection()) {
+                switch (robot.getDirection()) {
                     case LEFT:
                         robot.turnRight();
                         while (robot.getY() != toY) {
@@ -49,7 +49,7 @@ public class RobotRoute {
                 }
             }
             if (startX >= toX & startY >= toY) {
-                switch (robot.getDiraection()) {
+                switch (robot.getDirection()) {
                     case LEFT:
                         while (robot.getX() != toX) {
                             robot.stepForward();
@@ -91,7 +91,7 @@ public class RobotRoute {
                 }
             }
             if (startX >= toX & startY <= toY) {
-                switch (robot.getDiraection()) {
+                switch (robot.getDirection()) {
                     case LEFT:
                         while (robot.getX() != toX) {
                             robot.stepForward();
@@ -133,7 +133,7 @@ public class RobotRoute {
                 }
             }
             if (startX <= toX & startY >= toY) {
-                switch (robot.getDiraection()) {
+                switch (robot.getDirection()) {
                     case LEFT:
                         robot.turnLeft();
                         while (robot.getY() != toY) {
