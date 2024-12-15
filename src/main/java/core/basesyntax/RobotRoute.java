@@ -46,6 +46,8 @@ public class RobotRoute {
                             robot.stepForward();
                         }
                         break;
+                    default:
+                        break;
                 }
             }
             if (startX >= toX & startY >= toY) {
@@ -87,6 +89,8 @@ public class RobotRoute {
                         while (robot.getX() != toX) {
                             robot.stepForward();
                         }
+                        break;
+                    default:
                         break;
                 }
             }
@@ -130,6 +134,8 @@ public class RobotRoute {
                             robot.stepForward();
                         }
                         break;
+                    default:
+                        break;
                 }
             }
             if (startX <= toX & startY >= toY) {
@@ -171,6 +177,8 @@ public class RobotRoute {
                         while (robot.getX() != toX) {
                             robot.stepForward();
                         }
+                        break;
+                    default:
                         break;
                 }
             }
