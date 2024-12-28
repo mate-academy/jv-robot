@@ -21,7 +21,7 @@ public class RobotRoute {
                 robot.turnRight();
                 robot.turnRight();
                 break;
-            case RIGHT:
+            default:
                 break;
         }
 
@@ -37,8 +37,6 @@ public class RobotRoute {
 
     private void moveThroughY(Robot robot, int distanceY, int toY) {
         switch (robot.getDirection()) {
-            case UP:
-                break;
             case DOWN:
                 robot.turnLeft();
                 robot.turnLeft();
@@ -48,6 +46,8 @@ public class RobotRoute {
                 break;
             case RIGHT:
                 robot.turnLeft();
+                break;
+            default:
                 break;
         }
 
