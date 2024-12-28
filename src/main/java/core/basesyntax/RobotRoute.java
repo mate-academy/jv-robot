@@ -5,6 +5,11 @@ public class RobotRoute {
         int distanceX = toX - robot.getX();
         int distanceY = toY - robot.getY();
 
+        moveThroughX(robot, distanceX, toX);
+        moveThroughY(robot, distanceY, toY);
+    }
+
+    private void moveThroughX(Robot robot, int distanceX, int toX) {
         switch (robot.getDirection()) {
             case UP:
                 robot.turnRight();
@@ -18,39 +23,41 @@ public class RobotRoute {
                 break;
             case RIGHT:
                 break;
-      }
+        }
 
-      if (distanceX < 0) {
-          robot.turnRight();
-          robot.turnRight();
-      }
+        if (distanceX < 0) {
+            robot.turnRight();
+            robot.turnRight();
+        }
 
-      while (robot.getX() != toX) {
-          robot.stepForward();
-      }
+        while (robot.getX() != toX) {
+            robot.stepForward();
+        }
+    }
 
-      switch (robot.getDirection()) {
-          case UP:
-              break;
-          case DOWN:
-              robot.turnLeft();
-              robot.turnLeft();
-              break;
-          case LEFT:
-              robot.turnRight();
-              break;
-          case RIGHT:
-              robot.turnLeft();
-              break;
-      }
+    private void moveThroughY(Robot robot, int distanceY, int toY) {
+        switch (robot.getDirection()) {
+            case UP:
+                break;
+            case DOWN:
+                robot.turnLeft();
+                robot.turnLeft();
+                break;
+            case LEFT:
+                robot.turnRight();
+                break;
+            case RIGHT:
+                robot.turnLeft();
+                break;
+        }
 
-      if (distanceY < 0) {
-          robot.turnLeft();
-          robot.turnLeft();
-      }
+        if (distanceY < 0) {
+            robot.turnLeft();
+            robot.turnLeft();
+        }
 
-      while (robot.getY() != toY) {
-          robot.stepForward();
-      }
+        while (robot.getY() != toY) {
+            robot.stepForward();
+        }
     }
 }
