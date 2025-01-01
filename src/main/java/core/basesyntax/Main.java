@@ -7,6 +7,5 @@ public class Main {
         System.out.println("Robot is located at position: (" + robot.getX() + ", " + robot.getY() + ")");
         System.out.println("Robot's direction is: " + robot.getDirection());
 
-
     }
 }
