@@ -23,7 +23,6 @@ public class Robot {
         return coordinateY;
     }
 
-
     public void turnLeft() {
         switch (direction) {
 

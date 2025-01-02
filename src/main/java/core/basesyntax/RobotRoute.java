@@ -7,6 +7,7 @@ public class RobotRoute {
             while (robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
+
             robot.stepForward();
         } else {
             while (robot.getDirection() != Direction.LEFT) {
