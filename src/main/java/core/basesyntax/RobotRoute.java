@@ -8,7 +8,6 @@ public class RobotRoute {
                 robot.turnRight();
             }
             robot.stepForward();
-
         } else {
             while (robot.getDirection() != Direction.LEFT) {
                 robot.turnRight();
