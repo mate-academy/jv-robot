@@ -1,5 +1,6 @@
 package core.basesyntax;
-import static core.basesyntax.Direction.*;
+
+import static core.basesyntax.Direction.UP;
 
 public class Main {
     public static void main(String[] args) {

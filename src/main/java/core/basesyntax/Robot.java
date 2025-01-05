@@ -56,6 +56,8 @@ public class Robot {
             case RIGHT:
                 direction = Direction.DOWN;
                 break;
+            default:
+                break;
         }
     }
 
@@ -76,6 +78,8 @@ public class Robot {
             case RIGHT:
                 coordinateX++;
                 System.out.println("Ruch w prawo: X=" + coordinateX);
+                break;
+            default:
                 break;
         }
     }

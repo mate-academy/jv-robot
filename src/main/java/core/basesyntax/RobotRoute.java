@@ -15,31 +15,30 @@ public class RobotRoute {
                     turnRobotRight(robot);
                 }
                 robot.stepForward();
-                System.out.println("Przemieszczanie w kierunku X: " + robot.getDirection() + " do X=" + toX);
-            }
-            else if (robot.getX() > toX) {
+                System.out.println("Kierunek X: " + robot.getDirection() + " do X=" + toX);
+            } else if (robot.getX() > toX) {
                 if (robot.getDirection() != Direction.LEFT) {
                     turnRobotLeft(robot);
                 }
                 robot.stepForward();
-                System.out.println("Przemieszczanie w kierunku X: " + robot.getDirection() + " do X=" + toX);
+                System.out.println("Kierunek X: " + robot.getDirection() + " do X=" + toX);
             }
             if (robot.getY() < toY) {
                 if (robot.getDirection() != Direction.UP) {
                     turnRobotUp(robot);
                 }
                 robot.stepForward();
-                System.out.println("Przemieszczanie w kierunku Y: " + robot.getDirection() + " do Y=" + toY);
-            }
-            else if (robot.getY() > toY) {
+                System.out.println("Kierunek Y: " + robot.getDirection() + " do Y=" + toY);
+            } else if (robot.getY() > toY) {
                 if (robot.getDirection() != Direction.DOWN) {
                     turnRobotDown(robot);
                 }
                 robot.stepForward();
-                System.out.println("Przemieszczanie w kierunku Y: " + robot.getDirection() + " do Y=" + toY);
+                System.out.println("Kierunek Y: " + robot.getDirection() + " do Y=" + toY);
             }
         }
     }
+
     private void turnRobotRight(Robot robot) {
         while (robot.getDirection() != Direction.RIGHT) {
             robot.turnRight();
