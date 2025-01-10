@@ -2,8 +2,7 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
-        Direction currentRobotDirection = robot.getDirection();
+        //write your solution here
         int currentXCoordinate = robot.getX();
         int currentYCoordinate = robot.getY();
         while (currentXCoordinate != toX) {
