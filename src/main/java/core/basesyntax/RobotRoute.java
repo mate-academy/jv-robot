@@ -12,8 +12,7 @@ public class RobotRoute {
             Direction targetXdirection;
             if (xDelta > 0) {
                 targetXdirection = Direction.RIGHT;
-            }
-            else {
+            } else {
                 targetXdirection = Direction.LEFT;
             }
             while (robot.getDirection() != targetXdirection) {
@@ -31,8 +30,7 @@ public class RobotRoute {
 
             if (yDelta > 0) {
                 targetYdirection = Direction.UP;
-            }
-            else {
+            } else {
                 targetYdirection = Direction.DOWN;
             }
             while (robot.getDirection() != targetYdirection) {
