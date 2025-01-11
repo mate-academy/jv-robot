@@ -5,38 +5,40 @@ public class RobotRoute {
         int currentX = robot.getX();
         int currentY = robot.getY();
 
-        int xDelta = toX - currentX;
-        int yDelta = toY - currentY;
+        int xdelta = toX - currentX;
+        int ydelta = toY - currentY;
 
-        if (xDelta != 0) {
-            Direction targetXdirection;
-            if (xDelta > 0) {
-                targetXdirection = Direction.RIGHT;
+        if (xdelta != 0) {
+            Direction targetXDirection;
+            if (xdelta > 0) {
+                targetXDirection = Direction.RIGHT;
             } else {
-                targetXdirection = Direction.LEFT;
+                targetXDirection = Direction.LEFT;
             }
-            while (robot.getDirection() != targetXdirection) {
+
+            while (robot.getDirection() != targetXDirection) {
                 robot.turnRight();
             }
 
-            int stepsX = Math.abs(xDelta);
+            int stepsX = Math.abs(xdelta);
             for (int i = 0; i < stepsX; i++) {
                 robot.stepForward();
             }
         }
 
-        if (yDelta != 0) {
-            Direction targetYdirection;
+        if (ydelta != 0) {
+            Direction targetYDirection;
 
-            if (yDelta > 0) {
-                targetYdirection = Direction.UP;
+            if (ydelta > 0) {
+                targetYDirection = Direction.UP;
             } else {
-                targetYdirection = Direction.DOWN;
+                targetYDirection = Direction.DOWN;
             }
-            while (robot.getDirection() != targetYdirection) {
+            while (robot.getDirection() != targetYDirection) {
                 robot.turnRight();
             }
-            int stepsY = Math.abs(yDelta);
+
+            int stepsY = Math.abs(ydelta);
             for (int i = 0; i < stepsY; i++) {
                 robot.stepForward();
             }
