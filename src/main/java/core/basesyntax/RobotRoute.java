@@ -14,7 +14,6 @@ public class RobotRoute {
                     robot.turnRight();
                 }
             } else if (deltaX < 0) {
-
                 if (robot.getDirection() != Direction.LEFT) {
                     robot.turnLeft();
                 }
