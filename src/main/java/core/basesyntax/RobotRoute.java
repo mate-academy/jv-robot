@@ -3,11 +3,11 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
 
-        if(robot.getY() < toY) {
+        if (robot.getY() < toY) {
             switch (robot.getDirection()) {
                 case UP:
                     while (robot.getY() != toY) {
-                    robot.stepForward();
+                        robot.stepForward();
                     }
                     break;
                 case RIGHT:
@@ -34,7 +34,7 @@ public class RobotRoute {
             }
         }
 
-        if(robot.getY() > toY) {
+        if (robot.getY() > toY) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnRight();
@@ -65,7 +65,7 @@ public class RobotRoute {
             }
         }
 
-        if(robot.getX() < toX && robot.getY() == toY) {
+        if (robot.getX() < toX && robot.getY() == toY) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnRight();
@@ -96,7 +96,7 @@ public class RobotRoute {
             }
         }
 
-        if(robot.getX() > toX && robot.getY() == toY) {
+        if (robot.getX() > toX && robot.getY() == toY) {
             switch (robot.getDirection()) {
                 case UP:
                     robot.turnLeft();
