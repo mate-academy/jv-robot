@@ -1,54 +1,34 @@
 # jv-robot
-На игровом поле находится робот. Позиция робота на поле описывается двумя целочисленным координатами: X и Y. Ось X смотрит слева направо, ось Y — снизу вверх. (Помните, как рисовали графики функций в школе?)
 
-В начальный момент робот находится в некоторой позиции на поле. Также известно, куда робот смотрит: вверх, вниз, направо или налево. Ваша задача — привести робота в заданную точку игрового поля.
+---
+### Task Requirement
 
-Робот описывается классом Robot. Вы можете пользоваться следующими его методами:
+We have our good friend Robot Johny who got lost on the playground. His position is represented by two integer coordinates: `X` and `Y`. X is the horizontal axis and Y is the vertical axis. Unfortunately, he has some unknown random initial position and we don't even know the initial Direction in which he is facing. But he really wants to go home, which is represented by `toX` and `toY`. 
 
-public class Robot {
+Your task is to help Johny find his way home by implementing logic in the `RobotRoute` class that navigates the robot from its current position to the target position.
 
-    public Direction getDirection() {
-        // текущее направление взгляда
-    }
+### Provided Classes
 
-    public int getX() {
-        // текущая координата X
-    }
+#### Direction Enum
+An enum named `Direction` is provided which has the following values: UP, DOWN, LEFT, and RIGHT.
 
-    public int getY() {
-        // текущая координата Y
-    }
+#### Robot Class
+The `Robot` class is provided with the following methods:
+- `getDirection()`: returns the current direction of the robot.
+- `getX()` and `getY()`: return the current X and Y coordinates of the robot respectively.
+- `turnLeft()` and `turnRight()`: change the direction of the robot to the left or right respectively.
+- `stepForward()`: moves the robot one step forward in its current direction.
 
-    public void turnLeft() {
-        // повернуться на 90 градусов против часовой стрелки
-    }
+#### RobotRoute Class
+The `RobotRoute` class is provided with a method signature:
+- `moveRobot(Robot robot, int toX, int toY)`: This method should take a `Robot` instance and two integer parameters `toX` and `toY`, which represent the target position. The method should navigate the robot from its current position to the target position, considering its current direction and updating its direction as needed.
 
-    public void turnRight() {
-        // повернуться на 90 градусов по часовой стрелке
-    }
+### Requirements
+- Implement the logic in the `moveRobot` method of the `RobotRoute` class to navigate the robot from its current position to the target position (`toX`, `toY`).
+- The robot should be able to navigate through all four quadrants of the coordinate plane.
+- The robot should be able to handle moving from any quadrant to any other quadrant, as well as staying in the same position.
+- The robot's position and direction should be updated appropriately after the `moveRobot` method is called.
 
-    public void stepForward() {
-        // шаг в направлении взгляда
-        // за один шаг робот изменяет одну свою координату на единицу
-    }
-}
-
-Direction, направление взгляда робота,  — это перечисление:
-
-public enum Direction {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT
-}
-
-Пример
-
-В метод передано: toX == 3, toY == 0; начальное состояние робота такое: robot.getX() == 0, robot.getY() == 0, robot.getDirection() == Direction.UP
-
-Чтобы привести робота в указанную точку (3, 0), метод должен вызвать у робота следующие методы:
-
-robot.turnRight();
-robot.stepForward();
-robot.stepForward();
-robot.stepForward();
+### Notes
+- Pay attention to the robot's direction and ensure it is updated appropriately as it moves towards the target position.
+- [Try to avoid these mistakes while solving task](./checklist.md)
