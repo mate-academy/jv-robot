@@ -6,8 +6,8 @@ public class RobotRoute {
             robot.turnRight();
         }
     }
+
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
         if (robot.getX() < toX) {
             turnRobot(robot, Direction.RIGHT);
         } else if (robot.getX() > toX) {
