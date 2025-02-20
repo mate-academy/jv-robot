@@ -20,8 +20,8 @@ public class RobotRoute {
                 for (int i = 0; i > x; i--) {
                     robot.stepForward();
                 }
-                }
             }
+        }
         if (robot.getY() != toY) {
             int y = toY - robot.getY();
             if (y > 0) {
@@ -38,7 +38,7 @@ public class RobotRoute {
                 for (int i = 0; i > y; i--) {
                     robot.stepForward();
                 }
-                }
             }
+        }
     }
 }
