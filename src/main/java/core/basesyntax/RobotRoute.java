@@ -5,7 +5,6 @@ public class RobotRoute {
       //write your solution here
 
         if (robot.getX() == toX && robot.getY() == toY) {
-            System.out.println("Robot is in Home now! Nothing to do, and time to rest.");
         } else if (robot.getX() != toX) {
             int x = toX - robot.getX();
             if (x > 0) {
