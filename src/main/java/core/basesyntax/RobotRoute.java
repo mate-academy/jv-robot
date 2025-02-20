@@ -10,14 +10,16 @@ public class RobotRoute {
                 while (robot.getDirection() != Direction.RIGHT) {
                     robot.turnRight();
                 }
-                for (int i = 0; i < x; i++)
+                for (int i = 0; i < x; i++) {
                     robot.stepForward();
+                }
             } else {
                 while (robot.getDirection() != Direction.LEFT) {
                     robot.turnLeft();
                 }
-                for (int i = 0; i > x; i--)
+                for (int i = 0; i > x; i--) {
                     robot.stepForward();
+                }
                 }
             }
         if (robot.getY() != toY) {
@@ -26,14 +28,16 @@ public class RobotRoute {
                 while (robot.getDirection() != Direction.UP) {
                     robot.turnRight();
                 }
-                for (int i = 0; i < y; i++)
+                for (int i = 0; i < y; i++) {
                     robot.stepForward();
+                }
             } else {
                 while (robot.getDirection() != Direction.DOWN) {
                     robot.turnLeft();
                 }
-                for (int i = 0; i > y; i--)
+                for (int i = 0; i > y; i--) {
                     robot.stepForward();
+                }
                 }
             }
     }
