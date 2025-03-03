@@ -3,9 +3,10 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         //write your solution here
+        int stepsNumberX = getStepsNumberX(robot, toX);
+        int stepsNumberY = getStepsNumberY(robot, toY);
         if (toX < robot.getX()) {
             turnLeftToX(robot, toX);
-            int stepsNumberX = getStepsNumberX(robot, toX);
             for (int i = 0; i < stepsNumberX; i++) {
                 robot.stepForward();
             }
@@ -14,13 +15,11 @@ public class RobotRoute {
             } else {
                 robot.turnRight();
             }
-            int stepsNumberY = getStepsNumberY(robot, toY);
             for (int i = 0; i < stepsNumberY; i++) {
                 robot.stepForward();
             }
         } else {
             turnRightToX(robot, toX);
-            int stepsNumberX = getStepsNumberX(robot, toX);
             for (int i = 0; i < stepsNumberX; i++) {
                 robot.stepForward();
             }
@@ -29,7 +28,6 @@ public class RobotRoute {
             } else {
                 robot.turnLeft();
             }
-            int stepsNumberY = getStepsNumberY(robot, toY);
             for (int i = 0; i < stepsNumberY; i++) {
                 robot.stepForward();
             }
