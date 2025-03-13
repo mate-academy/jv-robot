@@ -3,23 +3,23 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
 
-      if (robot.getX() < toX) {
+        if (robot.getX() < toX) {
           while (robot.getDirection() != Direction.RIGHT) {
               robot.turnRight();
           }
           while (robot.getX()!= toX) {
               robot.stepForward();
           }
-      } else if (robot.getX() > toX) {
+        } else if (robot.getX() > toX) {
           while (robot.getDirection() != Direction.LEFT) {
               robot.turnLeft();
           }
           while (robot.getX() != toX) {
               robot.stepForward();
           }
-      } else {
+        } else {
               System.out.println("Robot is on the coordinate X");
-      }
+        }
 
         if (robot.getY() < toY) {
             while (robot.getDirection() != Direction.UP) {
