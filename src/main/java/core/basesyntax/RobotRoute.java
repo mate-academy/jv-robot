@@ -36,8 +36,7 @@ public class RobotRoute {
                 robot.stepForward();
             }
         } else {
-            System.out.println("Robot is on the coordinate Y");
-
+            System.out.println("Robot is on the coordinate Y");g
         }
     }
 }
