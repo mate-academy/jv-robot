@@ -4,19 +4,19 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
 
         if (robot.getX() < toX) {
-          while (robot.getDirection() != Direction.RIGHT) {
+            while (robot.getDirection() != Direction.RIGHT) {
               robot.turnRight();
-          }
-          while (robot.getX()!= toX) {
+            }
+            while (robot.getX() != toX) {
               robot.stepForward();
-          }
+            }
         } else if (robot.getX() > toX) {
-          while (robot.getDirection() != Direction.LEFT) {
+            while (robot.getDirection() != Direction.LEFT) {
               robot.turnLeft();
-          }
-          while (robot.getX() != toX) {
+            }
+            while (robot.getX() != toX) {
               robot.stepForward();
-          }
+            }
         } else {
               System.out.println("Robot is on the coordinate X");
         }
