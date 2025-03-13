@@ -3,7 +3,7 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
 
-      if(robot.getX() < toX) {
+      if (robot.getX() < toX) {
           while (robot.getDirection() != Direction.RIGHT) {
               robot.turnRight();
           }
@@ -17,13 +17,11 @@ public class RobotRoute {
           while (robot.getX() != toX) {
               robot.stepForward();
           }
-
       } else {
               System.out.println("Robot is on the coordinate X");
-
       }
 
-        if(robot.getY() < toY) {
+        if (robot.getY() < toY) {
             while (robot.getDirection() != Direction.UP) {
                 robot.turnRight();
             }
@@ -37,13 +35,9 @@ public class RobotRoute {
             while (robot.getY() != toY) {
                 robot.stepForward();
             }
-
         } else {
             System.out.println("Robot is on the coordinate Y");
 
         }
-
-
-
-}
+    }
 }
