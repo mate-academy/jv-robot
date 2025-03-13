@@ -5,20 +5,20 @@ public class RobotRoute {
 
         if (robot.getX() < toX) {
             while (robot.getDirection() != Direction.RIGHT) {
-              robot.turnRight();
+                robot.turnRight();
             }
             while (robot.getX() != toX) {
-              robot.stepForward();
+                robot.stepForward();
             }
         } else if (robot.getX() > toX) {
             while (robot.getDirection() != Direction.LEFT) {
-              robot.turnLeft();
+                robot.turnLeft();
             }
             while (robot.getX() != toX) {
-              robot.stepForward();
+                robot.stepForward();
             }
         } else {
-              System.out.println("Robot is on the coordinate X");
+            System.out.println("Robot is on the coordinate X");
         }
 
         if (robot.getY() < toY) {
