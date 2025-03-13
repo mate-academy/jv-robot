@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-public class Robot extends RobotRoute {
+public class Robot {
     private Direction direction;
     private int coordinateX;
     private int coordinateY;
