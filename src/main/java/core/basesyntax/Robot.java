@@ -79,4 +79,11 @@ public class Robot {
                 break;
         }
     }
+
+    public void stepTo(Direction direction, int distance) {
+        this.direction = direction;
+        for (int i = 0; i < Math.abs(distance); i++) {
+            this.stepForward();
+        }
+    }
 }
