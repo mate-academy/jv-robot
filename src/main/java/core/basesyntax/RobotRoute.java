@@ -1,75 +1,54 @@
 package core.basesyntax;
 
-
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-        //write your solution here
-        switch (robot.getDirection()) {
-            case UP:
-                if (toY > robot.getY()) {
-                    while (robot.getY() < toY) {
-                        robot.stepForward();
-                    }
-                } else if (toY < robot.getY()) {
+        // Рух по осі Y
+        while (robot.getY() != toY) {
 
-                    robot.turnRight();
-                    robot.turnRight();
-                    while (robot.getY() > toY) {
-                        robot.stepForward();
-                    }
+            if (robot.getY() < toY) {
+
+                if (robot.getDirection() != Direction.UP) {
+                    turnToDirection(robot, Direction.UP);
                 }
-                break;
-                
-            case DOWN:
-                if (toY < robot.getY()) {
-                    while (robot.getY() > toY) {
-                        robot.stepForward();
-                    }
-                } else if (toY > robot.getY()) {
+                robot.stepForward();
+            }
 
-                    robot.turnRight();
-                    robot.turnRight();
-                    while (robot.getY() < toY) {
-                        robot.stepForward();
-                    }
+            else if (robot.getY() > toY) {
+
+                if (robot.getDirection() != Direction.DOWN) {
+                    turnToDirection(robot, Direction.DOWN);
                 }
-                break;
-
-            case LEFT:
-                if (toX < robot.getX()) {
-                    while (robot.getX() > toX) {
-                        robot.stepForward();
-                    }
-                } else if (toX > robot.getX()) {
-
-                    robot.turnRight();
-                    while (robot.getX() < toX) {
-                        robot.stepForward();
-                    }
-
-
-                }
-                break;
-
-            case RIGHT:
-                if (toX > robot.getX()) {
-
-                    while (robot.getX() < toX) {
-                        robot.stepForward();
-                    }
-                } else if (toX < robot.getX()) {
-
-                    robot.turnLeft();
-                    robot.turnLeft();
-                    while (robot.getX() > toX) {
-                        robot.stepForward();
-                    }
-                }
-                break;
-
+                robot.stepForward();
+            }
         }
 
-        
+        // Рух по осі X
+        while (robot.getX() != toX) {
 
+            if (robot.getX() < toX) {
+
+                if (robot.getDirection() != Direction.RIGHT) {
+                    turnToDirection(robot, Direction.RIGHT);
+                }
+                robot.stepForward();
+            }
+
+            else if (robot.getX() > toX) {
+
+                if (robot.getDirection() != Direction.LEFT) {
+                    turnToDirection(robot, Direction.LEFT);
+                }
+                robot.stepForward();
+            }
+        }
+    }
+
+
+    private void turnToDirection(Robot robot, Direction targetDirection) {
+
+        while (robot.getDirection() != targetDirection) {
+            robot.turnRight();
+        }
     }
 }
+
