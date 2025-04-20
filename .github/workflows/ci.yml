@@ -3,9 +3,10 @@ name: Java CI
 on:
   push:
     branches:
-      - main
-      - '**'     
+      - main  # Можно указать конкретные ветки
   pull_request:
+    branches:
+      - main  # Или другие ветки для PR
 
 jobs:
   build:
@@ -19,7 +20,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
-          distribution: 'adopt'
+          distribution: 'temurin'  # Используем Eclipse Temurin вместо AdoptOpenJDK
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
