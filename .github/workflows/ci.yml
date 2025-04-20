@@ -3,33 +3,23 @@ name: Java CI
 on:
   push:
     branches:
-      - main
+      - main  
   pull_request:
     branches:
-      - main
-
+      - main  
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/chechout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v2
         with:
           java-version: '17'
-          distribution: 'temurin'  # Темурин вместо Adopt
-
-      # Maven cache
-      - name: Cache Maven dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2/repository  # Путь до Maven репозитория
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}  # Ключ для кэша
-          restore-keys: |
-            ${{ runner.os }}-maven-
+          distribution: 'temurin'  
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
