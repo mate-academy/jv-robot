@@ -19,8 +19,8 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: 'temurin' # AdoptOpenJDK тепер Temurin
-          cache: maven            # Увімкнене кешування Maven
+          distribution: 'temurin'
+          cache: maven
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
