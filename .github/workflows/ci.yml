@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: maven
+          cache: 'none'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
       - uses: mate-academy/auto-approve-action@v2
