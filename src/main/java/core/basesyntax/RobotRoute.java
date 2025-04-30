@@ -74,7 +74,6 @@ public class RobotRoute {
         int desiredIndex = desiredDirection.ordinal();
         int indexSum = currentIndex + desiredIndex;
 
-
         if (indexSum == 1 || indexSum == 5) {
             // turn around
             robot.turnLeft();
