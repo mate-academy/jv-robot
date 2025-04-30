@@ -1,56 +1,74 @@
-<properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>jv-robot</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
     <jdk.version>17</jdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <maven.checkstyle.plugin.version>3.3.0</maven.checkstyle.plugin.version>  <!-- Или используйте 3.1.1 -->
+    <maven.checkstyle.plugin.version>3.3.0</maven.checkstyle.plugin.version>
     <maven.checkstyle.plugin.configLocation>
-        https://raw.githubusercontent.com/mate-academy/style-guides/master/java/checkstyle.xml
+      https://raw.githubusercontent.com/mate-academy/style-guides/master/java/checkstyle.xml
     </maven.checkstyle.plugin.configLocation>
-</properties>
+  </properties>
 
-<dependencies>
+  <dependencies>
     <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>5.7.0</version> <!-- Использование более новой версии JUnit -->
-        <scope>test</scope>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.7.0</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.7.0</version>
-        <scope>test</scope>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.7.0</version>
+      <scope>test</scope>
     </dependency>
-</dependencies>
+  </dependencies>
 
-<build>
+  <build>
     <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.3.0</version> <!-- Совпадает с версией в properties -->
-            <executions>
-                <execution>
-                    <phase>compile</phase>
-                    <goals>
-                        <goal>check</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <configLocation>${maven.checkstyle.plugin.configLocation}</configLocation>
-                <consoleOutput>true</consoleOutput>
-                <failsOnError>true</failsOnError>
-                <linkXRef>false</linkXRef>
-            </configuration>
-        </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${maven.checkstyle.plugin.version}</version>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <configLocation>${maven.checkstyle.plugin.configLocation}</configLocation>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <linkXRef>false</linkXRef>
+        </configuration>
+      </plugin>
     </plugins>
 
     <pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version> <!-- Обновление до более новой версии -->
-                <configuration>
-                    <source>${jdk.version}</source>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.10.1</version>
+          <configuration>
+            <source>${jdk.version}</source>
+            <target>${jdk.version}</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
