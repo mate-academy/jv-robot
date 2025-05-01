@@ -25,6 +25,7 @@ public class Robot {
 
     public void turnLeft() {
         switch (direction) {
+
             case UP:
                 direction = Direction.LEFT;
                 break;
