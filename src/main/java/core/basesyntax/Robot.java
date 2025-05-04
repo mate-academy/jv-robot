@@ -79,4 +79,35 @@ public class Robot {
                 break;
         }
     }
+
+    public void faceUp() {
+        faceLeft();
+        turnRight();
+    }
+
+    public void faceDown() {
+        faceLeft();
+        turnLeft();
+    }
+
+    public void faceRight() {
+        faceLeft();
+        turnAround();
+    }
+
+    public void faceLeft() {
+        switch (getDirection()) {
+            case UP -> turnLeft();
+            case RIGHT -> turnAround();
+            case DOWN -> turnRight();
+            default -> {
+
+            }
+        }
+    }
+
+    public void turnAround() {
+        turnLeft();
+        turnLeft();
+    }
 }
