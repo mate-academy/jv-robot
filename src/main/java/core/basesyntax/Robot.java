@@ -23,7 +23,7 @@ public class Robot {
         return coordinateY;
     }
 
-    public void turnLeft() {
+    public String turnLeft() {
         switch (direction) {
             case UP:
                 direction = Direction.LEFT;
@@ -40,9 +40,10 @@ public class Robot {
             default:
                 break;
         }
+        return direction.name();
     }
 
-    public void turnRight() {
+    public String turnRight() {
         switch (direction) {
             case UP:
                 direction = Direction.RIGHT;
@@ -59,9 +60,10 @@ public class Robot {
             default:
                 break;
         }
+        return direction.name();
     }
 
-    public void stepForward() {
+    public String stepForward() {
         switch (direction) {
             case UP:
                 coordinateY++;
@@ -78,5 +80,21 @@ public class Robot {
             default:
                 break;
         }
+        return direction.name();
+    }
+
+    public Direction turnRobot() {
+        switch (direction) {
+            case UP : direction = Direction.DOWN;
+                return direction;
+            case DOWN : direction = Direction.UP;
+                return direction;
+            case LEFT : direction = Direction.RIGHT;
+                return direction;
+            case RIGHT :direction = Direction.LEFT;
+                return direction;
+            default: break;
+        }
+        return direction;
     }
 }
