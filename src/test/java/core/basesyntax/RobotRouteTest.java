@@ -38,7 +38,7 @@ public class RobotRouteTest {
       startX, startY), expectedX, actualX);
     Assert.assertEquals(String.format("Wrong Y coordinate with start position x = %d and y = %d\n",
       startX, startY), expectedY, actualY);
-  }
+   }
 
   @Test
   public void goFromFirstQuadrantToThird() {
