@@ -2,6 +2,7 @@ package core.basesyntax;
 
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
-      //write your solution here
+        WayRobotToX.moveToX(robot, toX);
+        WayRobotToY.moveToY(robot, toY);
     }
 }
