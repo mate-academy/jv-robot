@@ -6,6 +6,7 @@ public class RobotRoute {
         int currentX = robot.getX();
         int currentY = robot.getY();
 
+        // Ruch w poziomie (X)
         if (toX > currentX) {
             rotateTo(robot, Direction.RIGHT);
             for (int i = 0; i < toX - currentX; i++) {
@@ -18,6 +19,7 @@ public class RobotRoute {
             }
         }
 
+        // Ruch w pionie (Y)
         if (toY > currentY) {
             rotateTo(robot, Direction.UP);
             for (int i = 0; i < toY - currentY; i++) {
@@ -37,4 +39,4 @@ public class RobotRoute {
         }
     }
 }
-git
+
