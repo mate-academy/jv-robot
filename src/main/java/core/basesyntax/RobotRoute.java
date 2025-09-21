@@ -4,7 +4,6 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
         int currentX = robot.getX();
         Direction currentDirection = robot.getDirection();
-        int currentY = robot.getY();
 
         if (toX > currentX) {
             switch (currentDirection) {
@@ -56,6 +55,7 @@ public class RobotRoute {
             }
         }
 
+        int currentY = robot.getY();
         currentDirection = robot.getDirection();
 
         if (toY > currentY) {
