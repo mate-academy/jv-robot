@@ -11,7 +11,7 @@ public class Robot {
         this.coordinateY = coordinateY;
     }
 
-    public Direction getDirection() {
+    public Direction getDirection() { // повертає поточний напрямок робота
         return direction;
     }
 
