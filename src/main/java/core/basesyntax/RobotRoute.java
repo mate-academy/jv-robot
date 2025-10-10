@@ -1,28 +1,27 @@
 package core.basesyntax;
 
 /**
- * Moves a Robot from its current position to target coordinate.
+ * Moves a Robot from its current position to a target coordinate.
  *
  * <p>Movement strategy:
  * <ol>
- *     <li>Move along X axis.</li>
- *     <li>Move along Y axis</li>
+ *   <li>Move along X axis.</li>
+ *   <li>Move along Y axis.</li>
  * </ol>
  */
-public class RobotRoute {
+public final class RobotRoute {
+
     /**
-     * Move the given robot to the target coordinates(toX, toY)
+     * Move the given robot to the target coordinates (toX, toY).
      *
-     * @param robot
-     * @param toX
-     * @param toY
+     * @param robot the robot to move
+     * @param toX the target X coordinate
+     * @param toY the target Y coordinate
      */
     public void moveRobot(Robot robot, int toX, int toY) {
-      moveAlongX(robot, toX);
-      moveAlongY(robot, toY);
+        moveAlongX(robot, toX);
+        moveAlongY(robot, toY);
     }
-
-    //-----Private Helpers-----
 
     private void moveAlongX(Robot robot, int toX) {
         int currentX = robot.getX();
@@ -30,18 +29,20 @@ public class RobotRoute {
             return;
         }
 
-        Direction target = currentX < toX ? Direction.UP : Direction.DOWN;
+        Direction target = currentX < toX ? Direction.RIGHT : Direction.LEFT;
         turnTo(robot, target);
 
         while (robot.getX() != toX) {
             robot.stepForward();
         }
     }
+
     private void moveAlongY(Robot robot, int toY) {
         int currentY = robot.getY();
         if (currentY == toY) {
             return;
         }
+
         Direction target = currentY < toY ? Direction.UP : Direction.DOWN;
         turnTo(robot, target);
 
@@ -49,14 +50,17 @@ public class RobotRoute {
             robot.stepForward();
         }
     }
+
     /**
      * Turn the robot to the desired direction using the minimal number of turns.
      *
-     * <p>Determines how many left or right turns are requed and executes the smaller sequence.
+     * <p>Determines how many left or right turns are required and executes the smaller sequence.
+     *
+     * @param robot the robot to turn
+     * @param target the desired direction
      */
     private void turnTo(Robot robot, Direction target) {
         Direction current = robot.getDirection();
-
         if (current == target) {
             return;
         }
@@ -68,7 +72,7 @@ public class RobotRoute {
             for (int i = 0; i < rights; i++) {
                 robot.turnRight();
             }
-        }else{
+        } else {
             for (int i = 0; i < lefts; i++) {
                 robot.turnLeft();
             }
@@ -79,7 +83,7 @@ public class RobotRoute {
         int count = 0;
         Direction d = from;
         while (d != to) {
-            d = leftOf(d);
+            d = rightOf(d);
             count++;
         }
         return count;
@@ -110,7 +114,7 @@ public class RobotRoute {
         }
     }
 
-    private  Direction leftOf(Direction d) {
+    private Direction leftOf(Direction d) {
         switch (d) {
             case UP:
                 return Direction.LEFT;
