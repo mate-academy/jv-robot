@@ -1,9 +1,9 @@
-package fch.models;
+package core.basesyntax.models;
 
-import static fch.models.Direction.DOWN;
-import static fch.models.Direction.LEFT;
-import static fch.models.Direction.RIGHT;
-import static fch.models.Direction.UP;
+import static core.basesyntax.models.Direction.DOWN;
+import static core.basesyntax.models.Direction.LEFT;
+import static core.basesyntax.Direction.RIGHT;
+import static core.basesyntax.Direction.UP;
 
 public class RobotRoute {
 
