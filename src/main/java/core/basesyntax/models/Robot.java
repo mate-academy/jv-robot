@@ -3,13 +3,13 @@ package fch.models;
 import java.util.Random;
 
 public class Robot {
-    private int X;
-    private int Y;
+    private int coordinateX;
+    private int coordinateY;
     private Direction direction;
 
     public Robot() {
-        this.X = new Random().nextInt();
-        this.Y = new Random().nextInt();
+        this.coordinateX = new Random().nextInt();
+        this.coordinateY = new Random().nextInt();
         this.direction = Direction.values()[new Random().nextInt(Direction.values().length)];
     }
 
@@ -18,11 +18,11 @@ public class Robot {
     }
 
     public int getX() {
-        return X;
+        return coordinateX;
     }
 
     public int getY() {
-        return Y;
+        return coordinateY;
     }
 
     public void turnLeft() {
@@ -66,16 +66,16 @@ public class Robot {
     public void stepForward() {
         switch (direction) {
             case UP:
-                Y++;
+                coordinateY++;
                 break;
             case DOWN:
-                Y--;
+                coordinateY--;
                 break;
             case LEFT:
-                X--;
+                coordinateX--;
                 break;
             case RIGHT:
-                X++;
+                coordinateX++;
                 break;
             default:
                 break;

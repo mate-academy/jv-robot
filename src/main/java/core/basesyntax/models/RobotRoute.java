@@ -1,9 +1,9 @@
 package fch.models;
 
-import static fch.models.Direction.UP;
 import static fch.models.Direction.DOWN;
 import static fch.models.Direction.LEFT;
 import static fch.models.Direction.RIGHT;
+import static fch.models.Direction.UP;
 
 public class RobotRoute {
 
