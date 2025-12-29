@@ -1,14 +1,16 @@
-package core.basesyntax;
+package fch.models;
+
+import java.util.Random;
 
 public class Robot {
+    private int x;
+    private int y;
     private Direction direction;
-    private int coordinateX;
-    private int coordinateY;
 
-    public Robot(Direction direction, int coordinateX, int coordinateY) {
-        this.direction = direction;
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
+    public Robot() {
+        this.x = new Random().nextInt();
+        this.y = new Random().nextInt();
+        this.direction = Direction.values()[new Random().nextInt(Direction.values().length)];
     }
 
     public Direction getDirection() {
@@ -16,23 +18,23 @@ public class Robot {
     }
 
     public int getX() {
-        return coordinateX;
+        return x;
     }
 
     public int getY() {
-        return coordinateY;
+        return y;
     }
 
     public void turnLeft() {
-        switch (direction) {
+        switch(direction) {
             case UP:
                 direction = Direction.LEFT;
                 break;
-            case LEFT:
-                direction = Direction.DOWN;
-                break;
             case DOWN:
                 direction = Direction.RIGHT;
+                break;
+            case LEFT:
+                direction = Direction.DOWN;
                 break;
             case RIGHT:
                 direction = Direction.UP;
@@ -43,15 +45,15 @@ public class Robot {
     }
 
     public void turnRight() {
-        switch (direction) {
+        switch(direction) {
             case UP:
                 direction = Direction.RIGHT;
                 break;
-            case LEFT:
-                direction = Direction.UP;
-                break;
             case DOWN:
                 direction = Direction.LEFT;
+                break;
+            case LEFT:
+                direction = Direction.UP;
                 break;
             case RIGHT:
                 direction = Direction.DOWN;
@@ -62,18 +64,18 @@ public class Robot {
     }
 
     public void stepForward() {
-        switch (direction) {
+        switch(direction) {
             case UP:
-                coordinateY++;
-                break;
-            case LEFT:
-                coordinateX--;
+                y++;
                 break;
             case DOWN:
-                coordinateY--;
+                y--;
+                break;
+            case LEFT:
+                x--;
                 break;
             case RIGHT:
-                coordinateX++;
+                x++;
                 break;
             default:
                 break;

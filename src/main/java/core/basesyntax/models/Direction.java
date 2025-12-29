@@ -1,8 +1,8 @@
-package core.basesyntax;
+package fch.models;
 
 public enum Direction {
     UP,
-    DOWN,
     LEFT,
+    DOWN,
     RIGHT
 }
