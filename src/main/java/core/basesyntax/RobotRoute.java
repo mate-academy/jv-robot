@@ -13,7 +13,7 @@ public class RobotRoute {
             while (robot.getX() < toX && robot.getDirection() != Direction.RIGHT) {
                 robot.turnRight();
             }
-            while (robot.getX() < toX && robot.getDirection() != Direction.LEFT) {
+            while (robot.getX() > toX && robot.getDirection() != Direction.LEFT) {
                 robot.turnLeft();
             }
             robot.stepForward();
