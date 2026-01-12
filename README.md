@@ -1,34 +1,57 @@
-# jv-robot
+## jv-robot
+# Вимоги до завдання
 
----
-### Task Requirement
+У нас є наш хороший друг — робот Джонні, який загубився на майданчику. Його позиція задається двома цілими числами: X та Y.
 
-We have our good friend Robot Johny who got lost on the playground. His position is represented by two integer coordinates: `X` and `Y`. X is the horizontal axis and Y is the vertical axis. Unfortunately, he has some unknown random initial position and we don't even know the initial Direction in which he is facing. But he really wants to go home, which is represented by `toX` and `toY`. 
+X — горизонтальна вісь
 
-Your task is to help Johny find his way home by implementing logic in the `RobotRoute` class that navigates the robot from its current position to the target position.
+Y — вертикальна вісь
 
-### Provided Classes
+На жаль, його початкова позиція невідома, а також ми не знаємо, у якому напрямку він спочатку дивиться. Але Джонні дуже хоче дійти додому, координати якого задані як toX і toY.
 
-#### Direction Enum
-An enum named `Direction` is provided which has the following values: UP, DOWN, LEFT, and RIGHT.
+Твоє завдання — допомогти Джонні дійти додому, реалізувавши логіку в класі RobotRoute, яка буде переміщати робота з його поточної позиції до цільової.
+# Надані класи
+# Enum Direction
+Є enum Direction із наступними значеннями:
 
-#### Robot Class
-The `Robot` class is provided with the following methods:
-- `getDirection()`: returns the current direction of the robot.
-- `getX()` and `getY()`: return the current X and Y coordinates of the robot respectively.
-- `turnLeft()` and `turnRight()`: change the direction of the robot to the left or right respectively.
-- `stepForward()`: moves the robot one step forward in its current direction.
+UP — вверх
 
-#### RobotRoute Class
-The `RobotRoute` class is provided with a method signature:
-- `moveRobot(Robot robot, int toX, int toY)`: This method should take a `Robot` instance and two integer parameters `toX` and `toY`, which represent the target position. The method should navigate the robot from its current position to the target position, considering its current direction and updating its direction as needed.
+DOWN — вниз
 
-### Requirements
-- Implement the logic in the `moveRobot` method of the `RobotRoute` class to navigate the robot from its current position to the target position (`toX`, `toY`).
-- The robot should be able to navigate through all four quadrants of the coordinate plane.
-- The robot should be able to handle moving from any quadrant to any other quadrant, as well as staying in the same position.
-- The robot's position and direction should be updated appropriately after the `moveRobot` method is called.
+LEFT — вліво
 
-### Notes
-- Pay attention to the robot's direction and ensure it is updated appropriately as it moves towards the target position.
-- [Try to avoid these mistakes while solving task](./checklist.md)
+RIGHT — вправо
+
+# Клас Robot
+Клас Robot надає такі методи:
+
+getDirection() — повертає поточний напрямок робота
+
+getX() і getY() — повертають поточні координати X та Y
+
+turnLeft() і turnRight() — змінюють напрямок робота вліво або вправо
+
+stepForward() — переміщує робота на один крок вперед у поточному напрямку
+
+# Клас RobotRoute
+Клас RobotRoute надає метод:
+
+moveRobot(Robot robot, int toX, int toY)
+
+Цей метод має взяти робота (robot) і координати цілі (toX, toY)
+
+Метод повинен перемістити робота з його поточної позиції до цільової, враховуючи поточний напрямок і змінюючи його за потреби.
+
+# Вимоги
+Реалізуй логіку в методі moveRobot так, щоб робот діставався до цілі (toX, toY) з його поточної позиції.
+
+Робот повинен переміщатися у всіх чотирьох квадрантах координатної площини.
+
+Робот повинен уміти рухатися з будь-якого квадранта в будь-який інший, а також залишатися на місці, якщо він уже на цілі.
+
+Позиція та напрямок робота повинні коректно оновлюватися після виклику moveRobot.
+
+# Поради
+Зверни увагу на напрямок робота і оновлюй його правильно під час руху до цілі.
+
+Намагайся уникати помилок, які часто трапляються при реалізації цього завдання.
