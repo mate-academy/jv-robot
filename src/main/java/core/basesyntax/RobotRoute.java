@@ -5,27 +5,27 @@ public class RobotRoute {
 
         do {
             if (robot.getX() < toX) {
-                changeDirection(robot, Direction.RIGHT);
+                moveOneStepTo(robot, Direction.RIGHT);
             }
 
             if (robot.getX() > toX) {
-                changeDirection(robot, Direction.LEFT);
+                moveOneStepTo(robot, Direction.LEFT);
             }
 
         } while (robot.getX() != toX);
 
         do {
             if (robot.getY() < toY) {
-                changeDirection(robot, Direction.UP);
+                moveOneStepTo(robot, Direction.UP);
             }
 
             if (robot.getY() > toY) {
-                changeDirection(robot, Direction.DOWN);
+                moveOneStepTo(robot, Direction.DOWN);
             }
         } while (robot.getY() != toY);
     }
 
-    public void changeDirection(Robot robot, Direction targetDirection) {
+    public void moveOneStepTo(Robot robot, Direction targetDirection) {
         while (robot.getDirection() != targetDirection) {
             robot.turnRight();
         }
