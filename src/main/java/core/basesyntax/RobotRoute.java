@@ -52,11 +52,11 @@ public class RobotRoute {
                 case UP:
                     robot.turnRight();
                     break;
-                case DOWN:
+                case LEFT:
                     robot.turnLeft();
                     robot.turnLeft();
                     break;
-                case LEFT:
+                case DOWN:
                     robot.turnLeft();
                     break;
                 default:
@@ -69,11 +69,11 @@ public class RobotRoute {
                 case UP:
                     robot.turnLeft();
                     break;
-                case DOWN:
+                case RIGHT:
                     robot.turnRight();
                     robot.turnRight();
                     break;
-                case RIGHT:
+                case DOWN:
                     robot.turnRight();
                     break;
                 default:
