@@ -33,7 +33,7 @@ public class RobotRoute {
         int yway = toY - robot.getY();
         Direction currentDirection = robot.getDirection();
 
-        if (xway >= 0 && yway >= 0) {
+        if (xway > 0 && yway > 0) {
             firstUp(robot, currentDirection);
 
             for (int i = 0; i < yway; i++) {
@@ -47,7 +47,7 @@ public class RobotRoute {
             }
         }
 
-        if (xway <= 0 && yway <= 0) {
+        if (xway < 0 && yway < 0) {
             firstDown(robot, currentDirection);
 
             for (int i = 0; i > yway; i--) {
@@ -61,7 +61,7 @@ public class RobotRoute {
             }
         }
 
-        if (xway <= 0 && yway >= 0) {
+        if (xway < 0 && yway > 0) {
             firstUp(robot, currentDirection);
 
             for (int i = 0; i < yway; i++) {
@@ -75,7 +75,7 @@ public class RobotRoute {
             }
         }
 
-        if (xway >= 0 && yway <= 0) {
+        if (xway > 0 && yway < 0) {
             firstDown(robot, currentDirection);
 
             for (int i = 0; i > yway; i--) {
@@ -86,6 +86,32 @@ public class RobotRoute {
 
             for (int i = 0; i < xway; i++) {
                 robot.stepForward();
+            }
+        }
+
+        if (xway == 0) {
+            if (yway >= 0) {
+                firstUp(robot, currentDirection);
+                for (int i = 0; i < yway; i++) {
+                    robot.stepForward();
+                }
+            } else {
+                for (int i = 0; i > yway; i--) {
+                    robot.stepForward();
+                }
+            }
+        }
+
+        if (yway == 0) {
+            if (xway >= 0) {
+                firstUp(robot, currentDirection);
+                for (int i = 0; i < xway; i++) {
+                    robot.stepForward();
+                }
+            } else {
+                for (int i = 0; i > xway; i--) {
+                    robot.stepForward();
+                }
             }
         }
     }
