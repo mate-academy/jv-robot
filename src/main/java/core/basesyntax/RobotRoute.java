@@ -82,7 +82,7 @@ public class RobotRoute {
                 robot.stepForward();
             }
 
-            robot.turnRight();
+            robot.turnLeft();
 
             for (int i = 0; i < xway; i++) {
                 robot.stepForward();
@@ -96,6 +96,7 @@ public class RobotRoute {
                     robot.stepForward();
                 }
             } else {
+                firstDown(robot, currentDirection);
                 for (int i = 0; i > yway; i--) {
                     robot.stepForward();
                 }
@@ -105,10 +106,13 @@ public class RobotRoute {
         if (yway == 0) {
             if (xway >= 0) {
                 firstUp(robot, currentDirection);
+                robot.turnRight();
                 for (int i = 0; i < xway; i++) {
                     robot.stepForward();
                 }
             } else {
+                firstUp(robot, currentDirection);
+                robot.turnLeft();
                 for (int i = 0; i > xway; i--) {
                     robot.stepForward();
                 }
