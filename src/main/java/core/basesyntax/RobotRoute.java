@@ -17,6 +17,22 @@ public class RobotRoute {
         }
     }
 
+    private void moveToY(Robot r, int targetY) {
+        if (r.getY() < targetY) {
+            while (r.getDirection() != Direction.UP) {
+                r.turnRight();
+            }
+        } else if (r.getY() > targetY) {
+            while (r.getDirection() != Direction.DOWN) {
+                r.turnLeft();
+            }
+        }
+
+        while (r.getY() != targetY) {
+            r.stepForward();
+        }
+    }
+
     public void moveRobot(Robot robot, int toX, int toY) {
 
     }
