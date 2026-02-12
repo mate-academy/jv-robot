@@ -34,6 +34,7 @@ public class RobotRoute {
     }
 
     public void moveRobot(Robot robot, int toX, int toY) {
-
+        moveToX(robot, toX);
+        moveToY(robot, toY);
     }
 }
