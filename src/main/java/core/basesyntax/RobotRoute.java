@@ -41,6 +41,8 @@ public class RobotRoute {
             }
         }
 
+        currentDirection = robot.getDirection();
+
         if (currentY < toY) {
             if (currentDirection == Direction.LEFT) {
                 robot.turnRight();
