@@ -16,5 +16,9 @@ public class Main {
 
         RobotRoute rr = new RobotRoute();
         rr.moveRobot(robot, 0, 0);
+
+        System.out.println(robot.getX());
+        System.out.println(robot.getY());
+        System.out.println(robot.getDirection());
     }
 }

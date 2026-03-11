@@ -80,6 +80,9 @@ public class RobotRoute {
                 break;
             case LEFT:
                 turnAround(robot);
+                break;
+            default:
+                throw new IllegalArgumentException("wrong direction value");
         }
 
     }
