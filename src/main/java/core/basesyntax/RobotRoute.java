@@ -7,7 +7,7 @@ public class RobotRoute {
 
         if (startX < toX) { // move to RIGHT
             moveToRight(robot, toX - startX);
-        } else if (startX > toY) { // move to LEFT
+        } else if (startX > toX) { // move to LEFT
             moveToLeft(robot, startX - toX);
         }
 
