@@ -21,7 +21,7 @@ public class RobotRoute {
         }
     }
 
-    private void turnToDirection(Robot robot, Direction target){
+    private void turnToDirection(Robot robot, Direction target) {
         while (robot.getDirection() != target) {
             robot.turnRight();
         }
