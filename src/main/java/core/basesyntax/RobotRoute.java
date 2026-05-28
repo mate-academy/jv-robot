@@ -19,7 +19,6 @@ public class RobotRoute {
                         }
                     }
                 }
-
                 if (toX > robot.getX()) {
                     if (robot.getDirection() == Direction.UP) {
                         robot.turnRight();
