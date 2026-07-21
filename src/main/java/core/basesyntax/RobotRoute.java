@@ -34,8 +34,24 @@ public class RobotRoute {
     }
 
     private void turnToDirection(Robot robot, Direction requiredDirection) {
-        while (robot.getDirection() != requiredDirection) {
-            robot.turnRight();
+        if (robot.getDirection() == requiredDirection) {
+            return;
+        }
+
+        if ((robot.getDirection() == Direction.UP
+                && requiredDirection == Direction.LEFT)
+                || (robot.getDirection() == Direction.LEFT
+                && requiredDirection == Direction.DOWN)
+                || (robot.getDirection() == Direction.DOWN
+                && requiredDirection == Direction.RIGHT)
+                || (robot.getDirection() == Direction.RIGHT
+                && requiredDirection == Direction.UP)) {
+            robot.turnLeft();
+        } else {
+            while (robot.getDirection() != requiredDirection) {
+                robot.turnRight();
+            }
         }
     }
 }
+
