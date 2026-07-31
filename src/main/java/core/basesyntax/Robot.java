@@ -23,7 +23,7 @@ public class Robot {
         return coordinateY;
     }
 
-    public void turnLeft() {
+    private void turnLeft() {
         switch (direction) {
             case UP:
                 direction = Direction.LEFT;
@@ -42,26 +42,7 @@ public class Robot {
         }
     }
 
-    public void turnRight() {
-        switch (direction) {
-            case UP:
-                direction = Direction.RIGHT;
-                break;
-            case LEFT:
-                direction = Direction.UP;
-                break;
-            case DOWN:
-                direction = Direction.LEFT;
-                break;
-            case RIGHT:
-                direction = Direction.DOWN;
-                break;
-            default:
-                break;
-        }
-    }
-
-    public void stepForward() {
+    private void stepForward() {
         switch (direction) {
             case UP:
                 coordinateY++;
@@ -77,6 +58,42 @@ public class Robot {
                 break;
             default:
                 break;
+        }
+    }
+
+    public void goLeft(int toX) {
+        while (getDirection() != Direction.LEFT) {
+            turnLeft();
+        }
+        while (toX != getX()) {
+            stepForward();
+        }
+    }
+
+    public void goRight(int toX) {
+        while (getDirection() != Direction.RIGHT) {
+            turnLeft();
+        }
+        while (toX != getX()) {
+            stepForward();
+        }
+    }
+
+    public void goDown(int toY) {
+        while (getDirection() != Direction.DOWN) {
+            turnLeft();
+        }
+        while (toY != getY()) {
+            stepForward();
+        }
+    }
+
+    public void goUp(int toY) {
+        while (getDirection() != Direction.UP) {
+            turnLeft();
+        }
+        while (toY != getY()) {
+            stepForward();
         }
     }
 }
