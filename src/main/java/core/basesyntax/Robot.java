@@ -79,4 +79,86 @@ public class Robot {
                 break;
         }
     }
+
+    public void defineDirectionX(Robot robot, int toX) {
+        int x = robot.getX();
+        Direction needDirection = robot.getDirection();
+        if (x != toX) {
+            if (x > toX) {
+                needDirection = Direction.LEFT;
+            } else {
+                needDirection = Direction.RIGHT;
+            }
+        }
+        while (robot.getDirection() != needDirection) {
+            Direction robotDirection = robot.getDirection();
+            if (needDirection == Direction.RIGHT) {
+                switch (robotDirection) {
+                    case UP:
+                        robot.turnRight();
+                        break;
+                    case LEFT:
+                    case DOWN:
+                        robot.turnLeft();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (needDirection == Direction.LEFT) {
+                switch (robotDirection) {
+                    case RIGHT:
+                    case UP:
+                        robot.turnLeft();
+                        break;
+                    case DOWN:
+                        robot.turnRight();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+
+    public void defineDirectionY(Robot robot, int toY) {
+        int y = robot.getY();
+        Direction needDirection = robot.getDirection();
+        if (y != toY) {
+            if (y > toY) {
+                needDirection = Direction.DOWN;
+            } else {
+                needDirection = Direction.UP;
+            }
+        }
+        while (robot.getDirection() != needDirection) {
+            Direction robotDirection = robot.getDirection();
+            if (needDirection == Direction.DOWN) {
+                switch (robotDirection) {
+                    case LEFT:
+                    case UP:
+                        robot.turnLeft();
+                        break;
+                    case RIGHT:
+                        robot.turnRight();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (needDirection == Direction.UP) {
+                switch (robotDirection) {
+                    case LEFT:
+                    case DOWN:
+                        robot.turnRight();
+                        break;
+                    case RIGHT:
+                        robot.turnLeft();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
 }
