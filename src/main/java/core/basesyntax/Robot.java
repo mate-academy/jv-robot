@@ -26,16 +26,10 @@ public class Robot {
     public void turnLeft() {
         switch (direction) {
             case UP:
-                direction = Direction.LEFT;
-                break;
             case LEFT:
-                direction = Direction.DOWN;
-                break;
             case DOWN:
-                direction = Direction.RIGHT;
-                break;
             case RIGHT:
-                direction = Direction.UP;
+                direction = Direction.LEFT;
                 break;
             default:
                 break;
@@ -45,16 +39,32 @@ public class Robot {
     public void turnRight() {
         switch (direction) {
             case UP:
+            case LEFT:
+            case DOWN:
+            case RIGHT:
                 direction = Direction.RIGHT;
                 break;
+            default:
+                break;
+        }
+    }
+
+    public void turnDown() {
+        switch (direction) {
             case LEFT:
-                direction = Direction.UP;
-                break;
-            case DOWN:
-                direction = Direction.LEFT;
-                break;
             case RIGHT:
                 direction = Direction.DOWN;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void turnUp() {
+        switch (direction) {
+            case RIGHT:
+            case LEFT:
+                direction = Direction.UP;
                 break;
             default:
                 break;
