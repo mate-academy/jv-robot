@@ -21,7 +21,7 @@ The `Robot` class is provided with the following methods:
 
 #### RobotRoute Class
 The `RobotRoute` class is provided with a method signature:
-- `moveRobot(Robot robot, int toX, int toY)`: This method should take a `Robot` instance and two integer parameters `toX` and `toY`, which represent the target position. The method should navigate the robot from its current position to the target position, considering its current direction and updating its direction as needed.
+- `moveRobot(Robot robot, int toX, int toY)`: This method should take a `Robot` instance and two integer parameters `toX`and `toY`, which represent the target position. The method should navigate the robot from its current position to the target position, considering its current direction and updating its direction as needed.
 
 ### Requirements
 - Implement the logic in the `moveRobot` method of the `RobotRoute` class to navigate the robot from its current position to the target position (`toX`, `toY`).
