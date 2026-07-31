@@ -23,6 +23,14 @@ public class Robot {
         return coordinateY;
     }
 
+    public int setX(int coordinateX) {
+        return this.coordinateX = coordinateX;
+    }
+
+    public int setY(int coordinateY) {
+        return this.coordinateY = coordinateY;
+    }
+
     public void turnLeft() {
         switch (direction) {
             case UP:

@@ -3,9 +3,9 @@ package core.basesyntax;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class RobotRouteTest {
+public class RobotRouteTest{
   @Test
-  public void robotShouldStayAtTheSamePosition() {
+  public void robotShouldStayAtTheSamePosition(){
     int startX = 0;
     int startY = 0;
     Robot robot = new Robot(Direction.LEFT, startX, startY);
@@ -23,7 +23,7 @@ public class RobotRouteTest {
   }
 
   @Test
-  public void goFromFirstQuadrantToSecond() {
+  public void goFromFirstQuadrantToSecond(){
     int startX = 1;
     int startY = 1;
     Robot robot = new Robot(Direction.LEFT, startX, startY);
@@ -41,7 +41,7 @@ public class RobotRouteTest {
   }
 
   @Test
-  public void goFromFirstQuadrantToThird() {
+  public void goFromFirstQuadrantToThird(){
     int startX = 1;
     int startY = 1;
     Robot robot = new Robot(Direction.RIGHT, startX, startY);
@@ -59,7 +59,7 @@ public class RobotRouteTest {
   }
 
   @Test
-  public void goFromFirstQuadrantToFourth() {
+  public void goFromFirstQuadrantToFourth(){
     int startX = 1;
     int startY = 1;
     Robot robot = new Robot(Direction.DOWN, startX, startY);
@@ -77,7 +77,7 @@ public class RobotRouteTest {
   }
 
   @Test
-  public void goFromSecondQuadrantToFirst() {
+  public void goFromSecondQuadrantToFirst(){
     int startX = 12;
     int startY = -4;
     Robot robot = new Robot(Direction.UP, startX, startY);
