@@ -1,5 +1,6 @@
 package core.basesyntax;
 
+import core.basesyntax.main.RobotRoute;
 import org.junit.Assert;
 import org.junit.Test;
 
