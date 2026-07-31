@@ -12,14 +12,17 @@ public class Robot {
     }
 
     public Direction getDirection() {
+
         return direction;
     }
 
     public int getX() {
+
         return coordinateX;
     }
 
     public int getY() {
+
         return coordinateY;
     }
 
