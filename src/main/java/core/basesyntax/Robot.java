@@ -47,14 +47,14 @@ public class Robot {
             case UP:
                 direction = Direction.RIGHT;
                 break;
-            case LEFT:
-                direction = Direction.UP;
+            case RIGHT:
+                direction = Direction.DOWN;
                 break;
             case DOWN:
                 direction = Direction.LEFT;
                 break;
-            case RIGHT:
-                direction = Direction.DOWN;
+            case LEFT:
+                direction = Direction.UP;
                 break;
             default:
                 break;
