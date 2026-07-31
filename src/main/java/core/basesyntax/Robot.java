@@ -22,7 +22,7 @@ public class Robot {
     public int getY() {
         return coordinateY;
     }
-
+    
     public void turnLeft() {
         switch (direction) {
             case UP:
