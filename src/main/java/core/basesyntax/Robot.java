@@ -1,6 +1,7 @@
 package core.basesyntax;
 
 public class Robot {
+
     private Direction direction;
     private int coordinateX;
     private int coordinateY;
@@ -13,6 +14,10 @@ public class Robot {
 
     public Direction getDirection() {
         return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
     }
 
     public int getX() {
