@@ -12,7 +12,6 @@ public class RobotRouteTest {
     RobotRoute robotRoute = new RobotRoute();
     int expectedX = 0;
     int expectedY = 0;
-
     robotRoute.moveRobot(robot, expectedX, expectedY);
     int actualX = robot.getX();
     int actualY = robot.getY();
