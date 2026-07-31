@@ -16,7 +16,7 @@ An enum named `Direction` is provided which has the following values: UP, DOWN, 
 The `Robot` class is provided with the following methods:
 - `getDirection()`: returns the current direction of the robot.
 - `getX()` and `getY()`: return the current X and Y coordinates of the robot respectively.
-- `turnLeft()` and `turnRight()`: change the direction of the robot to the left or right respectively.
+- `turnLeft()` and `turnRight()`: change the direction of the robot to the left or right respectively.d
 - `stepForward()`: moves the robot one step forward in its current direction.
 
 #### RobotRoute Class
