@@ -79,4 +79,88 @@ public class Robot {
                 break;
         }
     }
+
+    protected void ifXmoreToX(int toX, int toY) {
+        if (getX() > toX) {
+            while (!getDirection().equals(Direction.LEFT)) {
+                turnLeft();
+            }
+            while (getX() != toX) {
+                stepForward();
+            }
+            if (getY() > toY) {
+                turnLeft();
+                while (getY() != toY) {
+                    stepForward();
+                }
+            } else if (getY() < toY) {
+                turnRight();
+                while (getY() != toY) {
+                    stepForward();
+                }
+            }
+        }
+    }
+
+    protected void ifXlessToX(int toX, int toY) {
+        if (getX() < toX) {
+            while (!getDirection().equals(Direction.RIGHT)) {
+                turnLeft();
+            }
+            while (getX() != toX) {
+                stepForward();
+            }
+            if (getY() > toY) {
+                turnRight();
+                while (getY() != toY) {
+                    stepForward();
+                }
+            } else if (getY() < toY) {
+                turnLeft();
+                while (getY() != toY) {
+                    stepForward();
+                }
+            }
+        }
+    }
+
+    protected void ifXequalsToX(int toX, int toY) {
+        if (getX() == toX) {
+            if (getY() > toY) {
+                while (!getDirection().equals(Direction.DOWN)) {
+                    turnRight();
+                }
+                while (getY() != toY) {
+                    stepForward();
+                }
+            } else if (getY() < toY) {
+                while (!getDirection().equals(Direction.UP)) {
+                    turnRight();
+                }
+                while (getY() != toY) {
+                    stepForward();
+                }
+            }
+        }
+    }
+
+    protected void ifYequalsToY(int toX, int toY) {
+        if (getY() == toY) {
+            if (getX() > toX) {
+                while (!getDirection().equals(Direction.LEFT)) {
+                    turnLeft();
+                }
+                while (getX() != toX) {
+                    stepForward();
+                }
+            } else if (getX() < toX) {
+                while (!getDirection().equals(Direction.RIGHT)) {
+                    turnLeft();
+                }
+                while (getX() != toX) {
+                    stepForward();
+                }
+            }
+        }
+    }
 }
