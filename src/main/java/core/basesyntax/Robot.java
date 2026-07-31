@@ -42,25 +42,6 @@ public class Robot {
         }
     }
 
-    public void turnRight() {
-        switch (direction) {
-            case UP:
-                direction = Direction.RIGHT;
-                break;
-            case LEFT:
-                direction = Direction.UP;
-                break;
-            case DOWN:
-                direction = Direction.LEFT;
-                break;
-            case RIGHT:
-                direction = Direction.DOWN;
-                break;
-            default:
-                break;
-        }
-    }
-
     public void stepForward() {
         switch (direction) {
             case UP:
