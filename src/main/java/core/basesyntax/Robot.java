@@ -61,7 +61,7 @@ public class Robot {
         }
     }
 
-    public void stepForward() {
+    public boolean stepForward() {
         switch (direction) {
             case UP:
                 coordinateY++;
@@ -78,5 +78,6 @@ public class Robot {
             default:
                 break;
         }
+        return false;
     }
 }
