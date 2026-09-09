@@ -42,7 +42,7 @@ public class RobotRoute {
           }
           while (toY != Y) {
             robot.stepForward();
-            X = robot.getY();
+            Y = robot.getY();
           }
         }
     }
