@@ -5,7 +5,8 @@ public class RobotRoute {
         X = robot.getX();
         Y = robot.getY();
         Direction = robot.getDirection();
-        if (X > toX){
+        if(X == toX){}
+        else if (X > toX){
           while(Direction != LEFT){
               robot.turnLeft();
               Direction = robot.getDirection();
@@ -24,6 +25,7 @@ public class RobotRoute {
             X = robot.getX();
           }
         }
+        if(Y==toY){}
         if (Y > toY){
           while(Direction != DOWN){
               robot.turnLeft();
