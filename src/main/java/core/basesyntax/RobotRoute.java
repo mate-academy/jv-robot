@@ -2,29 +2,9 @@ package core.basesyntax;
 
 public class RobotRoute {
 
-    private boolean hasArrived(Robot robot, int toX, int toY) {
-        return robot.getX() == toX && robot.getY() == toY;
-    }
-
-    private void performTurn(Robot robot, int toX, int toY) {
-        int x = robot.getX();
-        int y = robot.getY();
-        if (x > toX) {
-            while (robot.getDirection() != Direction.RIGHT) {
-                robot.turnLeft();
-            }
-        } else if (x < toX) {
-            while (robot.getDirection() != Direction.LEFT) {
-                robot.turnRight();
-            }
-        } else if (y > toY) {
-            while (robot.getDirection() != Direction.DOWN) {
-                robot.turnLeft();
-            }
-        } else if (y < toY) {
-            while (robot.getDirection() != Direction.UP) {
-                robot.turnRight();
-            }
+    private void turnToDirection(Robot robot, Direction target) {
+        while (robot.getDirection() != target) {
+            robot.turnRight();
         }
     }
 
@@ -32,15 +12,22 @@ public class RobotRoute {
         if (robot == null) {
             return;
         }
-        while (!hasArrived(robot, toX, toY)) {
-            if (robot.getX() != toX) {
-                performTurn(robot, toX, toY);
-                robot.stepForward();
+        while (robot.getX() != toX) {
+            if (robot.getX() < toX) {
+                turnToDirection(robot, Direction.RIGHT);
+            } else {
+                turnToDirection(robot, Direction.LEFT);
             }
-            if (robot.getY() != toY) {
-                performTurn(robot, toX, toY);
-                robot.stepForward();
+            robot.stepForward();
+        }
+
+        while (robot.getY() != toY) {
+            if (robot.getY() < toY) {
+                turnToDirection(robot, Direction.UP);
+            } else {
+                turnToDirection(robot, Direction.DOWN);
             }
+            robot.stepForward();
         }
     }
 }
