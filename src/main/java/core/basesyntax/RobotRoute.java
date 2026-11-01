@@ -3,7 +3,7 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
 
-        if (robot.getY() > toY) {
+        if (robot.getY() >= toY) {
             if (robot.getDirection() == Direction.UP) { //DOWN turn
                 robot.turnRight();
                 robot.turnRight();
@@ -16,7 +16,7 @@ public class RobotRoute {
                 robot.stepForward();
             }
 
-        } else if (robot.getY() < toY) {
+        } else if (robot.getY() <= toY) {
             if (robot.getDirection() == Direction.RIGHT) { //UP turn
                 robot.turnLeft();
             } else if (robot.getDirection() == Direction.DOWN) {
@@ -30,7 +30,7 @@ public class RobotRoute {
             }
         }
 
-        if (robot.getX() > toX) {
+        if (robot.getX() >= toX) {
             if (robot.getDirection() == Direction.UP) { //LEFT turn
                 robot.turnLeft();
             } else if (robot.getDirection() == Direction.DOWN) {
@@ -43,7 +43,7 @@ public class RobotRoute {
                 robot.stepForward();
             }
 
-        } else if (robot.getX() < toX) {
+        } else if (robot.getX() <= toX) {
             if (robot.getDirection() == Direction.UP) { //RIGHT turn
                 robot.turnRight();
             } else if (robot.getDirection() == Direction.DOWN) {
@@ -55,11 +55,11 @@ public class RobotRoute {
             while (robot.getX() < toX) {
                 robot.stepForward();
             }
-
         }
     }
 }
-        // якщо дивиться UP, а треба рухатись LEFT, то він робить 1 поворот robot.turnLeft()
+
+// якщо дивиться UP, а треба рухатись LEFT, то він робить 1 поворот robot.turnLeft()
 //якщо дивиться RIGHT, а треба рухатись LEFT, то він робить 2 поворот robot.turnLeft()
 //якщо дивиться DOWN, а треба рухатись LEFT, то він робить 1 поворот robot.turnRight()
 
