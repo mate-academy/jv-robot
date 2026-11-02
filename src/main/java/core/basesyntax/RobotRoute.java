@@ -3,8 +3,9 @@ package core.basesyntax;
 public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
 
-        if (robot.getY() >= toY) {
-            if (robot.getDirection() == Direction.UP) { //DOWN turn
+        if (robot.getY() > toY) {
+            if (robot.getDirection() == Direction.DOWN) {
+            } else if (robot.getDirection() == Direction.UP) { //DOWN turn
                 robot.turnRight();
                 robot.turnRight();
             } else if (robot.getDirection() == Direction.LEFT) {
@@ -16,8 +17,9 @@ public class RobotRoute {
                 robot.stepForward();
             }
 
-        } else if (robot.getY() <= toY) {
-            if (robot.getDirection() == Direction.RIGHT) { //UP turn
+        } else if (robot.getY() < toY) {
+            if (robot.getDirection() == Direction.UP) {
+            } else if (robot.getDirection() == Direction.RIGHT) { //UP turn
                 robot.turnLeft();
             } else if (robot.getDirection() == Direction.DOWN) {
                 robot.turnRight();
@@ -30,8 +32,9 @@ public class RobotRoute {
             }
         }
 
-        if (robot.getX() >= toX) {
-            if (robot.getDirection() == Direction.UP) { //LEFT turn
+        if (robot.getX() > toX) {
+            if (robot.getDirection() == Direction.LEFT) {
+            } else if (robot.getDirection() == Direction.UP) { //LEFT turn
                 robot.turnLeft();
             } else if (robot.getDirection() == Direction.DOWN) {
                 robot.turnLeft();
@@ -43,8 +46,9 @@ public class RobotRoute {
                 robot.stepForward();
             }
 
-        } else if (robot.getX() <= toX) {
-            if (robot.getDirection() == Direction.UP) { //RIGHT turn
+        } else if (robot.getX() < toX) {
+            if (robot.getDirection() == Direction.RIGHT) {
+            } else if (robot.getDirection() == Direction.UP) { //RIGHT turn
                 robot.turnRight();
             } else if (robot.getDirection() == Direction.DOWN) {
                 robot.turnRight();
