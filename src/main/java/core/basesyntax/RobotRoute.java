@@ -4,7 +4,7 @@ public class RobotRoute {
     public void moveRobot(Robot robot, int toX, int toY) {
 
         if (robot.getY() > toY) {
-            while (robot.getDirection() != Direction.DOWN) {//DOWN turn
+            while (robot.getDirection() != Direction.DOWN) { //DOWN turn
                 robot.turnRight();
             }
             while (robot.getY() > toY) {
@@ -12,8 +12,8 @@ public class RobotRoute {
             }
 
         } else if (robot.getY() < toY) {
-            while (robot.getDirection() != Direction.UP) {//UP turn
-                  robot.turnLeft();
+            while (robot.getDirection() != Direction.UP) { //UP turn
+                robot.turnLeft();
             }
             while (robot.getY() < toY) {
                 robot.stepForward();
@@ -21,7 +21,7 @@ public class RobotRoute {
         }
 
         if (robot.getX() > toX) {
-            while (robot.getDirection() != Direction.LEFT) {//LEFT turn
+            while (robot.getDirection() != Direction.LEFT) { //LEFT turn
                 robot.turnLeft();
             }
             while (robot.getX() > toX) {
